@@ -1,0 +1,25 @@
+############################################################################
+# SYABAS API AGREEMENT FILES
+# SIGNUP at developer.popbox.com and look in general forum for missing files
+############################################################################
+com/syabas/*
+com/designvox/*
+
+#  Compiled source   #
+######################
+
+#  testing stuff     #
+######################
+Jukebox/*
+
+# OS generated files #
+######################
+.Spotlight-V100
+.Trashes
+.DS_Store
+desktop.ini
+ehthumbs.db
+Thumbs.db
+.directory
+*~
+*.pid
