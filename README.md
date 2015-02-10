@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 *************
-YAMJ3 porting
+YAMJ3 PORTING
 *************
 
 Read file "YAMJ3 Readme"
@@ -42,6 +42,13 @@ renamed
 An additional setup in flash is added where it's debugged/published in device central
 I'm not sure if that carries over in the FLA file or a flash itself setting you need
 to adjust.
+
+***********
+CS4 and CS5
+***********
+
+As requested, CS4 and CS5 fla files have been saved.   These have never been tried and
+it's normally built from the fla file with cs5.5
 
 *****************
 UGLY CODE WARNING

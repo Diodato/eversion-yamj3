@@ -41,6 +41,13 @@ Limitations:
 - not all YAMJ3 specific warning/error messages support translations, some are hardwired into the code
 - some indices are not supported (i.e HD, Set etc)
 
+Source code:
+------------
+The porting to YAMJ3 was my first contact with Flash and Action Script so no flaming please.
+A lot of the original code is still in place though never used (called). I left it
+as a reference for myself for future enhancements.
+Unfortunately I have stopped working on this code and have very little time to continue.
+
 Bugs:
 -----
 Probably lots.
