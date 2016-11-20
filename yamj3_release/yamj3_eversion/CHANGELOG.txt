@@ -1,0 +1,13 @@
+Yamj3_Eversion Changelog
+V1.3:
+- fixed readme and changelog with .txt extension 
+
+V1.2:
+- fixed weather in evHell and TerraNOVA
+
+V1.1:
+- fix people photo in evZap
+
+R0:
+- publish eversion and eskins 
+- eversion base R3000
