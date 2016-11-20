@@ -173,8 +173,11 @@
     <datelang>EN</datelang>
     <!-- Temperature unit: C or F (°C/°F; affects also other units like mph, etc.)  -->
     <units>C</units>
-    <!-- Weather city code. Go to http://edg3.co.uk/snippets/weather-location-codes/ to find out. -->
-    <!-- Examples: GMXX0087 = Munich, USNY0996 = New York -->
-	<!-- <citycode1>GMXX0087</citycode1>  -->
-	<citycode1>SWXX0031</citycode1>
+    <!-- need to change with weather mod  -->
+	<!-- Weather city code. To find out goto http://isithackday.com/geoplanet-explorer/  -->
+    <!-- type your city name in 'Find a location' -->
+    <!-- Examples: Munich WOEID: 676757 , Berlin WOEID: 638242, New York WOEID: 2459115-->
+    <!-- set citycode -->
+	
+	<citycode1>606889</citycode1>   <!-- peynier -->
 </settings>

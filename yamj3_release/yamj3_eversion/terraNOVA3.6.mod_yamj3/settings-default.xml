@@ -141,26 +141,26 @@
 <cursor.shiny>true</cursor.shiny>
 
 
-<!-- ******* Weather ie. http://edg3.co.uk/snippets/weather-location-codes/ ******* -->
+<!-- ******* Weather  ******* -->
+	<!-- Weather city code. To find out goto http://isithackday.com/geoplanet-explorer/  -->
+    <!-- type your city name in 'Find a location' -->
+    <!-- Examples: Munich WOEID: 676757 , Berlin WOEID: 638242, New York WOEID: 2459115-->
+    <!--set citycode -->	
 	
 <datelang>EN</datelang>											<!-- Date language (EN, DE, FR, default = EN) -->
 
 <units>C</units>												<!-- Temperature unit: C or F (°C/°F)  -->
 
-<cityname1>Melbourne</cityname1>									<!-- City Name Tab #1 -->
-<citycode1>ASXX0075</citycode1>									<!-- Melbourne, Australia -->
+<cityname1>Peynier</cityname1>								<!-- City Name Tab #1 -->
+<citycode1>606889</citycode1>   <!-- peynier -->
 
-<cityname2>Townsville</cityname2>									<!-- City Name Tab #2 -->
-<citycode2>ASXX0117</citycode2>									<!-- Townsville, Australia -->
+<cityname2>Aix</cityname2>									<!-- City Name Tab #2 -->
+<citycode2>575609</citycode2>   <!-- aix -->
 
-<cityname3>Poznan</cityname3>										<!-- City Name Tab #3 -->
-<citycode3>PLXX0040</citycode3>									<!-- Poznan, Poland -->
 
-<cityname4>El Paso, TX</cityname4>									<!-- City Name Tab #4 -->
-<citycode4>USTX0413</citycode4>									<!-- El Paso, TX, United States -->
+<cityname3>Marseille</cityname3>							<!-- City Name Tab #3 -->
+<citycode3>610264</citycode3>   <!-- marseille -->
 
-<cityname5>McMurdo</cityname5>									<!-- City Name Tab #5 -->
-<citycode5>AYXX0010</citycode5>									<!-- McMurdo, Antarctica -->
 
 
 <!-- ******* Wall Overlays ******* -->

@@ -23,18 +23,5 @@
 <data>1</data>
 </item>
 
-<item>
-<title>[:#cityname4:]</title>
-<number>4</number>
-<action>BACK</action>    
-<data>1</data>
-</item>
-
-<item>
-<title>[:#cityname5:]</title>
-<number>5</number>
-<action>BACK</action>    
-<data>1</data>
-</item>
 
 </control> 
