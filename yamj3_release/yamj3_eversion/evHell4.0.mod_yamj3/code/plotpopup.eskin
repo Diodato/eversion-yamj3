@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>false</fullscreen>
+    </control>
+	
+	<image>
+		<name>infopopbg</name>
+		<file>[:@media:]movie/moviedetailsbgr.swf</file>
+		<posx>365</posx>
+		<posy>60</posy>
+		<width>550</width>
+		<height>600</height>
+	</image>
+
+	
+	<text>
+		<name>plot_prompt</name>
+		<display>Plot:</display>
+		<posx>380</posx>
+		<posy>76</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>plot</name>
+		<display>[:plot,blank:]</display>
+		<posx>380</posx>
+		<posy>98</posy>
+		<width>500</width>
+		<height>448</height>
+		<wordwrap>true</wordwrap>
+		<size>18</size>  
+		<color>movie.plot.color</color>
+	</text>	
+	
+	<text>
+		<name>watched_prompt</name>
+		<display>watched:</display>
+		<posx>385</posx>
+		<posy>549</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>epwatched</name>
+		<file>[:@media:]movie/epwatched[:watched:].swf</file>
+		<posx>510</posx>
+		<posy>549</posy> 
+		<width>22</width>
+		<height>22</height>
+	</image>
+	
+	<text>
+		<name>watchedDate_prompt</name>
+		<display>watchedDate:</display>
+		<posx>385</posx>
+		<posy>571</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>watchedDate</name>
+		<display>[:watchedDate:]</display>
+		<posx>510</posx>
+		<posy>571</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>extras_prompt</name>
+		<display>Extras:</display>
+		<posx>385</posx>
+		<posy>595</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<segment>
+		<condition>[:isextras:] == YES</condition>  <!-- This block is only done if there are extras -->
+		<name>extraslist</name>  <!-- This name is special for extras -->
+		<datasource>extras</datasource>
+		<startx>510</startx>
+		<starty>592</starty>
+		<endx>900</endx>
+		<endy>571</endy> 
+		<scroll>2</scroll>		
+		<cursor>
+			<file>[:@media:]common/cursor.390.32.1.2.C5EAFF.true.phf</file>
+			<above>false</above>
+			<posx>0</posx>
+			<posy>0</posy>
+		</cursor>		
+		<tile>
+			<cols>1</cols>
+			<rows>2</rows>
+			<width>625</width>
+			<height>32</height>
+			<text>
+				<name>mc</name>
+				<display>[:title:]</display>  <!-- Eversion variable holding the title -->
+				<posx>2</posx>
+				<posy>4</posy>
+				<width>390</width>
+				<height>32</height>
+				<size>19</size>  
+				<align>left</align>  <!-- By default align is left -->
+				<color>A0A0A0</color>
+				<hlcolor>movie.data.color</hlcolor>
+			</text>	
+		</tile>
+
+		<!-- Remote commands to play extras. Only use select, Play plays the movie-->
+		<remote>
+			<button>SELECT</button>
+			<action>PLAYFILE</action>	
+		</remote>	
+		
+		<remote>
+		   <button>BACK</button>
+		   <action>BACK</action>
+		   <data>1</data>
+		</remote>	
+		<remote>
+			<button>INFO</button>
+			<action>BACK</action>
+			<data>1</data>
+		</remote>			   
+	</segment>
+	
+	
+	
+</eskin>

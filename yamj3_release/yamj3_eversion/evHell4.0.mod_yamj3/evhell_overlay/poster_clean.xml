@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overlay>
+   <layer after="true">
+        <name>watched</name>
+        <left>0</left>
+        <top>0</top>
+        <align>left</align>
+        <valign>top</valign>
+        <images>
+            <image value="true" filename="/shine/p_shine.png"/>
+            <image value="false" filename="/shine/p_shine.png"/>
+        </images>
+    </layer>
+	
+    <layer after="true">
+        <name>watched</name>
+        <left>0</left>
+        <top>0</top>
+        <align>left</align>
+        <valign>top</valign>
+        <images>
+            <image value="true" filename="/watched/p_watchedframe.png"/>
+            <image value="false" filename="/watched/p_unwatchedframe.png"/>
+        </images>
+    </layer>
+
+    <layer after="true">
+        <name>rating</name>
+        <left>220</left>
+        <top>8</top>
+        <align>left</align>
+        <valign>top</valign>
+        <images>
+            <image value="0" filename="/rating/p_star0.png"/>
+            <image value="10" filename="/rating/p_star1.png"/>
+            <image value="20" filename="/rating/p_star2.png"/>
+            <image value="30" filename="/rating/p_star3.png"/>
+            <image value="40" filename="/rating/p_star4.png"/>
+            <image value="50" filename="/rating/p_star5.png"/>
+            <image value="60" filename="/rating/p_star6.png"/>
+            <image value="70" filename="/rating/p_star7.png"/>
+            <image value="80" filename="/rating/p_star8.png"/>
+            <image value="90" filename="/rating/p_star9.png"/>
+            <image value="100" filename="/rating/p_star10.png"/>
+        </images>
+    </layer>	
+	
+    <layer after="true">
+        <name>set</name>
+        <left>268</left>
+        <top>191</top>
+        <align>left</align>
+        <valign>top</valign>
+        <images>
+            <image value="true" filename="/set/p_set.png"/>
+        </images>
+    </layer>
+</overlay>

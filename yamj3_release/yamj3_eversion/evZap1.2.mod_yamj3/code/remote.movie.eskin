@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>NUMPAD</button>
+		<action>PLAYPART</action>	
+	</remote>	
+	<remote>
+		<condition>[:plot,length:] =&gt; 1013</condition>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_large</file>
+	</remote>			
+	<remote>
+		<condition>[:plot,length:] =&gt; 1013</condition>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_large</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 1013 ++ [:plot,length:] &gt;= 875</condition>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small3</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 1013 ++ [:plot,length:] &gt;= 875</condition>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small3</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 875 ++ [:plot,length:] &gt;= 725</condition>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small2</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 875 ++ [:plot,length:] &gt;= 725</condition>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small2</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 725</condition>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small1</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 725</condition>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small1</file>
+	</remote>		
+	<remote>
+		<button>SEARCH</button>
+		<action>SCREEN</action>
+		<file>help/help_[:#nmtmodel,lower:]_movie</file>
+	</remote>	
+	<remote>
+		<button>REPEAT</button>
+		<action>RESET</action>
+		<title>[:%reset:]</title>
+	</remote>
+</eskin>

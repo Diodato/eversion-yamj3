@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>	
+	
+	<image>
+		<name>movieplot</name>
+		<file>[:@media:]movie/movieplot.swf</file>
+		<posx>0</posx>
+		<posy>483</posy>
+		<width>1280</width>
+		<height>237</height>
+	</image>	
+
+	<text>
+		<name>plot</name>
+		<display>[:plot,blank:]</display>
+		<posx>15</posx>
+		<posy>523</posy>
+		<width>1250</width>
+		<height>197</height>
+		<wordwrap>true</wordwrap>
+		<size>18</size>  
+		<color>movie.plot.color</color>
+	</text>	
+	
+	<image>
+		<name>extras</name>
+		<condition>[:isextras:] == YES</condition>
+		<file>[:@media:]movie/extrasstardim.swf</file>
+		<posx>1030</posx>
+		<posy>488</posy>
+		<width>11</width>
+		<height>10</height>
+	</image>	
+	
+<!-- Play movie buttons -->	
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	
+<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>	
+	<remote>
+		<button>SPACE</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>
+	
+<!-- Go back to overview -->
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	<remote>
+	   <button>RETURN</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	
+<!-- Next -->
+	<remote>
+		<button>NUM1</button>
+		<action>EXTRA</action>	
+		<file>movieinfoover</file>
+	</remote>
+
+	<remote>
+		<button>NUM3</button>
+		<action>EXTRA</action>	
+		<file>movieinfocast</file>
+	</remote>
+
+	<remote>
+		<button>NUM4</button>
+		<action>EXTRA</action>	
+		<file>movieinfoawards</file>
+	</remote>
+	
+	<remote>
+		<button>NUM5</button>
+		<action>EXTRA</action>	
+		<file>movieinfodetail</file>
+	</remote>
+	
+	<remote>
+		<button>NUM6</button>
+		<action>EXTRA</action>	
+		<file>movieinfoextras</file>
+	</remote>
+	
+<!-- Next tab cast -->
+	<remote>
+		<button>GREEN</button>
+		<action>EXTRA</action>	
+		<file>movieinfocast</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>movieinfocast</file>
+	</remote>
+	
+<!-- Previous tab overview -->	
+	<remote>
+		<button>RED</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	
+<!-- Fanart only -->
+	<remote>
+		<button>YELLOW</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+
+</eskin>

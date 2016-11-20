@@ -71,7 +71,8 @@ class api.Remotedata {
 	public var peopleXML:XML=null;
 	
 	private var yamj3:dataYAMJ3=null;
-
+	private var alphabetic:String="abcdefghijklmnopqrstuwxyz";
+	
 	function Remotedata() {
 		this.fn = {harddataloaded:Delegate.create(this, this.harddataloaded),
 				   prefetch:Delegate.create(this, this.prefetch),
@@ -146,7 +147,7 @@ class api.Remotedata {
 	public function init(segDetails:Object,callBack:Function):Void {
 		// get ready
 		this.full_reset();
-
+		System.security.allowDomain('*');
 		this.Callback=callBack;
 		this.segDetails=segDetails;
 
@@ -163,6 +164,7 @@ class api.Remotedata {
 		this.newInit=true;
 
 		if(this.segDetails.eskin==undefined) {  // preload!!
+		//	trace("remotedata function init this.segDetails.eskin==undefined")
 			switch(this.segDetails.kind) {
 				case 'INDEX':
 					// trace("RD: index preload of "+this.segDetails.file);
@@ -172,12 +174,19 @@ class api.Remotedata {
 					break;
 				case 'PRELOAD':
 					trace("RD: preload for "+this.segDetails.xml.file);
+				/*	var tmplist:String = this.segDetails.xml.info.split("-")
+					trace ("tmplist[0]:" + tmplist[0] + " tmplist[1]:" + tmplist[1]);
+					switch(tmplist[0]) { */
 					switch(this.segDetails.xml.info) {
 						case 'menulist':
 						case 'userlist':
 						case 'userlist2':
 						case 'userlist3':
 						case 'userlist4':
+						case 'userlist5':
+						case 'userlist6':
+						case 'userlist7':
+					/*	case 'personlist': */
 							trace(this.segDetails.xml.info+" for "+this.segDetails.xml.title);
 							this.indexType=this.segDetails.xml.info.toUpperCase();
 							this.indexName=this.segDetails.xml.title;
@@ -185,6 +194,7 @@ class api.Remotedata {
 							this.datasource.indexdata(this.segDetails.xml.arraydata,this.fn.harddataloaded);
 							break;
 						default:
+						
 					}
 					break;
 				default:
@@ -273,16 +283,66 @@ class api.Remotedata {
 
 	// single array to prefetch processing
 	private function harddataloaded(status:String,message:String,data:Array) {
-		// trace("harddataloaded");
+		 trace("harddataloaded");
 
 		if(status==null) {
 			// trace(".. processing data");
 			
 			if(data[0].file=="YAMJ3") {
-				this.yamj3=new dataYAMJ3();
+			
+				this.yamj3=new dataYAMJ3();	
+				trace ( "Remotedata harddataloaded switch to " + data[0]["originaltitle"]);
 				switch(data[0]["originaltitle"]) {
+				
 					case "Genres":
 						this.yamj3.getYAMJ3genresIndexData(this.fn.harddataloaded1);
+						break;
+					case "Certification":
+						this.yamj3.getYAMJ3certificationIndexData(this.fn.harddataloaded1);
+						break;
+					case "Ratings":
+						this.yamj3.getYAMJ3ratingsIndexData(this.fn.harddataloaded1);
+						break;
+					case "Title":
+						this.yamj3.getYAMJ3titleIndexData(this.fn.harddataloaded1);
+						break;
+					case "Year":
+						this.yamj3.getYAMJ3yearIndexData(this.fn.harddataloaded1);
+						break;
+					case "Set":
+						this.yamj3.getYAMJ3setIndexData(this.fn.harddataloaded1);
+						break;
+					case "Person":
+						this.yamj3.getYAMJ3personIndexData(this.fn.harddataloaded1,null,1);
+						break;
+					case "lastname-a" :	
+					case "lastname-b" :
+					case "lastname-c" :
+					case "lastname-d" :
+					case "lastname-e" :
+					case "lastname-f" :
+					case "lastname-g" :
+					case "lastname-h" :
+					case "lastname-i" :
+					case "lastname-j" :
+					case "lastname-k" :
+					case "lastname-l" :
+					case "lastname-m" :
+					case "lastname-n" :
+					case "lastname-o" :
+					case "lastname-p" :
+					case "lastname-q" :
+					case "lastname-r" :
+					case "lastname-s" :
+					case "lastname-t" :
+					case "lastname-u" :
+					case "lastname-v" :
+					case "lastname-w" :
+					case "lastname-x" :
+					case "lastname-y" :
+					case "lastname-z" :
+						var index:Array = data[0]["originaltitle"].split("-");
+						this.yamj3.getYAMJ3personIndexData(this.fn.harddataloaded1, index[1], 1);
 						break;
 					default:
 						trace("harddataloaded - unhandled index");
@@ -298,8 +358,8 @@ class api.Remotedata {
 	}
 
 	private function harddataloaded1(status:String,message:String,data:Array) {
-		// trace("harddataloaded");
-
+		 trace("harddataloaded1");
+		
 		if(status==null) {
 			// set prefetch to only clear images from index
 			this.keepxml=true;
@@ -363,7 +423,7 @@ class api.Remotedata {
 		
 	private function onYAMJ3genresIndexData(status:String,message:String,data:Array,indexName:String) {
 		if(status==null) {
-			// trace(".. processing data");
+			// trace("Remotedada onYAMJ3genresIndexData.. processing data");
 			
 			// set prefetch to only clear images from index
 			this.keepxml=true;
@@ -449,7 +509,7 @@ class api.Remotedata {
 			this.indexType=itype;
 			this.totalPages=totalPages;
 			this.indexOriginalName=originalName;
-
+			trace ("indexName=" + this.indexName + " indexType=" + this.indexType + " indexOriginalName="  + this.indexOriginalName)
 			/*if(this.totalTitles < 11000) {
 				// trace("total within reason, keeping xml in memory");
 				this.keepxml=true;
@@ -653,16 +713,16 @@ class api.Remotedata {
 		if(this.loading == true) return;   // if we're loading we can't do anything so exit out
 
 		if(this.prefetchOn==true) {
-			//// trace("prefetch checking");
+		//	 trace("prefetch checking");
 
 			// LOAD CHECK
 			// is there anything left to load?
 			if(this.pageLoaded != this.totalPages) {
-				//// trace("prefetch: not fully loaded yet");
+			//	trace("prefetch: not fully loaded yet");
 				if(this.newInit==true && this.pageLoaded < this.datatotal && this.lastknown<20) {					// if we're still on first load and theres more room
 					prefetch_load(this.pageLast+1);		// grab the next page
 					this.prefetchdelay=1; 					// slow it down a little
-					//trace("newinit check");
+					trace("newinit check");
 				} else {
 					//trace("new page check");
 					// NORMAL CHECK FOR POSITION
@@ -677,20 +737,20 @@ class api.Remotedata {
 			// should we wait?
 			if(this.prefetchdelay>0) {
 				this.prefetchdelay--;
-				//trace('prefetchdelay '+this.prefetchdelay);
+				trace('prefetchdelay '+this.prefetchdelay);
 				return;
 			}
 
 			// make sure we didn't start loading or delayed
 			if(this.loading==true) {
-				//trace("STILL LOADING");
+				trace("STILL LOADING");
 				return;
 			}
 
 			// do we have too much?
 			this.prefetch_unload_check();
 
-		}	//// else  trace("prefetched skipped, new init still");
+		}	// else  trace("prefetched skipped, new init still");
 	}
 	private function prefetch_unload_check() {
 		// do we have too much?
@@ -850,7 +910,7 @@ class api.Remotedata {
 	private function prefetch_load(thisPage:Number) {
 		if(this.loading==true) return;
 		if(this.pageCount[thisPage] == null) {
-			trace("page "+thisPage+" loading..");
+			trace("prefetch_load page "+thisPage+" loading..");
 			// mark it loading
 			this.pageCount[thisPage]=-1;
 			// load it

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>NUMPAD</button>
+		<action>PLAYPART</action>	
+	</remote>	
+</eskin>

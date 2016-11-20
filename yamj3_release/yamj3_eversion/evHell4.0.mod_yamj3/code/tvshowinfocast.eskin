@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>
+
+	<include>common.infolist</include>	
+	
+	<image>
+		<name>episodebg</name>
+		<file>[:@media:]movie/episodebglow.swf</file>
+		<posx>0</posx>
+		<posy>390</posy>
+		<width>1280</width>
+		<height>300</height>
+	</image>
+	
+	<image>
+		<name>pimage1</name>
+		<condition>[:person:] !== UNKNOWN</condition>
+		<segname>peoplelist</segname>
+		<file>[:photo:]</file>
+		<posx>1055</posx>
+		<posy>372</posy>
+		<width>215</width>
+<!-- 	<height>318</height> -->
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+		<hyper>4</hyper>
+	</image>
+	
+	<image>
+		<name>pimage2</name>
+		<condition>[:person:] == UNKNOWN</condition>
+		<segname>peoplelist</segname>
+		<file>[:photo:]</file>
+		<altfile>[:@media:]movie/portraitlarge.swf</altfile>
+		<posx>1055</posx>
+		<posy>372</posy>
+		<width>215</width>
+<!-- 	<height>318</height> -->
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+		<hyper>4</hyper>
+	</image>
+	
+	<segment>
+		<name>peoplelist</name>
+		<datasource>people</datasource>
+		<startx>0</startx>
+		<starty>408</starty>
+		<endx>730</endx>
+		<endy>690</endy> 
+		<scroll>2</scroll>		
+		<cursor>
+			<file>[:@media:]movie/cursor.730.47.1.2.C5EAFF.true.phf</file>
+			<above>true</above>
+			<posx>0</posx>
+			<posy>0</posy>
+		</cursor>		
+		<tile>
+			<cols>1</cols>
+			<rows>6</rows>
+			<width>730</width>
+			<height>47</height>
+			
+			<image>
+				<name>imgActor1</name>
+				<condition>[:person:] !== UNKNOWN</condition>
+				<file>[:photo:]</file>
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>32</width>
+<!-- 			<height>47</height> -->	
+			</image>
+				
+				
+			<image>
+				<name>imgActor2</name>
+				<condition>[:person:] == UNKNOWN</condition>
+				<file>[:photo:]</file>
+				<altfile>[:@media:]movie/portraitsmall.swf</altfile>
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>32</width>
+<!-- 			<height>47</height> -->	
+			</image>	
+				
+			<text>
+				<name>txtName</name>
+				<display>[:person@name,blank:]</display>
+				<posx>50</posx>
+				<posy>13</posy>
+				<width>240</width>
+				<height>22</height>
+				<size>18</size>  
+				<align>left</align>
+				<color>tv.episode.color</color>
+				<hlcolor>tv.data.color</hlcolor>
+			</text>		
+						
+			<text>
+				<name>txtCharacter</name>
+				<display>[:person@character,blank:]</display>
+				<posx>290</posx>
+				<posy>13</posy>
+				<width>290</width>
+				<height>22</height>
+				<size>18</size>  
+				<align>left</align>
+				<color>tv.episode.color</color>
+				<hlcolor>tv.data.color</hlcolor>
+			</text>	
+			
+			<text>
+				<name>txtJob</name>
+				<display>[:person@job,evtrans,blank:]</display>
+				<posx>580</posx>
+				<posy>13</posy>
+				<width>150</width>
+				<height>22</height>
+				<size>18</size>  
+				<align>left</align>
+				<color>tv.episode.color</color>
+				<hlcolor>tv.data.color</hlcolor>
+			</text>
+			
+			<image>
+				<name>imgInfo</name>
+				<condition>[:person,nospaces:] !== UNKNOWN</condition>
+				<file>[:@media:]movie/info.swf</file>
+				<posx>680</posx>
+				<posy>0</posy>
+				<width>40</width>
+				<height>40</height>
+			</image>
+			
+		</tile>	
+
+		<remote>
+			<condition>[:person:] !== UNKNOWN</condition>
+            <button>SELECT</button>
+            <action>SWITCH</action>    
+            <data>Person_[:person@name,yamjfilesafe:]_1</data>    
+        </remote>            
+        <remote>
+			<condition>[:person:] !== UNKNOWN</condition>
+            <button>END</button>
+            <action>SWITCH</action>    
+            <data>Person_[:person@name,yamjfilesafe:]_1</data>    
+        </remote>
+		
+	</segment>
+
+<!-- Back -->	
+	<remote>
+		<button>GREEN</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>
+		
+</eskin>

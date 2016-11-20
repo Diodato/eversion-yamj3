@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<eskin>
+
+<control>
+<fullscreen>true</fullscreen>
+<clearhighresbg>false</clearhighresbg>
+</control>
+
+	<!-- Background -->
+
+<background>
+<file>[:@media:]common/main.userlist.background.png</file>
+</background>
+
+<segment>
+
+	<!-- Thumbnail Start Location -->
+
+<name>index</name>
+<hyperscroll>false</hyperscroll>
+<startx>18</startx>
+<starty>15</starty>
+<endx>1280</endx>
+<endy>665</endy>
+<scroll>2</scroll>
+
+	<!-- Cursor Size -->
+
+<cursor>
+<file>[:@media:]common/cursor/cursor_refl[:#cursor.refl:].950.950.20.20.[:#cursor.color:].[:#cursor.shiny:].swf</file>
+<above>true</above>
+<animate>true</animate>
+<posx>-3</posx>
+<posy>10</posy>
+<width>144</width>
+<height>212</height>
+<scroll>2</scroll>
+</cursor>
+
+<tile>
+
+	<!-- Columns and Rows -->
+
+<cols>8</cols>		
+<rows>3</rows>
+<width>158</width>
+<height>215</height>
+
+	<!-- Text Location -->
+
+<text>
+<name>txtMenu</name>
+<display>[:title:]</display>
+<posx>4</posx>
+<posy>178</posy>
+<width>133</width>
+<height>40</height>
+<size>17</size>
+<wordwrap>true</wordwrap>
+<align>center</align>
+<bold>true</bold>
+<color>userlist.name.color</color>
+<hlcolor>userlist.name.hlcolor</hlcolor>
+</text>	
+
+	<!-- Thumbnails - Certification -->
+
+<image>
+<name>certification</name>
+<condition>[:@indexname,lower:] == [:%certification,lower:]</condition>
+<file>[:@media:]categories/certification/[:title,lower:].png</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>191</height>
+</image>
+
+	<!-- Thumbnails - Genres -->
+
+<image>
+<name>genres</name>
+<condition>[:@indexname,lower:] == [:%genres,lower:]</condition>
+<file>[:@media:]categories/genres/[:title,lower:].png</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>161</height>
+</image>
+
+	<!-- Thumbnails - Title -->
+
+<image>
+<name>title</name>
+<condition>[:@indexname,lower:] == [:%title,lower:]</condition>
+<file>[:@media:]categories/title/[:title,lower:].png</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>191</height>
+</image>
+
+	<!-- Thumbnails - Year -->
+
+<image>
+<name>year</name>
+<condition>[:@indexname,lower:] == [:%year,lower:]</condition>
+<file>[:@media:]categories/year/[:title,lower:].png</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>191</height>
+</image>
+
+	<!-- Thumbnails - Ratings -->
+
+<image>
+<name>ratings</name>
+<condition>[:@indexname,lower:] == [:%ratings,lower:]</condition>
+<file>[:@media:]categories/ratings/[:title,lower:].png</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>161</height>
+</image>
+
+	<!-- Thumbnails - Set -->
+
+<image>
+<name>set</name>
+<condition>[:@indexname,lower:] == [:%set,lower:]</condition>
+<file>[:@jukebox:]Set_[:title:]_1_small.jpg</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>198</height>
+</image>
+
+	<!-- Thumbnails - Country -->
+
+<image>
+<name>country</name>
+<condition>[:@indexname,lower:] == [:%country,lower:]</condition>
+<file>[:@media:]categories/country/[:title,lower:].png</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>161</height>
+</image>
+
+	<!-- Thumbnails - Award -->
+
+<image>
+<name>award</name>
+<condition>[:@indexname,lower:] == [:%award,lower:]</condition>
+<file>[:@media:]categories/award/[:title,lower:].png</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>161</height>
+</image>
+
+	<!-- Thumbnails - People - Cast -->
+
+<image>
+<name>cast</name>
+<condition>[:@indexname,lower:] == [:%cast,lower:]</condition>
+<file>[:title:].jpg</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>161</height>
+</image>
+
+	<!-- Thumbnails - People - Person -->
+
+<image>
+<name>person</name>
+<condition>[:@indexname,lower:] == [:%person,lower:]</condition>
+<file>[:title:].jpg</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>161</height>
+</image>
+
+	<!-- Thumbnails - People - Writer -->
+
+<image>
+<name>writer</name>
+<condition>[:@indexname,lower:] == [:%writer,lower:]</condition>
+<file>[:title:].jpg</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>161</height>
+</image>
+
+	<!-- Thumbnails - People - Director -->
+
+<image>
+<name>director</name>
+<condition>[:@indexname,lower:] == [:%director,lower:]</condition>
+<file>[:title:].jpg</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>161</height>
+</image>
+
+</tile>
+
+</segment>		
+
+	<!-- Title, ie. AVATAR -->
+
+<text>
+<name>title</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:title,upper,trun100:]</display>
+<posx>30</posx>
+<posy>685</posy>
+<width>650</width>
+<height>30</height>
+<size>18</size>  
+<align>left</align>
+<bold>true</bold>
+<color>cat.title.color</color>
+</text>
+
+	<!-- Index -->
+
+<text>
+<name>indexname</name>
+<display>[:@indexname:]</display>
+<posx>845</posx>
+<posy>685</posy>
+<width>180</width>
+<height>30</height>
+<align>left</align>
+<size>18</size>
+<bold>true</bold>
+<color>cat.index.name.color</color>
+</text>	
+
+	<!-- Index Kind, ie. Titles: -->
+
+<text>
+<name>indexkind</name>
+<display>[:@indexkind:]:</display>
+<posx>1075</posx>
+<posy>685</posy>		
+<width>95</width>
+<height>30</height>
+<size>18</size>
+<align>left</align>
+<bold>true</bold>
+<color>cat.index.kind.color</color>
+</text>	
+
+	<!-- Index, ie. "23 /    " -->
+
+<text>
+<name>cursor</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:@curpos:] /</display>
+<posx>1145</posx>
+<posy>685</posy>
+<width>58</width>
+<height>30</height>
+<align>right</align>
+<size>18</size>  
+<bold>true</bold>
+<color>cat.index.color</color>
+</text>		
+
+	<!-- Index, ie. "     255" -->
+
+<text>
+<name>total</name>
+<display>[:@totaltiles:]</display>
+<posx>1205</posx>
+<posy>685</posy>
+<width>42</width>
+<height>30</height>
+<align>left</align>
+<size>18</size>  
+<bold>true</bold>
+<color>cat.index.total.color</color>
+</text>
+
+	<!-- Remote -->
+
+<remote>
+<button>BACK</button>
+<action>BACK</action>
+<data>1</data>
+</remote>
+
+<remote>
+<button>MENU</button>
+<action>SCREEN</action>
+<file>menu.1.outline</file>
+</remote>
+
+<remote>
+<button>SEARCH</button>
+<action>SCREEN</action>
+<file>menu.1.outline</file>
+</remote>
+
+<remote>
+<button>RED</button>
+<action>HOME</action>
+</remote>
+
+<remote>
+<button>REPEAT</button>
+<action>RESET</action>
+<title>[:%reset:]</title>
+</remote>
+
+<remote>
+<button>ALL</button>
+<action>BLOCK</action>
+</remote>
+
+</eskin>

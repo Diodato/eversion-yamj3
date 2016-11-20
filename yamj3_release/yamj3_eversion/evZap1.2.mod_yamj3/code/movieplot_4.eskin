@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+	<text>
+		<name>plot4</name>
+		<display>[:plot,slice1509,trun550:]</display>
+		<posx>360</posx>
+		<posy>415</posy>
+		<width>650</width>
+		<height>185</height>
+		<wordwrap>true</wordwrap>
+		<size>22</size>
+		<color>FFFFFF</color>
+	</text>
+	<image>
+		<name>up_on</name>
+		<file>[:@media:]common/up_on.swf</file>
+		<posx>970</posx>
+		<posy>600</posy>
+		<width>15</width>
+		<height>10.6</height>
+	</image>		
+<!-- Previous plot_3 -->
+	<remote>
+		<button>PAGEUP</button>
+		<action>BACK</action>	
+		<data>1</data>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>BACK</action>	
+		<data>1</data>
+	</remote>
+
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>index</data>
+	</remote>			
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>NUMPAD</button>
+		<action>PLAYPART</action>	
+	</remote>	
+	<remote>
+		<condition>[:plot,length:] =&gt; 1013</condition>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_large</file>
+	</remote>			
+	<remote>
+		<condition>[:plot,length:] =&gt; 1013</condition>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_large</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 1013 ++ [:plot,length:] &gt;= 875</condition>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small3</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 1013 ++ [:plot,length:] &gt;= 875</condition>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small3</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 875 ++ [:plot,length:] &gt;= 725</condition>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small2</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 875 ++ [:plot,length:] &gt;= 725</condition>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small2</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 725</condition>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small1</file>
+	</remote>		
+	<remote>
+		<condition>[:plot,length:] &lt; 725</condition>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviepopup_small1</file>
+	</remote>		
+	<remote>
+		<button>SEARCH</button>
+		<action>SCREEN</action>
+		<file>help/help_[:#nmtmodel,lower:]_movie</file>
+	</remote>	
+	<remote>
+		<button>REPEAT</button>
+		<action>RESET</action>
+		<title>[:%reset:]</title>
+	</remote>
+</eskin>

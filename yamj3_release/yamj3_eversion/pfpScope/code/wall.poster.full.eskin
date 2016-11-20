@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+	<include>wall.common.nav</include>	
+	<include>wall.common.mediainfo</include>	
+	<include>wall.common.title</include>	
+	<include>common.clock</include>	
+
+	<!-- Poster thumbnails -->
+	<segment>
+		<name>index</name>
+		<startx>28</startx>
+		<starty>142</starty>
+		<endx>1252</endx>
+		<endy>586</endy>
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]wall/poster.cursor.png</file>
+			<above>true</above>
+			<posx>-10</posx>
+			<posy>-10</posy>
+			<width>124</width>
+			<height>170</height>  
+		</cursor>		
+		<tile>
+			<cols>12</cols>
+			<rows>3</rows>
+			<width>102</width>
+			<height>148</height>
+			<image>
+				<name>thumbnail</name>
+				<file>[:@jukebox:][:thumbnail:]</file>
+				<posx>4</posx>
+				<posy>4</posy>
+				<width>94</width>
+				<height>140</height>
+			</image>
+			<image>
+				<name>unwatched.overlay</name>
+				<condition>[:watched:] = false</condition>
+				<file>[:@media:]wall/unwatched.overlay.png</file>
+				<posx>58</posx>
+				<posy>4</posy>
+				<width>40</width>
+				<height>40</height>
+			</image>			
+			<image>
+				<name>set.overlay-movie</name>
+				<condition>[:mtype:] == MOVIESET</condition>
+				<file>[:@media:]wall/set.overlay.png</file>
+				<posx>59</posx>
+				<posy>119</posy>
+				<width>39</width>
+				<height>24</height>
+			</image>			
+			<image>
+				<name>set.overlay-tv</name>
+				<condition>[:mtype:] == TVSET</condition>
+				<file>[:@media:]wall/set.overlay.png</file>
+				<posx>59</posx>
+				<posy>119</posy>
+				<width>39</width>
+				<height>24</height>
+			</image>
+			<image>
+				<name>thumbnail.overlay</name>
+				<file>[:@media:]wall/thumbnail.overlay.png</file>
+				<posx>4</posx>
+				<posy>4</posy>
+				<width>94</width>
+				<height>140</height>
+			</image>			
+		</tile>
+
+		<!-- Wall menu -->
+		<remote>
+			<button>EQUAL</button>
+			<action>PRELOAD</action>        
+			<target>indextypelist</target>
+			<file>wall.common.nav.index.change</file>
+		</remote> 
+		<remote>
+			<button>SEARCH</button>
+			<action>PRELOAD</action>        
+			<target>indextypelist</target>
+			<file>wall.common.nav.index.change</file>
+		</remote> 
+
+	   <!-- Remote suff -->
+		<remote>
+			<button>PLAY</button>
+			<action>PLAYALL</action>
+		</remote>
+	</segment>	
+</eskin>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<control>
+
+<insert>
+<info>userlist7</info>
+<action>PRELOAD</action>
+<file>people.poster.fanart.bio2</file>
+<data>index</data>		
+</insert>
+
+</control>

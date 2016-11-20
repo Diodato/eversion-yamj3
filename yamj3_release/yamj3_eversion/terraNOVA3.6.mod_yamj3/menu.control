@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<control>
+
+<insert>
+<info>menulist</info>
+<action>PRELOAD</action>
+<file>menu.3.list</file>
+<data>index</data>
+</insert>
+
+<item>
+<action>reset</action>
+<title>[:%reset,Lower:]</title>
+<originaltitle>Reset</originaltitle>
+</item>	
+
+<item>
+<action>exit</action>
+<title>[:%exit,Lower:]</title>
+<originaltitle>Exit</originaltitle>
+</item>
+
+</control>

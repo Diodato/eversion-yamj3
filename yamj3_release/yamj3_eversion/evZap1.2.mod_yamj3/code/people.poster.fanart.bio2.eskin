@@ -1,0 +1,956 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!-- Segements - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:segment -->	
+<!-- Segements-tiles - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:tile -->	
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+<!-- Artwork Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:artvariables -->	
+<!-- Conditions - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:if -->	
+
+    <control>
+		<fullscreen>true</fullscreen>  <!-- Clear the previous screen  -->
+		<clearhighresbg>false</clearhighresbg>  <!--  Don't clear the hires background (if avail)  -->
+    </control>
+
+	<!-- Background -->
+	<background>
+		<file>[:@media:]common/person_background.jpg</file>
+	</background>
+
+<!--	<image>
+		<name>IN GRid</name>
+		<file>[:@media:]common/grid.png</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+		</image>        -->
+		
+	<!-- ******************  -->
+	<!--        CLOCK         -->
+	<include>clock</include>	
+	
+	
+	<!-- Background overlay (creates a gradient over the fanart)  -->
+	<!-- It appear first because we want everything else on top of it  -->
+	
+	
+<!--	<image>
+		<name>fanart.overlay.bg</name>
+		<file>[:@media:]common/fanart.bg.png</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	</image> 
+	<image>
+		<name>upper.navbar.bg</name>
+		<file>[:@media:]common/underlay.png</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>50</height>
+	</image> -->
+	<image>
+			<name>bio frame</name>
+		
+			<file>[:@media:]common/biobackdrop50.png</file>
+			<posx>37</posx>
+			<posy>320</posy>
+			<width>1210</width>
+			<height>360</height>
+
+		</image>
+	<text>
+		<name>biography label</name>
+		<display>[:%biography:]:</display> 
+		<posx>290</posx>
+		<posy>322</posy>
+		<width>150</width>
+		<height>35</height>
+		<align>left</align>  
+		<size>24</size>
+		<bold>true</bold>
+		<color>ff0000</color>
+	</text>
+	<!-- display no_people image in case of no photo- will be overwriten by the real photo if exists --> 
+	<image>
+		<name>actor nophoto</name>		
+			<file>[:@media:]common/no_people.jpg</file>
+			<posx>50</posx>
+			<posy>332</posy>
+			<width>225</width>
+			<height>337</height>
+	</image>
+	<!-- display people photo - will overwrite no_people.jpg by the real photo if exists  -->
+	<image>
+		<name>actor photo</name>
+		<segname>index</segname> 
+		<condition>[:photo:] != undefined</condition>
+			<file>[:photo:]</file>
+			<posx>50</posx>
+			<posy>332</posy>
+			<width>225</width>
+			<height>337</height>
+			<hyper>4</hyper>
+	</image>
+	<image>
+		<name>actor frame</name>
+		<file>[:@media:]common/photo_frame.png</file>
+		<posx>43</posx>
+		<posy>325</posy>
+		<width>239</width>
+		<height>351</height>
+	</image>
+	<text>
+		<name>actor name</name>
+		<segname>index</segname>
+		<display>[:title:]</display> 
+		<posx>455</posx>
+		<posy>323</posy>
+		<width>350</width>
+		<height>35</height>
+		<align>left</align>  
+		<size>24</size>
+		<bold>true</bold>
+		<color>ff0000</color>
+		<hyper>4</hyper>
+	</text>	
+	<text>
+		<name>actor birthname</name>
+		<segname>index</segname>
+		<display>[:birthname:]</display> 
+		<posx>780</posx>
+		<posy>323</posy>
+		<width>450</width>
+		<height>35</height>
+		<align>right</align>  
+		<size>24</size>
+		<bold>true</bold>
+		<color>ff0000</color>
+		<hyper>4</hyper>
+	</text>	
+	<text>
+		<name>birthday</name>
+		<segname>index</segname>
+		<display>[:birthday,blank:]</display> 
+		<posx>290</posx>
+		<posy>353</posy>
+		<width>150</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+		<hyper>4</hyper>
+	</text>
+	<text>
+		<name>birthplace 1</name>
+		<segname>index</segname>
+		<display>[:birthplace,blank:]</display> 
+		<posx>780</posx>
+		<posy>353</posy>
+		<width>450</width>
+		<height>30</height>
+		<align>right</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+		<hyper>4</hyper>
+	</text>
+	<text>
+		<name>biography 1</name>
+		<segname>index</segname>
+		<display>[:biography,trun1430,blank:]</display> 
+		<posx>290</posx>
+		<posy>377</posy>
+		<width>940</width>
+		<height>305</height>
+		<align>justify</align>  
+		<wordwrap>true</wordwrap>
+		<size>20</size>  
+		<color>ffffff</color>
+		<hyper>4</hyper>
+	</text>
+	<!--   GENERAL FILMOGRAPHY -->
+	<if>
+	<condition>[:multi-/movie/filmography/movie-1-/movie-name,undefined:] != undefined</condition>  <!-- don't show filmography if nothing to display -->
+	<image>
+		<name>filmo frame</name>
+		<file>[:@media:]common/biobackdrop50.png</file>
+		<posx>710</posx>
+		<posy>320</posy>
+		<width>533</width>
+		<height>360</height>
+	</image>  
+	<text>
+		<name>movie label</name>
+		<display>[:knownMovies,blank:] [:%movies:]</display> 
+		<posx>725</posx>
+		<posy>322</posy>
+		<width>450</width>
+		<height>35</height>
+		<align>left</align>  
+		<size>24</size>
+		<bold>true</bold>
+		<color>ff0000</color>
+	</text>
+	<text>
+		<name>movie 1</name>
+		<display>[:multi-/movie/filmography/movie-1-/movie-year,blank:]  [:multi-/movie/filmography/movie-1-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>352</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>movie 2</name>
+		<display>[:multi-/movie/filmography/movie-2-/movie-year,blank:]  [:multi-/movie/filmography/movie-2-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>382</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>movie 3</name>
+		<display>[:multi-/movie/filmography/movie-3-/movie-year,blank:]  [:multi-/movie/filmography/movie-3-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>412</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>movie 4</name>
+		<display>[:multi-/movie/filmography/movie-4-/movie-year,blank:]  [:multi-/movie/filmography/movie-4-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>442</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>movie 5</name>
+		<display>[:multi-/movie/filmography/movie-5-/movie-year,blank:]  [:multi-/movie/filmography/movie-5-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>472</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>	
+	<text>
+		<name>movie 6</name>
+		<display>[:multi-/movie/filmography/movie-6-/movie-year,blank:]  [:multi-/movie/filmography/movie-6-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>502</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>movie 7</name>
+		<display>[:multi-/movie/filmography/movie-7-/movie-year,blank:]  [:multi-/movie/filmography/movie-7-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>532</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>movie 8</name>
+		<display>[:multi-/movie/filmography/movie-8-/movie-year,blank:]  [:multi-/movie/filmography/movie-8-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>562</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>
+		<text>
+		<name>movie 9</name>
+		<display>[:multi-/movie/filmography/movie-9-/movie-year,blank:]  [:multi-/movie/filmography/movie-9-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>592</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>movie 10</name>
+		<display>[:multi-/movie/filmography/movie-10-/movie-year,blank:]  [:multi-/movie/filmography/movie-10-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>622</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>movie 11</name>
+		<display>[:multi-/movie/filmography/movie-11-/movie-year,blank:]  [:multi-/movie/filmography/movie-11-/movie-name,blank:]</display> 
+		<posx>730</posx>
+		<posy>652</posy>
+		<width>510</width>
+		<height>30</height>
+		<align>left</align>  
+		<size>20</size>  
+		<color>ffffff</color>
+	</text> 
+	</if>
+	<!--    NAVBAR     -->
+	<!--<text>
+        <name>people_cast</name>
+		<condition>[:@indexurl:] contains Cast_</condition>
+        <display>[:%cast,upper:]: [:@indexname,upper:]</display>
+		<posx>110</posx>
+		<posy>3</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>36</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>d0d0d0</color>
+	</text>
+	<text>
+        <name>people_writer</name>
+		<condition>[:@indexurl:] contains Writer_</condition>
+        <display>[:%writer,upper:]: [:@indexname,upper:]</display>
+		<posx>110</posx>
+		<posy>3</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>36</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>d0d0d0</color>
+	</text>
+	<text>
+        <name>people_director</name>
+		<condition>[:@indexurl:] contains Director_</condition>
+        <display>[:%director,upper:]: [:@indexname,upper:]</display>
+		<posx>110</posx>
+		<posy>3</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>36</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>d0d0d0</color>
+	</text>
+	<text>
+        <name>people_person</name>
+		<condition>[:@indexurl:] contains Person_</condition>
+        <display>[:%person,upper:]: [:@indexname,upper:]</display>
+		<posx>110</posx>
+		<posy>3</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>36</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>d0d0d0</color>
+	</text> -->
+	<text>
+        <name>people_people</name>
+        <display>[:@indexname:]</display>
+		<posx>110</posx>
+		<posy>3</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>36</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>d0d0d0</color>
+	</text>
+	<text>
+		<name>tiles</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<display>[:@curpos:] / [:@totaltiles:]</display>
+		<align>right</align>
+		<posx>1070</posx>
+		<posy>683</posy>
+		<width>125</width>
+		<height>30</height>
+		<size>20</size>
+		<color>808080</color>
+	</text>	 	 	
+	<image>
+		<name>left_on</name>
+		<condition>[:@curpos:] != 1</condition>
+		<segname>index</segname>	
+		<hyper>4</hyper>
+		<file>[:@media:]common/l_on.swf</file>
+		<posx>1205</posx>
+		<posy>690</posy>
+		<width>10.6</width>
+		<height>15</height>
+	</image>
+	<image>
+		<name>right_on</name>
+		<condition>[:@curpos:] != [:@totaltiles:]</condition>
+		<segname>index</segname>	
+		<hyper>4</hyper>
+		<file>[:@media:]common/r_on.swf</file>
+		<posx>1220</posx>
+		<posy>690</posy>
+		<width>10.6</width>
+		<height>15</height>
+	</image>
+	<text>
+		<name>title_year</name>
+		<segname>index</segname>
+		<display>[:title:] ([:year:])</display>
+		<posx>250</posx>
+		<posy>680</posy>
+		<width>750</width>
+		<height>35</height>
+		<size>26</size>
+		<align>center</align>
+		<color>FFFFFF</color>
+		<hyper>4</hyper>
+	</text>
+<!--	<image>
+		<name>rating_image</name>
+		<segname>index</segname>
+		<file>[:@media:]common/star/star[:score,round:].swf</file>
+		<posx>35</posx>
+		<posy>685</posy>
+		<width>115</width>
+		<height>20</height>
+		<hyper>4</hyper>
+	</image> -->
+	
+	<!--   MOVIES = 1    -->
+
+	<segment>  
+		<name>index</name>
+		<condition>[:@totaltiles:] = 1</condition>	  
+		<startx>561</startx>
+		<starty>68</starty>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]wall/cursor_[:#cursor:].swf</file>
+			<above>true</above>
+			<animate>true</animate>
+			<posx>-6.8</posx>
+			<posy>-8.8</posy>
+			<width>171</width>
+			<height>230</height>
+		</cursor>
+		<tile>
+			<cols>1</cols>
+			<rows>1</rows>
+			<width>157</width>
+			<height>208</height>
+			<image>
+				<name>thumbnail</name>
+				<file>[:photo:]</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+<!--			<image>
+				<name>thumbnail_dim</name>
+				<highlight>false</highlight>
+				<file>[:@media:]wall/dim_[:#dimtile:].swf</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+			<image>
+				<name>thumbnailframe</name>
+				<file>[:@media:]people_wall/thumbframe.[:mtype:].[:smartres,filesafe:].[:videoSource:].swf</file>
+				<posx>11.2</posx>
+				<posy>9.7</posy>
+				<width>135</width>
+				<height>193</height>
+			</image>
+			<image>
+				<name>watched</name>
+				<file>[:@media:]common/icon_watched_[:watched:].swf</file>
+				<posx>113</posx>
+				<posy>170</posy>
+				<width>25</width>
+				<height>25</height>
+			</image> -->
+		</tile>
+<!--		<fanart>
+			<file>[:@media:]people_fanart/[:@indexname:].fanart.jpg</file>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<hyper>2</hyper>
+		</fanart> -->
+		<!-- Remote commands 
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>		-->	
+	</segment>	
+	
+	<!--   MOVIES = 2    -->
+	
+	<segment>  
+		<name>index</name>
+		<condition>[:@totaltiles:] = 2</condition>	  
+		<startx>482.5</startx>
+		<starty>68</starty>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]wall/cursor_[:#cursor:].swf</file>
+			<above>true</above>
+			<animate>true</animate>
+			<posx>-6.8</posx>
+			<posy>-8.8</posy>
+			<width>171</width>
+			<height>230</height>
+		</cursor>
+		<tile>
+			<cols>2</cols>
+			<rows>1</rows>
+			<width>157</width>
+			<height>208</height>
+			<first>1</first>  
+			<static>false</static>
+			 
+			<image>
+				<name>thumbnail</name>
+				<file>[:photo:]</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+<!--			<image>
+				<name>thumbnail_dim</name>
+				<highlight>false</highlight>
+				<file>[:@media:]wall/dim_[:#dimtile:].swf</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+			<image>
+				<name>thumbnailframe</name>
+				<file>[:@media:]people_wall/thumbframe.[:mtype:].[:smartres,filesafe:].[:videoSource:].swf</file>
+				<posx>11.2</posx>
+				<posy>9.7</posy>
+				<width>135</width>
+				<height>193</height>
+			</image>
+			<image>
+				<name>watched</name>
+				<file>[:@media:]common/icon_watched_[:watched:].swf</file>
+				<posx>113</posx>
+				<posy>170</posy>
+				<width>25</width>
+				<height>25</height>
+			</image> -->
+		</tile>
+<!--		<fanart>
+			<file>[:@media:]people_fanart/[:@indexname:].fanart.jpg</file>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<hyper>2</hyper>
+		</fanart> -->
+		<!-- Remote commands 
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>			-->
+	</segment>	
+	
+	<!--   MOVIES = 3    -->
+	
+	<segment>  
+		<name>index</name>
+		<condition>[:@totaltiles:] = 3</condition>	  
+		<startx>404</startx>
+		<starty>68</starty>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]wall/cursor_[:#cursor:].swf</file>
+			<above>true</above>
+			<animate>true</animate>
+			<posx>-6.8</posx>
+			<posy>-8.8</posy>
+			<width>171</width>
+			<height>230</height>
+		</cursor>
+		<tile>
+			<cols>3</cols>
+			<rows>1</rows>
+			<width>157</width>
+			<height>208</height>
+
+			<image>
+				<name>thumbnail</name>
+				<file>[:photo:]</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+<!--			<image>
+				<name>thumbnail_dim</name>
+				<highlight>false</highlight>
+				<file>[:@media:]wall/dim_[:#dimtile:].swf</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+			<image>
+				<name>thumbnailframe</name>
+				<file>[:@media:]people_wall/thumbframe.[:mtype:].[:smartres,filesafe:].[:videoSource:].swf</file>
+				<posx>11.2</posx>
+				<posy>9.7</posy>
+				<width>135</width>
+				<height>193</height>
+			</image>
+			<image>
+				<name>watched</name>
+				<file>[:@media:]common/icon_watched_[:watched:].swf</file>
+				<posx>113</posx>
+				<posy>170</posy>
+				<width>25</width>
+				<height>25</height>
+			</image> -->
+		</tile>
+<!--		<fanart>
+			<file>[:@media:]people_fanart/[:@indexname:].fanart.jpg</file>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<hyper>2</hyper>
+		</fanart> -->
+		<!-- Remote commands 
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>		-->	
+	</segment>	
+	
+	<!--   MOVIES = 4    -->
+	
+	<segment>  
+		<name>index</name>
+		<condition>[:@totaltiles:] = 4</condition>	  
+		<startx>325.5</startx>
+		<starty>68</starty>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]wall/cursor_[:#cursor:].swf</file>
+			<above>true</above>
+			<animate>true</animate>
+			<posx>-6.8</posx>
+			<posy>-8.8</posy>
+			<width>171</width>
+			<height>230</height>
+		</cursor>
+		<tile>
+			<cols>4</cols>
+			<rows>1</rows>
+			<width>157</width>
+			<height>208</height>
+			<image>
+				<name>thumbnail</name>
+				<file>[:photo:]</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+<!--			<image>
+				<name>thumbnail_dim</name>
+				<highlight>false</highlight>
+				<file>[:@media:]wall/dim_[:#dimtile:].swf</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+			<image>
+				<name>thumbnailframe</name>
+				<file>[:@media:]people_wall/thumbframe.[:mtype:].[:smartres,filesafe:].[:videoSource:].swf</file>
+				<posx>11.2</posx>
+				<posy>9.7</posy>
+				<width>135</width>
+				<height>193</height>
+			</image>
+			<image>
+				<name>watched</name>
+				<file>[:@media:]common/icon_watched_[:watched:].swf</file>
+				<posx>113</posx>
+				<posy>170</posy>
+				<width>25</width>
+				<height>25</height>
+			</image> -->
+		</tile>
+<!--		<fanart>
+			<file>[:@media:]people_fanart/[:@indexname:].fanart.jpg</file>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<hyper>2</hyper>
+		</fanart> -->
+		<!-- Remote commands 
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>			-->
+	</segment>	
+	
+	
+	<!--   MOVIES = 5    -->
+	
+	<segment>  
+		<name>index</name>
+		<condition>[:@totaltiles:] = 5</condition>	  
+		<startx>247</startx>
+		<starty>68</starty>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]wall/cursor_[:#cursor:].swf</file>
+			<above>true</above>
+			<animate>true</animate>
+			<posx>-6.8</posx>
+			<posy>-8.8</posy>
+			<width>171</width>
+			<height>230</height>
+		</cursor>
+		<tile>
+			<cols>5</cols>
+			<rows>1</rows>
+			<width>157</width>
+			<height>208</height>
+
+			<image>
+				<name>thumbnail</name>
+				<file>[:photo:]</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+<!--			<image>
+				<name>thumbnail_dim</name>
+				<highlight>false</highlight>
+				<file>[:@media:]wall/dim_[:#dimtile:].swf</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+			<image>
+				<name>thumbnailframe</name>
+				<file>[:@media:]people_wall/thumbframe.[:mtype:].[:smartres,filesafe:].[:videoSource:].swf</file>
+				<posx>11.2</posx>
+				<posy>9.7</posy>
+				<width>135</width>
+				<height>193</height>
+			</image>
+			<image>
+				<name>watched</name>
+				<file>[:@media:]common/icon_watched_[:watched:].swf</file>
+				<posx>113</posx>
+				<posy>170</posy>
+				<width>25</width>
+				<height>25</height>
+			</image> -->
+		</tile>
+<!--		<fanart>
+		<file>[:@media:]people_fanart/[:@indexname:].fanart.jpg</file>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<hyper>2</hyper>
+		</fanart> -->
+		
+		<!-- Remote commands 
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>			-->
+	</segment>	
+	
+	<!--   MOVIES = 6    -->
+	
+	<segment>  
+		<name>index</name>
+		<condition>[:@totaltiles:] = 6</condition>	  
+		<startx>168.5</startx>
+		<starty>68</starty>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]wall/cursor_[:#cursor:].swf</file>
+			<above>true</above>
+			<animate>true</animate>
+			<posx>-6.8</posx>
+			<posy>-8.8</posy>
+			<width>171</width>
+			<height>230</height>
+		</cursor>
+		<tile>
+			<cols>6</cols>
+			<rows>1</rows>
+			<width>157</width>
+			<height>208</height>
+			<image>
+				<name>thumbnail</name>
+				<file>[:photo:]</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+<!--			<image>
+				<name>thumbnail_dim</name>
+				<highlight>false</highlight>
+				<file>[:@media:]wall/dim_[:#dimtile:].swf</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+			<image>
+				<name>thumbnailframe</name>
+				<file>[:@media:]people_wall/thumbframe.[:mtype:].[:smartres,filesafe:].[:videoSource:].swf</file>
+				<posx>11.2</posx>
+				<posy>9.7</posy>
+				<width>135</width>
+				<height>193</height>
+			</image>
+			<image>
+				<name>watched</name>
+				<file>[:@media:]common/icon_watched_[:watched:].swf</file>
+				<posx>113</posx>
+				<posy>170</posy>
+				<width>25</width>
+				<height>25</height>
+			</image> -->
+		</tile>
+<!--		<fanart>
+			<file>[:@media:]people_fanart/[:@indexname:].fanart.jpg</file>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<hyper>2</hyper>
+		</fanart> -->
+		<!-- Remote commands 
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>			-->
+	</segment>	
+	
+	<!--   MOVIES = 7 and above    -->
+	
+	<segment>  
+		<name>index</name>
+		<condition>[:@totaltiles:] &gt;= 7</condition>	  
+		<startx>90</startx>
+		<starty>68</starty>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]wall/cursor_[:#cursor:].swf</file>
+			<above>true</above>
+			<animate>true</animate>
+			<posx>-6.8</posx>
+			<posy>-8.8</posy>
+			<width>171</width>
+			<height>230</height>
+		</cursor>
+		<tile>
+			<cols>7</cols>
+			<rows>1</rows>
+			<width>157</width>
+			<height>208</height>
+	
+			<first>4</first>  
+			<static>true</static>
+			<offset>3</offset>
+			<image>
+				<name>no_photo</name>
+				<file>[:@media:]common/no_people.jpg</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+			<image>
+				<name>photo</name>
+				<file>[:photo:]</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+<!--			<image>
+				<name>thumbnail_dim</name>
+				<highlight>false</highlight>
+				<file>[:@media:]wall/dim_[:#dimtile:].swf</file>
+				<posx>16</posx>
+				<posy>14.5</posy>
+				<width>125</width>
+				<height>183</height>
+			</image>
+			<image>
+				<name>thumbnailframe</name>
+				<file>[:@media:]people_wall/thumbframe.[:mtype:].[:smartres,filesafe:].[:videoSource:].swf</file>
+				<posx>11.2</posx>
+				<posy>9.7</posy>
+				<width>135</width>
+				<height>193</height>
+			</image>
+			<image>
+				<name>watched</name>
+				<file>[:@media:]common/icon_watched_[:watched:].swf</file>
+				<posx>113</posx>
+				<posy>170</posy>
+				<width>25</width>
+				<height>25</height>
+			</image> -->
+		</tile>
+<!--	<fanart>
+			<file>[:@media:]people_fanart/[:@indexname:].fanart.jpg</file>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<hyper>2</hyper>
+		</fanart> -->
+		<!-- Remote commands 
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>			-->
+	</segment>	
+</eskin>

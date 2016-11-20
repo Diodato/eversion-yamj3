@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+	<include>wall.common.nav</include>	
+	<include>wall.common.mediainfo</include>	
+	<include>wall.common.title</include>	
+	<include>common.clock</include>	
+
+	<!-- Banners -->
+	<segment>
+		<name>index</name>
+		<startx>42</startx>
+		<starty>147</starty>
+		<endx>1262</endx>
+		<endy>582</endy>
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]wall/banner.cursor.png</file>
+			<above>true</above>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>399</width>
+			<height>87</height>  
+		</cursor>		
+		<tile>
+			<cols>3</cols>
+			<rows>5</rows>
+			<width>399</width>
+			<height>87</height>
+			<image>
+				<name>banner</name>
+				<file>[:@jukebox:][:banner:]</file>
+				<posx>6</posx>
+				<posy>6</posy>
+				<width>387</width>
+				<height>75</height>
+			</image>			
+		</tile>
+
+		<!-- Wall menu -->
+		<remote>
+			<button>EQUAL</button>
+			<action>PRELOAD</action>        
+			<target>indextypelist</target>
+			<file>wall.common.nav.index.change</file>
+		</remote> 
+		<remote>
+			<button>SEARCH</button>
+			<action>PRELOAD</action>        
+			<target>indextypelist</target>
+			<file>wall.common.nav.index.change</file>
+		</remote> 
+
+	   <!-- Remote suff -->
+		<remote>
+			<button>PLAY</button>
+			<action>PLAYALL</action>
+		</remote>
+	</segment>	
+</eskin>

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>	
+
+<!-- ******* Preloader Location ******* -->
+
+<preloadx>14</preloadx>
+<preloady>134</preloady>
+
+<startpage>home</startpage>
+	
+<!-- ******* HOME/MENU PAGES ******* -->
+
+<menuHOME>home</menuHOME>
+
+<menuMENU>menu.1.outline</menuMENU>
+
+<!-- ******* INDEX/DETAIL PAGES ******* -->
+
+<indexINDEX>movie.wall.(1).48</indexINDEX>							<!-- All/New/Extras/HD/HD-720/HD-1080/Top 250/Watched/Unwatched/Rating -->
+<indexMOVIE>movie.wall.(1).24</indexMOVIE>							<!-- Movies -->
+<indexNEWMOVIE>movie.wall.(1).24</indexNEWMOVIE>						<!-- New-Movies -->
+<indexMOVIESET>movie.wall.(1).48</indexMOVIESET>						<!-- Movies Boxset -->
+
+<!-- CHOICES -->
+<!-- movie.list.(1).8 -->
+<!-- movie.list.(1).15 -->
+<!-- movie.wall.(1).8 -->
+<!-- movie.wall.(1).24 -->
+<!-- movie.wall.(1).48 -->
+
+<detailsMOVIE>movie.wall.(2).1.outline</detailsMOVIE>						<!-- Movie Detail -->
+
+<!-- CHOICES -->
+<!-- movie.wall.(2).1.outline -->
+<!-- movie.wall.(2).2.plot -->
+<!-- movie.wall.(2).3.cast -->
+<!-- movie.wall.(2).4.details -->
+<!-- movie.wall.(2).5.fanart -->
+<!-- movie.wall.(2).6.all.awards -->
+<!-- movie.wall.(2).7.all.trailers -->
+
+<indexTV>tv.banner.(1).14</indexTV>									<!-- TV -->
+<indexNEWTV>tv.banner.(1).21</indexNEWTV>								<!-- New-TV -->
+
+<!-- CHOICES -->
+<!-- tv.banner.(1).14 -->
+<!-- tv.banner.(1).21 -->
+<!-- movie.list.(1).8 -->
+<!-- movie.list.(1).15 -->
+<!-- movie.wall.(1).8 -->
+<!-- movie.wall.(1).24 -->
+<!-- movie.wall.(1).48 -->
+
+<indexTVSET>tv.banner.(2).8</indexTVSET>								<!-- TV Set -->
+
+<!-- CHOICES -->
+<!-- tv.banner.(2).8 -->
+
+<detailsTV>tv.banner.(3).1.outline.full</detailsTV>						<!-- TV Detail -->
+
+<!-- CHOICES -->
+<!-- tv.banner.(3).1.outline.full -->
+<!-- tv.banner.(3).2.outline.half -->
+<!-- tv.banner.(3).3.episodes -->
+<!-- tv.banner.(3).4.cast -->
+<!-- tv.banner.(3).5.fanart -->
+
+<indexPEOPLE>people.wall.custom</indexPEOPLE>							<!-- Cast/Person/Writer/Director -->
+
+<!-- CHOICES -->
+<!-- movie.list.(1).8 -->
+<!-- movie.list.(1).15 -->
+<!-- movie.wall.(1).8 -->
+<!-- movie.wall.(1).24 -->
+<!-- movie.wall.(1).48 -->
+<!-- people.wall.custom -->
+
+<indexPEOPLEwall>people.48</indexPEOPLEwall>							<!-- Wall Mode Cast/Person/Writer/Director -->
+
+<!-- CHOICES -->
+<!-- people.24 -->
+<!-- people.48 -->
+
+<!-- ******* INDEX TRAILERS ******* -->
+
+<indexTrailers>main.trailer.wall.16</indexTrailers>						<!-- Trailer Detail -->
+
+<!-- CHOICES -->
+<!-- main.trailer.wall.16 -->
+<!-- main.trailer.wall.24 -->
+
+<homelist>Other</homelist>
+
+<menulist>Certification,Genres,Title,Year,Ratings,Set,Country,Award,Cast,Person,Writer,Director</menulist>	
+
+<userlist></userlist>
+<userlist3>Cast,Person,Writer,Director</userlist3>						<!-- People -->
+<userlist4>Certification,Genres,Title,Year,Ratings,Set,Country,Award</userlist4>	<!-- Categories -->
+
+
+<!-- ******* Certification ******* -->
+
+<certification>mpaa</certification>    								<!-- Movie details certification images to use: mpaa, bbfc, csa or germany -->
+
+
+<!-- ******* Category Certification Images: au *** de *** fr *** ie *** nl *** uk *** us ******* -->
+
+<cat.certification>us</cat.certification>
+
+
+<!-- ******* Category Genres Images: fiinix.color.g&b *** fiinix.color.y&w *** xzeners ******* -->
+
+<cat.genres>fiinix.color.g&b</cat.genres>
+
+
+<!-- ****** Specific Audio Codec/Channels Display ******* -->
+
+<audio.codec>audio.codec.min</audio.codec>							<!-- Audio Codec Display -->
+
+<!-- CHOICES -->
+<!-- audio.codec.min -->										<!-- Audio Codec Display 	ie. AC3 -->
+<!-- audio.codec.full -->										<!-- Audio Codec Display	ie. AC3 (en) / AC3 (fr) -->
+
+<audio.channels>audio.channels.min</audio.channels>						<!-- Audio Channels Display -->
+
+<!-- CHOICES -->
+<!-- audio.channels.min -->										<!-- Audio Channels Display 	ie. 5.1 -->
+<!-- audio.channels.full -->										<!-- Audio Channels Display	ie. 6 / 6 -->
+
+
+<!-- ****** Cursor Settings ******* -->
+
+<!-- CHOICES *** 1 (slow effect) *** 2 (fast effect) -->
+<cursor.refl>2</cursor.refl>
+
+<!-- CHOICES *** ffffff (white) *** eeee00 (yellow) *** a10000 (red) *** 03a000 (green) *** 0040ff (blue) *** 9a9a9a (silver) -->
+<cursor.color>9a9a9a</cursor.color>
+
+<!-- CHOICES *** true (shiny on) *** false (shiny off) -->
+<cursor.shiny>true</cursor.shiny>
+
+
+<!-- ******* Weather ie. http://edg3.co.uk/snippets/weather-location-codes/ ******* -->
+	
+<datelang>EN</datelang>											<!-- Date language (EN, DE, FR, default = EN) -->
+
+<units>C</units>												<!-- Temperature unit: C or F (°C/°F)  -->
+
+<cityname1>Melbourne</cityname1>									<!-- City Name Tab #1 -->
+<citycode1>ASXX0075</citycode1>									<!-- Melbourne, Australia -->
+
+<cityname2>Townsville</cityname2>									<!-- City Name Tab #2 -->
+<citycode2>ASXX0117</citycode2>									<!-- Townsville, Australia -->
+
+<cityname3>Poznan</cityname3>										<!-- City Name Tab #3 -->
+<citycode3>PLXX0040</citycode3>									<!-- Poznan, Poland -->
+
+<cityname4>El Paso, TX</cityname4>									<!-- City Name Tab #4 -->
+<citycode4>USTX0413</citycode4>									<!-- El Paso, TX, United States -->
+
+<cityname5>McMurdo</cityname5>									<!-- City Name Tab #5 -->
+<citycode5>AYXX0010</citycode5>									<!-- McMurdo, Antarctica -->
+
+
+<!-- ******* Wall Overlays ******* -->
+
+<overlaythumbnail>false</overlaythumbnail>							<!-- Movie Wall 16,24,36,48 Overlay Thumbnail -->
+<overlayunwatched>false</overlayunwatched>							<!-- Movie Wall 16,24,36,48 Overlay Unwatched (NEW) -->
+<overlayset>false</overlayset>									<!-- Movie Wall 16,24,36,48 Overlay Set (Movie/TV)-->
+<overlayposter>false</overlayposter>								<!-- Movie Wall Details Overlay Poster -->
+
+
+<!-- ******* Colors ******* -->
+
+<!-- Home / Categories -->
+
+<home.name.color>ffffff</home.name.color> 							<!-- Home Name -->
+<home.name.hlcolor>ffd800</home.name.hlcolor>							<!-- Home Name Highlight -->
+<categories.name.color>ffffff</categories.name.color> 					<!-- Categories Name -->
+<categories.name.hlcolor>ffd800</categories.name.hlcolor>					<!-- Categories Name Highlight -->
+
+<!-- People -->
+
+<people.name.color>ffffff</people.name.color> 							<!-- People Name -->
+<people.name.hlcolor>ffd800</people.name.hlcolor>						<!-- People Name Highlight -->
+<people.title.color>99ccff</people.title.color> 						<!-- Title				ie. AVATAR -->
+<people.index.name.color>99ccff</people.index.name.color> 					<!-- Index Name 			ie. Cast -->
+<people.index.kind.color>99ccff</people.index.kind.color> 					<!-- Index Kind			ie. Titles: -->
+<people.index.color>99ccff</people.index.color> 						<!-- Index				ie. "23 /    " -->
+<people.index.total.color>99ccff</people.index.total.color> 				<!-- Index Total			ie. "     255" -->
+
+<!-- User List -->
+
+<userlist.name.color>ffffff</userlist.name.color> 						<!-- User List Name -->
+<userlist.name.hlcolor>ffd800</userlist.name.hlcolor>						<!-- User List Name Highlight -->
+
+<!-- Menu -->
+
+<menu.2.main.name.color>00bfff</menu.2.main.name.color> 					<!-- Menu Main Name -->
+<menu.2.main.title.color>ffffff</menu.2.main.title.color> 					<!-- Menu Main Title -->
+<menu.2.main.title.hlcolor>ffd800</menu.2.main.title.hlcolor> 				<!-- Menu Main Title Highlight -->
+<menu.3.list.name.color>00bfff</menu.3.list.name.color> 					<!-- Menu List Name -->
+<menu.3.list.title.color>ffffff</menu.3.list.title.color> 					<!-- Menu List Title -->
+<menu.3.list.title.hlcolor>ffd800</menu.3.list.title.hlcolor> 				<!-- Menu List Title Highlight -->
+
+<!-- Categories -->
+
+<cat.title.color>99ccff</cat.title.color> 							<!-- Title				ie. AVATAR -->
+<cat.index.name.color>99ccff</cat.index.name.color> 						<!-- Index Name 			ie. Cast -->
+<cat.index.kind.color>99ccff</cat.index.kind.color> 						<!-- Index Kind			ie. Titles: -->
+<cat.index.color>99ccff</cat.index.color> 							<!-- Index				ie. "23 /    " -->
+<cat.index.total.color>99ccff</cat.index.total.color> 					<!-- Index Total			ie. "     255" -->
+
+<!-- Trailers -->
+
+<tr.runtime.label.color>00bfff</tr.runtime.label.color>					<!-- Runtime Label		ie. Runtime: -->
+<tr.runtime.color>ffffff</tr.runtime.color>							<!-- Runtime			ie. 2:24 -->
+<tr.outline.label.color>00bfff</tr.outline.label.color>					<!-- Outline Label 		ie. Outline: -->
+<tr.outline.color>ffffff</tr.outline.color>							<!-- Outline -->
+<tr.title.color>99ccff</tr.title.color> 								<!-- Title				ie. AVATAR -->
+<tr.index.kind.color>99ccff</tr.index.kind.color> 						<!-- Index Kind			ie. Titles: -->
+<tr.index.color>99ccff</tr.index.color> 								<!-- Index				ie. "23 /    " -->
+<tr.index.total.color>99ccff</tr.index.total.color> 						<!-- Index Total			ie. "     255" -->
+
+<!-- Tech Background Info -->
+
+<tech.title.color>99ccff</tech.title.color> 							<!-- Title				ie. AVATAR -->
+<tech.year.color>99ccff</tech.year.color>								<!-- Year				ie. 2011 -->
+<tech.runtime.color>99ccff</tech.runtime.color>							<!-- Runtime			ie. 1hr 46m -->
+<tech.cert.color>99ccff</tech.cert.color>								<!-- Certification		ie. PG -->
+<tech.show.status.color>99ccff</tech.show.status.color>					<!-- Show Status			ie. Status: ENDED -->
+<tech.top250.color>99ccff</tech.top250.color>							<!-- Top 250			ie. # 124 -->
+<tech.filesize.color>99ccff</tech.filesize.color> 						<!-- Filesize			ie. 1.36 GB -->
+<tech.container.color>99ccff</tech.container.color> 						<!-- Container			ie. AVI -->
+<tech.video.color>99ccff</tech.video.color> 							<!-- Video Codec			ie. XVID -->
+<tech.resolution.color>99ccff</tech.resolution.color> 					<!-- Resolution			ie. SD -->
+<tech.vratio.color>99ccff</tech.vratio.color> 							<!-- Video Ratio			ie. 2.25:1 -->
+<tech.audio.color>99ccff</tech.audio.color> 							<!-- Audio Codec			ie. AC3 -->
+<tech.channels.color>99ccff</tech.channels.color> 						<!-- Audio Channels		ie. 5.1 -->
+<tech.star.rating.color>99ccff</tech.star.rating.color> 					<!-- Star Rating			ie. 66 / 100 -->
+<tech.index.kind.color>99ccff</tech.index.kind.color> 					<!-- Index Kind			ie. Titles: -->
+<tech.index.color>99ccff</tech.index.color> 							<!-- Index				ie. "23 /    " -->
+<tech.index.total.color>99ccff</tech.index.total.color> 					<!-- Index Total			ie. "     255" -->
+
+<!-- Movie Info Index (2) List / Wall -->
+
+<mii.2.title.color>99ccff</mii.2.title.color> 							<!-- Title				ie. AVATAR -->
+<mii.2.runtime.genres.color>00ff00</mii.2.runtime.genres.color>				<!-- Cert / Runtime / Genres 	ie. Rated (PG-13) / Runtime (1hr 46m) / Action -->
+<mii.2.director.label.color>00bfff</mii.2.director.label.color>				<!-- Director Label 		ie. Director: -->
+<mii.2.director.color>ffffff</mii.2.director.color>						<!-- Director -->
+<mii.2.actor.label.color>00bfff</mii.2.actor.label.color>					<!-- Actor Label 			ie. Actor: -->
+<mii.2.actor.color>ffffff</mii.2.actor.color>							<!-- Actor -->
+<mii.2.plot.label.color>00bfff</mii.2.plot.label.color>					<!-- Plot Label 			ie. Plot: -->
+<mii.2.plot.color>ffffff</mii.2.plot.color>							<!-- Plot -->
+
+<!-- Movie List (1) Info 8 -->
+
+<list8.title.color>ffffff</list8.title.color> 							<!-- Title				ie. AVATAR -->
+<list8.title.hlcolor>00ff00</list8.title.hlcolor> 						<!-- Title				ie. AVATAR (Highlighted) -->
+<list8.year.color>ffffff</list8.year.color>							<!-- Year				ie. 2011 -->
+<list8.year.hlcolor>00ff00</list8.year.hlcolor>							<!-- Year				ie. 2011 (Highlighted) -->
+<list8.star.rating.color>ffffff</list8.star.rating.color> 					<!-- Star Rating			ie. 3.6 / 5 -->
+<list8.star.rating.hlcolor>00ff00</list8.star.rating.hlcolor>				<!-- Star Rating			ie. 3.6 / 5 (Highlighted) -->
+<list8.runtime.color>ffffff</list8.runtime.color>						<!-- Runtime			ie. 1hr 46m -->
+
+<!-- Movie List (1) Info 15 -->
+
+<list15.title.color>ffffff</list15.title.color> 						<!-- Title				ie. AVATAR -->
+<list15.title.hlcolor>00ff00</list15.title.hlcolor> 						<!-- Title				ie. AVATAR (Highlighted) -->
+<list15.year.color>ffffff</list15.year.color>							<!-- Year				ie. 2011 -->
+<list15.year.hlcolor>00ff00</list15.year.hlcolor>						<!-- Year				ie. 2011 (Highlighted) -->
+<list15.runtime.color>ffffff</list15.runtime.color>						<!-- Runtime			ie. 1hr 46m -->
+<list15.star.rating.color>ffffff</list15.star.rating.color> 				<!-- Star Rating			ie. 3.6 / 5 -->
+
+<!-- Movie Details (2) 1 Outline -->
+
+<mw.1.title.year.color>99ccff</mw.1.title.year.color>						<!-- Title / Year 		ie. AVATAR (2011) -->
+<mw.1.runtime.genres.color>00ff00</mw.1.runtime.genres.color>				<!-- Cert / Runtime / Genres 	ie. Rated (PG-13) / Runtime (1hr 46m) / Action -->
+<mw.1.director.label.color>00bfff</mw.1.director.label.color>				<!-- Director Label 		ie. Director: -->
+<mw.1.director.color>ffffff</mw.1.director.color>						<!-- Director -->
+<mw.1.writer.label.color>00bfff</mw.1.writer.label.color>					<!-- Writer Label 		ie. Writer: -->
+<mw.1.writer.color>ffffff</mw.1.writer.color>							<!-- Writer -->
+<mw.1.tagline.label.color>00bfff</mw.1.tagline.label.color>					<!-- Tagline Label 		ie. Tagline: -->
+<mw.1.tagline.color>be1e2d</mw.1.tagline.color>							<!-- Tagline -->
+<mw.1.outline.label.color>00bfff</mw.1.outline.label.color>					<!-- Outline Label 		ie. Outline: -->
+<mw.1.outline.color>ffffff</mw.1.outline.color>							<!-- Outline -->
+
+<!-- Movie Details (2) 2 Plot -->
+
+<mw.2.plot.label.color>00bfff</mw.2.plot.label.color>						<!-- Plot Label 			ie. Plot: -->
+<mw.2.plot.color>ffffff</mw.2.plot.color>								<!-- Plot -->
+
+<!-- Movie Details (2) 3 Cast -->
+
+<mw.3.actor.title.name.color>00ff00</mw.3.actor.title.name.color>				<!-- Actor Title Label		ie. Actor (Title) -->
+<mw.3.actor.name.color>99ccff</mw.3.actor.name.color>						<!-- Actor Label 			ie. Actor (Name) -->
+<mw.3.writer.title.name.color>f1ca00</mw.3.writer.title.name.color>			<!-- Writer Title Label 	ie. Writer (Title) -->
+<mw.3.writer.name.color>99ccff</mw.3.writer.name.color>					<!-- Writer Label 		ie. Writer (Name) -->
+<mw.3.director.title.name.color>be1e2d</mw.3.director.title.name.color>			<!-- Director Title Label 	ie. Director (Title) -->
+<mw.3.director.name.color>99ccff</mw.3.director.name.color>					<!-- Director Label 		ie. Director (Name) -->
+
+<!-- Movie Details (2) 4 Details -->
+
+<mw.4.main.label.color>f1ca00</mw.4.main.label.color> 					<!-- Main Headings Label	ie. Details/Awards -->
+<mw.4.main.sub.label.color>00bfff</mw.4.main.sub.label.color> 				<!-- Main Sub-Headings Label	ie. Country/Company -->
+<mw.4.main.sub.text.color>ffffff</mw.4.main.sub.text.color> 				<!-- Main Sub-Headings Text	ie. Country/Company Text -->
+<mw.4.sub.label.color>00ff00</mw.4.sub.label.color> 						<!-- Main Sub-Headings Name	ie. Bafta Awards -->
+<mw.4.sub.label.text.color>00bfff</mw.4.sub.label.text.color> 				<!-- Text Sub			ie. Win/Nominated/Year -->
+<mw.4.sub.text.color>ffffff</mw.4.sub.text.color> 						<!-- Text				ie. ALL Text -->
+
+<!-- Movie Details (2) 6 All Awards -->
+
+<mw.6.title.year.color>99ccff</mw.6.title.year.color>						<!-- Title / Year 		ie. AVATAR (2011) -->
+<mw.6.runtime.genres.color>00ff00</mw.6.runtime.genres.color>				<!-- Cert / Runtime / Genres	ie. Rated (PG-13) / Runtime (1hr 46m) / Action -->
+<mw.6.tagline.label.color>00bfff</mw.6.tagline.label.color>					<!-- Tagline Label 		ie. Tagline: -->
+<mw.6.tagline.color>be1e2d</mw.6.tagline.color>							<!-- Tagline -->
+<mw.6.plot.label.color>00bfff</mw.6.plot.label.color>						<!-- Plot Label 			ie. Plot: -->
+<mw.6.plot.color>ffffff</mw.6.plot.color>								<!-- Plot -->
+<mw.6.main.label.color>f1ca00</mw.6.main.label.color> 					<!-- Main Headings Label	ie. Details/Awards -->
+<mw.6.main.sub.label.color>00bfff</mw.6.main.sub.label.color> 				<!-- Main Sub-Headings Label	ie. Country/Company -->
+<mw.6.main.sub.text.color>ffffff</mw.6.main.sub.text.color> 				<!-- Main Sub-Headings Text	ie. Country/Company Text -->
+<mw.6.sub.label.color>00ff00</mw.6.sub.label.color> 						<!-- Main Sub-Headings Name	ie. Bafta Awards -->
+<mw.6.sub.label.text.color>00bfff</mw.6.sub.label.text.color> 				<!-- Text Sub			ie. Win/Nominated/Year -->
+<mw.6.sub.text.color>ffffff</mw.6.sub.text.color> 						<!-- Text				ie. ALL Text -->
+<mw.6.logo.color>99ccff</mw.6.logo.color> 							<!-- Logo				ie. Logo Text -->
+<mw.6.actor.title.name.color>00ff00</mw.6.actor.title.name.color>				<!-- Actor Title Label		ie. Actor (Title) -->
+<mw.6.actor.name.color>99ccff</mw.6.actor.name.color>						<!-- Actor Label 			ie. Actor (Name) -->
+<mw.6.writer.title.name.color>f1ca00</mw.6.writer.title.name.color>			<!-- Writer Title Label 	ie. Writer (Title) -->
+<mw.6.writer.name.color>99ccff</mw.6.writer.name.color>					<!-- Writer Label 		ie. Writer (Name) -->
+<mw.6.director.title.name.color>be1e2d</mw.6.director.title.name.color>			<!-- Director Title Label 	ie. Director (Title) -->
+<mw.6.director.name.color>99ccff</mw.6.director.name.color>					<!-- Director Label 		ie. Director (Name) -->
+
+<!-- Movie Details (2) 7 All Trailers -->
+
+<mw.7.title.year.color>99ccff</mw.7.title.year.color>						<!-- Title / Year 		ie. AVATAR (2011) -->
+<mw.7.runtime.genres.color>00ff00</mw.7.runtime.genres.color>				<!-- Cert / Runtime / Genres	ie. Rated (PG-13) / Runtime (1hr 46m) / Action -->
+<mw.7.tagline.label.color>00bfff</mw.7.tagline.label.color>					<!-- Tagline Label 		ie. Tagline: -->
+<mw.7.tagline.color>be1e2d</mw.7.tagline.color>							<!-- Tagline -->
+<mw.7.plot.label.color>00bfff</mw.7.plot.label.color>						<!-- Plot Label 			ie. Plot: -->
+<mw.7.plot.color>ffffff</mw.7.plot.color>								<!-- Plot -->
+<mw.7.trailer.name.color>99ccff</mw.7.trailer.name.color>					<!-- Trailer Name -->
+<mw.7.trailer.name.hlcolor>00ff00</mw.7.trailer.name.hlcolor>				<!-- Trailer Name Highlight -->
+<mw.7.logo.color>99ccff</mw.7.logo.color> 							<!-- Logo				ie. Logo Text -->
+<mw.7.actor.title.name.color>00ff00</mw.7.actor.title.name.color>				<!-- Actor Title Label		ie. Actor (Title) -->
+<mw.7.actor.name.color>99ccff</mw.7.actor.name.color>						<!-- Actor Label 			ie. Actor (Name) -->
+<mw.7.writer.title.name.color>f1ca00</mw.7.writer.title.name.color>			<!-- Writer Title Label 	ie. Writer (Title) -->
+<mw.7.writer.name.color>99ccff</mw.7.writer.name.color>					<!-- Writer Label 		ie. Writer (Name) -->
+<mw.7.director.title.name.color>be1e2d</mw.7.director.title.name.color>			<!-- Director Title Label 	ie. Director (Title) -->
+<mw.7.director.name.color>99ccff</mw.7.director.name.color>					<!-- Director Label 		ie. Director (Name) -->
+
+<!-- Movie Details Bottom Menu -->
+
+<bottom.menu.color>ffffff</bottom.menu.color>							<!-- Bottom Menu -->
+<bottom.menu.hlcolor>ffd800</bottom.menu.hlcolor>						<!-- Bottom Menu Highlight -->
+
+<!-- TV Info Index (2) List / Wall -->
+
+<tvii.2.title.color>99ccff</tvii.2.title.color> 						<!-- Title				ie. AVATAR -->
+<tvii.2.runtime.genres.color>00ff00</tvii.2.runtime.genres.color>				<!-- Cert / Runtime / Genres 	ie. Rated (PG-13) / Runtime (1hr 46m) / Action -->
+<tvii.2.director.label.color>00bfff</tvii.2.director.label.color>				<!-- Director Label 		ie. Director: -->
+<tvii.2.director.color>ffffff</tvii.2.director.color>						<!-- Director -->
+<tvii.2.actor.label.color>00bfff</tvii.2.actor.label.color>					<!-- Actor Label 			ie. Actor: -->
+<tvii.2.actor.color>ffffff</tvii.2.actor.color>							<!-- Actor -->
+<tvii.2.plot.label.color>00bfff</tvii.2.plot.label.color>					<!-- Plot Label 			ie. Plot: -->
+<tvii.2.plot.color>ffffff</tvii.2.plot.color>							<!-- Plot -->
+
+<!-- TV Banner Details (2) -->
+
+<tvb.2.title.year.color>99ccff</tvb.2.title.year.color>					<!-- Title / Year 		ie. AVATAR (2011) -->
+<tvb.2.runtime.genres.color>00ff00</tvb.2.runtime.genres.color>				<!-- Cert / Runtime / Genres	ie. Rated (PG-13) / Runtime (1hr 46m) / Action -->
+<tvb.2.director.label.color>00bfff</tvb.2.director.label.color>				<!-- Director Label 		ie. Director: -->
+<tvb.2.director.color>ffffff</tvb.2.director.color>						<!-- Director -->
+<tvb.2.writer.label.color>00bfff</tvb.2.writer.label.color>					<!-- Writer Label 		ie. Writer: -->
+<tvb.2.writer.color>ffffff</tvb.2.writer.color>							<!-- Writer -->
+<tvb.2.actor.label.color>00bfff</tvb.2.actor.label.color>					<!-- Actor Label 			ie. Actor: -->
+<tvb.2.actor.color>ffffff</tvb.2.actor.color>							<!-- Actor -->
+<tvb.2.plot.label.color>00bfff</tvb.2.plot.label.color>					<!-- Plot Label 			ie. Plot: -->
+<tvb.2.plot.color>ffffff</tvb.2.plot.color>							<!-- Plot -->
+
+<!-- TV Banner Details (3) 1 Outline Full -->
+
+<tvb3.1.ep.label.color>00bfff</tvb3.1.ep.label.color>						<!-- Left Episode Label		ie. Episode: -->
+<tvb3.1.ep.total.color>00bfff</tvb3.1.ep.total.color>						<!-- Left Episode Total		ie. 1/1 -->
+<tvb3.1.ep.title.label.color>ffffff</tvb3.1.ep.title.label.color>				<!-- Left Episode Title		ie. 20. Crossed -->
+<tvb3.1.ep.title.label.hlcolor>f1ca00</tvb3.1.ep.title.label.hlcolor>			<!-- Left Episode Title HL 	ie. 20. Crossed (Highlighted) -->
+<tvb3.1.ep.aired.label.color>ffffff</tvb3.1.ep.aired.label.color>				<!-- Left Episode Aired		ie. 2000-10-02 -->
+<tvb3.1.ep.aired.label.hlcolor>f1ca00</tvb3.1.ep.aired.label.hlcolor>			<!-- Left Episode Aired HL 	ie. 2000-10-02 (Highlighted) -->
+<tvb3.1.title.year.color>99ccff</tvb3.1.title.year.color>					<!-- Title / Year 		ie. AVATAR (2011) -->
+<tvb3.1.runtime.genres.color>00ff00</tvb3.1.runtime.genres.color>				<!-- Cert / Runtime / Genres	ie. Rated (PG-13) / Runtime (1hr 46m) / Action -->
+<tvb3.1.director.label.color>00bfff</tvb3.1.director.label.color>				<!-- Director Label 		ie. Director: -->
+<tvb3.1.director.color>ffffff</tvb3.1.director.color>						<!-- Director -->
+<tvb3.1.writer.label.color>00bfff</tvb3.1.writer.label.color>				<!-- Writer Label 		ie. Writer: -->
+<tvb3.1.writer.color>ffffff</tvb3.1.writer.color>						<!-- Writer -->
+<tvb3.1.actor.label.color>00bfff</tvb3.1.actor.label.color>					<!-- Actor Label 			ie. Actor: -->
+<tvb3.1.actor.color>ffffff</tvb3.1.actor.color>							<!-- Actor -->
+<tvb3.1.plot.label.color>00bfff</tvb3.1.plot.label.color>					<!-- Plot Label 			ie. Plot: -->
+<tvb3.1.plot.color>ffffff</tvb3.1.plot.color>							<!-- Plot -->
+
+<!-- TV Banner Details (3) 2 Outline Half -->
+
+<tvb3.2.total.tiles.label.color>ffd800</tvb3.2.total.tiles.label.color>			<!-- Total Tiles			ie. 1/18 -->
+<tvb3.2.aired.label.color>ffd800</tvb3.2.aired.label.color>					<!-- Left Episode Aired		ie. 2000-10-02 -->
+<tvb3.2.title.year.color>99ccff</tvb3.2.title.year.color>					<!-- Title / Year 		ie. AVATAR (2011) -->
+<tvb3.2.runtime.genres.color>00ff00</tvb3.2.runtime.genres.color>				<!-- Cert / Runtime / Genres	ie. Rated (PG-13) / Runtime (1hr 46m) / Action -->
+<tvb3.2.director.label.color>00bfff</tvb3.2.director.label.color>				<!-- Director Label 		ie. Director: -->
+<tvb3.2.director.color>ffffff</tvb3.2.director.color>						<!-- Director -->
+<tvb3.2.writer.label.color>00bfff</tvb3.2.writer.label.color>				<!-- Writer Label 		ie. Writer: -->
+<tvb3.2.writer.color>ffffff</tvb3.2.writer.color>						<!-- Writer -->
+<tvb3.2.actor.label.color>00bfff</tvb3.2.actor.label.color>					<!-- Actor Label 			ie. Actor: -->
+<tvb3.2.actor.color>ffffff</tvb3.2.actor.color>							<!-- Actor -->
+<tvb3.2.plot.label.color>00bfff</tvb3.2.plot.label.color>					<!-- Plot Label 			ie. Plot: -->
+<tvb3.2.plot.color>ffffff</tvb3.2.plot.color>							<!-- Plot -->
+<tvb3.2.ep.title.label.color>ffffff</tvb3.2.ep.title.label.color>				<!-- Left Episode Title		ie. 20. Crossed -->
+<tvb3.2.ep.title.label.hlcolor>ffd800</tvb3.2.ep.title.label.hlcolor>			<!-- Left Episode Title HL 	ie. 20. Crossed (Highlighted) -->
+
+<!-- TV Banner Details (3) 3 Episodes -->
+
+<tvb3.3.ep.title.label.color>ffffff</tvb3.3.ep.title.label.color>				<!-- Left Episode Title		ie. 20. Crossed -->
+<tvb3.3.ep.title.label.hlcolor>ffd800</tvb3.3.ep.title.label.hlcolor>			<!-- Left Episode Title HL 	ie. 20. Crossed (Highlighted) -->
+
+<!-- TV Banner Details (3) 4 Cast -->
+
+<tvb3.4.actor.title.name.color>00ff00</tvb3.4.actor.title.name.color>			<!-- Actor Title Label		ie. Actor (Title) -->
+<tvb3.4.actor.name.color>99ccff</tvb3.4.actor.name.color>					<!-- Actor Label 			ie. Actor (Name) -->
+<tvb3.4.writer.title.name.color>f1ca00</tvb3.4.writer.title.name.color>			<!-- Writer Title Label 	ie. Writer (Title) -->
+<tvb3.4.writer.name.color>99ccff</tvb3.4.writer.name.color>					<!-- Writer Label 		ie. Writer (Name) -->
+<tvb3.4.director.title.name.color>be1e2d</tvb3.4.director.title.name.color>		<!-- Director Title Label 	ie. Director (Title) -->
+<tvb3.4.director.name.color>99ccff</tvb3.4.director.name.color>				<!-- Director Label 		ie. Director (Name) -->
+
+<!-- TV Details Bottom Menu -->
+
+<tv.bottom.menu.color>ffffff</tv.bottom.menu.color>						<!-- Bottom Menu -->
+<tv.bottom.menu.hlcolor>ffd800</tv.bottom.menu.hlcolor>					<!-- Bottom Menu Highlight -->
+
+</settings>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>	
+	
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>NUMPAD</button>
+		<action>PLAYPART</action>	
+	</remote>	
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	<remote>
+		<button>YELLOW</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>
+</eskin>

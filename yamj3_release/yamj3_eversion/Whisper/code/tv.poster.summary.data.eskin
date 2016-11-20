@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>	
+<!--******************************************************************
+	This .eskin file contains code that is common to many screens so
+	it's been separated out on it's own and is "included" by the other
+	.eskin files.
+	
+	Used with:
+	text.summary
+	poster.summary
+	******************************************************************-->
+<!-- Hyper - See: http://www.dentedboxes.com/doku.php/eversion:eskins:dev -->	
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+<!-- Artwork Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:artvariables -->	
+<!-- Conditions - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:if -->	
+
+	<!-- Details -->
+	<text>
+		<name>title</name>
+		<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
+		<hyper>4</hyper>
+		<display>[:fulltitle:]</display>  <!-- Eversion variable holding the title -->
+		<posx>290</posx>
+		<posy>370</posy>
+		<width>474</width>
+		<height>45</height>
+		<size>27</size>  
+		<wordwrap>true</wordwrap>
+		<color>list.title.color</color>
+	</text>
+	<text>
+		<name>outline</name>
+		<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
+		<hyper>4</hyper>
+		<display>[:smartoutline:]</display>  <!-- Eversion variable holding the title outline -->
+		<posx>298</posx>
+		<posy>400</posy>
+		<width>980</width>
+		<height>130</height>
+		<size>22</size>  
+		<wordwrap>true</wordwrap>  <!-- By default is false -->
+		<color>list.title.color</color>
+	</text>			
+</eskin>

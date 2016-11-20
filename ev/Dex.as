@@ -89,7 +89,7 @@ class ev.Dex {
 		this.hyperStop();   													 // make sure hyper is off
 		this.hyperInterval = setInterval(this.fn.hyperCheck,Common.evSettings.hyperscrolltimer); // enable the watchdog
 
-		trace("DEX inited");
+		trace("Dex DEX inited");
 
 		// init remote data
 		this.remotedata=new Remotedata();
@@ -182,16 +182,16 @@ class ev.Dex {
 // ********************** COMMUNICATION *******************
     // info from screen
 	public function alert(request:String, message:String, newparent:MovieClip, data:Object) {
-		// trace("alert request "+request);
+		// trace("Dex alert request "+request);
 
 		if(newparent!=null && newparent!=undefined) {
 			this.parentMC=newparent;
-			// trace("..new parent");
+			// trace("Dex ..new parent");
 		}
 
 		switch(request) {
 			case 'IDLE':
-				// trace("index deactivated");
+				// trace("Dex index deactivated");
 				this.indexActive=false;
 				break;
 			case 'ERRORHALT':
@@ -210,7 +210,7 @@ class ev.Dex {
 				}
 				break;
 			case 'WAKE':  // we're back in control!
-				trace("waking");
+				trace("Dex waking");
 				this.segdetails.erun.skin_segname_update(this.mysegment,{get_data:this.fn.get_current_data,get_ev_data:this.fn.get_ev_data});
 				this.indexActive=true;
 				this.hyperReset();
@@ -220,7 +220,7 @@ class ev.Dex {
 			case 'UPDATE':  // called after preload when eskin is ready to go
 				this.segdetails=data;
 				this.mysegment=data.segnum;
-				// trace("new segment number "+data.segnum);
+				// trace("Dex new segment number "+data.segnum);
 				// BREAK MISSING ON PURPOSE
 			case 'START':
 				this.mainMC=this.parentMC.createEmptyMovieClip(this.segdetails.mcname, this.segdetails.mcdepth);
@@ -232,14 +232,14 @@ class ev.Dex {
 				Preloader.clear();
 				break;
 			default:
-				// trace("unknown alert");
+				// trace("Dex unknown alert");
 				break;
 		}
 	}
 
     // info from remotedata
 	private function onremotedata(request:String, message:String, data:Array, details:Array) {
-		// trace("onremotedata request "+request+" : "+message);
+		// trace("Dex onremotedata request "+request+" : "+message);
 
 		switch(request) {
 			case 'ERROR':    // problem
@@ -256,13 +256,13 @@ class ev.Dex {
 				_global["setTimeout"](this.fn.dexdelaystart, 100);
 				break;
 			case 'add':      // add data to dex
-				// trace("... add");
+				// trace("Dex ... add");
 				menu_field_draw(data, details.page, details.offset);
 				//if(this.hyperscroll==0 && this.menuActiveMore==true) this.menu_draw_active();
 				this.menuActiveMore=true;
 				break;
 			case 'remove':   // remove data from dex
-				// trace("... remove");
+				// trace("Dex ... remove");
 				menu_field_remove(details.page, details.offset, details.length, details.keepdata);
 				break;
 			case 'reloaded': // reload finished
@@ -288,7 +288,7 @@ class ev.Dex {
 
 // *********************** DEX creation ****************************
 	private function dex_create() {
-		trace("dex_create");
+		trace("Dex dex_create");
 
 		// setup parameters
 		this.reset_dex();
@@ -352,7 +352,7 @@ class ev.Dex {
 
 		// cursor below
 		if(Common.eskinmaster[this.segdetails.eskin][this.segdetails.file].segments[this.segdetails.member].cursor.above==false) {
-			trace("cursor is below segment");
+			trace("Dex cursor is below segment");
 			create_cursor(this.mainMC.menuMC);
 		}
 
@@ -362,7 +362,7 @@ class ev.Dex {
 		// mask the screen to hide out of box items
 		var wide=this.menuSettings.endx-this.menuSettings.posx;
 		var high=this.menuSettings.endy-this.menuSettings.posy;
-		// trace("wide "+wide+" high "+high);
+		// trace("Dex wide "+wide+" high "+high);
 
 		var maskMC=this.mainMC.menuMC.createEmptyMovieClip("maskMC", this.mainMC.menuMC.getNextHighestDepth());
 		maskMC.beginFill(0x000000,100);
@@ -375,7 +375,7 @@ class ev.Dex {
 
 		// cursor above
 		if(Common.eskinmaster[this.segdetails.eskin][this.segdetails.file].segments[this.segdetails.member].cursor.above==true) {
-			trace("cursor is above segment");
+			trace("Dex cursor is above segment");
 			create_cursor(this.mainMC.menuMC);
 		}
 
@@ -437,7 +437,7 @@ class ev.Dex {
 		var ending=offSet+menuData.length;
 
 		for(var i=offSet;i<ending;i++) {
-			// trace("adding tile "+i);
+			// trace("Dex adding tile "+i);
 			this.indexRefer[i].page=fromPage;
 			this.indexRefer[i].element=i-offSet;
 			this.indexRefer[i].loaded=1;
@@ -473,7 +473,7 @@ class ev.Dex {
 	}
 
 	private function menu_add_single(who:Number, dx:Number,dy:Number):Void {
-		//// trace("prepping tile "+who);
+		//// trace("Dex prepping tile "+who);
 		if(this.indexRefer[who]==undefined) this.indexRefer[who]=new Object();
 		this.indexRefer[who].tilex=0+(this.menuSettings.tilewidth*dx);
 		this.indexRefer[who].tiley=0+(this.menuSettings.tileheight*dy);
@@ -537,7 +537,7 @@ class ev.Dex {
 		// loop them in order of what should be on the screen
 		if(this.menuDirection==1) {
 			for(var i=firsttile;i<=lasttile;i++) {
-				//// trace(".. checking tile "+i);
+				//// trace("Dex .. checking tile "+i);
 				if(this.menu_draw_tile(i)) {
 					drew++;
 					if(drew>=stopat) {
@@ -548,7 +548,7 @@ class ev.Dex {
 			}
 		} else {
 			for(var i=lasttile;i>=firsttile;i--) {
-				//// trace(".. checking tile "+i);
+				//// trace("Dex .. checking tile "+i);
 				if(this.menu_draw_tile(i)) {
 					drew++;
 					if(drew>=stopat) {
@@ -568,19 +568,19 @@ class ev.Dex {
 	}
 
 	private function menu_draw_tile(who:Number) {
-		//// trace("TILE: draw "+who);
+		//// trace("Dex TILE: draw "+who);
 
 		if(this.indexRefer[who].loaded!=1) {
-			// trace("TILE: data not loaded, skipped tile "+who);
+			// trace("Dex TILE: data not loaded, skipped tile "+who);
 			return(false);
 		}
 
 		if(this.mainMC.menuMC.listMC[who]._visible==true) {
-			//// trace("tile exists, skipped " +who);
+			//// trace("Dex tile exists, skipped " +who);
 			return(false);
 		}
 
-		// trace("TILE: draw "+who);
+		// trace("Dex TILE: draw "+who);
 
 		// create mc
         this.mainMC.menuMC.listMC.createEmptyMovieClip(who, who+1);
@@ -614,12 +614,12 @@ class ev.Dex {
 		this.mainMC.menuMC.cursorSLIDE.cursorMC._y=this.indexRefer[who].tiley;
 
 		if(this.mainMC.menuMC.listMC[who]._visible!=true) {
-			// trace("hl tile doesn't exist, skipped");
+			// trace("Dex hl tile doesn't exist, skipped");
 			return;
 		}
 
 		if(this.menuSettings.cursoranimate) {
-			//trace("animating cursor");
+			//trace("Dex animating cursor");
 			this.mainMC.menuMC.cursorSLIDE.cursorMC.cursor.cursor_img.gotoAndPlay(1);
 		}
 
@@ -638,15 +638,15 @@ class ev.Dex {
 
 // *********************** ev int data *****************************
 	private function get_ev_data(what:String) {
-		// trace("dex get_ev_data for "+what);
+		// trace("Dex dex get_ev_data for "+what);
 
 		switch(what) {
 			case 'peoplexml':
-				//trace("dex: "+this.remotedata.peopleXML);
+				//trace("Dex dex: "+this.remotedata.peopleXML);
 				return(this.remotedata.peopleXML);
 				break;
 			case 'indexname':
-				//trace("call for indexname "+this.remotedata.indexName);
+				//trace("Dex call for indexname "+this.remotedata.indexName);
 				return(this.remotedata.indexName);
 				break;
 			case 'indextype':
@@ -693,18 +693,18 @@ class ev.Dex {
 				return(tt.toString());
 				break;
 			default:
-				// trace(".. unknown");
+				// trace("Dex .. unknown");
 		}
 	}
 
 	public function get_data(what:String, who:Number,howmany:Number) {
-		//trace("!!!!!!!!!!!!!!!!!!!! get_data for "+what);
+		//trace("Dex !!!!!!!!!!!!!!!!!!!! get_data for "+what);
 		if(who==undefined) who=this.menuCursor;
 		return(this.remotedata.process_JBData(what,this.indexRefer[who],howmany));
 	}
 
 	public function get_current_data(what:String,who:Number,howmany:Number) {
-		//trace("$($*(@#$*@!($*@!(#$*@(!*@!#$*!@(#$*@#($ get_current_data for "+what);
+		//trace("Dex $($*(@#$*@!($*@!(#$*@(!*@!#$*!@(#$*@#($ get_current_data for "+what);
 	    // used by hyperdraw
 		switch(what) {     // loading alternative
 			case 'title':
@@ -728,7 +728,7 @@ class ev.Dex {
 // ************************************* Nav movement ***************************************
 	private function menu_nav_jump(keyhit) {
 		var who=Math.floor((this.remotedata.totalTitles-1)*((keyhit-48)/10));
-		//// trace("******** jump to "+who);
+		//// trace("Dex ******** jump to "+who);
 
 		// reset hyperscoll to give a fast reload if possible
 		this.hyperscrolllast=-1;
@@ -1021,7 +1021,7 @@ class ev.Dex {
 // ************************************* HYPERSCROLL ****************************************
 	// this is the function that controls what to draw depending on hyperscoll level
 	private function hyperDraw(redraw:Boolean, dontclimb:Boolean):Void {
-		// trace("hyperdraw called");
+		// trace("Dex hyperdraw called");
 
 		var hyperd:Number=1;
 		switch(this.hyperscroll) {
@@ -1091,17 +1091,17 @@ class ev.Dex {
 		} else {
 			// see if we're loading
 			if(this.hyperScreen==true && this.indexRefer[this.menuCursor].loaded != 1) {  // loading with loading showing
-				// trace("hyper skipped, not loaded");
+				// trace("Dex hyper skipped, not loaded");
 				return;
 			} else if(this.hyperScreen==true && this.indexRefer[this.menuCursor].loaded == 1) {  // loaded but loading still showing
-				trace("returning from loading....");
+				trace("Dex returning from loading....");
 				this.menu_draw_tile(this.menuCursor);
 				this.hyperDraw(true,true);
 				if(this.hyperscroll==0) this.menu_draw_active();
 				this.hyperScreen=false;
 				return;
 			} else if(this.hyperScreen==true) {
-				trace("hyperscreen still true");
+				trace("Dex hyperscreen still true");
 				//this.hyperDraw(true,true);
 				this.hyperScreen=false;
 			}
@@ -1192,7 +1192,7 @@ class ev.Dex {
 				return(false);
 			}
 
-			// trace("** SEGMENT1 KEY HIT! "+keyhit);
+			// trace("Dex ** SEGMENT1 KEY HIT! "+keyhit);
 			this.handle_remote(handler,keyhit);
 			return(true);
 		}
@@ -1200,7 +1200,7 @@ class ev.Dex {
 
 /*
 		if(Common.eskinmaster[this.segdetails.eskin][this.segdetails.file].segments[this.segdetails.member].remote[keyhit] != undefined) {
-			// trace("** SEGMENT2 KEY HIT! "+keyhit);
+			// trace("Dex ** SEGMENT2 KEY HIT! "+keyhit);
 			this.handle_remote(Common.eskinmaster[this.segdetails.eskin][this.segdetails.file].segments[this.segdetails.member].remote[keyhit],keyhit);
 			return(true);
 		}
@@ -1208,7 +1208,7 @@ class ev.Dex {
 		// keypad
 		if(Common.eskinmaster[this.segdetails.eskin][this.segdetails.file].segments[this.segdetails.member].settings.remotekeypad != undefined) {
 			if(keyhit>47 && keyhit<58) {
-				// trace("** KEYPAD HIT! "+keyhit);
+				// trace("Dex ** KEYPAD HIT! "+keyhit);
 				this.handle_remote(Common.eskinmaster[this.segdetails.eskin][this.segdetails.file].segments[this.segdetails.member].settings.remotekeypad,keyhit);
 				return(true);
 			}
@@ -1216,7 +1216,7 @@ class ev.Dex {
 
 		// all
 		if(Common.eskinmaster[this.segdetails.eskin][this.segdetails.file].segments[this.segdetails.member].settings.remoteall != undefined) {
-			// trace("** ALL HIT! "+keyhit);
+			// trace("Dex ** ALL HIT! "+keyhit);
 			this.handle_remote(Common.eskinmaster[this.segdetails.eskin][this.segdetails.file].segments[this.segdetails.member].settings.remoteall,keyhit);
 			return(true);
 		}
@@ -1234,7 +1234,7 @@ class ev.Dex {
 				}
 				return(true);
 			case (Key.ENTER):
-				trace("default select");
+				trace("Dex default select");
 				this.remote_select(keyhit);  // keyhit is for episode play usage
 				return(true);
 			default:
@@ -1252,13 +1252,13 @@ class ev.Dex {
 
 		for(var i=0;i<against.length;i++) {
 			if(against[i].condition==undefined) {
-				trace(".. no remote condition");
+				trace("Dex .. no remote condition");
 				return(against[i]);
 			} else {
-				trace(".. remote condition "+against[i].condition);
+				trace("Dex .. remote condition "+against[i].condition);
 				if(this.segdetails.erun.process_condition(against[i].condition, this.menuCursor, {get_data:this.fn.get_current_data,get_ev_data:this.fn.get_ev_data})) {
 					return(against[i]);
-				} else trace("condition failed");
+				} else trace("Dex condition failed");
 			}
 		}
 
@@ -1266,22 +1266,22 @@ class ev.Dex {
 	}
 
 	private function handle_remote(data:Object, keyhit) {
-		trace("SEG HANDLE_REMOTE");
+		trace("Dex SEG HANDLE_REMOTE");
 		if(data.action=="PRELOAD" && data.target!=undefined) {
-			trace("targeted preload for "+data.target);
+			trace("Dex targeted preload for "+data.target);
 
 			switch(data.target) {
 				case 'indextypelist':
-					trace(".. indextypelist");
+					trace("Dex .. indextypelist");
 					var doing=this.remotedata.get_remote_details(data.target);
 					if(doing==null || doing==undefined) return;
-					trace(".. doing: "+doing);
+					trace("Dex .. doing: "+doing);
 					var raw=new Object({action:data.file, file:data.file, data:"index", info:"menulist", arraydata:doing.toLowerCase(), title:Common.evPrompts[doing.toLowerCase()]});
 					data.action="PRELOAD";
 					this.callback("REMOTEKEY",data.action,{keyinfo:raw, who:this.menuCursor, epraw:epraw, raw:raw, xml:this.segdetails.xml, get_data:this.fn.get_data, get_ev_data:this.fn.get_ev_data});
 					break;
 				default:
-					trace("not sure what to do here, skipped");
+					trace("Dex not sure what to do here, skipped");
 					//this.callback("ERROR","Unknown target:"+data.target);
 					break;
 			}
@@ -1289,16 +1289,16 @@ class ev.Dex {
 			var raw=this.remotedata.get_data(this.indexRefer[this.menuCursor]);
 			var epraw=this.remotedata.get_episodedata();
 
-			// trace("raw: "+raw);
-			// trace("raw episode: "+raw.episode);
+			// trace("Dex raw: "+raw);
+			// trace("Dex raw episode: "+raw.episode);
 
 			if(data==undefined) {
-				trace("no data");
+				trace("Dex no data");
 				if(raw.action!=undefined) {
-					trace("no data, raw is good to use");
+					trace("Dex no data, raw is good to use");
 					data=raw;
 				} else {
-					trace("no data or raw, aborting");
+					trace("Dex no data or raw, aborting");
 					return;
 				}
 			}
@@ -1312,7 +1312,7 @@ class ev.Dex {
 
 		// get the action
 		var action:String=this.remotedata.process_JBData("action",this.indexRefer[this.menuCursor]);
-		trace("select action "+action);
+		trace("Dex select action "+action);
 
 		//Common.keyListener.onKeyDown = null;
 
@@ -1329,24 +1329,24 @@ class ev.Dex {
 				this.remote_change_detail();
 				break;
 			default:
-				// trace(".. unknown action, trying remote action processor");
+				// trace("Dex .. unknown action, trying remote action processor");
 				this.handle_remote();
 		}
 	}
 
 	private function remote_change_detail() {
-		trace("details change");
+		trace("Dex details change");
 		var ddata=this.remotedata.get_data(this.indexRefer[this.menuCursor]);
 		this.callback("change",null,{kind:"DETAIL",xml:ddata});
 	}
 
 	private function remote_change_index() {
-		trace("index change");
+		trace("Dex index change");
 
 		// figure out who is next
 		var filename:String=this.remotedata.process_JBData("file",this.indexRefer[this.menuCursor]);
 		if(this.remotedata.process_JBData("mtype",this.indexRefer[this.menuCursor])=="TVSET") {
-			trace("next index is a tv set");
+			trace("Dex next index is a tv set");
 			var ddata=this.remotedata.get_data(this.indexRefer[this.menuCursor]);
 		} else var ddata=undefined;
 
@@ -1354,7 +1354,7 @@ class ev.Dex {
 			trace(filename+" is next");
 			this.callback("change",null,{kind:"INDEX",file:filename,tvset:ddata});
 		} else {
-			// trace("unknown filename to change too");
+			// trace("Dex unknown filename to change too");
 		}
 	}
 }

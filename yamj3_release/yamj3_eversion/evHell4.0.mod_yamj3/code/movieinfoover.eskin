@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>
+	
+	<image>
+		<name>movieoverview</name>
+		<file>[:@media:]movie/movieoverview.swf</file>
+		<posx>0</posx>
+		<posy>483</posy>
+		<width>1280</width>
+		<height>237</height>
+	</image>	
+	
+	<image>
+		<name>clearlogo</name>
+		<file>[:@jukebox:][:clearLogoFile:]</file>
+		<posx>10</posx>
+		<posy>10</posy>
+<!--	<width>400</width> -->
+		<height>155</height>
+		<keepaspect>true</keepaspect>
+		<haligned>left</haligned>
+		<valigned>top</valigned>
+	</image>
+	
+	<image>
+		<name>thumbnailtrue</name>
+		<condition>[:#movieinfooverreflection:] == true</condition>
+		<file>[:@jukebox:][:smartposter1small:]</file>
+		<posx>1055</posx>
+		<posy>390</posy>
+		<width>215</width>
+		<!--	<height>318</height> -->
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+	</image>
+	<image>
+		<name>thumbnailfalse</name>
+		<condition>[:#movieinfooverreflection:] == false</condition>
+		<file>[:@jukebox:][:smartposter1large:]</file>
+		<posx>1055</posx>
+		<posy>390</posy>
+		<width>215</width>
+		<!--	<height>318</height> -->
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+	</image>
+	
+	<text>
+		<name>titleyear</name>
+		<display>[:fulltitle:] ([:year:])</display>
+		<posx>15</posx>
+		<posy>523</posy>
+		<width>1140</width>
+		<height>40</height>
+		<size>30</size>  
+		<color>movie.title.color</color>
+	</text>	
+	
+	<image>
+		<name>cert</name>
+		<file>[:@media:]movie/cert/[:#categorycert,lower:]/[:flagcertification,nospaces,lower:].swf</file>
+		<posx>15</posx>
+		<posy>562</posy>
+		<width>46</width>
+		<height>22</height>
+	</image>
+	
+	<text>
+		<name>info</name>
+		<display> - [:runtime,1,trun55:] - [:genres,3:] - [:releaseDate:]</display>
+		<posx>64</posx>
+		<posy>563</posy>
+		<width>1099</width>
+		<height>20</height>
+		<size>14</size>  
+		<color>movie.data.color</color>
+	</text>	
+	
+	<image>
+		<name>rating_image</name>
+		<file>[:@media:]common/star/star[:score,round:].swf</file>
+		<posx>15</posx>
+		<posy>590</posy>
+		<width>74</width>
+		<height>14</height>
+	</image>
+	
+	
+	<text>
+		<name>director_prompt</name>
+		<display>[:%directors:]</display>
+		<posx>15</posx>
+		<posy>613</posy>
+		<width>100</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>director</name>
+		<display>[:directors,3:]</display>
+		<posx>115</posx>
+		<posy>613</posy>
+		<width>940</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>	
+
+	<text>
+		<name>writer_prompt</name>
+		<display>[:%writers:]</display>
+		<posx>15</posx>
+		<posy>633</posy>
+		<width>200</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>	
+	
+	<text>
+		<name>writer</name>
+		<display>[:person-Writer-1-name,blank:]&#xd;[:person-Writer-2-name,blank:]</display>
+		<posx>115</posx>
+		<posy>633</posy>
+		<width>1040</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>	
+
+	<text>
+		<name>tagline_prompt</name>
+		<display>[:$tagline:]</display>
+		<posx>15</posx>
+		<posy>653</posy>
+		<width>100</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>tagline</name>
+		<display>[:tagline,blank:]</display>
+		<posx>115</posx>
+		<posy>653</posy>
+		<width>940</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>outline_prompt</name>
+		<display>[:$outline:]</display>
+		<posx>15</posx>
+		<posy>673</posy>
+		<width>100</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>outline</name>
+		<display>[:outline,blank:]</display>
+		<posx>115</posx>
+		<posy>673</posy>
+		<width>940</width>
+		<height>44</height>
+		<wordwrap>true</wordwrap>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<image>
+		<name>top250bgr</name>
+		<condition>[:top250:] != -1 ++ [:#showtop250:] == true</condition>
+		<file>[:@media:]wall/top250.swf</file>
+		<posx>940</posx>
+		<posy>523</posy>
+		<width>100</width>
+		<height>50</height>
+	</image>
+	<text>
+		<name>top250</name>
+		<condition>[:top250:] != -1 ++ [:#showtop250:] == true</condition>
+		<display>[:top250:]</display>
+		<posx>970</posx>
+		<posy>541</posy>
+		<width>42</width>
+		<height>28</height>
+		<size>24</size> 
+		<bold>true</bold>
+		<align>center</align>
+		<color>000000</color>
+	</text>	
+
+	<image>
+		<name>extras</name>
+		<condition>[:isextras:] == YES</condition>
+		<file>[:@media:]movie/extrasstardim.swf</file>
+		<posx>1030</posx>
+		<posy>488</posy>
+		<width>11</width>
+		<height>10</height>
+	</image>	
+	
+<!-- Play movie buttons -->	
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	
+<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>	
+	<remote>
+		<button>SPACE</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>
+	
+<!-- Go back -->	
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	<remote>
+	   <button>RETURN</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	
+<!-- Next -->
+	<remote>
+		<button>NUM2</button>
+		<action>EXTRA</action>	
+		<file>movieinfoplot</file>
+	</remote>
+
+	<remote>
+		<button>NUM3</button>
+		<action>EXTRA</action>	
+		<file>movieinfocast</file>
+	</remote>
+
+	<remote>
+		<button>NUM4</button>
+		<action>EXTRA</action>	
+		<file>movieinfoawards</file>
+	</remote>
+	
+	<remote>
+		<button>NUM5</button>
+		<action>EXTRA</action>	
+		<file>movieinfodetail</file>
+	</remote>
+	
+	<remote>
+		<button>NUM6</button>
+		<action>EXTRA</action>	
+		<file>movieinfoextras</file>
+	</remote>
+
+	<remote>
+		<button>GREEN</button>
+		<action>EXTRA</action>	
+		<file>movieinfoplot</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>movieinfoplot</file>
+	</remote>
+	
+<!-- Fanart only -->
+	<remote>
+		<button>YELLOW</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+</eskin>

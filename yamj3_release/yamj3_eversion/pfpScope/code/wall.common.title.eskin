@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eskin>			
+	<image>
+		<name>title.bg</name>
+		<file>[:@media:]wall/title.bg.png</file>
+		<posx>14</posx>
+		<posy>597</posy>
+		<width>985</width>
+		<height>32</height>
+	</image>		
+	<text>
+		<name>title</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<display>[:fulltitle,upper:]</display>
+		<posx>44</posx>
+		<posy>600</posy>
+		<width>900</width>
+		<height>32</height>
+		<size>20</size>  
+		<color>title.color1</color>
+	</text>
+</eskin>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<eskin>
+
+<control>
+<fullscreen>true</fullscreen>
+</control>
+
+<include>tech.background.info</include>	
+
+	<!-- Background -->
+
+<background>
+<file>[:@media:]common/tech.background.info.png</file>
+</background>
+
+	<!-- Fanart   (THIS WILL BE CHANGED TO SUPPORT CUSTOM IMAGES) -->
+
+<image>
+<name>fanart</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<file>[:@jukebox:][:fanart:]</file>
+<posx>13</posx>
+<posy>13</posy>
+<width>1254</width>
+<height>623</height>  
+</image>
+
+	<!-- Outline Bar 1 -->
+
+<image>
+<name>outline.bar1</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<file>[:@media:]common/people.wall.custom.outline1.png</file>
+<posx>13</posx>
+<posy>420</posy>
+<width>1254</width>
+<height>216</height>
+</image>	
+
+<segment>
+
+	<!-- Thumbnail Start Location -->
+
+<name>index</name>
+<hyperscroll>false</hyperscroll>
+<startx>18</startx>
+<starty>415</starty>
+<endx>1280</endx>
+<endy>630</endy>
+<scroll>1</scroll>
+
+	<!-- Cursor Size -->
+
+<cursor>
+<file>[:@media:]common/cursor/cursor_refl[:#cursor.refl:].950.950.20.20.[:#cursor.color:].[:#cursor.shiny:].swf</file>
+<above>true</above>
+<animate>true</animate>
+<posx>-2</posx>
+<posy>11</posy>
+<width>142</width>
+<height>208</height>
+<scroll>2</scroll>
+</cursor>
+
+<tile>
+
+	<!-- Columns and Rows -->
+
+<cols>8</cols>		
+<rows>1</rows>
+<width>158</width>
+<height>215</height>
+
+	<!-- Thumbnail -->
+
+<image>
+<name>thumbnail</name>
+<file>[:@jukebox:][:smartposter1small:]</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>196</height>
+</image>
+
+	<!-- Overlay Thumbnail -->
+
+<image>
+<name>thumbnail.overlay</name>
+<condition>[:#overlaythumbnail:] = true</condition>
+<file>[:@media:]common/people.wall.custom.overlay.thumbnail.png</file>
+<posx>3.5</posx>
+<posy>17</posy>
+<width>131</width>
+<height>196</height>
+</image>
+
+
+	<!-- Overlay Thumbnail - Unwatched -->
+
+<image>
+<name>overlay.unwatched</name>
+<condition>[:#overlayunwatched:] = true ++ [:watched:] = false</condition>
+<file>[:@media:]common/people.wall.custom.overlay.unwatched.png</file>
+<posx>94</posx>
+<posy>17</posy>
+<width>40</width>
+<height>40</height>
+</image>
+
+	<!-- Overlay Thumbnail - Movie Set -->
+
+<image>
+<name>overlay-movie.set</name>
+<condition>[:#overlayset:] = true ++ [:mtype:] == MOVIESET</condition>
+<file>[:@media:]common/people.wall.custom.overlay.set.png</file>
+<posx>83</posx>
+<posy>176</posy>
+<width>49</width>
+<height>34</height>
+</image>			
+
+	<!-- Overlay Thumbnail - TV Set -->
+
+<image>
+<name>overlay-tv.set</name>
+<condition>[:#overlayset:] = true ++ [:mtype:] == TVSET</condition>
+<file>[:@media:]common/people.wall.custom.overlay.set.png</file>
+<posx>83</posx>
+<posy>176</posy>
+<width>49</width>
+<height>34</height>
+</image>
+
+</tile>
+
+</segment>	
+
+	<!-- Remote -->
+
+<remote>
+<button>PLAY</button>
+<action>PLAYALL</action>
+</remote>			
+
+<remote>
+<button>BACK</button>
+<action>BACK</action>
+<data>1</data>
+</remote>
+
+<remote>
+<button>MENU</button>
+<action>SCREEN</action>
+<file>menu.1.outline</file>
+</remote>
+
+<remote>
+<button>SEARCH</button>
+<action>SCREEN</action>
+<file>menu.1.outline</file>
+</remote>
+
+<remote>
+<button>RED</button>
+<action>HOME</action>
+</remote>
+
+<remote>
+<button>REPEAT</button>
+<action>RESET</action>
+<title>[:%reset:]</title>
+</remote>
+
+<remote>
+<button>ALL</button>
+<action>BLOCK</action>
+</remote>
+
+</eskin>

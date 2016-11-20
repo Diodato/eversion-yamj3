@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+	<text>
+		<name>plot2</name>
+		<display>[:plot,slice693,trun690:]</display>
+		<posx>295</posx>
+		<posy>195</posy>
+		<width>690</width>
+		<height>300</height>
+		<wordwrap>true</wordwrap>
+		<size>23</size>
+		<leading>3</leading>
+		<color>DDDDDD</color>
+	</text>
+	<image>
+		<name>up_on</name>
+		<file>[:@media:]common/up_on.swf</file>
+		<posx>955</posx>
+		<posy>490</posy>
+		<width>15</width>
+		<height>10.6</height>
+	</image>		
+	<image>
+		<name>down_on</name>
+		<condition>[:plot,length:] &gt; 1386</condition>
+		<file>[:@media:]common/down_on.swf</file>
+		<posx>970</posx>
+		<posy>490</posy>
+		<width>15</width>
+		<height>10.6</height>
+	</image>		
+<!-- Next plot_3 -->
+	<remote>
+		<condition>[:plot,length:] &gt; 1386</condition>
+		<button>PAGEDOWN</button>
+		<action>EXTRA</action>	
+		<file>indexplot_3</file>
+	</remote>
+	<remote>
+		<condition>[:plot,length:] &gt; 1386</condition>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>indexplot_3</file>
+	</remote>
+<!-- Previous plot_1 -->
+	<remote>
+		<button>PAGEUP</button>
+		<action>BACK</action>	
+		<data>1</data>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>BACK</action>	
+		<data>1</data>
+	</remote>
+
+	<remote>
+	   <button>PLAY</button>
+	   <action>PLAYALL</action>
+	</remote>	
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+	<remote>
+		<button>SELECT</button>
+		<action>BACK</action>	
+		<data>index</data>
+	</remote>
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>index</data>
+	</remote>	
+	<remote>
+		<button>INFO</button>
+		<action>BACK</action>	
+		<data>index</data>
+	</remote>		
+	<remote>
+		<button>EQUAL</button>
+		<action>BACK</action>	
+		<data>index</data>
+	</remote>		
+	<remote>
+		<button>SEARCH</button>
+		<action>SCREEN</action>
+		<file>help/help_[:#nmtmodel,lower:]_index</file>
+	</remote>	
+	<remote>
+		<button>REPEAT</button>
+		<action>RESET</action>
+		<title>[:%reset:]</title>
+	</remote>	
+</eskin>

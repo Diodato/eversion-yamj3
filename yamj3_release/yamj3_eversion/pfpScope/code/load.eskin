@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+	<info>
+	  <name>pfpScope</name>
+	  <version>2.1.9.0108</version>
+	  <homepage>http://www.dentedboxes.com</homepage>
+	</info>
+	<settings>
+	    <starttype>home</starttype>
+		<home>home</home>	
+		<menu>common.menu</menu>
+		<index default="wall.poster.summary">wall.poster.summary,wall.poster.full,wall.banner.summary,wall.banner.full, list.poster,list.banner</index>
+		<movie default="details.movie">details.movie,details.movie.orig</movie>
+		<tv default="details.tv">details.tv</tv>
+	</settings>
+</eskin>
+
+-->

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!--******************************************************************
+	This .eskin file contains code that is common to many screens so
+	it's been separated out on it's own and is "included" by the other
+	.eskin files.
+	
+	Used with:
+	tv
+	
+	******************************************************************-->
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+<!-- Conditions - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:if -->	
+<!-- Shared eskin - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:shared -->	
+
+	<!-- Details -->
+	<image>
+		<name>videoimage</name>
+		<segname>eplist</segname>  <!-- segname and hyper are necessary for the TV episode list -->
+		<hyper>3</hyper>
+		<swap>true</swap>
+		<file>[:@jukebox:][:videoimage:]</file>  <!-- Eversion variable holding the name of the episode image YAMJ created-->
+		<posx>12</posx>
+		<posy>496</posy>
+		<width>270</width>
+		<height>155</height>
+	</image>			
+	<text>
+		<name>outline</name>
+		<segname>eplist</segname>  <!-- segname and hyper are necessary for the TV episode list -->
+		<hyper>4</hyper>
+		<display>[:smartoutline:]</display>  <!-- Eversion variable holding the outline -->
+		<posx>298</posx>
+		<posy>476</posy>		
+		<width>466</width>
+		<height>200</height>
+		<size>22</size>
+		<wordwrap>true</wordwrap>  <!-- By default is false -->
+		<color>movie.title.color</color>
+	</text>
+	
+	<!-- Create the list of episodes -->
+	<segment>
+		<name>eplist</name>
+		<hyperscroll>false</hyperscroll>
+		<datasource>episodes</datasource>
+		<startx>762</startx>
+		<starty>475</starty>
+		<tilesize>true</tilesize>
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]common/1.eskin.used/cursor.png</file>
+			<above>false</above>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>520</width>
+			<height>36</height>  
+		</cursor>		
+		<tile>
+			<cols>1</cols>
+			<rows>5</rows>
+			<width>520</width>
+			<height>36</height>			
+			<text>
+				<name>mc</name>
+				<display>[:title:]</display>  <!-- Eversion variable holding the title -->
+				<posx>0</posx>
+				<posy>5</posy>
+				<width>520</width>
+				<height>42</height>
+				<size>25</size>  
+				<align>center</align>  <!-- By default align is left -->
+				<color>list.list.color</color>
+				<hlcolor>list.list.highlight.color</hlcolor>
+			</text>	
+		</tile>
+
+		<!-- Remote commands -->
+		<remote>
+			<button>PLAY</button>
+			<action>PLAYFROMHERE</action>	
+		</remote>		
+		<remote>
+			<button>PAUSE</button>
+			<action>PLAYRANDOM</action>	
+		</remote>		
+		<remote>
+			<button>SELECT</button>
+			<action>PLAYSINGLE</action>	
+		</remote>	
+		<remote>
+			<button>FASTFORWARD</button>
+			<action>PLAYLAST</action>			
+		</remote>
+		<remote>
+			<button>BACK</button>  <!-- Go back one level -->
+			<action>BACK</action>
+			<data>2</data>  <!-- Special (due to the passthrough in tv): 1 would only get us back to the tv screen with no details -->
+		</remote>	
+		<remote>  <!-- This is what opens the info page for tv screens (for the pc)-->
+			<button>COMMA</button>
+			<action>EXTRA</action>	
+			<file>tv.data.extended</file>  <!-- The page to open -->
+		</remote>			
+		<remote>  <!-- This is what opens the info page for tv screens -->
+			<button>INFO</button>  
+			<action>EXTRA</action>	
+			<file>tv.data.extended</file>  <!-- The page to open -->
+		</remote>
+	</segment>	
+</eskin>

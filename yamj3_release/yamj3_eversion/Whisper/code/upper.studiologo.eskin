@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!--******************************************************************
+	While this .eskin file is only used with one screen it's been
+	separated out on it's own becasue the (index) version of it is 
+	used in many places and this makes it easier when they need to be
+	edited.
+	
+	Used with:
+	tv1
+	******************************************************************-->
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+	
+	<!-- Studio logo -->
+	<image>
+		<name>studiologo</name> 
+		<file>[:@sharedmedia:]company/[:company:].png</file>
+		<posx>1062</posx>
+		<posy>55</posy>
+		<width>161</width>
+		<height>109</height>
+		<align>right</align>
+		<keepaspect>true</keepaspect>
+	</image>
+</eskin>

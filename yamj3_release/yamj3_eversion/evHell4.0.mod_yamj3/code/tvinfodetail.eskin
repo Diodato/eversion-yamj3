@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>	
+	
+	<image>
+		<name>tvinfodetails</name>
+		<file>[:@media:]movie/tvdetails.swf</file>
+		<posx>0</posx>
+		<posy>520</posy>
+		<width>1280</width>
+		<height>200</height>
+	</image>	
+
+	<text>
+		<name>language_prompt</name>
+		<display>[:%language:]</display>
+		<posx>15</posx>
+		<posy>565</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>footeraudiolanguages</name>
+		<file>[:@jukebox:][:baseFilename:].footer_audiolanguages.png</file>
+		<posx>115</posx>
+		<posy>555</posy>
+		<width>751</width>
+		<height>51</height>
+	</image>
+	
+	<text>
+		<name>audiocodec_prompt</name>
+		<display>[:%audiocodec:]</display>
+		<posx>15</posx>
+		<posy>616</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>footeraudiocodecs</name>
+		<file>[:@jukebox:][:baseFilename:].footer_audiocodecs.png</file>
+		<posx>115</posx>
+		<posy>606</posy>
+		<width>751</width>
+		<height>51</height>
+	</image>
+	
+	<text>
+		<name>channels_prompt</name>
+		<display>[:%channels:]</display>
+		<posx>15</posx>
+		<posy>667</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+
+	<image>
+		<name>footeraudiochannels</name>
+		<file>[:@jukebox:][:baseFilename:].footer_audiochannels.png</file>
+		<posx>115</posx>
+		<posy>657</posy>
+		<width>751</width>
+		<height>51</height>
+	</image>	
+
+	<text>
+		<name>subtitles_prompt</name>
+		<display>[:%subtitles:]</display>
+		<posx>655</posx>
+		<posy>565</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>	
+
+	<image>
+		<name>footersubtitle</name>
+		<file>[:@jukebox:][:baseFilename:].footer_subtitles.png</file>
+		<posx>755</posx>
+		<posy>555</posy>
+		<width>751</width>
+		<height>51</height>
+	</image>
+	
+	<text>
+		<name>company_prompt</name>
+		<display>[:$company:]</display>
+		<posx>655</posx>
+		<posy>616</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	<image>
+		<name>imgfooter_companies</name>
+		<file>[:@eskin:]evhell_overlay/resources/company/[:company,nospaces,lower:].png</file>
+		<posx>755</posx>
+		<posy>606</posy>
+<!-- 	<width>751</width> -->
+		<height>51</height>
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>top</valigned>
+	</image>	
+
+	<text>
+		<name>country_prompt</name>
+		<display>[:$country:]</display>
+		<posx>655</posx>
+		<posy>667</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>imgfooter_countries</name>
+		<file>[:@jukebox:][:baseFilename:].footer_countries.png</file>
+		<posx>755</posx>
+		<posy>657</posy>
+		<width>751</width>
+		<height>51</height>
+	</image>	
+	
+	<image>
+		<name>extras</name>
+		<condition>[:isextras:] == YES</condition>
+		<file>[:@media:]movie/Extrasstardim.swf</file>
+		<posx>1030</posx>
+		<posy>529</posy>
+		<width>11</width>
+		<height>10</height>
+	</image>	
+	
+<!-- Play movie buttons -->	
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>NUMPAD</button>
+		<action>PLAYPART</action>	
+	</remote>
+	
+<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>tvdetailpopup</file>
+	</remote>	
+	<remote>
+		<button>SPACE</button>
+		<action>EXTRA</action>	
+		<file>tvdetailpopup</file>
+	</remote>
+	
+<!-- Go back to overview -->	
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>4</data>
+	</remote>
+	<remote>
+	   <button>RETURN</button>
+	   <action>BACK</action>
+	   <data>4</data>
+	</remote>
+	
+<!-- Next tab extras -->
+	<remote>
+		<button>GREEN</button>
+		<action>EXTRA</action>	
+		<file>tvinfoextras</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>tvinfoextras</file>
+	</remote>
+	
+<!-- Previous tab photos -->	
+	<remote>
+		<button>RED</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	
+<!-- Fanart only -->
+	<remote>
+		<button>YELLOW</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+
+</eskin>

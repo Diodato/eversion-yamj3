@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+        <fullscreen>true</fullscreen>
+    </control>
+    <background>
+        <file>[:@media:]wall/background.png</file>
+    </background>
+	
+<!-- The top right bar with current Index name --> 	
+	<image>
+		<name>indexbg</name>
+		<file>[:@media:]common/blank.png</file>
+		<posx>1090</posx>
+		<posy>8</posy>
+		<width>150</width>
+		<height>33.30</height>
+	</image>
+	<text>
+		<name>indexname</name>
+		<display>[:@indexname:]</display>
+		<posx>1099</posx>
+		<posy>9</posy>		
+		<width>180</width>
+		<height>28</height>
+		<size>24</size>
+		<align>left</align>
+		<color>808080</color>
+	</text>
+	
+<!-- The bottom left bar with the current page number and page total -->
+	<image>
+		<name>pagebg</name>
+		<file>[:@media:]common/blank.png</file>
+		<posx>35</posx>
+		<posy>674</posy>
+		<width>120</width>
+		<height>30</height>
+	</image>
+	<text>
+        <name>pagenavfull</name>
+        <segname>index</segname>
+        <hyper>4</hyper>
+        <display>[:@pagecurrent:] / [:@pagetotal:]</display>
+        <align>right</align>
+        <posx>40</posx>
+        <posy>673</posy>
+        <width>90</width>
+        <height>28</height>
+        <size>24</size>  
+        <color>808080</color>
+    </text>    
+	
+<!-- The title that is centered on the bottom -->
+    <text>
+        <name>title</name>
+        <segname>index</segname>
+        <display>[:fulltitle:]</display>
+        <posx>195</posx>
+        <posy>673</posy>
+        <width>880</width>
+        <height>37</height>
+        <size>32</size>  
+        <color>FFFFFF</color>
+        <align>center</align>
+        <hyper>4</hyper>
+    </text>
+	
+<!-- The title number and the total of titles -->
+	<image>
+		<name>totalbg</name>
+		<file>[:@media:]wall/mediacountbg.png</file>
+		<posx>1090</posx>
+		<posy>674</posy>
+		<width>150</width>
+		<height>30</height>
+	</image>
+    <text>
+		<name>cursorloc</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<display>[:@curpos:]</display>
+		<align>right</align>
+		<posx>1098</posx>
+		<posy>673</posy>
+		<width>58</width>
+		<height>28</height>
+		<size>24</size>
+		<align>right</align>
+		<color>808080</color>
+    </text>
+    <text>
+        <name>total</name>
+        <display>[:@totaltiles:]</display>
+        <posx>1170</posx>
+        <posy>673</posy>        
+        <width>80</width>
+        <height>28</height>
+        <size>24</size>
+        <color>808080</color>
+    </text> 
+<!-- The banners -->
+    <segment>
+        <name>index</name>
+        <startx>10</startx>
+        <starty>50</starty>
+        <endx>1261</endx>
+        <endy>665</endy>
+        <scroll>2</scroll>
+        <cursor>
+			<file>[:@media:]common/1.eskin.used/banner.cursor.png</file>
+			<above>true</above>
+			<posx>1</posx>
+			<posy>-2</posy>
+			<width>420</width>
+			<height>90</height>  
+		</cursor>
+        <tile>
+            <cols>3</cols>
+            <rows>7</rows>
+            <width>419</width>
+            <height>86</height>
+            <image>
+				<name>banner</name>
+				<file>[:@jukebox:][:banner1small:]</file> <!-- Eversion artwork variable holding the name of the banner YAMJ created-->
+				<posx>3</posx>
+				<posy>4</posy>
+				<width>410</width>
+				<height>78</height>
+				<keepaspect>true</keepaspect>
+			</image>		
+		</tile>
+        <remote>
+           <button>PLAY</button>
+           <action>PLAYALL</action>
+        </remote>            
+    </segment>   	
+</eskin> 

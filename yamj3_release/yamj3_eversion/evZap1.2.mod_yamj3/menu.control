@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Control file for MENU of Eversion evstreamed eskin. 
+
+For more info: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:control
+-->
+<control>
+	<item>
+		<action>home</action>
+		<title>[:%home:]</title>
+	</item>	
+	<insert>
+		<info>menulist</info>
+		<action>PRELOAD</action>
+		<file>catlist</file>
+        <data>index</data>	
+	</insert>
+
+<!-- Add people entry to the menu list this need to install people mod 
+ the menupeople.eskins and mod the wallfull_people.eskins -->
+	<item>
+		<name>People</name>
+		<action>screen</action>
+		<title>[:%people:]</title>
+		<originaltitle>people</originaltitle>
+		<file>themenu.people</file>
+	</item> 
+	<item>
+		<name>Trailers</name>
+		<action>SWITCH</action>
+		<title>[:%trailers:]</title>
+		<data>eskin://trailerwall</data>
+		<feed>http://trailers.lundman.net</feed>
+	</item>
+	<insert>
+		<info>playrom</info>
+	</insert>	
+	<item>
+		<action>apps</action>
+		<title>[:%sapps:]</title>
+	</item>
+	<item>
+		<action>SCREEN</action>
+		<title>[:%weather:]</title>
+		<file>weather</file>
+	</item>	
+	<item>
+		<action>RESET</action>
+		<title>[:%reset:]</title>
+	</item>	
+	<item>
+		<action>screen</action>
+		<file>about</file>
+		<title>[:%about:]</title>
+	</item>		
+	<item>
+		<action>screen</action>
+		<file>help/help_[:#nmtmodel,lower:]</file>
+		<title>[:%help:]</title>
+	</item>		
+	<item>
+		<action>exit</action>
+		<title>[:%exit:]</title>
+	</item>
+</control>

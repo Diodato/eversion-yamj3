@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<passthrough>movieplot_1_people_list</passthrough> 
+    </control>
+	<background>
+		<file>[:@jukebox:][:fanart:]</file>
+	</background>
+	<include>clock</include>	
+	<include>common.movie_people_list</include>
+</eskin>

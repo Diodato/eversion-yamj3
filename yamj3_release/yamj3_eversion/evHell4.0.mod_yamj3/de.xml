@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	EvHell German prompts
+-->
+
+<translation>
+	<!-- TITLES (TV Shows has to be changed in YAMJ categories to TV-Shows-->
+	<!-- home menu -->
+	<all>Alle</all>
+	<new>Neues</new>
+	<new-movies>Neue Filme</new-movies>
+	<new-movie>Neue Film</new-movie>
+	<new-tv>Neue Serien</new-tv>
+	<movies>Filme</movies>
+	<tv-shows>TV Serien</tv-shows>
+	<hd>HD</hd>
+	<hd-720>HD 720</hd-720>
+	<hd-1080>HD 1080</hd-1080>
+	<top250>Top 250</top250>
+	<3d>3D</3d>
+	<extras>Extras</extras>
+	<watched>Gesehen</watched>
+	<unwatched>Ungesehen</unwatched>
+	<rating>Bewertung</rating>
+	<tv>TV</tv>
+	<video>Video</video>
+	<categories>Kategorien</categories>
+	<people>Personen</people>
+	<trailers>Trailer</trailers>
+	<weather>Wetter</weather>
+	<apps>Apps</apps>
+	<reset>Zurücksetzen</reset>
+	<about>Über</about>
+	<help>Hilfe</help>
+	<exit>Beenden</exit>
+
+	<!-- categories -->
+	<home>Home</home>
+	<genres>Genres</genres>
+	<title>Titel</title>
+	<certification>Altersfreigabe</certification>
+	<year>Jahr</year>
+	<country>Land</country>
+	<award>Preis</award>
+	<ratings>Bewertungen</ratings>
+	<set>Set</set>
+
+	<!-- user menu -->
+	<cast>Darsteller</cast>
+	<director>Regie</director>
+	<directors>Regisseure</directors>
+	<writer>Drehbuch</writer>
+	<writers>Authoren</writers>
+	<person>Person</person>
+
+	<!-- BEGIN MOVIE DETAILS -->
+	<tagline>Untertitel</tagline>
+	<outline>Kurz-Inhalt</outline>
+	<details>Details</details>
+	<company>Produktions Firma</company>
+	<awards>Auszeichnungen</awards>
+	<won>Gewonnen</won>
+	<nominated>Nominiert</nominated>
+
+	<!-- BEGIN REVERSE TRANSLATIONS!!!!! translations in the tags english and content between the tags!!! -->
+	<!-- BEGIN REVERSE TRANSLATIONS!!!!! e.g. for french  <réalisateur>Director</réalisateur>         !!! -->
+	<!-- Reverse categories -->
+	<home>Home</home>
+	<genres>Genres</genres>
+	<titel>Title</titel>
+	<altersfreigabe>Certification</altersfreigabe>
+	<jahr>Year</jahr>
+	<land>Country</land>
+	<preis>Award</preis>
+	<auszeichnungen>Awards</auszeichnungen>
+	<bewertung>Rating</bewertung>
+	<bewertungen>Ratings</bewertungen>
+	<set>Set</set>
+	<darsteller>Cast</darsteller>
+	<regie>Director</regie>
+	<regisseure>Directors</regisseure>
+	<drehbuch>Writer</drehbuch>
+    <autoren>Writers</autoren>
+	<person>Person</person>
+
+
+	<!-- Countries  REVERSE TRANSLATIONS -->
+	<afghanistan>Afghanistan</afghanistan>
+	<aland_islands>Aland Islands</aland_islands>
+	<albania>Albania</albania>
+	<algeria>Algeria</algeria>
+	<american_samoa>American Samoa</american_samoa>
+	<andorra>Andorra</andorra>
+	<angola>Angola</angola>
+	<anguilla>Anguilla</anguilla>
+	<antarctica>Antarctica</antarctica>
+	<antigua_and_barbuda>Antigua and Barbuda</antigua_and_barbuda>
+	<argentinien>Argentina</argentinien>
+	<armenia>Armenia</armenia>
+	<aruba>Aruba</aruba>
+	<australien>Australia</australien>
+	<Österreich>Austria</Österreich>
+	<azerbaijan>Azerbaijan</azerbaijan>
+	<bahamas>Bahamas</bahamas>
+	<bahrain>Bahrain</bahrain>
+	<bangladesh>Bangladesh</bangladesh>
+	<barbados>Barbados</barbados>
+	<belarus>Belarus</belarus>
+	<belgien>Belgium</belgien>
+	<belize>Belize</belize>
+	<benin>Benin</benin>
+	<bermuda>Bermuda</bermuda>
+	<bhutan>Bhutan</bhutan>
+	<bolivien>Bolivia</bolivien>
+	<bosnia_and_herzegovina>Bosnia and Herzegovina</bosnia_and_herzegovina>
+	<botswana>Botswana</botswana>
+	<brasilien>Brazil</brasilien>
+	<british_indian_ocean_territory>British Indian Ocean Territory</british_indian_ocean_territory>
+	<british_virgin_islands>British Virgin Islands</british_virgin_islands>
+	<brunei>Brunei</brunei>
+	<bulgarien>Bulgaria</bulgarien>
+	<burkina_faso>Burkina Faso</burkina_faso>
+	<burundi>Burundi</burundi>
+	<cambodia>Cambodia</cambodia>
+	<cameroon>Cameroon</cameroon>
+	<kanada>Canada</kanada>
+	<cape_verde>Cape Verde</cape_verde>
+	<cayman_islands>Cayman Islands</cayman_islands>
+	<central_african_republic>Central African Republic</central_african_republic>
+	<chad>Chad</chad>
+	<chile>Chile</chile>
+	<china>China</china>
+	<christmas_island>Christmas Island</christmas_island>
+	<kolumbien>Colombia</kolumbien>
+	<comoros>Comoros</comoros>
+	<republic_of_the_congo>Republic of the Congo</republic_of_the_congo>
+	<cook_islands>Cook Islands</cook_islands>
+	<costa_rica>Costa Rica</costa_rica>
+	<ivory_coast>Ivory Coast</ivory_coast>
+	<kroatien>Croatia</kroatien>
+	<cuba>Cuba</cuba>
+	<cyprus>Cyprus</cyprus>
+	<tschechien>Czech_republic</tschechien>
+	<dänemark>Denmark</dänemark>
+	<djibouti>Djibouti</djibouti>
+	<dominica>Dominica</dominica>
+	<dominican_republic>Dominican Republic</dominican_republic>
+	<ecuador>Ecuador</ecuador>
+	<egypt>Egypt</egypt>
+	<el_salvador>El Salvador</el_salvador>
+	<equatorial_guinea>Equatorial Guinea</equatorial_guinea>
+	<eritrea>Eritrea</eritrea>
+	<estonia>Estonia</estonia>
+	<ethiopia>Ethiopia</ethiopia>
+	<falkland_islands>Falkland Islands</falkland_islands>
+	<faroe_islands>Faroe Islands</faroe_islands>
+	<fiji>Fiji</fiji>
+	<finnland>Finland</finnland>
+	<frankreich>France</frankreich>
+	<french_polynesia>French Polynesia</french_polynesia>
+	<gabon>Gabon</gabon>
+	<gambia>Gambia</gambia>
+	<georgia>Georgia</georgia>
+	<deutschland>Germany</deutschland>
+	<ghana>Ghana</ghana>
+	<gibraltar>Gibraltar</gibraltar>
+	<greece>Greece</greece>
+	<greenland>Greenland</greenland>
+	<grenada>Grenada</grenada>
+	<guam>Guam</guam>
+	<guatemala>Guatemala</guatemala>
+	<guernsey>Guernsey</guernsey>
+	<guinea>Guinea</guinea>
+	<guinea-bissau>Guinea-Bissau</guinea-bissau>
+	<guyana>Guyana</guyana>
+	<haiti>Haiti</haiti>
+	<honduras>Honduras</honduras>
+	<hong_kong>Hong_kong</hong_kong>
+	<ungarn>Hungary</ungarn>
+	<island>Iceland</island>
+	<indien>India</indien>
+	<indonesia>Indonesia</indonesia>
+	<iran>Iran</iran>
+	<iraq>Iraq</iraq>
+	<irland>Ireland</irland>
+	<isle_of_man>Isle of Man</isle_of_man>
+	<israel>Israel</israel>
+	<italien>Italy</italien>
+	<jamaica>Jamaica</jamaica>
+	<japan>Japan</japan>
+	<jersey>Jersey</jersey>
+	<jordan>Jordan</jordan>
+	<kazakhstan>Kazakhstan</kazakhstan>
+	<kenya>Kenya</kenya>
+	<kiribati>Kiribati</kiribati>
+	<kuwait>Kuwait</kuwait>
+	<kyrgyzstan>Kyrgyzstan</kyrgyzstan>
+	<laos>Laos</laos>
+	<latvia>Latvia</latvia>
+	<lebanon>Lebanon</lebanon>
+	<lesotho>Lesotho</lesotho>
+	<liberia>Liberia</liberia>
+	<libya>Libya</libya>
+	<liechtenstein>Liechtenstein</liechtenstein>
+	<lithuania>Lithuania</lithuania>
+	<luxembourg>Luxembourg</luxembourg>
+	<macedonia>Macedonia</macedonia>
+	<madagascar>Madagascar</madagascar>
+	<malawi>Malawi</malawi>
+	<malaysia>Malaysia</malaysia>
+	<maldives>Maldives</maldives>
+	<mali>Mali</mali>
+	<malta>Malta</malta>
+	<marshall_islands>Marshall Islands</marshall_islands>
+	<mauritania>Mauritania</mauritania>
+	<mauritius>Mauritius</mauritius>
+	<mexiko>Mexico</mexiko>
+	<micronesia>Micronesia</micronesia>
+	<moldova>Moldova</moldova>
+	<monaco>Monaco</monaco>
+	<mongolia>Mongolia</mongolia>
+	<montenegro>Montenegro</montenegro>
+	<montserrat>Montserrat</montserrat>
+	<morocco>Morocco</morocco>
+	<mozambique>Mozambique</mozambique>
+	<myanmar>Myanmar</myanmar>
+	<namibia>Namibia</namibia>
+	<nauru>Nauru</nauru>
+	<nepal>Nepal</nepal>
+	<holland>Netherlands</holland>
+	<netherlands_antilles>Netherlands Antilles</netherlands_antilles>
+	<neuseeland>New zealand</neuseeland>
+	<nicaragua>Nicaragua</nicaragua>
+	<niger>Niger</niger>
+	<nigeria>Nigeria</nigeria>
+	<niue>Niue</niue>
+	<norfolk_island>Norfolk Island</norfolk_island>
+	<northern_mariana_islands>Northern Mariana Islands</northern_mariana_islands>
+	<north_korea>North Korea</north_korea>
+	<norwegen>Norway</norwegen>
+	<oman>Oman</oman>
+	<pakistan>Pakistan</pakistan>
+	<palau>Palau</palau>
+	<palestinian_territory>Palestinian Territory</palestinian_territory>
+	<panama>Panama</panama>
+	<papua_new_guinea>Papua New Guinea</papua_new_guinea>
+	<paraguay>Paraguay</paraguay>
+	<peru>Peru</peru>
+	<philippines>Philippines</philippines>
+	<pitcairn>Pitcairn</pitcairn>
+	<polen>Poland</polen>
+	<portugal>Portugal</portugal>
+	<puerto_rico>Puerto Rico</puerto_rico>
+	<qatar>Qatar</qatar>
+	<romania>Romania</romania>
+	<russland>Russia</russland>
+	<rwanda>Rwanda</rwanda>
+	<san_marino>San Marino</san_marino>
+	<sao_tome_and_principe>Sao Tome and Principe</sao_tome_and_principe>
+	<saudi_arabia>Saudi Arabia</saudi_arabia>
+	<senegal>Senegal</senegal>
+	<serbien>Serbia</serbien>
+	<seychelles>Seychelles</seychelles>
+	<sierra_leone>Sierra Leone</sierra_leone>
+	<singapore>Singapore</singapore>
+	<slovakia>Slovakia</slovakia>
+	<slovenia>Slovenia</slovenia>
+	<solomon_islands>Solomon Islands</solomon_islands>
+	<somalia>Somalia</somalia>
+	<south_africa>South Africa</south_africa>
+	<south_korea>South Korea</south_korea>
+	<spanien>Spain</spanien>
+	<sri_lanka>Sri Lanka</sri_lanka>
+	<saint_kitts_and_nevis>Saint Kitts and Nevis</saint_kitts_and_nevis>
+	<saint_helena>Saint Helena</saint_helena>
+	<saint_lucia>Saint Lucia</saint_lucia>
+	<saint_vincent_and_the_grenadines>Saint Vincent and the Grenadines</saint_vincent_and_the_grenadines>
+	<sudan>Sudan</sudan>
+	<suriname>Suriname</suriname>
+	<swaziland>Swaziland</swaziland>
+	<schweden>Sweden</schweden>
+	<schweiz>Switzerland</schweiz>
+	<syria>Syria</syria>
+	<taiwan>Taiwan</taiwan>
+	<tajikistan>Tajikistan</tajikistan>
+	<tanzania>Tanzania</tanzania>
+	<thailand>Thailand</thailand>
+	<togo>Togo</togo>
+	<tonga>Tonga</tonga>
+	<trinidad_and_tobago>Trinidad and Tobago</trinidad_and_tobago>
+	<tunisia>Tunisia</tunisia>
+	<turkey>Turkey</turkey>
+	<turkmenistan>Turkmenistan</turkmenistan>
+	<turks_and_caicos_islands>Turks and Caicos Islands</turks_and_caicos_islands>
+	<tuvalu>Tuvalu</tuvalu>
+	<uganda>Uganda</uganda>
+	<ukraine>Ukraine</ukraine>
+	<united_arab_emirates>United Arab Emirates</united_arab_emirates>
+	<united_kingdom>United Kingdom</united_kingdom>
+	<united_states>United States</united_states>
+	<uruguay>Uruguay</uruguay>
+	<uzbekistan>Uzbekistan</uzbekistan>
+	<vanuatu>Vanuatu</vanuatu>
+	<vatican>Vatican</vatican>
+	<venezuela>Venezuela</venezuela>
+	<vietnam>Vietnam</vietnam>
+	<u.s._virgin_islands>U.S. Virgin Islands</u.s._virgin_islands>
+	<wallis_and_futuna>Wallis and Futuna</wallis_and_futuna>
+	<samoa>Samoa</samoa>
+	<yemen>Yemen</yemen>
+	<zambia>Zambia</zambia>
+	<zimbabwe>Zimbabwe</zimbabwe>
+	<serbia_and_montenegro>Serbia and Montenegro</serbia_and_montenegro>
+	<bouvet_island>Bouvet Island</bouvet_island>
+	<saint_barthélemy>Saint Barthélemy</saint_barthélemy>
+	<bonaire_saint_eustatius_and_saba>Bonaire, Saint Eustatius and Saba</bonaire_saint_eustatius_and_saba>
+	<cocos_islands>Cocos Islands</cocos_islands>
+	<curaçao>Curaçao</curaçao>
+	<macao>Macao</macao>
+	<western_sahara>Western Sahara</western_sahara>
+	<south_georgia_and_the_south_sandwich_islands>South Georgia and the South Sandwich Islands</south_georgia_and_the_south_sandwich_islands>
+	<french_guiana>French Guiana</french_guiana>
+	<guadeloupe>Guadeloupe</guadeloupe>
+	<heard_island_and_mcdonald_islands>Heard Island and McDonald Islands</heard_island_and_mcdonald_islands>
+	<kosovo>Kosovo</kosovo>
+	<martinique>Martinique</martinique>
+	<saint_martin>Saint Martin</saint_martin>
+	<saint_pierre_and_miquelon>Saint Pierre and Miquelon</saint_pierre_and_miquelon>
+	<new_caledonia>New Caledonia</new_caledonia>
+	<reunion>Reunion</reunion>
+	<french_southern_territories>French Southern Territories</french_southern_territories>
+	<sint_maarten>Sint Maarten</sint_maarten>
+	<svalbard_and_jan_mayen>Svalbard and Jan Mayen</svalbard_and_jan_mayen>
+	<south_sudan>South Sudan</south_sudan>
+	<tokelau>Tokelau</tokelau>
+	<east_timor>East Timor</east_timor>
+	<united_states_minor_outlying_islands>United States Minor Outlying Islands</united_states_minor_outlying_islands>
+	<mayotte>Mayotte</mayotte>
+	<democratic_republic_of_the_congo>Democratic Republic of the Congo</democratic_republic_of_the_congo>
+	<uk>UK</uk>
+	<u.s.a.>USA</u.s.a.>
+	<usa>USA</usa>
+	<jugoslawien>yugoslavia</jugoslawien>
+	<vereinigte_staaten>United states</vereinigte_staaten>
+
+	<!-- GENRES -->
+	<action_and_adventure>Action_and_adventure</action_and_adventure>
+	<action>Action</action>
+	<adult>Adult</adult>
+	<adventure>Adventure</adventure>
+	<animated>Animated</animated>
+	<animation>Animation</animation>
+	<anime>Anime</anime>
+	<biography>Biography</biography>
+	<blank>Blank</blank>
+	<bollywood>Bollywood</bollywood>
+	<children>Children</children>
+	<christmas>Christmas</christmas>
+	<comedy>Comedy</comedy>
+	<concert>Concert</concert>
+	<crime>Crime</crime>
+	<disaster>Disaster</disaster>
+	<documentary>Documentary</documentary>
+	<drama>Drama</drama>
+	<family>Family</family>
+	<fantasy>Fantasy</fantasy>
+	<film-noir>Film-noir</film-noir>
+	<game-show>Game-show</game-show>
+	<halloween>Halloween</halloween>
+	<hentai>Hentai</hentai>
+	<history-or-epic>History-or-epic</history-or-epic>
+	<history>History</history>
+	<home-and-garden>Home-and-garden</home-and-garden>
+	<horror>Horror</horror>
+	<independent>Independent</independent>
+	<interview>Interview</interview>
+	<karaoke>Karaoke</karaoke>
+	<martial-arts>Martial-arts</martial-arts>
+	<mini-series>Mini-series</mini-series>
+	<mini-tv-series>Mini-tv-series</mini-tv-series>
+	<monster>Monster</monster>
+	<music>Music</music>
+	<musical>Musical</musical>
+	<mystery>Mystery</mystery>
+	<nature>Nature</nature>
+	<news>News</news>
+	<post-apocalypse>Post-apocalypse</post-apocalypse>
+	<reality>Reality</reality>
+	<reality-tv>Reality</reality-tv>
+	<religion>Religion</religion>
+	<romance>Romance</romance>
+	<sci-fi>Sci-fi</sci-fi>
+	<science-fiction>Science-fiction</science-fiction>
+	<short>Short</short>
+	<smart>Smart</smart>
+	<soap>Soap</soap>
+	<special-interest>Special-interest</special-interest>
+	<sport>Sport</sport>
+	<stageplay>Stageplay</stageplay>
+	<stand-up>Stand up</stand-up>
+	<superhero>Superhero</superhero>
+	<supernatural>Supernatural</supernatural>
+	<talk-show>Talk-show</talk-show>
+	<thriller>Thriller</thriller>
+	<tv-shows>Tv-shows</tv-shows>
+	<unknown>Unknown</unknown>
+	<war>War</war>
+	<western>Western</western>
+	<wrestling>Wrestling</wrestling>
+
+	<!-- END REVERSE TRANSLATIONS!!!!! translations in the tags english as content between the tags!!! -->
+
+
+	<!-- BEGIN HELP -->
+	<walls>Index Wand</walls>
+	<movie>Film Details</movie>
+
+	<!-- WALL -->
+	<keypad_wall>Springe an Position in Index-Wand (0=0%, 1=10%,…)</keypad_wall>
+	<home_wall>Zum Home-Screen</home_wall>
+	<home_wall_pb>Eversion beenden</home_wall_pb>
+	<return_wall>Ein Schritt zurück</return_wall>
+	<left_wall>Navigiere hoch/runter/links/rechts</left_wall>
+	<hyperscroll_wall>(gedrückt halten für schnelles scrollen)</hyperscroll_wall>
+	<right_wall></right_wall>
+	<up_wall></up_wall>
+	<down_wall></down_wall>
+	<info_wall></info_wall>
+	<pageup_wall>Zur nächsten/vorherigen Seite</pageup_wall>
+	<pagedown_wall></pagedown_wall>
+	<mute_wall></mute_wall>
+	<menu_wall>Öffne/Schliesse Menü</menu_wall>
+	<eject_wall>Eversion beenden</eject_wall>
+	<search_wall>Öffne Menü</search_wall>
+	<red_wall>Rot :</red_wall>
+	<redlink_wall>Zum Home-Screen</redlink_wall>
+	<green_wall>Grün:</green_wall>
+	<greenlink_wall>Zum Home-Screen</greenlink_wall>
+	<yellow_wall>Gelb:</yellow_wall>
+	<yellowlink_wall>Zum Home-Screen</yellowlink_wall>
+	<blue_wall>Blau:</blue_wall>
+	<bluelink_wall>Beenden & Apps-Center starten</bluelink_wall>
+	<enter_wall>Öffne Film / TV-Show / Set Seite</enter_wall>
+	<stop_wall></stop_wall>
+	<play_wall>Wiedergabe Video / Playliste</play_wall>
+	<play_alt1_wall></play_alt1_wall>
+	<pause_wall></pause_wall>
+	<rewind_wall></rewind_wall>
+	<fastforward_wall></fastforward_wall>
+	<skipback_wall></skipback_wall>
+	<skipforward_wall></skipforward_wall>
+
+	<!-- SET -->
+	<keypad_set>Springe an Position Set-Wand (0=0%, 1=10%,…)</keypad_set>
+	<home_set>Zum Home-Screen</home_set>
+	<home_set_pb>Eversion beenden</home_set_pb>
+	<return_set>Ein Schritt zurück</return_set>
+	<left_set>Navigiere hoch/runter</left_set>
+	<hyperscroll_set>(gedrückt halten für schnelles scrollen)</hyperscroll_set>
+	<right_set></right_set>
+	<up_set></up_set>
+	<down_set></down_set>
+	<info_set></info_set>
+	<pageup_set>Zur nächsten/vorherigen Seite</pageup_set>
+	<pagedown_set></pagedown_set>
+	<mute_set></mute_set>
+	<menu_set>Öffne/Schliesse Menü</menu_set>
+	<eject_set>Eversion beenden</eject_set>
+	<search_set>Öffne Menü</search_set>
+	<red_set>Rot :</red_set>
+	<redlink_set>Zum Home-Screen</redlink_set>
+	<green_set>Grün:</green_set>
+	<greenlink_set>Zum Home-Screen</greenlink_set>
+	<yellow_set>Gelb:</yellow_set>
+	<yellowlink_set>Zum Home-Screen</yellowlink_set>
+	<blue_set>Blau:</blue_set>
+	<bluelink_set>Beenden & Apps-Center starten</bluelink_set>
+	<enter_set>Öffne Film / TV-Show Detail Seite</enter_set>
+	<stop_set></stop_set>
+	<play_set>Wiedergabe Video / Playliste</play_set>
+	<play_alt1_set></play_alt1_set>
+	<pause_set></pause_set>
+	<rewind_set></rewind_set>
+	<fastforward_set></fastforward_set>
+	<skipback_set></skipback_set>
+	<skipforward_set></skipforward_set>
+
+	<!-- MOVIE -->
+	<keypad_movie>Wähle Teil eines Multi-Part Films (1=Teil1, 2=Teil2,…)</keypad_movie>
+	<home_movie>Zum Home-Screen</home_movie>
+	<home_movie_pb>Eversion beenden</home_movie_pb>
+	<return_movie>Ein Schritt zurück</return_movie>
+	<left_movie>Navigiere hoch/runter/links/rechts</left_movie>
+	<hyperscroll_movie>*Nur in Film-Info Popup</hyperscroll_movie>
+	<right_movie></right_movie>
+	<up_movie></up_movie>
+	<down_movie></down_movie>
+	<info_movie>Zeige Film-Info Popup*</info_movie>
+	<info_alt1_movie>(Extras, Trailers, Handlung)</info_alt1_movie>
+	<pageup_movie></pageup_movie>
+	<pagedown_movie></pagedown_movie>
+	<mute_movie></mute_movie>
+	<menu_movie>Öffne/Schliesse Menü</menu_movie>
+	<eject_movie>Eversion beenden</eject_movie>
+	<search_movie>Öffne Menü</search_movie>
+	<red_movie>Rot :</red_movie>
+	<redlink_movie>Nächster Detail-Screen</redlink_movie>
+	<green_movie>Grün:</green_movie>
+	<greenlink_movie>Vorheriger Detail-Screen</greenlink_movie>
+	<yellow_movie>Gelb:</yellow_movie>
+	<yellowlink_movie>Zum Home-Screen</yellowlink_movie>
+	<blue_movie>Blau:</blue_movie>
+	<bluelink_movie>Beenden & Apps-Center starten</bluelink_movie>
+	<enter_movie>Wiedergabe/Öffne MultiPart Auswahl</enter_movie>
+	<enter_alt1_movie>*In Film-Info: Wiedergabe Trailer & Extras</enter_alt1_movie>
+	<stop_movie></stop_movie>
+	<play_movie></play_movie>
+	<play_alt1_movie></play_alt1_movie>
+	<play_movie_pb>Wiedergabe/Öffne MultiPart Auswahl</play_movie_pb>
+	<play_alt1_movie_pb>*In Film-Info: Wiedergabe Trailer & Extras</play_alt1_movie_pb>
+	<pause_movie></pause_movie>
+	<rewind_movie></rewind_movie>
+	<fastforward_movie></fastforward_movie>
+	<skipback_movie></skipback_movie>
+	<skipforward_movie></skipforward_movie>
+
+	<!-- TV -->
+	<keypad_tv>Springe an Position (0=0%, 1=10%,…)</keypad_tv>
+	<home_tv>Zum Home-Screen</home_tv>
+	<home_tv_pb>Eversion beenden</home_tv_pb>
+	<return_tv>Ein Schritt zurück</return_tv>
+	<left_tv>Navigiere hoch/runter</left_tv>
+	<hyperscroll_tv></hyperscroll_tv>
+	<right_tv></right_tv>
+	<up_tv></up_tv>
+	<down_tv></down_tv>
+	<info_tv></info_tv>
+	<pageup_tv>Zur nächsten/vorherigen Serien Seite</pageup_tv>
+	<pagedown_tv></pagedown_tv>
+	<mute_tv></mute_tv>
+	<menu_tv>Öffne/Schliesse Menü</menu_tv>
+	<eject_tv>Eversion beenden</eject_tv>
+	<search_tv>Öffne Menü</search_tv>
+	<red_tv>Rot :</red_tv>
+	<redlink_tv>Zum Home-Screen</redlink_tv>
+	<green_tv>Grün:</green_tv>
+	<greenlink_tv>Zum Home-Screen</greenlink_tv>
+	<yellow_tv>Gelb:</yellow_tv>
+	<yellowlink_tv>Zum Home-Screen</yellowlink_tv>
+	<blue_tv>Blau:</blue_tv>
+	<bluelink_tv>Beenden & Apps-Center starten</bluelink_tv>
+	<enter_tv>Wiedergabe ausgewählte Episode</enter_tv>
+	<enter_alt1_tv></enter_alt1_tv>
+	<stop_tv></stop_tv>
+	<enter_tv>Wiedergabe ausgewählte Folge</enter_tv>
+	<play_tv>Wiedergabe alle (starte mit gewählter)</play_tv>
+	<play_alt1_tv></play_alt1_tv>
+	<pause_tv>Wiedergabe zufällige Folge</pause_tv>
+	<rewind_tv></rewind_tv>
+	<fastforward_tv>Wiedergabe letzte Folge</fastforward_tv>
+	<skipback_tv></skipback_tv>
+	<skipforward_tv></skipforward_tv>
+	<!-- END HELP -->
+</translation>

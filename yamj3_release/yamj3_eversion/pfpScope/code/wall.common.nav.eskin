@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+
+	<!-- Index name -->
+	<image>
+		<name>navpos1</name>
+		<file>[:@media:]wall/nav.index.bg.png</file>
+		<posx>139</posx>
+		<posy>98</posy>
+		<width>312</width>
+		<height>32</height>
+	</image>
+	<text>
+		<name>indexname</name>
+		<display>[:@indexname,upper:]</display>
+		<posx>145</posx>
+		<posy>101</posy>		
+		<width>275</width>
+		<height>32</height>
+		<size>20</size>
+		<align>right</align>
+		<color>active.index.color</color>
+	</text>	
+
+	<!-- Media Count -->
+	<image>
+		<name>mcount.bg</name>
+		<file>[:@media:]wall/nav.media.count.bg.png</file>
+		<posx>1084</posx>
+		<posy>98</posy>
+		<width>180</width>
+		<height>32</height>
+	</image>
+	<text>
+		<name>indexkind</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<display>[:@indexkind,upper:]</display>
+		<posx>1094</posx>
+		<posy>101</posy>		
+		<width>95</width>
+		<height>32</height>
+		<size>20</size>
+		<color>info.color1</color>
+	</text>
+	<text>
+		<name>total</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<display>[:@totaltiles:]</display>
+		<posx>1180</posx>
+		<posy>101</posy>		
+		<width>59</width>
+		<height>32</height>
+		<size>20</size>
+		<align>right</align>
+		<color>data.color</color>
+	</text>	
+
+	<!-- Page Nav -->
+	<image>
+		<name>pagenav.bg</name>
+		<file>[:@media:]wall/nav.page.bg.png</file>
+		<posx>1002</posx>
+		<posy>597</posy>
+		<width>260</width>
+		<height>32</height>
+	</image>		
+	<text>
+		<name>page_prompt</name>
+		<display>[:%page,upper:]</display>
+		<posx>1013</posx>
+		<posy>600</posy>
+		<width>83.95</width>
+		<height>32</height>
+		<size>20</size>  
+		<color>info.color1</color>
+	</text>		
+	<text>
+		<name>pagenavfull</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<display>[:@pagecurrent:] / [:@pagetotal:]</display>
+		<align>right</align>
+		<posx>1077</posx>
+		<posy>600</posy>
+		<width>80</width>
+		<height>32</height>
+		<size>20</size>  
+		<color>data.color</color>
+	</text>	
+	<text>
+		<name>cursorloc</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<display>[:@curpos:]</display>
+		<align>right</align>
+		<posx>1170</posx>
+		<posy>600</posy>
+		<width>80</width>
+		<height>32</height>
+		<size>20</size>  
+		<color>data.color</color>
+	</text>	
+
+	
+</eskin>

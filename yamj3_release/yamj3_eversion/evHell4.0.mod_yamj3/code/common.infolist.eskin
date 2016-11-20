@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>	
+
+	<image>
+		<name>bottombar</name>
+		<file>[:@media:]common/bottombar2.swf</file>
+		<posx>0</posx>
+		<posy>690</posy>
+		<width>1280</width>
+		<height>30</height>
+	</image>
+
+	<text>
+		<name>videosource</name>
+		<display>[:videoSource,upper,blank:]</display>
+		<posx>5</posx>
+		<posy>694</posy>
+		<width>100</width>
+		<height>30</height>
+		<size>19</size>  
+		<align>center</align>
+		<color>mediainfo.color</color>
+	</text>	
+	<text>
+		<name>smartcontainer</name>
+		<display>[:smartcontainer,upper,blank:]</display>
+		<posx>100</posx>
+		<posy>694</posy>
+		<width>100</width>
+		<height>30</height>
+		<size>19</size>  
+		<align>center</align>
+		<color>mediainfo.color</color>
+	</text>	
+	<text>
+		<name>smartvideocodec</name>
+		<display>[:smartvideocodec,upper,blank:]</display>
+		<posx>200</posx>
+		<posy>694</posy>
+		<width>100</width>
+		<height>30</height>
+		<size>19</size>  
+		<align>center</align>
+		<color>mediainfo.color</color>
+	</text>	
+	
+	<text>
+		<name>smartres</name>
+		<display>[:smartres,upper,blank:]</display>
+		<posx>300</posx>
+		<posy>694</posy>
+		<width>100</width>
+		<height>30</height>
+		<size>19</size>  
+		<align>center</align>
+		<color>mediainfo.color</color>
+	</text>	
+	
+	<text>
+		<name>smartaspect</name>
+		<display>[:smartaspect,upper,blank:]</display>
+		<posx>400</posx>
+		<posy>694</posy>
+		<width>100</width>
+		<height>30</height>
+		<size>19</size>  
+		<align>center</align>
+		<color>mediainfo.color</color>
+	</text>	
+	
+	<text>
+		<name>smartaudiocodec</name>
+		<display>[:smartaudiocodec,upper,blank:]</display>
+		<posx>500</posx>
+		<posy>694</posy>
+		<width>100</width>
+		<height>30</height>
+		<size>19</size>  
+		<align>center</align>
+		<color>mediainfo.color</color>
+	</text>	
+	
+	<text>
+		<name>smartchannels</name>
+		<display>[:smartchannels,upper,blank:]</display>
+		<posx>600</posx>
+		<posy>694</posy>
+		<width>100</width>
+		<height>30</height>
+		<size>19</size>  
+		<align>center</align>
+		<color>mediainfo.color</color>
+	</text>	
+	<text>
+		<name>titlesmall2</name>
+		<segname>eplist</segname>
+		<hyper>4</hyper>
+		<display>[:title,trun31:]</display>
+		<posx>700</posx>
+		<posy>694</posy>
+		<width>350</width>
+		<height>30</height>
+		<size>19</size>  
+		<align>center</align>
+		<color>mediainfo.color</color>
+		<hyper>3</hyper>
+	</text>
+	
+	<text>
+		<name>rating</name>
+		<display>[:score5:] / 5</display>
+		<posx>1050</posx>
+		<posy>694</posy>
+		<width>100</width>
+		<height>30</height>
+		<size>19</size>  
+		<color>mediainfo.color</color>
+		<align>center</align>
+	</text>	
+
+	<if>
+		<condition>[:score:] != UNKNOWN</condition>
+		<image>
+			<name>rating_image</name>
+			<segname>eplist</segname>
+			<swap>true</swap>
+			<file>[:@media:]common/star/star[:score,round,blank:].swf</file>
+			<posx>1176</posx>
+			<posy>698</posy>
+			<width>74</width>
+			<height>14</height>
+			<hyper>3</hyper>
+		</image>		
+	</if>
+	<if>
+		<condition>[:score:] != UNKNOWN</condition>
+		<image>
+			<name>rating_image</name>
+			<segname>index</segname>
+			<swap>true</swap>
+			<file>[:@media:]common/star/star[:score,round,blank:].swf</file>
+			<posx>1176</posx>
+			<posy>698</posy>
+			<width>74</width>
+			<height>14</height>
+			<hyper>3</hyper>
+		</image>		
+	</if>
+
+</eskin>

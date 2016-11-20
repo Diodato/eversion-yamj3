@@ -27,8 +27,9 @@ class ev.Loadimage {
 	public static var lastsuccess=null;
 
 	public static function load(loadImgMCId:String, parentMC:MovieClip, x:Number, y:Number, width:Number, height:Number, url:String, alt:String,keepaspect:Boolean,valigned,haligned,hl:Boolean):Void
-	{
-		if(url==undefined || url==null || url=="UNKNOWN" || url.length<5 || StringUtil.endsWith(url,"UNKNOWN")) return;
+	{	
+		//trace ("Loadimage  load: url : " + url)
+		if(url==undefined || url==null || url=="UNKNOWN" || url.length<5 || StringUtil.endsWith(url,"UNKNOWN") || StringUtil.endsWith(url,"undefined")) return;
 		if(height<3||width<3) return;
 
 		if(parentMC[loadImgMCId]._visible == true) return;

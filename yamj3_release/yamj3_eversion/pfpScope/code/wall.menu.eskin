@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<passthrough>wall.menu.themenu</passthrough>
+   </control>
+	<image>
+		<name>dropdown.bg</name>
+		<file>[:@media:]wall/menu.bg.png</file>
+		<posx>230</posx>
+		<posy>100</posy>
+		<width>210</width>
+		<height>338</height>
+	</image>
+</eskin>

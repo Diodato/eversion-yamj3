@@ -108,7 +108,7 @@ class ev.Cfile {
 			trace(".. "+myXML.length+" blocks in the file");
 			for (var i=0; i<myXML.length; i++) {
 				var blockName=myXML[i].nodeName.toString().toLowerCase();
-				trace(".. block: "+blockName);
+			//	trace(".. block: "+blockName);
 
 				switch(blockName) {
 					case 'item':
@@ -212,7 +212,7 @@ class ev.Cfile {
 	}
 
 	private function cf_item(xml:XML) {
-		trace(".. processing item");
+	//	trace(".. processing item");
 
 		var newxml:Array=Data.arrayXML(xml);
 		if(newxml==null || newxml==undefined) {

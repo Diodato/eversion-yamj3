@@ -1,0 +1,66 @@
+<settings>	
+	<menuHOME>home_zap</menuHOME>
+	<!-- Show current temperature and weather (PCH A/C-300 like) -->
+	<current_weather>true</current_weather>
+	<!-- Show 3-day weather forecast (PCH C-300 like) -->
+	<home_forecast>true</home_forecast>
+	
+	<!-- ##########  DETAIL PAGES  ########## -->	
+	
+	<!-- choose what MOD you want value available are -->
+	<!--  movie for the original evZap without MOD  -->
+	<!--  movie_people for people mod only -->
+	<!--  movie_people_list for people and and dynamic list --> 
+
+	<!-- when people mod hit = or info in detail page --> 
+		<detailsMOVIE>movie_people_list</detailsMOVIE> 
+	<!-- set people index with fanart and biography -->
+		<indexPEOPLE>people.poster.fanart.bio</indexPEOPLE> 
+
+	<!--  compatible value movie2 for overlays MOD only, uncomment the index pages bellow, install legion_evzap_overlays mandatory -->
+
+
+	<!-- Show maximum people poster (true/false) if true display 8 posters otherwise display the maximum according with the plot lenght -->
+		<people_max_poster>true</people_max_poster>
+
+	<!-- Categories for home/side menu -->
+	<!-- Other,Genres,Title,Certification,Year,Library,Cast,Director,Writer,Country,Set,Award,Person,Ratings -->
+	<!-- added userlist3 for people menu -->
+
+		<menulist>Other,Genres,Title,Library,Year,Set,Ratings,Person</menulist>
+		<userlist3>Cast,Director,Writer,Person</userlist3>
+
+	<!-- to increase the movie cover quality, set below to 'true',... cause evZap to use
+         posters for the movie wall instead of thumbnails.    -->
+    		<large_screen_tv>true</large_screen_tv>
+    	<!-- set to 'true' to display movie versions/movie collections/tv series -->
+    		<display_movie_version>true</display_movie_version>
+    	<!-- for testing ...  displays  :mtype: :smartres: :videoSource:  over each movie -->
+    		<display_movie_type>false</display_movie_type> 
+
+
+	<!-- ##########  INDEX PAGES with Overlays MOD (uncomment if you want to enable this MOD)  ########## -->
+    	<!-- indexindex is everything else. Values: wallfull, infowall -->
+    	<!--	<indexINDEX>wallfull2</indexINDEX> -->
+    	<!-- indexmovie is the Movies and New-Movies index. Values: wallfull, infowall -->
+    	<!--	<indexMOVIE>wallfull2</indexMOVIE> -->
+    	<!-- indexmovieset is a boxset of movies. Values: infolist -->
+    	<!--	<indexMOVIESET>infolist2</indexMOVIESET> -->
+    	<!-- indextvset is a tv show set of seasons. Values: infolistbanner -->
+    	<!--	<indexTVSET>infolistbanner2</indexTVSET> -->
+
+ 	<!-- ##########  WEATHER SETTINGS  ########## -->
+	<!-- Temperatur unit: °C/°F (values: C, F)  -->
+	<units>c</units>
+	<!-- Weather city code. To find out goto http://edg3.co.uk/snippets/weather-location-codes/  -->
+	<!-- Examples: GMXX0087 = Munich, GMXX0007 = Berlin, USNY0996 = New York -->
+	<citycode>FRPA0428</citycode>  <!-- this one is for home menu weather data -->
+	<citycode1>FRPA0428</citycode1>   <!-- peynier -->
+	<citycode2>FRXX0076</citycode2>   <!-- aix -->
+	<citycode3>FRXX0001</citycode3>   <!-- marseille -->
+
+
+	<!-- ##########  COMMON SETTINGS  ########## -->
+	<!-- Skin language. Has effect on date (values: EN, DE, FR; default = EN) -->
+	<skinlang>fr</skinlang>
+</settings>

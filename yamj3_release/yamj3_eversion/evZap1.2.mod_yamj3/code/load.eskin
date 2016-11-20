@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+	<info>
+	  <name>evZap1.2.mod_yamj3</name>
+	  <version>1.0</version>
+	  <homepage>http://www.dentedboxes.com</homepage>
+	  <language>fr_zap.xml</language>
+	</info>
+	<settings>
+	    <starttype>home</starttype>
+		<home default="home">home,home_ev,home_v8,home_300,home_zap</home>	
+		<menu>menu</menu>
+		<index default="wallfull">infowall,infobanner,infobanner2col,infolist,wallfull,wallfull2row,infolistbanner,wallfullbanner2col,wallfullbanner,people.poster.fanart.bio2</index> 
+		<movie default="movie">movie,movie_people,movie_people_list</movie>
+		<tv default="tv1">tv1,tv2</tv>
+	</settings>
+</eskin>

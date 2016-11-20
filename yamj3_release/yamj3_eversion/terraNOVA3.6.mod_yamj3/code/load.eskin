@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<eskin>
+
+	<!-- Skin Information -->
+
+<info>
+<name>terraNOVA</name>
+<version>v3.6</version>
+<homepage>http://www.dentedboxes.com</homepage>
+</info>
+
+	<!-- Default Settings -->
+
+<settings>
+
+<starttype>home</starttype>
+
+<home>home</home>	
+
+<menu>menu.1.outline</menu>
+
+<index default="movie.wall.(1).8">
+movie.list.(1).8,
+movie.list.(1).15,
+movie.wall.(1).8,
+movie.wall.(1).24,
+movie.wall.(1).48,
+movie.wall.(2).1.outline,
+movie.wall.(2).2.plot,
+movie.wall.(2).3.cast,
+movie.wall.(2).4.details,
+movie.wall.(2).5.fanart,
+movie.wall.(2).6.all.awards,
+movie.wall.(2).7.all.trailers,
+people.wall.custom,
+tv.banner.(1).14,
+tv.banner.(1).21,
+tv.banner.(2).8,
+tv.banner.(3).details
+</index>
+
+<movie default="movie.wall.(2).1.outline">
+movie.wall.(2).1.outline,
+movie.wall.(2).2.plot,
+movie.wall.(2).3.cast,
+movie.wall.(2).4.details,
+movie.wall.(2).5.fanart,
+movie.wall.(2).6.all.awards,
+movie.wall.(2).7.all.trailers
+</movie>
+
+<tv default="tv.banner.(3).1.outline.full">
+tv.banner.(3).1.outline.full,
+tv.banner.(3).2.outline.half,
+tv.banner.(3).3.episodes,
+tv.banner.(3).4.cast,
+tv.banner.(3).5.fanart
+</tv>
+
+</settings>
+
+</eskin>

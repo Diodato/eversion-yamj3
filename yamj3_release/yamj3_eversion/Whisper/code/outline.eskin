@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!-- Segements - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:segment -->	
+<!-- Segements-tiles - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:tile -->	
+<!-- Artwork Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:artvariables -->	
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+
+	<text>
+		<name>outline</name>
+		<segname>eplist</segname>  <!-- segname and hyper are necessary for the TV episode list -->
+		<hyper>4</hyper>
+		<display>[:smartoutline:]</display>  <!-- Eversion variable holding the outline -->
+		<posx>298</posx>
+		<posy>476</posy>		
+		<width>466</width>
+		<height>200</height>
+		<size>22</size>
+		<wordwrap>true</wordwrap>  <!-- By default is false -->
+		<color>movie.title.color</color>
+	</text>
+</eskin>

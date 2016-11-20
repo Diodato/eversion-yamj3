@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Control file for MENU of Eversion evstreamed eskin. 
+
+For more info: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:control
+-->
+<control>
+	<insert>
+		<info>menulist</info>
+		<action>PRELOAD</action>
+		<file>wall.menu.catlist</file>
+        <data>index</data>		
+	</insert>
+	<insert>
+		<info>playrom</info>
+	</insert>	
+</control>

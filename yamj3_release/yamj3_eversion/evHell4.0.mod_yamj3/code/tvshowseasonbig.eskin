@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+
+	<background>
+		<file>[:@media:]backgrounds/background_[:#tvshowseasonbg:].swf</file>
+	</background>
+		
+	<image>
+		<name>bottombgr</name>
+		<file>[:@media:]wall/bottom.swf</file>
+		<posx>0</posx>
+		<posy>686</posy>
+		<width>1280</width>
+		<height>34</height>
+	</image>
+	
+	<image>
+		<name>SeasonImg</name>
+		<condition>[:#tvshowseasonbig:] == true</condition>
+		<file>[:@media:]movie/season/[:season:].swf</file>
+		<posx>30</posx>
+		<posy>30</posy>
+<!--	<width>150</width> -->
+		<height>150</height>
+		<keepaspect>true</keepaspect>
+		<haligned>left</haligned>
+		<valigned>top</valigned>
+		<hyper>4</hyper>
+		<segname>index</segname>
+	</image>
+	
+
+	<text>
+		<name>season_prompt</name>
+		<display>[:%season:]</display>
+		<segname>index</segname>
+		<posx>3</posx>
+		<posy>686</posy>
+		<bold>true</bold>
+		<width>80</width>
+		<height>34</height>
+		<size>26</size>  
+		<color>99CCFF</color>
+		<align>left</align>
+	</text>	
+	
+	<image>
+		<name>clearLogoFile</name>
+		<file>[:@jukebox:][:clearLogoFile:]</file>
+		<posx>440</posx>
+		<posy>530</posy>
+<!--	<width>400</width> -->
+		<height>155</height>
+		<keepaspect>true</keepaspect>
+		<haligned>left</haligned>
+		<valigned>top</valigned>
+		<segname>index</segname>
+	</image>
+	
+	<segment>
+		<name>index</name>
+		<startx>80</startx>
+		<starty>686</starty>
+		<endx>1280</endx>
+		<endy>720</endy>
+		<scroll>1</scroll>
+	
+		<tile>
+			<cols>24</cols>
+			<rows>1</rows>
+			<width>50</width>
+			<height>34</height>
+			<text>
+				<name>mcSeason</name>
+				<display>[:season:]</display>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>30</width>
+				<height>34</height>
+				<size>26</size>  
+				<bold>true</bold>
+				<align>center</align>
+				<color>768686</color>
+				<hlcolor>FFFFFF</hlcolor>
+			</text>	
+			<image>
+				<name>watched1</name>
+				<condition>[:#showwatchedonwalls:] == true</condition>
+				<file>[:@media:]movie/epwatched[:watched:].swf</file>
+				<posx>30</posx>
+				<posy>10</posy> 
+				<width>20</width>
+				<height>20</height>
+				<haligned>center</haligned>
+			</image>
+		</tile>
+		<fanart>
+			<file>[:@jukebox:][:fanart1large:]</file>
+			<hyper>3</hyper>
+		</fanart>	
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>		
+	</segment>	
+	
+</eskin>

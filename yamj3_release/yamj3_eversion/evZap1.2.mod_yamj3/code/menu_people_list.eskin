@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>false</fullscreen>
+		<passthrough>themenu_people_list</passthrough>
+    </control>
+	<image>
+		<name>menubg</name>
+		<file>[:@media:]common/menubg.png</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>350</width>
+		<height>720</height>
+	</image>
+	<remote>
+		<button>REPEAT</button>
+		<action>RESET</action>
+		<title>[:%reset:]</title>
+	</remote>	
+</eskin>

@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>
+
+	<include>common.infolist</include>	
+	
+	<image>
+		<name>episodebg</name>
+		<file>[:@media:]movie/episodebglow.swf</file>
+		<posx>0</posx>
+		<posy>390</posy>
+		<width>1280</width>
+		<height>300</height>
+	</image>
+	
+	<image>
+		<name>clearlogo</name>
+		<file>[:@jukebox:][:clearLogoFile:]</file>
+		<posx>5</posx>
+		<posy>5</posy>
+<!--	<width>400</width> -->
+		<height>120</height>
+		<keepaspect>true</keepaspect>
+		<haligned>left</haligned>
+		<valigned>top</valigned>
+	</image>
+	
+	<image>
+		<name>videoimage</name>
+		<segname>eplist</segname>
+		<file>[:@jukebox:][:videoimage:]</file>
+		<posx>5</posx>
+		<posy>397</posy> 
+		<width>420</width>
+<!-- 	<height>300</height> -->
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>top</valigned>
+		<hyper>4</hyper>
+	</image>
+	
+	<text>
+		<name>seasonprompt</name>
+		<segname>eplist</segname>
+		<display>Season [:season,blank:]</display>
+		<bold>true</bold>
+		<posx>740</posx>
+		<posy>395</posy>
+		<width>310</width>
+		<height>40</height>
+		<size>30</size>  
+		<color>BCBEC0</color>
+		<hyper>4</hyper>
+	</text>	
+		
+	<text>
+		<name>outline</name>
+		<segname>eplist</segname>
+		<display>[:smartplot,blank:]</display>
+		<posx>425</posx>
+		<posy>395</posy>
+		<width>310</width>
+		<height>295</height>
+		<size>17</size>  
+		<wordwrap>true</wordwrap>
+		<color>efdfcd</color>
+		<hyper>4</hyper>
+	</text>	
+
+	<segment>
+		<name>eplist</name>
+		<datasource>episodes</datasource>
+		<startx>740</startx>
+		<starty>429</starty> 
+		<endx>1280</endx>
+		<endy>690</endy> 
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]movie/episodecursor.swf</file>
+			<above>false</above>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>540</width>
+			<height>32</height>  
+		</cursor>		
+		<tile>
+			<cols>1</cols>
+			<rows>8</rows>
+			<width>540</width>
+			<height>32</height>
+			<text>
+				<name>mc</name>
+				<display>[:episode:]. [:title:]</display>
+				<posx>2</posx>
+				<posy>4</posy>
+				<width>440</width>
+				<height>32</height>
+				<size>19</size>  
+				<align>left</align>
+				<color>BCBEC0</color>
+				<hlcolor>000000</hlcolor>
+			</text>	
+
+			<text>
+				<name>ma</name>
+				<display>[:aired:]</display>
+				<posx>440</posx>
+				<posy>4</posy>
+				<width>100</width>
+				<height>32</height>
+				<size>19</size>  
+				<align>left</align>
+				<color>BCBEC0</color>
+				<hlcolor>000000</hlcolor>
+			</text>	
+			<image>
+				<name>epwatched</name>
+				<file>[:@media:]movie/epwatched[:watched:].swf</file>
+				<posx>415</posx>
+				<posy>4</posy> 
+				<width>25</width>
+				<height>25</height>
+			</image>
+		</tile>
+		<remote>
+			<button>PLAY</button>
+			<action>PLAYFROMHERE</action>	
+		</remote>		
+		<remote>
+			<button>PAUSE</button>
+			<action>PLAYRANDOM</action>	
+		</remote>		
+		<remote>
+			<button>SELECT</button>
+			<action>PLAYSINGLE</action>	
+		</remote>	
+		<remote>
+			<button>FASTFORWARD</button>
+			<action>PLAYLAST</action>	
+		</remote>	
+		
+
+		
+	</segment>	
+	
+<!-- TV Show popup -->
+	<remote>
+		<button>RED</button>
+		<action>EXTRA</action>	
+		<file>tvshowpopup</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>tvshowpopup</file>
+	</remote>
+	
+<!-- TV Show cast -->
+	<remote>
+		<button>GREEN</button>
+		<action>EXTRA</action>	
+		<file>tvshowinfocast</file>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>EXTRA</action>	
+		<file>tvshowinfocast</file>
+	</remote>
+	
+<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>tvdetailpopup</file>
+	</remote>	
+	<remote>
+		<button>SPACE</button>
+		<action>EXTRA</action>	
+		<file>tvdetailpopup</file>
+	</remote>
+	
+<!-- Fanart only -->
+	<remote>
+		<button>YELLOW</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	
+<!-- Back -->	
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>
+	
+</eskin>

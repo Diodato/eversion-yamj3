@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>false</fullscreen>
+    </control>
+	<text>	
+		<name>title</name>
+		<display>[:%person,upper:]</display>
+		<posx>10</posx>
+		<posy>10</posy>
+		<width>330</width>
+		<height>45</height>
+		<size>30</size>
+		<align>center</align>
+		<color>1F4973</color>
+	</text>	
+	<segment>
+        <name>peoplelist</name>
+        <datasource>people</datasource>
+		<hyperscroll>false</hyperscroll>
+		<startx>20</startx>
+		<starty>50</starty>
+		<scroll>2</scroll>
+		<cursor>
+           <file>[:@media:]common/cursor.325.25.1.2.C5EAFF.true.phf</file> 
+            <above>true</above>
+            <posx>0</posx>
+            <posy>2</posy>
+        </cursor>       
+        <tile>
+			<cols>1</cols>
+			<rows>22</rows>
+			<width>320</width>
+			<height>30</height>
+            <text>
+                <name>mcTitle</name>
+                <display>[:person@name:] - [:person@job,evtrans:]</display> 
+              	<posx>10</posx>
+				<posy>0</posy>
+				<width>315</width>
+				<height>30</height>
+				<size>22</size>
+				<color>808080</color>
+				<hlcolor>FFFFFF</hlcolor>
+            </text>    
+        </tile>   
+		<remote>
+			<button>EQUAL</button>
+			<action>EXTRA</action>	
+			<file>menu</file>
+		</remote>		
+		<remote>
+			<button>INFO</button>
+			<action>EXTRA</action>	
+			<file>menu</file>
+		</remote>	
+<!--		<remote>
+		<condition>[:person:] !== UNKNOWN</condition>
+            <button>ENTER</button>
+            <action>SWITCH</action>    
+            <data>Person_[:person@index:]_1</data>    
+        </remote> -->
+		
+<!--		with yamj3 , couldn't get this remote available -->
+		<remote>
+            <button>ENTER</button>
+            <action></action>    
+            <data>2</data>    
+        </remote>
+    </segment> 
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>2</data>
+	</remote>	
+	<remote>
+	   <button>MENU</button>
+	   <action>BACK</action>
+	   <data>2</data>
+	</remote>	
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+</eskin>

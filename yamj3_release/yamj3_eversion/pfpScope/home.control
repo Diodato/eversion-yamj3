@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Control file for home page of Eversion evstreamed eskin. 
+
+For more info: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:control
+-->
+<control>
+	<insert>
+		<info>homelist</info>
+	</insert>
+	<insert>
+		<info>playrom</info>
+	</insert>	
+	<item>
+		<action>exit</action>
+		<title>[:%exit:]</title>
+	</item>
+</control>

@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>false</fullscreen>
+    </control>
+	
+	<image>
+		<name>infopopbg</name>
+		<file>[:@media:]movie/moviedetailsbgr.swf</file>
+		<posx>365</posx>
+		<posy>60</posy>
+		<width>550</width>
+		<height>600</height>
+	</image>
+
+	<image>
+		<name>cert</name>
+		<file>[:@media:]movie/cert/[:#categorycert,lower:]/[:flagcertification,nospaces,lower:].swf</file>
+		<posx>845</posx>
+		<posy>70</posy>
+		<width>60</width>
+		<height>30</height>
+	</image>
+	
+	<text>
+		<name>plot_prompt</name>
+		<display>Plot:</display>
+		<posx>380</posx>
+		<posy>76</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+
+	<text>
+		<name>plot</name>
+		<display>[:smartplot,blank:]</display>
+		<posx>380</posx>
+		<posy>98</posy>
+		<width>500</width>
+		<height>262</height>
+		<wordwrap>true</wordwrap>
+		<size>18</size>  
+		<color>movie.plot.color</color>
+	</text>	
+	
+	<text>
+		<name>genre_prompt</name>
+		<display>[:%genres:]:</display>
+		<posx>380</posx>
+		<posy>360</posy>
+		<width>100</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>99CCFF</color>
+	</text>
+	
+	<text>
+		<name>genre</name>
+		<display>[:genres,3,blank:]</display>
+		<posx>480</posx>
+		<posy>360</posy>
+		<width>430</width>
+		<height>22</height>
+		<size>18</size>  
+		<wordwrap>true</wordwrap>
+		<color>efdfcd</color>
+	</text>	
+	
+	<text>
+		<name>runtime_prompt</name>
+		<display>[:%runtime:]:</display>
+		<posx>380</posx>
+		<posy>382</posy>
+		<width>100</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>99CCFF</color>
+	</text>
+	
+	<text>
+		<name>runtime</name>
+		<display>[:runtime,1,trun55,blank:]</display>
+		<posx>480</posx>
+		<posy>382</posy>
+		<width>430</width>
+		<height>22</height>
+		<size>18</size>  
+		<wordwrap>true</wordwrap>
+		<color>efdfcd</color>
+	</text>	
+	
+	<text>
+		<name>director_prompt</name>
+		<display>[:%directors:]:</display>
+		<posx>380</posx>
+		<posy>404</posy>
+		<width>100</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>99CCFF</color>
+	</text>
+	
+	<text>
+		<name>director</name>
+		<display>[:directors,3,blank:]</display>
+		<posx>480</posx>
+		<posy>404</posy>
+		<width>430</width>
+		<height>22</height>
+		<size>18</size>  
+		<wordwrap>true</wordwrap>
+		<color>efdfcd</color>
+	</text>	
+
+	<text>
+		<name>writer_prompt</name>
+		<display>[:%writers:]:</display>
+		<posx>380</posx>
+		<posy>426</posy>
+		<width>100</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>99CCFF</color>
+	</text>	
+	
+	<text>
+		<name>writer</name>
+		<display>[:writers,3,blank:]</display>
+		<posx>480</posx>
+		<posy>426</posy>
+		<width>430</width>
+		<height>22</height>
+		<size>18</size>  
+		<wordwrap>true</wordwrap>
+		<color>efdfcd</color>
+	</text>	
+	
+	<text>
+		<name>year_prompt</name>
+		<display>[:%year:]:</display>
+		<posx>380</posx>
+		<posy>448</posy>
+		<width>100</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>99CCFF</color>
+	</text>	
+	
+	<text>
+		<name>year</name>
+		<display>[:year,blank:]</display>
+		<posx>480</posx>
+		<posy>448</posy>
+		<width>430</width>
+		<height>22</height>
+		<size>18</size>  
+		<wordwrap>true</wordwrap>
+		<color>efdfcd</color>
+	</text>	
+	
+	<text>
+		<name>showStatus_prompt</name>
+		<display>[:%status:]:</display>
+		<posx>380</posx>
+		<posy>470</posy>
+		<width>100</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>99CCFF</color>
+	</text>	
+	
+	<text>
+		<name>showStatus</name>
+		<display>[:showStatus,blank:]</display>
+		<posx>480</posx>
+		<posy>470</posy>
+		<width>430</width>
+		<height>22</height>
+		<size>18</size>  
+		<wordwrap>true</wordwrap>
+		<color>efdfcd</color>
+	</text>	
+	
+	<image>
+		<name>company</name>
+		<file>[:@eskin:]evhell_overlay/resources/company/[:company,nospaces,lower:].png</file>
+		<posx>754</posx>
+		<posy>530</posy>
+		<width>161</width>
+		<height>109</height>
+	</image>	
+	
+	<text>
+		<name>companytext</name>
+		<display>[:company:]</display>
+		<posx>754</posx>
+		<posy>640</posy>
+		<width>161</width>
+		<height>16</height>
+		<size>13</size>
+		<align>center</align>
+		<color>movie.data.color</color>
+	</text>
+
+	
+	
+<!-- TV Show popup -->
+	<remote>
+		<button>RED</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	
+	<remote>
+		<button>COMMA</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>	
+
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>
+</eskin>

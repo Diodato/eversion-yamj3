@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+        <fullscreen>true</fullscreen>
+    </control>
+    <background>
+        <file>[:@media:]wall/background.png</file>
+    </background>
+	
+<!-- The bottom bar with page nav, title and total titles --> 	
+	<image>
+		<name>indexbg</name>
+		<file>[:@media:]common/blank.png</file>
+		<posx>1090</posx>
+		<posy>8</posy>
+		<width>150</width>
+		<height>33.30</height>
+	</image>
+	<text>
+		<name>indexname</name>
+		<display>[:@indexname:]</display>
+		<posx>1099</posx>
+		<posy>9</posy>		
+		<width>180</width>
+		<height>28</height>
+		<size>24</size>
+		<align>left</align>
+		<color>808080</color>
+	</text>
+	
+	<!-- The bottom left bar with the current page number and page total -->
+	<image>
+		<name>pagebg</name>
+		<file>[:@media:]common/blank.png</file>
+		<posx>35</posx>
+		<posy>674</posy>
+		<width>120</width>
+		<height>30</height>
+	</image>
+	<text>
+        <name>pagenavfull</name>
+        <segname>index</segname>
+        <hyper>4</hyper>
+        <display>[:@pagecurrent:] / [:@pagetotal:]</display>
+        <align>right</align>
+        <posx>40</posx>
+        <posy>673</posy>
+        <width>90</width>
+        <height>28</height>
+        <size>24</size>  
+        <color>808080</color>
+    </text>  
+
+<!-- Title that is centered on the bottom -->	
+    <text>
+        <name>title</name>
+        <segname>index</segname>
+        <display>[:fulltitle:]</display>
+        <posx>195</posx>
+        <posy>673</posy>
+        <width>880</width>
+        <height>37</height>
+        <size>32</size>  
+        <color>FFFFFF</color>
+        <align>center</align>
+        <hyper>4</hyper>
+    </text>
+	
+	<!-- The title number and the total of titles -->
+	<image>
+		<name>totalbg</name>
+		<file>[:@media:]wall/mediacountbg.png</file>
+		<posx>1090</posx>
+		<posy>674</posy>
+		<width>150</width>
+		<height>30</height>
+	</image>
+    <text>
+		<name>cursorloc</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<display>[:@curpos:]</display>
+		<align>right</align>
+		<posx>1098</posx>
+		<posy>673</posy>
+		<width>58</width>
+		<height>28</height>
+		<size>24</size>
+		<align>right</align>
+		<color>808080</color>
+    </text>
+    <text>
+        <name>total</name>
+        <display>[:@totaltiles:]</display>
+        <posx>1170</posx>
+        <posy>673</posy>        
+        <width>80</width>
+        <height>28</height>
+        <size>24</size>
+        <color>808080</color>
+    </text> 
+<!-- The thumbnails -->
+    <segment>
+        <name>index</name>
+        <startx>52</startx>
+        <starty>41</starty>
+        <endx>1261</endx>
+        <endy>665</endy>
+        <scroll>2</scroll>
+        <cursor>
+            <file>[:@media:]wall/cursor.png</file>
+            <above>true</above>
+            <posx>5</posx>
+            <posy>6</posy>
+            <width>142</width>
+            <height>200</height>  
+        </cursor>        
+        <tile>
+            <cols>8</cols>
+            <rows>3</rows>
+            <width>146</width>
+            <height>207</height>
+            <image>
+                <name>thumbnail</name>
+                <file>[:@jukebox:][:thumbnail:]</file> <!-- Eversion artwork variable holding the name of the thumbnail YAMJ created-->
+                <posx>10</posx>
+                <posy>10</posy>
+                <width>131</width>
+                <height>192</height>
+            </image>
+			<image>
+				<name>unwatched.overlay</name>
+				<condition>[:#wall.unwatched.overlay:] == true ++ [:watched:] != true</condition>  <!-- This block is done if the condition is true-->
+				<file>[:@media:]wall/1.eskin.used/unwatched.overlay.png</file>
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>65</width>
+				<height>64</height>
+			</image>
+			<image>
+				<name>watched.overlay</name>
+				<condition>[:#wall.watched.overlay:] == true ++ [:watched:] == true</condition>  <!-- This block is done if the condition is true-->
+				<file>[:@media:]wall/1.eskin.used/watched.overlay.png</file>
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>65</width>
+				<height>64</height>				
+			</image>				
+		</tile>
+        <remote>
+           <button>PLAY</button>
+           <action>PLAYALL</action>
+        </remote>            
+    </segment>   	
+</eskin> 

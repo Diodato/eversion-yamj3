@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Control file for home page of Eversion evstreamed eskin. 
+For more info: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:control
+-->
+<control>
+	<insert>
+		<info>homelist</info>
+	</insert>
+
+	<item>
+		<action>SWITCH</action>
+		<title>%trailers</title>
+		<originaltitle>trailers</originaltitle> 
+		<data>eskin://trailerwall</data>
+		<feed>http://trailers.lundman.net</feed>
+	</item>	
+	<item>
+		<action>SWITCH</action>
+		<title>categories</title>
+		<originaltitle>categories</originaltitle> 		
+		<data>menu</data>
+	</item>
+	
+	<item>
+		<action>SCREEN</action>
+		<title>people</title>
+		<originaltitle>people</originaltitle>
+		<file>people_menu</file>
+	</item>	
+	
+	<item>
+		<action>SCREEN</action>
+		<title>weather</title>
+		<originaltitle>weather</originaltitle>
+		<file>weather</file>
+	</item>	
+	<insert>
+		<info>playrom</info>
+	</insert>
+	<item>
+		<action>apps</action>
+		<title>%apps</title>
+		<originaltitle>apps</originaltitle>
+	</item>
+	<item>
+		<action>RESET</action>
+		<title>%reset</title>
+		<originaltitle>reset</originaltitle>
+	</item>	
+	<item>
+		<action>screen</action>
+		<file>about</file>
+		<title>%about</title>
+		<originaltitle>about</originaltitle>
+	</item>	
+	<item>
+		<action>screen</action>
+		<file>help_C200</file>
+		<title>Help</title>
+		<originaltitle>help</originaltitle>
+	</item>	
+	<item>
+		<action>exit</action>
+		<title>%exit</title>
+		<originaltitle>exit</originaltitle>
+	</item>
+</control>

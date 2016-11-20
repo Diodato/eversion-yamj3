@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- EVERSION French HELP prompts -->
+
+<translation>
+
+<help>Aide</help>
+<walls>Index</walls>
+<set>Set</set>
+<movie>Films</movie>
+<tv>TV</tv>	
+	
+<!-- WALL -->
+
+<keypad_wall>Aller a la position (0=0%, 1=10%,…)</keypad_wall>
+<home_wall>Aller ecran d'accueil</home_wall>
+<home_wall_pb>Sortie d'Eversion</home_wall_pb>
+<return_wall>Retour arriere</return_wall>
+<left_wall>Navigation haut/bas/gauche/droite</left_wall>
+<hyperscroll_wall>(maintenir pour aller plus rapidement)</hyperscroll_wall>
+<right_wall></right_wall>
+<up_wall></up_wall>
+<down_wall></down_wall>
+<info_wall></info_wall>
+<pageup_wall>Aller a la prochaine/precedente page</pageup_wall>
+<pagedown_wall></pagedown_wall>
+<mute_wall></mute_wall>
+<menu_wall>Ouvrir/Fermer menu</menu_wall>
+<eject_wall>Sortie d'Eversion</eject_wall>
+<search_wall>Ouvrir menu</search_wall>
+<red_wall>Rouge:</red_wall>
+<redlink_wall>Jump to Home screen</redlink_wall>
+<green_wall>Vert:</green_wall>
+<greenlink_wall>Aller ecran d'accueil</greenlink_wall>
+<yellow_wall>Jaune:</yellow_wall>
+<yellowlink_wall>Aller ecran d'accueil</yellowlink_wall>
+<blue_wall>Bleu:</blue_wall>
+<bluelink_wall>Sortie et aller a Apps center</bluelink_wall>
+<enter_wall>Ouvrir Selectionner Film/TV/Set page</enter_wall>
+<stop_wall></stop_wall>
+<play_wall>Jouer video / Jouer toutes les videos dans la liste de lecture</play_wall>
+<play_alt1_wall></play_alt1_wall>
+<pause_wall></pause_wall>
+<rewind_wall></rewind_wall>
+<fastforward_wall></fastforward_wall>
+<skipback_wall></skipback_wall>
+<skipforward_wall></skipforward_wall>
+	
+<!-- SET -->
+
+<keypad_set>Aller a la position (0=0%, 1=10%,…)</keypad_set>
+<home_set>Aller ecran d'accueil</home_set>
+<home_set_pb>Sortie d'Eversion</home_set_pb>
+<return_set>Retour arriere</return_set>
+<left_set>Navigation haut/bas/gauche/droite</left_set>
+<hyperscroll_set>(maintenir pour aller plus rapidement)</hyperscroll_set>
+<right_set></right_set>
+<up_set></up_set>
+<down_set></down_set>
+<info_set></info_set>
+<pageup_set>Aller a la prochaine/precedente page</pageup_set>
+<pagedown_set></pagedown_set>
+<mute_set></mute_set>
+<menu_set>Ouvrir/Fermer menu</menu_set>
+<eject_set>Sortie d'Eversion</eject_set>
+<search_set>Ouvrir menu</search_set>
+<red_set>Rouge:</red_set>
+<redlink_set>Jump to Home screen</redlink_set>
+<green_set>Vert:</green_set>
+<greenlink_set>Aller ecran d'accueil</greenlink_set>
+<yellow_set>Jaune:</yellow_set>
+<yellowlink_set>Aller ecran d'accueil</yellowlink_set>
+<blue_set>Bleu:</blue_set>
+<bluelink_set>Sortie et aller a Apps center</bluelink_set>
+<enter_set>Ouvrir Selectionner Film/TV/Set page</enter_set>
+<stop_set></stop_set>
+<play_set>Jouer video / Jouer toutes les videos dans la liste de lecture</play_set>
+<play_alt1_set></play_alt1_set>
+<pause_set></pause_set>
+<rewind_set></rewind_set>
+<fastforward_set></fastforward_set>
+<skipback_set></skipback_set>
+<skipforward_set></skipforward_set>
+
+<!-- MOVIE -->
+
+<keypad_movie>Selection film simple ou multi-partie (1=part1, 2=part2,…)</keypad_movie>
+<home_movie>Aller a l'ecran d'accueil</home_movie>
+<home_movie_pb>Sortie d'Eversion</home_movie_pb>
+<return_movie>Retour arriere</return_movie>
+<left_movie>Navigation haut/bas/gauche/droite</left_movie>
+<hyperscroll_movie>*info Film popup</hyperscroll_movie>
+<right_movie></right_movie>
+<up_movie></up_movie>
+<down_movie></down_movie>
+<info_movie>popup info film*</info_movie>
+<info_alt1_movie>(extras, bande annonce, synopsis)</info_alt1_movie>
+<pageup_movie>Aller a la prochaine/precedente page</pageup_movie>
+<pagedown_movie></pagedown_movie>
+<mute_movie></mute_movie>
+<menu_movie>Ouvrir/Fermer menu</menu_movie>
+<eject_movie>Sortie d'Eversion</eject_movie>
+<search_movie>Ouvrir menu</search_movie>
+<red_movie>Rouge:</red_movie>
+<redlink_movie>Aller a l'ecran d'accueil</redlink_movie>
+<green_movie>Vert:</green_movie>
+<greenlink_movie>Aller a l'ecran d'accueil</greenlink_movie>
+<yellow_movie>Jaune:</yellow_movie>
+<yellowlink_movie>Aller a l'ecran d'accueil</yellowlink_movie>
+<blue_movie>Bleu:</blue_movie>
+<bluelink_movie>Sortir vers Apps Center</bluelink_movie>
+<enter_movie>Jouer video / Ouvrir selection multi-partie</enter_movie>
+<enter_alt1_movie>*popup film info: Jouer bande annonce & extras</enter_alt1_movie>
+<stop_movie></stop_movie>
+<play_movie></play_movie>
+<play_alt1_movie></play_alt1_movie>
+<play_movie_pb>Jouer video / Ouvrir selection multi-partie</play_movie_pb>
+<play_alt1_movie_pb>*popup film info: Jouer bande annonce & extras</play_alt1_movie_pb>
+<pause_movie></pause_movie>
+<rewind_movie></rewind_movie>
+<fastforward_movie></fastforward_movie>
+<skipback_movie></skipback_movie>
+<skipforward_movie></skipforward_movie>
+
+<!-- TV -->
+<keypad_tv>Selection TV par episode (1=epis1, 2=epis2,…)</keypad_tv>
+<home_tv>Aller a l'ecran d'accueil</home_tv>
+<home_tv_pb>Sortie d'Eversion</home_tv_pb>
+<return_tv>Retour arriere</return_tv>
+<left_tv>Navigation haut/bas</left_tv>
+<hyperscroll_tv></hyperscroll_tv>
+<right_tv></right_tv>
+<up_tv></up_tv>
+<down_tv></down_tv>
+<info_tv></info_tv>
+<pageup_tv>Aller a la prochaine/precedente page</pageup_tv>
+<pagedown_tv></pagedown_tv>
+<mute_tv></mute_tv>
+<menu_tv>Ouvrir/Fermer menu</menu_tv>
+<eject_tv>Sortie d'Eversion</eject_tv>
+<search_tv>Ouvrir menu</search_tv>
+<red_tv>Rouge:</red_tv>
+<redlink_tv>Aller a l'ecran d'accueil</redlink_tv>
+<green_tv>Vert:</green_tv>
+<greenlink_tv>Aller a l'ecran d'accueil</greenlink_tv>
+<yellow_tv>Jaune:</yellow_tv>
+<yellowlink_tv>Aller a l'ecran d'accueil</yellowlink_tv>
+<blue_tv>Bleu:</blue_tv>
+<bluelink_tv>Sortir vers Apps Center</bluelink_tv>
+<enter_tv>Jouer episode selectionne</enter_tv>
+<enter_alt1_tv></enter_alt1_tv>
+<stop_tv></stop_tv>
+<enter_tv>Jouer episode selectionne</enter_tv>
+<play_tv>Jouer tout(de l'episode en cours)</play_tv>
+<play_alt1_tv></play_alt1_tv>
+<pause_tv>Jouer episode en sequence</pause_tv>
+<rewind_tv></rewind_tv>
+<fastforward_tv>Jouer dernier episode</fastforward_tv>
+<skipback_tv></skipback_tv>
+<skipforward_tv></skipforward_tv>
+
+</translation>

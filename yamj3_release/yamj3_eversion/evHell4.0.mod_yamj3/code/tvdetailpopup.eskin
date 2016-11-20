@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>false</fullscreen>
+    </control>
+	
+	<image>
+		<name>infopopbg</name>
+		<file>[:@media:]movie/moviedetailsbgr.swf</file>
+		<posx>365</posx>
+		<posy>60</posy>
+		<width>550</width>
+		<height>600</height>
+	</image>
+	
+	<text>
+		<name>file_prompt</name>
+		<display>FILE</display>
+		<posx>380</posx>
+		<posy>76</posy>
+		<width>150</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.title.color</color>
+	</text>	
+	
+	<text>
+		<name>baseFilename_prompt</name>
+		<display>baseFilename:</display>
+		<posx>385</posx>
+		<posy>100</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>baseFilename</name>
+		<display>[:baseFilename:]</display>
+		<posx>510</posx>
+		<posy>100</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>fileDate_prompt</name>
+		<display>fileDate:</display>
+		<posx>385</posx>
+		<posy>122</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>fileDate</name>
+		<display>[:fileDate:]</display>
+		<posx>510</posx>
+		<posy>122</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>fileSize_prompt</name>
+		<display>fileSize:</display>
+		<posx>385</posx>
+		<posy>144</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>fileSize</name>
+		<display>[:fileSize:]</display>
+		<posx>510</posx>
+		<posy>144</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>media_prompt</name>
+		<display>MEDIA</display>
+		<posx>380</posx>
+		<posy>167</posy>
+		<width>150</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.title.color</color>
+	</text>	
+	
+	<text>
+		<name>videoSource_prompt</name>
+		<display>videoSource:</display>
+		<posx>385</posx>
+		<posy>191</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>videoSource</name>
+		<display>[:videoSource:]</display>
+		<posx>510</posx>
+		<posy>191</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>videoOutput_prompt</name>
+		<display>videoOutput:</display>
+		<posx>385</posx>
+		<posy>213</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>videoOutput</name>
+		<display>[:videoOutput:]</display>
+		<posx>510</posx>
+		<posy>213</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>container_prompt</name>
+		<display>container:</display>
+		<posx>385</posx>
+		<posy>235</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>container</name>
+		<display>[:container:]</display>
+		<posx>510</posx>
+		<posy>235</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>videoCodec_prompt</name>
+		<display>videoCodec:</display>
+		<posx>385</posx>
+		<posy>257</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>videoCodec</name>
+		<display>[:videoCodec:]</display>
+		<posx>510</posx>
+		<posy>257</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>resolution_prompt</name>
+		<display>resolution:</display>
+		<posx>385</posx>
+		<posy>279</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>resolution</name>
+		<display>[:resolution:]</display>
+		<posx>510</posx>
+		<posy>279</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>aspect_prompt</name>
+		<display>aspect:</display>
+		<posx>385</posx>
+		<posy>301</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>aspect</name>
+		<display>[:aspect:]</display>
+		<posx>510</posx>
+		<posy>301</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>fps_prompt</name>
+		<display>fps:</display>
+		<posx>385</posx>
+		<posy>323</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>fps</name>
+		<display>[:fps:]</display>
+		<posx>510</posx>
+		<posy>323</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>audioCodec_prompt</name>
+		<display>audioCodec:</display>
+		<posx>385</posx>
+		<posy>345</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>audioCodec</name>
+		<display>[:audioCodec,trun44:]</display>
+		<posx>510</posx>
+		<posy>345</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>language_prompt</name>
+		<display>language:</display>
+		<posx>385</posx>
+		<posy>367</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>language</name>
+		<display>[:language,trun52:]</display>
+		<posx>510</posx>
+		<posy>367</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>subtitles_prompt</name>
+		<display>subtitles:</display>
+		<posx>385</posx>
+		<posy>389</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>subtitles</name>
+		<display>[:subtitles,trun56:]</display>
+		<posx>510</posx>
+		<posy>389</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>info_prompt</name>
+		<display>INFO</display>
+		<posx>380</posx>
+		<posy>411</posy>
+		<width>150</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.title.color</color>
+	</text>
+	
+	<text>
+		<name>runtime_prompt</name>
+		<display>runtime:</display>
+		<posx>385</posx>
+		<posy>436</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>runtime</name>
+		<display>[:runtime:]</display>
+		<posx>510</posx>
+		<posy>436</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>certification_prompt</name>
+		<display>certification:</display>
+		<posx>385</posx>
+		<posy>458</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>certification</name>
+		<display>[:certification:]</display>
+		<posx>510</posx>
+		<posy>458</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>season_prompt</name>
+		<display>season:</display>
+		<posx>385</posx>
+		<posy>480</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>season</name>
+		<display>[:season:]</display>
+		<posx>510</posx>
+		<posy>480</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>other_prompt</name>
+		<display>OTHER</display>
+		<posx>380</posx>
+		<posy>502</posy>
+		<width>150</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.title.color</color>
+	</text>
+	
+	<text>
+		<name>trailerExchange_prompt</name>
+		<display>trailerExchange:</display>
+		<posx>385</posx>
+		<posy>527</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>trailerExchange</name>
+		<display>[:trailerExchange:]</display>
+		<posx>510</posx>
+		<posy>527</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>watched_prompt</name>
+		<display>watched:</display>
+		<posx>385</posx>
+		<posy>549</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>watched</name>
+		<display>[:watched:]</display>
+		<posx>510</posx>
+		<posy>549</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+	<text>
+		<name>watchedDate_prompt</name>
+		<display>watchedDate:</display>
+		<posx>385</posx>
+		<posy>571</posy>
+		<width>120</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>watchedDate</name>
+		<display>[:watchedDate:]</display>
+		<posx>510</posx>
+		<posy>571</posy>
+		<width>390</width>
+		<height>22</height>
+		<size>18</size>  
+		<color>movie.data.color</color>
+	</text>
+	
+</eskin>

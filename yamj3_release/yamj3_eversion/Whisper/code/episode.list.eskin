@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!-- Segements - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:segment -->	
+<!-- Segements-tiles - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:tile -->	
+<!-- Artwork Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:artvariables -->	
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+
+
+	
+	<!-- Create the list of episodes -->
+	<segment>
+		<name>eplist</name>
+		<hyperscroll>false</hyperscroll>
+		<datasource>episodes</datasource>
+		<startx>762</startx>
+		<starty>475</starty>
+		<tilesize>true</tilesize>
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]common/1.eskin.used/cursor.png</file>
+			<above>false</above>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>520</width>
+			<height>36</height>  
+		</cursor>		
+		<tile>
+			<cols>1</cols>
+			<rows>5</rows>
+			<width>520</width>
+			<height>36</height>			
+			<text>
+				<name>mc</name>
+				<display>[:title:]</display>  <!-- Eversion variable holding the title -->
+				<posx>0</posx>
+				<posy>5</posy>
+				<width>520</width>
+				<height>42</height>
+				<size>25</size>  
+				<align>center</align>  <!-- By default align is left -->
+				<color>list.list.color</color>
+				<hlcolor>list.list.highlight.color</hlcolor>
+			</text>	
+		</tile>
+
+		<!-- Remote commands -->
+		<remote>
+			<button>PLAY</button>
+			<action>PLAYFROMHERE</action>	
+		</remote>		
+		<remote>
+			<button>PAUSE</button>
+			<action>PLAYRANDOM</action>	
+		</remote>		
+		<remote>
+			<button>SELECT</button>
+			<action>PLAYSINGLE</action>	
+		</remote>	
+		<remote>
+			<button>FASTFORWARD</button>
+			<action>PLAYLAST</action>			
+		</remote>
+		<remote>
+			<button>BACK</button>  <!-- Go back one level -->
+			<action>BACK</action>
+			<data>2</data>  <!-- Special (due to the passthrough in movie1, movie2): 1 would only get us back to the movie screen with no details -->
+		</remote>	
+		<remote>  <!-- This is what opens the info page for movie screens (for the pc)-->
+			<button>COMMA</button>
+			<action>EXTRA</action>	
+			<file>tv.extended</file>  <!-- The page to open -->
+		</remote>			
+		<remote>  <!-- This is what opens the info page for movie screens -->
+			<button>INFO</button>  
+			<action>EXTRA</action>	
+			<file>tv.extended</file>  <!-- The page to open -->
+		</remote>
+	</segment>	
+</eskin>

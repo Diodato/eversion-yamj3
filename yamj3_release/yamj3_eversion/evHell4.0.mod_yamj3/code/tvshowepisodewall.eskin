@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+
+	<background>
+		<file>[:@media:]backgrounds/background_[:#tvshowepisodewall:].swf</file>
+	</background>
+	
+	<include>common.navinfotop</include>	
+	<include>common.infolist</include>	
+	
+	<segment>
+		<name>eplist</name>
+		<datasource>episodes</datasource>
+		<startx>0</startx>
+		<starty>30</starty> 
+		<endx>1280</endx>
+		<endy>660</endy> 
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]movie/cursor.234.156.2.5.C5EAFF.true.phf</file>
+			<above>true</above>
+			<posx>11</posx>
+			<posy>4</posy>
+		</cursor>		
+		<tile>
+			<cols>5</cols>
+			<rows>4</rows>
+			<width>256</width>
+			<height>165</height>
+				<image>
+					<name>videoimage</name>
+					<file>[:@jukebox:][:videoimage:]</file>
+					<posx>11</posx>
+					<posy>4</posy> 
+					<width>234</width>
+<!-- 				<height>156</height> -->
+					<keepaspect>true</keepaspect>
+					<haligned>center</haligned>
+					<valigned>center</valigned>
+				</image>
+				<text>
+					<name>mc</name>
+					<display>[:episode:]. [:title:]</display>
+					<posx>12</posx>
+					<posy>138</posy>
+					<width>232</width>
+					<height>20</height>
+					<size>14</size>  
+					<align>center</align>
+					<color>tv.episode.color</color>
+					<hlcolor>tv.data.color</hlcolor>
+				</text>	
+		</tile>
+		<remote>
+			<button>PLAY</button>
+			<action>PLAYFROMHERE</action>	
+		</remote>		
+		<remote>
+			<button>PAUSE</button>
+			<action>PLAYRANDOM</action>	
+		</remote>		
+		<remote>
+			<button>SELECT</button>
+			<action>PLAYSINGLE</action>	
+		</remote>	
+		<remote>
+			<button>FASTFORWARD</button>
+			<action>PLAYLAST</action>	
+		</remote>	
+	</segment>	
+	
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	
+<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>	
+	
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>
+	
+</eskin>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+	<image>
+		<name>small_clock_topbar_right</name>
+		<file>[:@media:]common/clock_[:#skinlang,lower:]_large.[:#largeclock:].swf</file>
+		<posx>1000</posx>
+		<posy>-1</posy>
+		<width>300</width>
+		<height>40</height>
+	</image>
+</eskin>

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<passthrough>movieinfoscreen_1_people_list</passthrough> 
+    </control>
+	<!-- ##############    construct background for people movie wall for each movie ############################### -->
+	<image>
+		<name>bgoverlay_a</name>
+		<file>[:@media:]common/zap_bg_movie150people.frame.swf</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	</image>
+		<image>
+		<name>bgoverlay_e</name>
+		<file>[:@media:]common/hide_footer.png</file>
+		<posx>358</posx>
+		<posy>650</posy>
+		<width>890</width>
+		<height>60</height>
+	</image> 
+	<text>
+		<name>title_a</name>
+		<display>[:fulltitle,upper,unknown,trun40:]</display>
+		<posx>370</posx>
+		<posy>178</posy>
+		<width>880</width>
+		<height>40</height>
+		<size>29</size>
+		<wordwrap>true</wordwrap>
+		<bold>true</bold>		
+		<color>FFFFFF</color>
+	</text>
+	<text>
+		<name>tagline_a</name>
+		<condition>[:#popuptag,lower:] = tagline</condition>
+		<display>[:tagline,blank:]</display>
+		<posx>365</posx>
+		<posy>210</posy>
+		<width>640</width>
+		<height>30</height>
+		<size>22</size>
+		<italic>true</italic>
+		<color>c0c0c0</color>
+	</text>		
+	<text>
+		<name>ori_title_a</name>
+		<condition>[:#popuptag,lower:] = originaltitle</condition>
+		<display>OT: [:originalTitle,unknown:]</display>
+		<posx>365</posx>
+		<posy>208</posy>
+		<width>640</width>
+		<height>30</height>
+		<size>20</size>
+		<color>c0c0c0</color>
+	</text>		
+	<image>
+		<name>rating_image_a</name>
+		<file>[:@media:]common/star/star[:score,round:].swf</file>
+		<posx>365</posx>
+		<posy>240</posy>
+		<width>86.5</width>
+		<height>15</height>
+	</image>		
+	<text>
+		<name>rating_a</name>
+		<condition>[:rating:] != -1</condition>
+		<display>[:score:] / 10</display>
+		<posx>462</posx>
+		<posy>240</posy>
+		<width>200</width>
+		<height>19</height>
+		<size>16</size>
+		<color>c0c0c0</color>
+	</text>
+	<text>
+		<name>rating_unknown_a</name>
+		<condition>[:rating:] = -1</condition>
+		<display>? / 10</display>
+		<posx>462</posx>
+		<posy>240</posy>
+		<width>200</width>
+		<height>19</height>
+		<size>16</size>
+		<color>c0c0c0</color>
+	</text>
+	<text>
+		<name>genres_a</name>
+		<display>[:genres,7,blank:]</display>
+		<posx>400</posx>
+		<posy>239</posy>
+		<width>743</width>
+		<height>30</height>
+		<align>right</align>
+		<size>20</size>
+		<color>c0c0c0</color>
+	</text>		
+<!-- ## left field: runtime, year ## -->	
+	<text>
+		<name>runtime_a</name>
+		<display>[:runtime,unknown:]</display>
+		<posx>1175</posx>
+		<posy>238</posy>
+		<width>158</width>
+		<height>25</height>
+		<size>20</size>
+		<color>FFFFFF</color>
+	</text>
+	<text>
+		<name>year_unknown_a</name>
+		<condition>[:year:] = UNKNOWN</condition>
+		<display>&#8212;</display>
+		<posx>1175</posx>
+		<posy>198</posy>
+		<width>160</width>
+		<height>25</height>
+		<size>20</size>
+		<color>FFFFFF</color>
+	</text>		
+	<text>
+		<name>year_a</name>
+		<condition>[:year:] != UNKNOWN</condition>
+		<display>[:year:]</display>
+		<posx>1175</posx>
+		<posy>198</posy>
+		<width>160</width>
+		<height>25</height>
+		<size>20</size>
+		<color>FFFFFF</color>
+	</text>	
+
+<!-- ************************************ MOD PEOPLE 250 ************************************* -->
+
+	<!-- ##############  000  ################################################################ -->
+	<image>
+		<name>extras_on</name>
+		<file>[:@media:]common/icon_extras_[:isextras,lower:].swf</file>
+		<posx>363</posx>
+		<posy>279</posy>
+		<width>80</width>
+		<height>15</height>
+	</image>
+	<image>
+		<name>info_on</name>
+		<file>[:@media:]common/icon_info_[:isextras,lower:].swf</file>
+		<posx>453</posx>
+		<posy>277</posy>
+		<width>20</width>
+		<height>20</height>
+	</image>
+
+	<text>
+		<name>won1_a</name>
+		<condition>[:multi-/movie/awards/event/award-1-/award:] == Oscar ++ [:multi-/movie/awards/event/award-1-/award-won:] != 0</condition>
+		<display>[:multi-/movie/awards/event/award-1-/award-won:] x</display>
+		<posx>1100</posx>
+		<posy>300</posy>
+		<width>50</width>
+		<height>40</height>
+		<size>17</size>
+		<align>right</align>		
+		<bold>true</bold>		
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>won2_a</name>
+		<condition>[:multi-/movie/awards/event/award-2-/award:] == Oscar ++ [:multi-/movie/awards/event/award-2-/award-won:] != 0</condition>
+		<display>[:multi-/movie/awards/event/award-2-/award-won:] x</display>
+		<posx>1100</posx>
+		<posy>300</posy>
+		<width>50</width>
+		<height>40</height>
+		<size>17</size>
+		<align>right</align>		
+		<bold>true</bold>		
+		<color>ffffff</color>
+	</text>
+	<text>
+		<name>won3_a</name>
+		<condition>[:multi-/movie/awards/event/award-3-/award:] == Oscar ++ [:multi-/movie/awards/event/award-3-/award-won:] != 0</condition>
+		<display>[:multi-/movie/awards/event/award-3-/award-won:] x</display>
+		<posx>1100</posx>
+		<posy>300</posy>
+		<width>50</width>
+		<height>40</height>
+		<size>17</size>
+		<align>right</align>		
+		<bold>true</bold>		
+		<color>ffffff</color>
+	</text>
+	<image>
+		<name>oscar1_a</name>
+		<condition>[:multi-/movie/awards/event/award-1-/award:] == Oscar ++ [:multi-/movie/awards/event/award-1-/award-won:] != 0</condition>
+		<file>[:@media:]common/oscar.swf</file>
+		<posx>1150</posx>
+		<posy>265</posy>
+		<width>28.1</width>
+		<height>55</height>
+	</image>		
+	<image>
+		<name>oscar2_a</name>
+		<condition>[:multi-/movie/awards/event/award-2-/award:] == Oscar ++ [:multi-/movie/awards/event/award-2-/award-won:] != 0</condition>
+		<file>[:@media:]common/oscar.swf</file>
+		<posx>1150</posx>
+		<posy>265</posy>
+		<width>28.1</width>
+		<height>55</height>
+	</image>		
+	<image>
+		<name>oscar3_a</name>
+		<condition>[:multi-/movie/awards/event/award-3-/award:] == Oscar ++ [:multi-/movie/awards/event/award-3-/award-won:] != 0</condition>
+		<file>[:@media:]common/oscar.swf</file>
+		<posx>1150</posx>
+		<posy>265</posy>
+		<width>28.1</width>
+		<height>55</height>
+	</image>	
+</eskin>

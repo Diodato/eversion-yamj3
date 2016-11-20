@@ -1,0 +1,76 @@
+<settings>	
+<!--
+	********************** NOT UPDATE FRIENDLY  *********************
+	This file will be overwritten by any skin updates.  If you want
+	to make changes to any of these values you should create a file
+	called settings.xml in the same folder and place all your edits
+	there.  
+	******************************************************************
+-->
+
+    <!-- ******* Colors -->
+	<home.header.color>FFFFFF</home.header.color> 		<!-- Color for home header -->
+	<home.color>808080</home.color> 					<!-- Color for home text -->
+	<home.highlight.color>FFC300</home.highlight.color> <!-- Color for home selected text -->
+
+	<menu.header.color>FFFFFF</menu.header.color> 		<!-- Color for menu header -->
+	<menu.color>808080</menu.color> 					<!-- Color for menu text -->
+	<menu.highlight.color>FFC300</menu.highlight.color> <!-- Color for menu selected text -->
+
+	<list.header.color>FFCF3F</list.header.color> 		<!-- Color for set list headers -->
+	<list.color>808080</list.color>						<!-- Color for set lists -->
+	<list.highlight.color>FFC300</list.highlight.color>	<!-- Color for set lists selected text -->
+
+	<info.color1>808080</info.color1>					<!-- Color for information that does not change as titles change -->
+	<active.index.color>808080</active.index.color>		<!-- Color for the current index in use --> 
+	<clock.color>808080</clock.color> 					<!-- Color for the clock -->
+	
+	<label.wall.color>FFCF3F</label.wall.color> 		<!-- Color for labels on the wall summary pages -->
+	<label.detail.color0>FFFFFF</label.detail.color0>	<!-- Color for labels on the orig movie detail pages -->
+	<label.detail.color1>FFCF3F</label.detail.color1>	<!-- Color for labels on the detail pages -->
+	<label.detail.color2>808080</label.detail.color2>	<!-- Alternate color for labels on the detail pages -->
+
+	<data.title.color1>FFFFFF</data.title.color1>		<!-- Color for title related data -->
+	<data.title.color2>808080</data.title.color2>		<!-- Alternate color for title related data -->
+	<data.color>FFFFFF</data.color> 					<!-- Color for non-title related data -->
+
+	<actor.list.color1>FFFFFF</actor.list.color1>		<!-- Color for the list of actors -->
+	<actor.list.color2>FFFFFF</actor.list.color2>		<!-- Alternating color for the list of actors -->
+	
+	<title.color1>FFC300</title.color1> 				<!-- Color for the actual title --> 
+	<title.color2>FFC300</title.color2> 				<!-- Color for the actual title on tv details page--> 
+	<episode.color1>FFC300</episode.color1> 			<!-- Color for the episode title on tv details page --> 
+	
+	
+    <!-- ******* Preloader Location -->
+	<preloadx>14</preloadx>
+	<preloady>134</preloady>
+	
+    <!-- ******* HOME PAGES -->
+	<startpage>home</startpage>
+	<menuHOME>home</menuHOME>
+	
+    <!-- ******* INDEX PAGES -->
+	<!-- index tv is the TV Shows and New-TV index -->
+	<indexTV>wall.banner.summary</indexTV>
+	<!-- indexmovie is the Movies and New-Movies index -->
+	<indexMOVIE>wall.poster.summary</indexMOVIE>
+	<!-- indextvset is a tv show set of seasons -->
+	<indexTVSET>list.banner</indexTVSET>
+	<!-- indexmovieset is a boxset of movies -->
+	<indexMOVIESET>list.poster</indexMOVIESET>
+	<!-- indexindex is everything else -->
+	<indexINDEX>wall.poster.summary</indexINDEX>
+	
+	<!-- ********** DETAIL PAGES -->	
+	<!-- details tv is the skin style for tv season -->
+	<detailsTV>details.tv</detailsTV>
+	<!-- details movie is the skin style for a movie -->
+	<detailsMOVIE>details.movie</detailsMOVIE>
+	
+	<homelist>Other,Library</homelist>
+	<menulist>Other,Genres,Title,Library,Year,Ratings,Certification</menulist>	
+	
+	<!-- Movie details certification images to use: mpaa, bbfc, csa or germany -->
+	<certification>mpaa</certification>    
+</settings>

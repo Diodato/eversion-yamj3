@@ -1,0 +1,1013 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>	
+	
+	<image>
+		<name>moviedetails2</name>
+		<file>[:@media:]movie/moviedetailsaward.swf</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	</image>
+	
+	<image>
+		<name>extras</name>
+		<condition>[:isextras:] == YES</condition>
+		<file>[:@media:]movie/extrasstardim.swf</file>
+		<posx>1030</posx>
+		<posy>2</posy>
+		<width>11</width>
+		<height>10</height>
+	</image>		
+	
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 0</condition>
+		<image>
+			<name>awardimg1</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-1-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>30</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear1</name>
+			<display>[:multi-/movie/awards/event-1-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>44</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype1</name>
+			<display>[:multi-/movie/awards/event-1-/event-name:]</display>
+			<posx>100</posx>
+			<posy>44</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname1</name>
+			<display>[:multi-/movie/awards/event-1-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>44</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards1</name>
+			<display>[:multi-/movie/awards/event-1-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>44</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon1</name>
+			<display>[:multi-/movie/awards/event-1-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>44</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+	</if>
+	
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 1</condition>
+		<image>
+			<name>awardimg2</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-2-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>80</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear2</name>
+			<display>[:multi-/movie/awards/event-2-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>94</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype2</name>
+			<display>[:multi-/movie/awards/event-2-/event-name:]</display>
+			<posx>100</posx>
+			<posy>94</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname2</name>
+			<display>[:multi-/movie/awards/event-2-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>94</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards2</name>
+			<display>[:multi-/movie/awards/event-2-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>94</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon2</name>
+			<display>[:multi-/movie/awards/event-2-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>94</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 		
+	</if>	
+	
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 2</condition>
+		<image>
+			<name>awardimg3</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-3-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>130</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear3</name>
+			<display>[:multi-/movie/awards/event-3-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>144</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype3</name>
+			<display>[:multi-/movie/awards/event-3-/event-name:]</display>
+			<posx>100</posx>
+			<posy>144</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname3</name>
+			<display>[:multi-/movie/awards/event-3-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>144</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards3</name>
+			<display>[:multi-/movie/awards/event-3-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>144</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon3</name>
+			<display>[:multi-/movie/awards/event-3-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>144</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>		
+	
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 3</condition>
+		<image>
+			<name>awardimg4</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-4-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>180</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear4</name>
+			<display>[:multi-/movie/awards/event-4-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>194</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype4</name>
+			<display>[:multi-/movie/awards/event-4-/event-name:]</display>
+			<posx>100</posx>
+			<posy>194</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname4</name>
+			<display>[:multi-/movie/awards/event-4-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>194</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards4</name>
+			<display>[:multi-/movie/awards/event-4-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>194</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon4</name>
+			<display>[:multi-/movie/awards/event-4-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>194</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>		
+
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 4</condition>
+		<image>
+			<name>awardimg5</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-5-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>230</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear5</name>
+			<display>[:multi-/movie/awards/event-5-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>244</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype5</name>
+			<display>[:multi-/movie/awards/event-5-/event-name:]</display>
+			<posx>100</posx>
+			<posy>244</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname5</name>
+			<display>[:multi-/movie/awards/event-5-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>244</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards5</name>
+			<display>[:multi-/movie/awards/event-5-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>244</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon5</name>
+			<display>[:multi-/movie/awards/event-5-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>244</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>		
+	
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 5</condition>
+		<image>
+			<name>awardimg6</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-6-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>280</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear6</name>
+			<display>[:multi-/movie/awards/event-6-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>294</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype6</name>
+			<display>[:multi-/movie/awards/event-6-/event-name:]</display>
+			<posx>100</posx>
+			<posy>294</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname6</name>
+			<display>[:multi-/movie/awards/event-6-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>294</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards6</name>
+			<display>[:multi-/movie/awards/event-6-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>294</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon6</name>
+			<display>[:multi-/movie/awards/event-6-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>294</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>		
+	
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 6</condition>
+		<image>
+			<name>awardimg7</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-7-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>330</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear7</name>
+			<display>[:multi-/movie/awards/event-7-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>344</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype7</name>
+			<display>[:multi-/movie/awards/event-7-/event-name:]</display>
+			<posx>100</posx>
+			<posy>344</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname7</name>
+			<display>[:multi-/movie/awards/event-7-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>344</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards7</name>
+			<display>[:multi-/movie/awards/event-7-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>344</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon7</name>
+			<display>[:multi-/movie/awards/event-7-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>344</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>		
+	
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 7</condition>
+		<image>
+			<name>awardimg8</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-8-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>380</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear8</name>
+			<display>[:multi-/movie/awards/event-8-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>394</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype8</name>
+			<display>[:multi-/movie/awards/event-8-/event-name:]</display>
+			<posx>100</posx>
+			<posy>394</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname8</name>
+			<display>[:multi-/movie/awards/event-8-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>394</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards8</name>
+			<display>[:multi-/movie/awards/event-8-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>394</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon8</name>
+			<display>[:multi-/movie/awards/event-8-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>394</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>		
+	
+	
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 8</condition>
+		<image>
+			<name>awardimg9</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-9-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>430</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear9</name>
+			<display>[:multi-/movie/awards/event-9-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>444</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype9</name>
+			<display>[:multi-/movie/awards/event-9-/event-name:]</display>
+			<posx>100</posx>
+			<posy>444</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname9</name>
+			<display>[:multi-/movie/awards/event-9-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>444</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards9</name>
+			<display>[:multi-/movie/awards/event-9-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>444</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon9</name>
+			<display>[:multi-/movie/awards/event-9-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>444</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>			
+	
+	
+	
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 9</condition>
+		<image>
+			<name>awardimg10</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-10-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>480</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear10</name>
+			<display>[:multi-/movie/awards/event-10-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>494</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype10</name>
+			<display>[:multi-/movie/awards/event-10-/event-name:]</display>
+			<posx>100</posx>
+			<posy>494</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname10</name>
+			<display>[:multi-/movie/awards/event-10-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>494</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards10</name>
+			<display>[:multi-/movie/awards/event-10-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>494</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon10</name>
+			<display>[:multi-/movie/awards/event-10-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>494</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>		
+
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 10</condition>
+		<image>
+			<name>awardimg11</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-11-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>530</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear11</name>
+			<display>[:multi-/movie/awards/event-11-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>544</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype11</name>
+			<display>[:multi-/movie/awards/event-11-/event-name:]</display>
+			<posx>100</posx>
+			<posy>544</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname11</name>
+			<display>[:multi-/movie/awards/event-11-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>544</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards11</name>
+			<display>[:multi-/movie/awards/event-11-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>544</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon11</name>
+			<display>[:multi-/movie/awards/event-11-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>544</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>		
+
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 11</condition>
+		<image>
+			<name>awardimg12</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-12-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>580</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear12</name>
+			<display>[:multi-/movie/awards/event-12-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>594</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype12</name>
+			<display>[:multi-/movie/awards/event-12-/event-name:]</display>
+			<posx>100</posx>
+			<posy>594</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname12</name>
+			<display>[:multi-/movie/awards/event-12-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>594</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards12</name>
+			<display>[:multi-/movie/awards/event-12-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>594</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon12</name>
+			<display>[:multi-/movie/awards/event-12-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>594</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>		
+
+	<if>
+	  <condition>[:multi-/movie/awards-1-/awards-count:] &gt; 12</condition>
+		<image>
+			<name>awardimg13</name>
+			<file>[:@media:]purity/awards/[:multi-/movie/awards/event-13-/event-name,filesafe,nospaces,lower:].png</file>
+			<posx>10</posx>
+			<posy>630</posy>
+			<width>35</width>
+			<height>50</height>
+		</image>	
+		
+		<text>
+			<name>awardyear13</name>
+			<display>[:multi-/movie/awards/event-13-/event/award-year:]</display>
+			<posx>50</posx>
+			<posy>644</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardtype13</name>
+			<display>[:multi-/movie/awards/event-13-/event-name:]</display>
+			<posx>100</posx>
+			<posy>644</posy>
+			<width>400</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 	
+		
+		<text>
+			<name>awardname13</name>
+			<display>[:multi-/movie/awards/event-13-/event/award-name:]</display>
+			<posx>500</posx>
+			<posy>644</posy>
+			<width>200</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>numberofawards13</name>
+			<display>[:multi-/movie/awards/event-13-/event/award-won:]</display>
+			<posx>700</posx>
+			<posy>644</posy>
+			<width>50</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 
+		
+		<text>
+			<name>awardswon13</name>
+			<display>[:multi-/movie/awards/event-13-/event/award-wons:]</display>
+			<posx>750</posx>
+			<posy>644</posy>
+			<width>530</width>
+			<height>22</height>
+			<size>16</size>          
+			<color>FFFFFF</color>
+		</text> 			
+	</if>			
+		
+
+	
+<!-- Play movie buttons -->	
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	
+<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>	
+	<remote>
+		<button>SPACE</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>
+	
+<!-- Go back to overview -->	
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>3</data>
+	</remote>
+	<remote>
+	   <button>RETURN</button>
+	   <action>BACK</action>
+	   <data>3</data>
+	</remote>
+	
+<!-- Next -->
+	<remote>
+		<button>NUM1</button>
+		<action>EXTRA</action>	
+		<file>movieinfoover</file>
+	</remote>
+
+	<remote>
+		<button>NUM2</button>
+		<action>EXTRA</action>	
+		<file>movieinfoplot</file>
+	</remote>
+
+	<remote>
+		<button>NUM3</button>
+		<action>EXTRA</action>	
+		<file>movieinfocast</file>
+	</remote>
+	
+	<remote>
+		<button>NUM5</button>
+		<action>EXTRA</action>	
+		<file>movieinfodetail</file>
+	</remote>
+	
+	<remote>
+		<button>NUM6</button>
+		<action>EXTRA</action>	
+		<file>movieinfoextras</file>
+	</remote>
+	
+<!-- Next tab details -->
+	<remote>
+		<button>GREEN</button>
+		<action>EXTRA</action>	
+		<file>movieinfodetail</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>movieinfodetail</file>
+	</remote>
+	
+<!-- Previous tab cast -->	
+	<remote>
+		<button>RED</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	
+<!-- Fanart only -->
+	<remote>
+		<button>YELLOW</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+
+</eskin>

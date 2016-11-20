@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>	
+	
+	<image>
+		<name>tvawards</name>
+		<file>[:@media:]movie/tvawards.swf</file>
+		<posx>0</posx>
+		<posy>520</posy>
+		<width>1280</width>
+		<height>200</height>
+	</image>
+	
+	<image>
+		<name>awardstop</name>
+		<file>[:@media:]movie/awardstop.swf</file>
+		<posx>263</posx>
+		<posy>0</posy>
+		<width>754</width>
+		<height>53</height>
+	</image>	
+	
+	<image>
+		<name>imgfooterawards</name>
+		<file>[:@jukebox:][:baseFilename:].footer_awards.png</file>
+		<posx>265</posx>
+		<posy>0</posy>
+		<width>751</width>
+		<height>51</height>
+	</image>
+
+	<text>
+        <name>Award1Prompt</name>
+        <display>ASCAP Film and Television Music Awards</display>
+        <posx>10</posx>
+        <posy>555</posy>
+        <width>620</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award1WonPrompt</name>
+        <display>[:$won:]</display>
+        <posx>10</posx>
+        <posy>577</posy>
+        <width>40</width>
+        <height>22</height>
+        <size>16</size>     
+		<align>left</align>		
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award1Won</name>
+        <display>[:multi-/movie/awards/event[@name='ASCAP Film and Television Music Awards']-1-/event/award-won,blank:]</display>
+        <posx>50</posx>
+        <posy>577</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award1NominatedPrompt</name>
+        <display>[:$nominated:]</display>
+        <posx>65</posx>
+        <posy>577</posy>
+        <width>75</width>
+        <height>22</height>
+        <size>16</size>  
+		<align>left</align>	        
+        <color>F0F0F0</color>
+    </text>
+	
+	<text>
+        <name>Award1Nominated</name>
+        <display>[:multi-/movie/awards/event[@name='ASCAP Film and Television Music Awards']-1-/event/award-nominated,blank:]</display>
+        <posx>140</posx>
+        <posy>577</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award1YearPrompt</name>
+        <display>[:$year:]</display>
+        <posx>155</posx>
+        <posy>577</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>   
+		<align>left</align>	
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award1Year</name>
+        <display>[:multi-/movie/awards/event[@name='ASCAP Film and Television Music Awards']-1-/event/award-year,blank:]</display>
+        <posx>200</posx>
+        <posy>577</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award1Name</name>
+        <display>[:multi-/movie/awards/event[@name='ASCAP Film and Television Music Awards']-1-/event/award,blank:]</display>
+        <posx>245</posx>
+        <posy>577</posy>
+        <width>380</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award2Prompt</name>
+        <display>BAFTA Awards</display>
+        <posx>10</posx>
+        <posy>599</posy>
+        <width>620</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award2WonPrompt</name>
+        <display>[:$won:]</display>
+        <posx>10</posx>
+        <posy>621</posy>
+        <width>40</width>
+        <height>22</height>
+        <size>16</size>     
+		<align>left</align>		
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award2Won</name>
+        <display>[:multi-/movie/awards/event[@name='BAFTA Awards']-1-/event/award-won,blank:]</display>
+        <posx>50</posx>
+        <posy>621</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award2NominatedPrompt</name>
+        <display>[:$nominated:]</display>
+        <posx>65</posx>
+        <posy>621</posy>
+        <width>75</width>
+        <height>22</height>
+        <size>16</size>  
+		<align>left</align>	        
+        <color>F0F0F0</color>
+    </text>
+	
+	<text>
+        <name>Award2Nominated</name>
+        <display>[:multi-/movie/awards/event[@name='BAFTA Awards']-1-/event/award-nominated,blank:]</display>
+        <posx>140</posx>
+        <posy>621</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award2YearPrompt</name>
+        <display>[:$year:]</display>
+        <posx>155</posx>
+        <posy>621</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>   
+		<align>left</align>	
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award2Year</name>
+        <display>[:multi-/movie/awards/event[@name='BAFTA Awards']-1-/event/award-year,blank:]</display>
+        <posx>200</posx>
+        <posy>621</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award2Name</name>
+        <display>[:multi-/movie/awards/event[@name='BAFTA Awards']-1-/event/award,blank:]</display>
+        <posx>245</posx>
+        <posy>621</posy>
+        <width>380</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 	
+	
+	<text>
+        <name>Award3Prompt</name>
+        <display>BMI Film & TV Awards</display>
+        <posx>10</posx>
+        <posy>643</posy>
+        <width>620</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award3WonPrompt</name>
+        <display>[:$won:]</display>
+        <posx>10</posx>
+        <posy>665</posy>
+        <width>40</width>
+        <height>22</height>
+        <size>16</size>     
+		<align>left</align>		
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award3Won</name>
+        <display>[:multi-/movie/awards/event[@name='BMI Film & TV Awards']-1-/event/award-won,blank:]</display>
+        <posx>50</posx>
+        <posy>665</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award3NominatedPrompt</name>
+        <display>[:$nominated:]</display>
+        <posx>65</posx>
+        <posy>665</posy>
+        <width>75</width>
+        <height>22</height>
+        <size>16</size>  
+		<align>left</align>	        
+        <color>F0F0F0</color>
+    </text>
+	
+	<text>
+        <name>Award3Nominated</name>
+        <display>[:multi-/movie/awards/event[@name='BMI Film & TV Awards']-1-/event/award-nominated,blank:]</display>
+        <posx>140</posx>
+        <posy>665</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award3YearPrompt</name>
+        <display>[:$year:]</display>
+        <posx>155</posx>
+        <posy>665</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>   
+		<align>left</align>	
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award3Year</name>
+        <display>[:multi-/movie/awards/event[@name='BMI Film & TV Awards']-1-/event/award-year,blank:]</display>
+        <posx>200</posx>
+        <posy>665</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award3Name</name>
+        <display>[:multi-/movie/awards/event[@name='BMI Film & TV Awards']-1-/event/award,blank:]</display>
+        <posx>245</posx>
+        <posy>665</posy>
+        <width>380</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 	
+	
+	<text>
+        <name>Award5Prompt</name>
+        <display>MTV Movie Awards</display>
+        <posx>640</posx>
+        <posy>555</posy>
+        <width>620</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award5WonPrompt</name>
+        <display>[:$won:]</display>
+        <posx>640</posx>
+        <posy>577</posy>
+        <width>40</width>
+        <height>22</height>
+        <size>16</size>     
+		<align>left</align>		
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award5Won</name>
+        <display>[:multi-/movie/awards/event[@name='MTV Movie Awards']-1-/event/award-won,blank:]</display>
+        <posx>680</posx>
+        <posy>577</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award5NominatedPrompt</name>
+        <display>[:$nominated:]</display>
+        <posx>695</posx>
+        <posy>577</posy>
+        <width>75</width>
+        <height>22</height>
+        <size>16</size>  
+		<align>left</align>	        
+        <color>F0F0F0</color>
+    </text>
+	
+	<text>
+        <name>Award5Nominated</name>
+        <display>[:multi-/movie/awards/event[@name='MTV Movie Awards']-1-/event/award-nominated,blank:]</display>
+        <posx>770</posx>
+        <posy>577</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award5YearPrompt</name>
+        <display>[:$year:]</display>
+        <posx>785</posx>
+        <posy>577</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>   
+		<align>left</align>	
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award5Year</name>
+        <display>[:multi-/movie/awards/event[@name='MTV Movie Awards']-1-/event/award-year,blank:]</display>
+        <posx>830</posx>
+        <posy>577</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award5Name</name>
+        <display>[:multi-/movie/awards/event[@name='MTV Movie Awards']-1-/event/award,blank:]</display>
+        <posx>875</posx>
+        <posy>577</posy>
+        <width>380</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award6Prompt</name>
+        <display>Satellite Awards</display>
+        <posx>640</posx>
+        <posy>599</posy>
+        <width>620</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award6WonPrompt</name>
+        <display>[:$won:]</display>
+        <posx>640</posx>
+        <posy>621</posy>
+        <width>40</width>
+        <height>22</height>
+        <size>16</size>     
+		<align>left</align>		
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award6Won</name>
+        <display>[:multi-/movie/awards/event[@name='Satellite Awards']-1-/event/award-won,blank:]</display>
+        <posx>680</posx>
+        <posy>621</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award6NominatedPrompt</name>
+        <display>[:$nominated:]</display>
+        <posx>695</posx>
+        <posy>621</posy>
+        <width>75</width>
+        <height>22</height>
+        <size>16</size>  
+		<align>left</align>	        
+        <color>F0F0F0</color>
+    </text>
+	
+	<text>
+        <name>Award6Nominated</name>
+        <display>[:multi-/movie/awards/event[@name='Satellite Awards']-1-/event/award-nominated,blank:]</display>
+        <posx>770</posx>
+        <posy>621</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award6YearPrompt</name>
+        <display>[:$year:]</display>
+        <posx>785</posx>
+        <posy>621</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>   
+		<align>left</align>	
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award6Year</name>
+        <display>[:multi-/movie/awards/event[@name='Satellite Awards']-1-/event/award-year,blank:]</display>
+        <posx>830</posx>
+        <posy>621</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award6Name</name>
+        <display>[:multi-/movie/awards/event[@name='Satellite Awards']-1-/event/award,blank:]</display>
+        <posx>875</posx>
+        <posy>621</posy>
+        <width>380</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 	
+	
+	<text>
+        <name>Award7Prompt</name>
+        <display>Teen Choice Awards</display>
+        <posx>640</posx>
+        <posy>643</posy>
+        <width>620</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award7WonPrompt</name>
+        <display>[:$won:]</display>
+        <posx>640</posx>
+        <posy>665</posy>
+        <width>40</width>
+        <height>22</height>
+        <size>16</size>     
+		<align>left</align>		
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award7Won</name>
+        <display>[:multi-/movie/awards/event[@name='Teen Choice Awards']-1-/event/award-won,blank:]</display>
+        <posx>680</posx>
+        <posy>665</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award7NominatedPrompt</name>
+        <display>[:$nominated:]</display>
+        <posx>695</posx>
+        <posy>665</posy>
+        <width>75</width>
+        <height>22</height>
+        <size>16</size>  
+		<align>left</align>	        
+        <color>F0F0F0</color>
+    </text>
+	
+	<text>
+        <name>Award7Nominated</name>
+        <display>[:multi-/movie/awards/event[@name='Teen Choice Awards']-1-/event/award-nominated,blank:]</display>
+        <posx>770</posx>
+        <posy>665</posy>
+        <width>15</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award7YearPrompt</name>
+        <display>[:$year:]</display>
+        <posx>785</posx>
+        <posy>665</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>   
+		<align>left</align>	
+        <color>F0F0F0</color>
+    </text> 
+	
+	<text>
+        <name>Award7Year</name>
+        <display>[:multi-/movie/awards/event[@name='Teen Choice Awards']-1-/event/award-year,blank:]</display>
+        <posx>830</posx>
+        <posy>665</posy>
+        <width>45</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 
+	
+	<text>
+        <name>Award7Name</name>
+        <display>[:multi-/movie/awards/event[@name='Teen Choice Awards']-1-/event/award,blank:]</display>
+        <posx>875</posx>
+        <posy>665</posy>
+        <width>380</width>
+        <height>22</height>
+        <size>16</size>          
+        <color>99CCFF</color>
+    </text> 	
+
+	<image>
+		<name>extras</name>
+		<condition>[:isextras:] == YES</condition>
+		<file>[:@media:]movie/Extrasstardim.swf</file>
+		<posx>1030</posx>
+		<posy>529</posy>
+		<width>11</width>
+		<height>10</height>
+	</image>	
+	
+<!-- Play movie buttons -->	
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>NUMPAD</button>
+		<action>PLAYPART</action>	
+	</remote>
+	
+<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>tvdetailpopup</file>
+	</remote>	
+	<remote>
+		<button>SPACE</button>
+		<action>EXTRA</action>	
+		<file>tvdetailpopup</file>
+	</remote>
+	
+<!-- Go back to overview -->	
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>3</data>
+	</remote>
+	<remote>
+	   <button>RETURN</button>
+	   <action>BACK</action>
+	   <data>3</data>
+	</remote>
+	
+<!-- Next tab details -->
+	<remote>
+		<button>GREEN</button>
+		<action>EXTRA</action>	
+		<file>tvinfodetail</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>tvinfodetail</file>
+	</remote>
+	
+<!-- Previous tab cast -->	
+	<remote>
+		<button>RED</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	
+<!-- Fanart only -->
+	<remote>
+		<button>YELLOW</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+
+</eskin>

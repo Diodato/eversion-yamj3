@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>	
+<!--******************************************************************
+	This .eskin file contains code that is common to many screens so
+	it's been separated out on it's own and is "included" by the other
+	.eskin files.
+	
+	Used with:
+	movie
+	tv
+	
+	******************************************************************-->
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+<!-- Conditions - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:if -->	
+
+	<!-- Media info -->
+	<if>
+		<condition>[:videoSource:] != NO</condition>  <!-- This block is done if the condition is true-->
+		<image>
+			<name>source.bg</name>
+			<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+			<posx>278</posx>
+			<posy>670</posy>
+			<width>108.75</width>
+			<height>45</height>
+		</image>
+		<image>
+			<name>source</name>
+			<file>[:@sharedmedia:]purityflags/video/custom/[:videoSource:].png</file>  <!-- Eversion variables holding the video Source, if none found display nothing -->
+			<posx>278</posx>
+			<posy>663</posy>
+			<width>108.75</width>
+			<height>62</height>
+			<align>center</align>  <!-- By default align is left -->
+			<keepaspect>true</keepaspect>
+		</image>
+	</if>
+	<image>
+		<name>videocodec.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>389</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>	
+	<image>
+		<name>videocodec</name>
+		<file>[:@sharedmedia:]purityflags/video/custom/[:smartvideocodec:].png</file>  <!-- Eversion variables holding the video codec, if none found display nothing -->
+		<posx>389</posx>
+		<posy>663</posy>
+		<width>108.75</width>
+		<height>60</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>	
+	<image>
+		<name>audiocodec.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>500</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>
+	<image>
+		<name>audiocodec</name>
+		<file>[:@sharedmedia:]purityflags/audio/custom/[:flagaudiocodec:].png</file>  <!-- Eversion variables holding the audio codec, if none found display nothing -->
+		<posx>500</posx>
+		<posy>662</posy>
+		<width>108.75</width>
+		<height>60</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>	
+		<image>
+		<name>audiochannel.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>608</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>
+	<image>
+		<name>audiochannel</name>
+		<file>[:@sharedmedia:]purityflags/audio/custom/[:flagchannels:].png</file>  <!-- Eversion variables holding the audio channel, if none found display nothing -->
+		<posx>608</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>	
+	<image>
+		<name>resolution.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>716</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>	
+	<image>
+		<name>resolution</name>
+		<file>[:@sharedmedia:]purityflags/video/custom/[:flagresolution:].png</file>  <!-- Eversion variables holding the video resolution, if none found display nothing -->
+		<posx>716</posx>
+		<posy>673</posy>
+		<width>108.75</width>
+		<height>45</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>	
+	<image>
+		<name>aspectratio.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>824</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>
+	<image>
+		<name>aspectratio</name>
+		<file>[:@sharedmedia:]purityflags/aspectratio/custom/comercial/[:flagaspect:].png</file>  <!-- Eversion variables holding the aspect ratio, if none found display nothing -->
+		<posx>824</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>
+	<image>
+		<name>container.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>932</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>
+	<image>
+		<name>container</name>
+		<file>[:@sharedmedia:]purityflags/video/custom/[:smartcontainer:].png</file>
+		<posx>933</posx>
+		<posy>664</posy>
+		<width>108.75</width>
+		<height>55</height>
+		<align>center</align>
+		<keepaspect>true</keepaspect>
+	</image>
+	<if>
+		<condition>[:subtitles:] != NO</condition>  <!-- This block is done if the condition is true-->
+		<image>
+			<name>subtitle.bg</name>
+			<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+			<posx>1148</posx>
+			<posy>670</posy>
+			<width>80</width>
+			<height>45</height>
+		</image>	
+		<image>
+			<name>subtitle</name>
+			<file>[:@sharedmedia:]purityflags/subtitle.png</file>  <!-- Use the language files to display localized "subtitle", in upper case -->
+			<posx>1151</posx>
+			<posy>668</posy>
+			<width>75</width>
+			<height>48</height>
+			<align>center</align>  <!-- By default align is left -->
+			<keepaspect>true</keepaspect>
+		</image>
+	</if>
+</eskin>

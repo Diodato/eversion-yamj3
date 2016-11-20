@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<control>
+
+<insert>
+<info>userlist3</info>
+<action>PRELOAD</action>
+<file>main.people.wall.24</file>
+<data>index</data>		
+</insert>
+
+</control>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!--******************************************************************
+	This .eskin file contains code that is used on the movie details page.
+	
+	Used with:
+	movie
+	
+	******************************************************************-->
+
+	<!-- Add an underlay bar to the top of the screen, useful when the background is not black  -->
+	<image>
+		<name>upper.navbar.bg</name>
+		<file>[:@media:]wall/topbar_overlay.png</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>50</height>
+	</image>
+	<text>
+		<name>title</name>
+		<display>[:fulltitle:]</display>  <!-- Eversion variable holding the title -->
+		<posx>25</posx>
+		<posy>5</posy>
+		<width>770</width>
+		<height>40</height>
+		<size>32</size>  
+		<color>movie.title.color</color>
+	</text>	
+	<!-- For genre we want to see up to six of them, but if a movie is part of the top250 that should be included as a genre -->
+		<!-- Media count -->
+	<text>  <!-- This one is only used for the walls and lists due to the segname.  -->
+		<name>total.index</name>
+		<segname>index</segname>  <!-- segname is necessary for the walls and lists -->
+		<display>[:@totaltiles:]</display>  <!-- An Eversion variable holding the number of titles in a segment  -->
+		<posx>1175</posx>
+		<posy>13</posy>		
+		<width>60</width>
+		<height>32</height>
+		<size>20</size>
+		<align>right</align>  <!-- By default align is left -->
+		<color>nav.data.color</color>
+	</text>	
+	<text>  <!-- This one is only used for tv due to the segname. -->
+		<name>total.episode</name>
+		<segname>eplist</segname>  <!-- segname is necessary for the TV episode list, hyper is not needed since this data does not change -->
+		<display>[:@totaltiles:]</display>  <!-- An Eversion variable holding the number of titles in a segment  -->
+		<posx>1175</posx>
+		<posy>13</posy>		
+		<width>60</width>
+		<height>32</height>
+		<size>20</size>
+		<align>right</align>  <!-- By default align is left -->
+		<color>nav.data.color</color>
+	</text>	
+	<text>  <!-- This one is only used for the walls and lists due to the segname.  -->
+		<name>total.index</name>
+		<segname>trailerfeed</segname>  <!-- segname is necessary for the walls and lists -->
+		<display>[:@totaltiles:]</display>  <!-- An Eversion variable holding the number of titles in a segment  -->
+		<posx>1175</posx>
+		<posy>13</posy>		
+		<width>60</width>
+		<height>32</height>
+		<size>20</size>
+		<align>right</align>  <!-- By default align is left -->
+		<color>nav.data.color</color>
+	</text>		
+</eskin>

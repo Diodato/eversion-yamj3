@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>	
+	
+	<image>
+		<name>moviedetails</name>
+		<file>[:@media:]movie/moviedetails.swf</file>
+		<posx>0</posx>
+		<posy>483</posy>
+		<width>1280</width>
+		<height>237</height>
+	</image>	
+
+	<text>
+		<name>country_prompt</name>
+		<display>[:$country:]</display>
+		<posx>15</posx>
+		<posy>523</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>country1</name>
+		<file>[:@media:]purity/flags/[:multi-/movie/countries/land-1-/land,filesafe,nospaces,lower:].png</file>
+		<posx>115</posx>
+		<posy>516</posy>
+		<width>40</width>
+		<height>40</height>		
+	</image>
+	<image>
+		<name>country2</name>
+		<condition>[:multi-/movie/countries-1-/countries-count:] &gt; 1</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/countries/land-2-/land,filesafe,nospaces,lower:].png</file>
+		<posx>175</posx>
+		<posy>516</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>country3</name>
+		<condition>[:multi-/movie/countries-1-/countries-count:] &gt; 2</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/countries/land-3-/land,filesafe,nospaces,lower:].png</file>
+		<posx>235</posx>
+		<posy>516</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>country4</name>
+		<condition>[:multi-/movie/countries-1-/countries-count:] &gt; 3</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/countries/land-4-/land,filesafe,nospaces,lower:].png</file>
+		<posx>295</posx>
+		<posy>516</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>country5</name>
+		<condition>[:multi-/movie/countries-1-/countries-count:] &gt; 4</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/countries/land-5-/land,filesafe,nospaces,lower:].png</file>
+		<posx>355</posx>
+		<posy>516</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>country6</name>
+		<condition>[:multi-/movie/countries-1-/countries-count:] &gt; 5</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/countries/land-6-/land,filesafe,nospaces,lower:].png</file>
+		<posx>415</posx>
+		<posy>516</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>country7</name>
+		<condition>[:multi-/movie/countries-1-/countries-count:] &gt; 6</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/countries/land-7-/land,filesafe,nospaces,lower:].png</file>
+		<posx>475</posx>
+		<posy>516</posy>
+		<width>40</width>
+		<height>40</height>		
+	</image>
+	
+	
+	
+	<text>
+		<name>language_prompt</name>
+		<display>[:%language:]</display>
+		<posx>15</posx>
+		<posy>563</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>audio_lang1</name>
+		<file>[:@media:]purity/flags/[:multi-/movie/codecs/audio/codec-1-/codec-langugageFull,filesafe,nospaces,lower:].png</file>
+		<posx>115</posx>
+		<posy>556</posy>
+		<width>40</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_lang2</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 1</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/codecs/audio/codec-2-/codec-langugageFull,filesafe,nospaces,lower:].png</file>
+		<posx>175</posx>
+		<posy>556</posy>
+		<width>40</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_lang3</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 2</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/codecs/audio/codec-3-/codec-langugageFull,filesafe,nospaces,lower:].png</file>
+		<posx>235</posx>
+		<posy>556</posy>
+		<width>40</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_lang4</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 3</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/codecs/audio/codec-4-/codec-langugageFull,filesafe,nospaces,lower:].png</file>
+		<posx>295</posx>
+		<posy>556</posy>
+		<width>40</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_lang5</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 4</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/codecs/audio/codec-5-/codec-langugageFull,filesafe,nospaces,lower:].png</file>
+		<posx>355</posx>
+		<posy>556</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	
+	<text>
+		<name>audiocodec_prompt</name>
+		<display>[:%audiocodec:]</display>
+		<posx>15</posx>
+		<posy>603</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>audio_cod1</name>
+		<file>[:@media:]purity/audiocodec/audcod_[:multi-/movie/codecs/audio/codec-1-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>115</posx>
+		<posy>596</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_cod2</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 1</condition>
+		<file>[:@media:]purity/audiocodec/audcod_[:multi-/movie/codecs/audio/codec-2-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>175</posx>
+		<posy>596</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_cod3</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 2</condition>
+		<file>[:@media:]purity/audiocodec/audcod_[:multi-/movie/codecs/audio/codec-3-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>235</posx>
+		<posy>596</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_cod4</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 3</condition>
+		<file>[:@media:]purity/audiocodec/audcod_[:multi-/movie/codecs/audio/codec-4-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>295</posx>
+		<posy>596</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_cod5</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 4</condition>
+		<file>[:@media:]purity/audiocodec/audcod_[:multi-/movie/codecs/audio/codec-5-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>355</posx>
+		<posy>596</posy>
+		<width>60</width>
+		<height>40</height>	
+	</image>
+	
+	<text>
+		<name>channels_prompt</name>
+		<display>[:%channels:]</display>
+		<posx>15</posx>
+		<posy>643</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>audio_ch1</name>
+		<file>[:@media:]purity/channel/audch_[:multi-/movie/codecs/audio/codec-1-/codec-channels,filesafe,nospaces,lower:].swf</file>
+		<posx>115</posx>
+		<posy>636</posy>
+		<width>60</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>audio_ch2</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 1</condition>
+		<file>[:@media:]purity/channel/audch_[:multi-/movie/codecs/audio/codec-2-/codec-channels,filesafe,nospaces,lower:].swf</file>
+		<posx>175</posx>
+		<posy>636</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_ch3</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 2</condition>
+		<file>[:@media:]purity/channel/audch_[:multi-/movie/codecs/audio/codec-3-/codec-channels,filesafe,nospaces,lower:].swf</file>
+		<posx>235</posx>
+		<posy>636</posy>
+		<width>60</width>
+		<height>40</height>	
+	</image>	
+	<image>
+		<name>audio_ch4</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 3</condition>
+		<file>[:@media:]purity/channel/audch_[:multi-/movie/codecs/audio/codec-4-/codec-channels,filesafe,nospaces,lower:].swf</file>
+		<posx>295</posx>
+		<posy>636</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>audio_ch5</name>
+		<condition>[:multi-/movie/codecs/audio-1-/audio-count:] &gt; 4</condition>
+		<file>[:@media:]purity/channel/audch_[:multi-/movie/codecs/audio/codec-5-/codec-channels,filesafe,nospaces,lower:].swf</file>
+		<posx>355</posx>
+		<posy>636</posy>
+		<width>60</width>
+		<height>40</height>	
+	</image>
+		
+	<text>
+		<name>subtitles_prompt</name>
+		<display>[:%subtitles:]</display>
+		<posx>15</posx>
+		<posy>683</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>	
+
+	<image>
+		<name>audio_sub1</name>
+		<file>[:@media:]purity/flags/[:multi-/movie/subs/subtitle-1-/subtitle,filesafe,nospaces,lower:].png</file>
+		<posx>115</posx>
+		<posy>676</posy>
+		<width>40</width>
+		<height>40</height>		
+	</image>
+	<image>
+		<name>audio_sub2</name>
+		<condition>[:multi-/movie/subs-1-/subs-count:] &gt; 1</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/subs/subtitle-2-/subtitle,filesafe,nospaces,lower:].png</file>
+		<posx>175</posx>
+		<posy>676</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>audio_sub3</name>
+		<condition>[:multi-/movie/subs-1-/subs-count:] &gt; 2</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/subs/subtitle-3-/subtitle,filesafe,nospaces,lower:].png</file>
+		<posx>235</posx>
+		<posy>676</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>audio_sub4</name>
+		<condition>[:multi-/movie/subs-1-/subs-count:] &gt; 3</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/subs/subtitle-4-/subtitle,filesafe,nospaces,lower:].png</file>
+		<posx>295</posx>
+		<posy>676</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>audio_sub5</name>
+		<condition>[:multi-/movie/subs-1-/subs-count:] &gt; 4</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/subs/subtitle-5-/subtitle,filesafe,nospaces,lower:].png</file>
+		<posx>355</posx>
+		<posy>676</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>audio_sub6</name>
+		<condition>[:multi-/movie/subs-1-/subs-count:] &gt; 5</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/subs/subtitle-6-/subtitle,filesafe,nospaces,lower:].png</file>
+		<posx>415</posx>
+		<posy>676</posy>
+		<width>40</width>
+		<height>40</height>	
+	</image>
+	<image>
+		<name>audio_sub7</name>
+		<condition>[:multi-/movie/subs-1-/subs-count:] &gt; 6</condition>
+		<file>[:@media:]purity/flags/[:multi-/movie/subs/subtitle-7-/subtitle,filesafe,nospaces,lower:].png</file>
+		<posx>475</posx>
+		<posy>676</posy>
+		<width>40</width>
+		<height>40</height>		
+	</image>
+	
+
+	
+	<text>
+		<name>videocodec_prompt</name>
+		<display>[:%videocodec:]</display>
+		<posx>655</posx>
+		<posy>523</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>video_cod1</name>
+		<file>[:@media:]purity/videocodec/vidcod_[:multi-/movie/codecs/video/codec-1-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>755</posx>
+		<posy>516</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>video_cod2</name>
+		<condition>[:multi-/movie/codecs/video-1-/video-count:] &gt; 1</condition>
+		<file>[:@media:]purity/videocodec/vidcod_[:multi-/movie/codecs/video/codec-2-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>815</posx>
+		<posy>516</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>video_cod3</name>
+		<condition>[:multi-/movie/codecs/video-1-/video-count:] &gt; 2</condition>
+		<file>[:@media:]purity/videocodec/vidcod_[:multi-/movie/codecs/video/codec-3-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>875</posx>
+		<posy>516</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>video_cod4</name>
+		<condition>[:multi-/movie/codecs/video-1-/video-count:] &gt; 3</condition>
+		<file>[:@media:]purity/videocodec/vidcod_[:multi-/movie/codecs/video/codec-4-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>935</posx>
+		<posy>516</posy>
+		<width>60</width>
+		<height>40</height>
+	</image>
+	<image>
+		<name>video_cod5</name>
+		<condition>[:multi-/movie/codecs/video-1-/video-count:] &gt; 4</condition>
+		<file>[:@media:]purity/videocodec/vidcod_[:multi-/movie/codecs/video/codec-5-/codec,filesafe,nospaces,lower:].swf</file>
+		<posx>995</posx>
+		<posy>516</posy>
+		<width>60</width>
+		<height>40</height>	
+	</image>
+	
+	<text>
+		<name>videosource_prompt</name>
+		<display>[:%videosource:]</display>
+		<posx>655</posx>
+		<posy>563</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<image>
+		<name>videosource</name>
+		<file>[:@media:]purity/videosource/videosource_[:videoSource,filesafe,nospaces,lower:].swf</file>
+		<posx>755</posx>
+		<posy>556</posy>
+		<width>60</width>
+		<height>40</height>	
+	</image>	
+	
+	<text>
+		<name>container_prompt</name>
+		<display>[:%container:]</display>
+		<posx>655</posx>
+		<posy>603</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>	
+	
+	<image>
+		<name>container</name>
+		<file>[:@media:]purity/container/container_[:smartcontainer,filesafe,nospaces,lower:].swf</file>
+		<posx>755</posx>
+		<posy>596</posy>
+		<width>60</width>
+		<height>40</height>	
+	</image>
+	
+	<text>
+		<name>aspect_prompt</name>
+		<display>[:%aspect:]</display>
+		<posx>655</posx>
+		<posy>643</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>		
+	
+	<image>
+		<name>aspect</name>
+		<file>[:@media:]purity/aspect/aspect_[:flagratio,filesafe,nospaces,lower:].swf</file>
+		<posx>755</posx>
+		<posy>636</posy>
+		<width>60</width>
+		<height>40</height>	
+	</image>
+	
+	<text>
+		<name>fps_prompt</name>
+		<display>[:%fps:]</display>
+		<posx>655</posx>
+		<posy>683</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>	
+	
+	<image>
+		<name>fps</name>
+		<file>[:@media:]purity/fps/fps_[:fps,filesafe,nospaces,lower:].swf</file>
+		<posx>755</posx>
+		<posy>676</posy>
+		<width>60</width>
+		<height>40</height>	
+	</image>
+	
+	<text>
+		<name>runtime_prompt</name>
+		<display>[:%runtime:]</display>
+		<posx>1060</posx>
+		<posy>523</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.label.color</color>
+	</text>
+	
+	<text>
+		<name>runtime</name>
+		<display>[:runtime,blank:]</display>
+		<posx>1160</posx>
+		<posy>523</posy>
+		<width>525</width>
+		<height>25</height>
+		<size>17</size>  
+		<color>movie.data.color</color>
+	</text>	
+
+	<image>
+		<name>company</name>
+		<file>[:@eskin:]evhell_overlay/resources/company/[:company,nospaces,lower:].png</file>
+		<posx>1090</posx>
+		<posy>570</posy>
+		<width>161</width>
+		<height>109</height>
+	</image>	
+	
+	<text>
+		<name>companytext</name>
+		<display>[:company:]</display>
+		<posx>1060</posx>
+		<posy>680</posy>
+		<width>220</width>
+		<height>40</height>
+		<size>15</size>
+		<align>center</align>
+		<color>movie.data.color</color>
+	</text>
+	
+	<image>
+		<name>extras</name>
+		<condition>[:isextras:] == YES</condition>
+		<file>[:@media:]movie/Extrasstardim.swf</file>
+		<posx>1030</posx>
+		<posy>488</posy>
+		<width>11</width>
+		<height>10</height>
+	</image>	
+	
+<!-- Play movie buttons -->	
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	
+<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>	
+	<remote>
+		<button>SPACE</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>
+	
+<!-- Go back to overview -->	
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>4</data>
+	</remote>
+	<remote>
+	   <button>RETURN</button>
+	   <action>BACK</action>
+	   <data>4</data>
+	</remote>
+	
+<!-- Next -->
+	<remote>
+		<button>NUM1</button>
+		<action>EXTRA</action>	
+		<file>movieinfoover</file>
+	</remote>
+
+	<remote>
+		<button>NUM2</button>
+		<action>EXTRA</action>	
+		<file>movieinfoplot</file>
+	</remote>
+
+	<remote>
+		<button>NUM3</button>
+		<action>EXTRA</action>	
+		<file>movieinfocast</file>
+	</remote>
+
+	<remote>
+		<button>NUM4</button>
+		<action>EXTRA</action>	
+		<file>movieinfoawards</file>
+	</remote>
+	
+	<remote>
+		<button>NUM6</button>
+		<action>EXTRA</action>	
+		<file>movieinfoextras</file>
+	</remote>
+	
+<!-- Next tab extras -->
+	<remote>
+		<button>GREEN</button>
+		<action>EXTRA</action>	
+		<file>movieinfoextras</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>movieinfoextras</file>
+	</remote>
+	
+<!-- Previous tab photos -->	
+	<remote>
+		<button>RED</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>BACK</action>	
+	   <data>1</data>
+	</remote>
+	
+<!-- Fanart only -->
+	<remote>
+		<button>YELLOW</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+
+</eskin>

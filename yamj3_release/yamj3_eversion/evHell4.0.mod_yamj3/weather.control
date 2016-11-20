@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+For more info: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:control
+-->
+<control>
+	<item>
+		<title>City1</title>
+		<number>1</number>
+		<action>BACK</action>	
+		<data>1</data>
+	</item>	
+</control>

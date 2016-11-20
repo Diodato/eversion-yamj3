@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- EVERSION Danish HELP prompts -->
+
+<translation>
+
+<help>Help</help>
+<walls>Index Walls</walls>
+<set>Set</set>
+<movie>Movie Details</movie>
+<tv>TV Details</tv>	
+
+<!-- WALL -->
+
+<keypad_wall>Jump to position (0=0%, 1=10%,…)</keypad_wall>
+<home_wall>Jump to Home screen</home_wall>
+<home_wall_pb>Exit Eversion</home_wall_pb>
+<return_wall>Go one step back</return_wall>
+<left_wall>Navigate up/down/left/right</left_wall>
+<hyperscroll_wall>(hold down for faster scrolling)</hyperscroll_wall>
+<right_wall></right_wall>
+<up_wall></up_wall>
+<down_wall></down_wall>
+<info_wall></info_wall>
+<pageup_wall>Jump to next/previous page</pageup_wall>
+<pagedown_wall></pagedown_wall>
+<mute_wall></mute_wall>
+<menu_wall>Open/Close menu</menu_wall>
+<eject_wall>Exit Eversion</eject_wall>
+<search_wall>Open menu</search_wall>
+<red_wall>Red:</red_wall>
+<redlink_wall>Jump to Home screen</redlink_wall>
+<green_wall>Green:</green_wall>
+<greenlink_wall>Jump to Home screen</greenlink_wall>
+<yellow_wall>Yellow:</yellow_wall>
+<yellowlink_wall>Jump to Home screen</yellowlink_wall>
+<blue_wall>Blue:</blue_wall>
+<bluelink_wall>Exit and goto Apps Center</bluelink_wall>
+<enter_wall>Open selected Movie/TV show/Set page</enter_wall>
+<stop_wall></stop_wall>
+<play_wall>Play video / Play all videos in playlist</play_wall>
+<play_alt1_wall></play_alt1_wall>
+<pause_wall></pause_wall>
+<rewind_wall></rewind_wall>
+<fastforward_wall></fastforward_wall>
+<skipback_wall></skipback_wall>
+<skipforward_wall></skipforward_wall>
+	
+<!-- SET -->
+
+<keypad_set>Jump to position (0=0%, 1=10%,…)</keypad_set>
+<home_set>Jump to Home screen</home_set>
+<home_set_pb>Exit Eversion</home_set_pb>
+<return_set>Go one step back</return_set>
+<left_set>Navigate up/down</left_set>
+<hyperscroll_set>(hold down for faster scrolling)</hyperscroll_set>
+<right_set></right_set>
+<up_set></up_set>
+<down_set></down_set>
+<info_set></info_set>
+<pageup_set>Jump to next/previous page</pageup_set>
+<pagedown_set></pagedown_set>
+<mute_set></mute_set>
+<menu_set>Open/Close menu</menu_set>
+<eject_set>Exit Eversion</eject_set>
+<search_set>Open menu</search_set>
+<red_set>Red:</red_set>
+<redlink_set>Jump to Home screen</redlink_set>
+<green_set>Green:</green_set>
+<greenlink_set>Jump to Home screen</greenlink_set>
+<yellow_set>Yellow:</yellow_set>
+<yellowlink_set>Jump to Home screen</yellowlink_set>
+<blue_set>Blue:</blue_set>
+<bluelink_set>Exit and goto Apps Center</bluelink_set>
+<enter_set>Open Movie/TV show detail page</enter_set>
+<stop_set></stop_set>
+<play_set>Play video / Play all videos in playlist</play_set>
+<play_alt1_set></play_alt1_set>
+<pause_set></pause_set>
+<rewind_set></rewind_set>
+<fastforward_set></fastforward_set>
+<skipback_set></skipback_set>
+<skipforward_set></skipforward_set>
+
+<!-- MOVIE -->
+
+<keypad_movie>Select part of multi-part movie (1=part1, 2=part2,…)</keypad_movie>
+<home_movie>Jump to Home screen</home_movie>
+<home_movie_pb>Exit Eversion</home_movie_pb>
+<return_movie>Go one step back</return_movie>
+<left_movie>Navigate up/down/left/right</left_movie>
+<hyperscroll_movie>*Movie info popup only</hyperscroll_movie>
+<right_movie></right_movie>
+<up_movie></up_movie>
+<down_movie></down_movie>
+<info_movie>Show movie info popup*</info_movie>
+<info_alt1_movie>(extras, trailers, full plot)</info_alt1_movie>
+<pageup_movie></pageup_movie>
+<pagedown_movie></pagedown_movie>
+<mute_movie></mute_movie>
+<menu_movie>Open/Close menu</menu_movie>
+<eject_movie>Exit Eversion</eject_movie>
+<search_movie>Open menu</search_movie>
+<red_movie>Red:</red_movie>
+<redlink_movie>Jump to Home screen</redlink_movie>
+<green_movie>Green:</green_movie>
+<greenlink_movie>Jump to Home screen</greenlink_movie>
+<yellow_movie>Yellow:</yellow_movie>
+<yellowlink_movie>Jump to Home screen</yellowlink_movie>
+<blue_movie>Blue:</blue_movie>
+<bluelink_movie>Exit and goto Apps Center</bluelink_movie>
+<enter_movie>Play video / Open multi-part selection</enter_movie>
+<enter_alt1_movie>*Movie info popup: Play trailers & extras</enter_alt1_movie>
+<stop_movie></stop_movie>
+<play_movie></play_movie>
+<play_alt1_movie></play_alt1_movie>
+<play_movie_pb>Play video / Open multi-part selection</play_movie_pb>
+<play_alt1_movie_pb>*Movie info popup: Play trailers & extras</play_alt1_movie_pb>
+<pause_movie></pause_movie>
+<rewind_movie></rewind_movie>
+<fastforward_movie></fastforward_movie>
+<skipback_movie></skipback_movie>
+<skipforward_movie></skipforward_movie>
+
+<!-- TV -->
+
+<keypad_tv>Jump to position (0=0%, 1=10%,…)</keypad_tv>
+<home_tv>Jump to Home screen</home_tv>
+<home_tv_pb>Exit Eversion</home_tv_pb>
+<return_tv>Go one step back</return_tv>
+<left_tv>Navigate up/down</left_tv>
+<hyperscroll_tv></hyperscroll_tv>
+<right_tv></right_tv>
+<up_tv></up_tv>
+<down_tv></down_tv>
+<info_tv></info_tv>
+<pageup_tv>Jump to next/previous episode page</pageup_tv>
+<pagedown_tv></pagedown_tv>
+<mute_tv></mute_tv>
+<menu_tv>Open/Close menu</menu_tv>
+<eject_tv>Exit Eversion</eject_tv>
+<search_tv>Open menu</search_tv>
+<red_tv>Red:</red_tv>
+<redlink_tv>Jump to Home screen</redlink_tv>
+<green_tv>Green:</green_tv>
+<greenlink_tv>Jump to Home screen</greenlink_tv>
+<yellow_tv>Yellow:</yellow_tv>
+<yellowlink_tv>Jump to Home screen</yellowlink_tv>
+<blue_tv>Blue:</blue_tv>
+<bluelink_tv>Exit and goto Apps Center</bluelink_tv>
+<enter_tv>Play selected episode</enter_tv>
+<enter_alt1_tv></enter_alt1_tv>
+<stop_tv></stop_tv>
+<enter_tv>Play selected episode</enter_tv>
+<play_tv>Play all (starting with selected episode)</play_tv>
+<play_alt1_tv></play_alt1_tv>
+<pause_tv>Play a random episode</pause_tv>
+<rewind_tv></rewind_tv>
+<fastforward_tv>Play the last episode</fastforward_tv>
+<skipback_tv></skipback_tv>
+<skipforward_tv></skipforward_tv>
+
+</translation>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+	<text>
+		<name>indexname_name</name>
+		<condition>[:@indexurl,cut4:] = Cert</condition>
+		<display>[:%certification:]: [:@indexname,yamj3clean:]</display>
+		<posx>110</posx>
+		<posy>3</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>36</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>222222</color>
+	</text>
+	<text>
+		<name>indexname_tv</name>
+		<condition>[:@indexname:] = TV Shows</condition>
+		<display>[:%tv-shows,upper:]</display>
+		<posx>110</posx>
+		<posy>3</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>36</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>222222</color>
+	</text>
+	<text>
+        <name>indexname_untranslatable</name>
+        <condition>[:@indexname:] != TV Shows ++ [:@indexname,evtrans:] == undefined ++ [:@indexurl,cut4:] != Cert</condition>
+        <display>[:@indexname:]</display>
+		<posx>110</posx>
+		<posy>3</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>36</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>222222</color>
+	</text>
+<!--	<text>
+		<name>indexname_translatable</name>
+        <condition>[:@indexname,evtrans:] != undefined ++ [:@indexurl,cut4:] != Cert</condition>
+        <display>[:@indexname,evtrans,upper:]</display>
+		<posx>110</posx>
+		<posy>3</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>36</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>222222</color>
+	</text>-->
+	<image>
+		<name>indexicon</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<condition>[:@indexurl:] startswith Other || [:@indexurl:] startswith Genre</condition>
+		<file>[:@media:]common/icons/icon_[:@indexname,lower:].png</file>
+		<posx>35</posx>
+		<posy>0</posy>
+		<width>63</width>
+		<height>45</height>
+	</image>
+	<image>
+		<name>indexicon_sub-categories</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<condition>[:@indexurl:] startswith Set || [:@indexurl:] startswith Library || [:@indexurl:] startswith Title || [:@indexurl:] startswith Year || [:@indexurl:] startswith Cast || [:@indexurl:] startswith Writer || [:@indexurl:] startswith Director || [:@indexurl:] startswith Country || [:@indexurl:] startswith Ratings || [:@indexurl:] startswith Certification</condition>
+		<file>[:@media:]common/icons/icon_[:@indexurl,cut4,lower:].png</file>
+		<posx>35</posx>
+		<posy>0</posy>
+		<width>63</width>
+		<height>50</height>
+	</image>
+	<image>
+		<name>indexicon_certification</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<condition>[:@indexurl:] startswith Certification</condition>
+		<file>[:@media:]common/cert/[:#certification,lower:]_[:@indexname,lower:].png</file>
+		<posx>530</posx>
+		<posy>3</posy>
+		<width>220</width>
+		<height>45</height>
+		<keepaspect>true</keepaspect>
+	</image>
+	<image>
+		<name>indexicon_certification_tv</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<condition>[:@indexurl:] startswith Certification</condition>
+		<file>[:@media:]common/cert/[:@indexname,lower:].png</file>
+		<posx>530</posx>
+		<posy>3</posy>
+		<width>220</width>
+		<height>45</height>
+		<keepaspect>true</keepaspect>
+	</image>
+	<!--<text>
+		<name>test_block</name>
+		<display>[:@indexname:]</display>
+		<posx>110</posx>
+		<posy>23</posy>		
+		<width>1060</width>
+		<height>50</height>
+		<size>25</size>
+		<align>center</align>
+		<bold>true</bold>
+		<color>ffffff</color>
+	</text>-->
+</eskin>

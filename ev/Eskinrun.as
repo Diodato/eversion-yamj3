@@ -438,7 +438,7 @@ class ev.Eskinrun {
 
 	// meant to be called for first draw
 	public function skin_draw() {
-		trace(". first ui draw for "+this.eskinfile);
+		trace("***** Eskinrun: ESKIN called . first ui draw ====>  "+this.eskinfile);
 
 		// placeholders
 		if(this.nextdepth==null) {
@@ -869,7 +869,7 @@ class ev.Eskinrun {
 	private function do_variable(vartag:String,who,getdata):String {
 		// pull out the var
 		var stripped:String=vartag.substr(2,vartag.length-4);
-		//trace("stripped: "+stripped);
+		// trace("stripped: "+stripped + " vartag:" + vartag);
 
 		// split by ,
 		var modcheck:Array=stripped.split(",");  // checks at end if any
@@ -931,7 +931,7 @@ class ev.Eskinrun {
 				break;
 		}
 
-		//trace("newdata now "+newdata);
+		// trace("newdata now "+newdata);
 
 		if(newdata!=null && newdata!=undefined) {
 			// if length isn't 1
@@ -940,7 +940,8 @@ class ev.Eskinrun {
 				//trace("var modifiers found");
 
 				for(var tt=1;tt<modcheck.length;tt++) {
-					//trace("... checking modifier: "+modcheck[tt]);
+				var tmpnewdata:String = newdata;   // save the value if someting wrong 
+				//	trace("... checking modifier: "+modcheck[tt]+" newdata:" + newdata);
 					switch(modcheck[tt]) {
 						case 'upper':
 							newdata=newdata.toUpperCase();
@@ -991,7 +992,9 @@ class ev.Eskinrun {
 							newdata=newdata.length.toString();
 							break;
 						case 'nospaces':
+							var tmpnewdata:String = newdata;
 							newdata=StringUtil.replace(newdata," ","");
+							if (newdata == undefined) {newdata = tmpnewdata; }
 							break;
 						case 'filesafe':
 							newdata=StringUtil.replace(newdata,"/",".");
@@ -1014,6 +1017,9 @@ class ev.Eskinrun {
 							newdata=StringUtil.replace(newdata,">","-");
 							newdata=StringUtil.replace(newdata,'"',"-");
 							newdata=StringUtil.replace(newdata,"|","-");
+							break;
+						case 'yamj3clean':
+							newdata=StringUtil.replace(newdata,"::"," ");
 							break;
 						default:
 							//trace("unknown modifier");
@@ -1038,10 +1044,19 @@ class ev.Eskinrun {
 								if(newdata.length>howmany) {
 									newdata=newdata.substring(0,howmany);
 								}
+							} else if(StringUtil.beginsWith(modcheck[tt], "last")) {
+								// last
+								var howmany:Number=int(modcheck[tt].slice(4));
+								trace("last by "+howmany);
+								if(newdata.length>howmany) {
+									newdata=newdata.substring(newdata.length - howmany);
+								}
 							}
 							break;
 					}
 					//trace("modified new data: "+newdata);
+					// restore newdata if corrupted 
+					if (newdata == undefined) {newdata = tmpnewdata; }
 				}
 			}
 			//trace("modified new data: "+newdata);
@@ -1068,6 +1083,7 @@ class ev.Eskinrun {
 				break;
 			case 'media':  			// path to eskin media folder
 				newdata=Common.evSettings.eskinrootpath+this.eskinmaster+"/media/";
+			//	trace ("Eskinrun: media: " + newdata)
 				break;
 			case 'jukebox':      	// path to jukebox folder
 				newdata=Common.evSettings.yamjdatapath;
@@ -1126,16 +1142,17 @@ class ev.Eskinrun {
 				break;
 			default:
 				if(this.tempgetdata != undefined && this.tempgetdata !=null) {  // check the temp data for answer
-					//trace("trying tempgetdata");
+				//	trace("trying tempgetdata");
 					newdata=this.tempgetdata(data);
 				}
 
 				if(getdata!= undefined && (newdata==null || newdata==undefined)) {     // check the segment data for answer
+				//	trace("trying get_ev_data("+ data + ")");
 					newdata=getdata.get_ev_data(data);
 				}
 
 				if(newdata==null || newdata==undefined) {
-					trace("unknown evint "+data);
+					trace("do_var_evint unknown evint "+data);
 				}
 		}
 

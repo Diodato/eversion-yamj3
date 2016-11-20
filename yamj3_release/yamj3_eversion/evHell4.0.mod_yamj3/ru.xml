@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    EvHell Russian prompts
+-->
+<translation>
+    <!-- TITLES (TV Shows has to be changed in YAMJ categories to TV-Shows-->
+    <!-- home menu -->
+    <all>Все</all>
+    <new>Новинки</new>
+    <new-movies>Новые_Фильмы</new-movies>
+    <new-movie>Новый_Фильм</new-movie>
+    <new-tv>Новое_ТВ-Шоу</new-tv>
+    <movies>Фильмы</movies>
+    <tv-shows>ТВ-Шоу</tv-shows>    
+    <hd>HD</hd>
+    <hd-720>HD 720</hd-720>    
+    <hd-1080>HD 1080</hd-1080>    
+    <top250>Топ 250</top250>
+    <3d>3D</3d>
+    <extras>Extras</extras>
+    <watched>Просмотрено</watched>
+    <unwatched>Не Просмотрено</unwatched>
+    <rating>Рейтинг</rating>
+    <tv>ТВ</tv>
+    <video>Видео</video>
+
+    <categories>Категории</categories>
+    <people>Люди</people>
+    <trailers>Трейлеры</trailers>
+    <weather>Погода</weather>
+    <apps>Приложения</apps>
+    <reset>Сброс</reset>
+    <about>О проекте</about>
+    <help>Помощь</help>
+    <exit>Выход</exit>    
+    
+    <!-- categories -->
+    <home>Начало</home>
+    <genres>Жанры</genres>
+    <title>Название</title>
+    <certification>Рейтинг_MPAA</certification>    
+    <year>Год</year>
+    <country>Страна</country>
+    <award>Награды</award>
+    <ratings>Рейтинг</ratings>
+    <set>Серия</set>
+
+    <!-- user menu -->    
+    <cast>Подбор актеров</cast>
+    <director>Режиссёр</director>
+    <writer>Сценарий</writer>
+    <person>Персонаж</person>
+
+    <!-- BEGIN MOVIE DETAILS -->
+    <tagline>Слоган</tagline>
+    <outline>Описание</outline>
+    <details>Подробно</details>    
+    <company>Компания</company>    
+    <awards>Награды</awards>    
+    <won>Победитель</won>        
+    <nominated>Номинации</nominated>
+    
+    <!-- BEGIN REVERSE TRANSLATIONS!!!!! translations in the tags english and content between the tags!!! -->
+    <!-- BEGIN REVERSE TRANSLATIONS!!!!! e.g. for french  <réalisateur>Director</réalisateur>         !!! -->
+    <!-- Reverse categories -->
+    <Начало>Home</Начало>
+    <жанры>Genres</жанры>
+    <название>Title</название>
+    <рейтинг_mpaa>Certification</рейтинг_mpaa>
+    <год>Year</год>
+    <страна>Country</страна>
+    <награды>Award</награды>
+    <рейтинг>Ratings</рейтинг>
+    <серия>Set</серия>
+    <подбор_актеров>Cast</подбор_актеров>
+    <режиссёр>Director</режиссёр>
+    <сценарий>Writer</сценарий>
+    <персонаж>Person</персонаж>
+	
+    <!-- Reverse Countries -->	
+	<afghanistan>Afghanistan</afghanistan>
+	<aland_islands>Aland Islands</aland_islands>
+	<albania>Albania</albania>
+	<algeria>Algeria</algeria>
+	<american_samoa>American Samoa</american_samoa>
+	<andorra>Andorra</andorra>
+	<angola>Angola</angola>
+	<anguilla>Anguilla</anguilla>
+	<antarctica>Antarctica</antarctica>
+	<antigua_and_barbuda>Antigua and Barbuda</antigua_and_barbuda>
+    <аргентина>Argentina</аргентина>
+	<armenia>Armenia</armenia>
+	<aruba>Aruba</aruba>
+    <австралия>Australia</австралия>
+    <австрия>Austria</австрия>
+	<azerbaijan>Azerbaijan</azerbaijan>
+	<bahamas>Bahamas</bahamas>
+	<bahrain>Bahrain</bahrain>
+	<bangladesh>Bangladesh</bangladesh>
+	<barbados>Barbados</barbados>
+    <беларусь>Belarus</беларусь>
+    <бельгия>Belgium</бельгия>
+	<belize>Belize</belize>
+	<benin>Benin</benin>
+	<bermuda>Bermuda</bermuda>
+	<bhutan>Bhutan</bhutan>
+    <боливия>Bolivia</боливия>
+	<bosnia_and_herzegovina>Bosnia and Herzegovina</bosnia_and_herzegovina>
+	<botswana>Botswana</botswana>
+    <бразилия>Brazil</бразилия>
+	<british_indian_ocean_territory>British Indian Ocean Territory</british_indian_ocean_territory>
+	<british_virgin_islands>British Virgin Islands</british_virgin_islands>
+	<brunei>Brunei</brunei>
+    <болгария>Bulgaria</болгария>
+	<burkina_faso>Burkina Faso</burkina_faso>
+	<burundi>Burundi</burundi>
+	<cambodia>Cambodia</cambodia>
+	<cameroon>Cameroon</cameroon>
+    <канада>Canada</канада>
+	<cape_verde>Cape Verde</cape_verde>
+	<cayman_islands>Cayman Islands</cayman_islands>
+	<central_african_republic>Central African Republic</central_african_republic>
+	<chad>Chad</chad>
+	<chile>Chile</chile>
+    <китай>China</китай>
+	<christmas_island>Christmas Island</christmas_island>
+    <колумбия>Colombia</колумбия>
+	<comoros>Comoros</comoros>
+	<republic_of_the_congo>Republic of the Congo</republic_of_the_congo>
+	<cook_islands>Cook Islands</cook_islands>
+	<costa_rica>Costa Rica</costa_rica>
+	<ivory_coast>Ivory Coast</ivory_coast>
+    <хорватия>Croatia</хорватия>
+	<cuba>Cuba</cuba>
+	<cyprus>Cyprus</cyprus>
+	<czech_republic>Czech Republic</czech_republic>
+    <дания>Denmark</дания>
+	<djibouti>Djibouti</djibouti>
+	<dominica>Dominica</dominica>
+	<dominican_republic>Dominican Republic</dominican_republic>
+	<ecuador>Ecuador</ecuador>
+	<egypt>Egypt</egypt>
+	<el_salvador>El Salvador</el_salvador>
+	<equatorial_guinea>Equatorial Guinea</equatorial_guinea>
+	<eritrea>Eritrea</eritrea>
+	<estonia>Estonia</estonia>
+	<ethiopia>Ethiopia</ethiopia>
+	<falkland_islands>Falkland Islands</falkland_islands>
+	<faroe_islands>Faroe Islands</faroe_islands>
+	<fiji>Fiji</fiji>
+    <финляндия>Finland</финляндия>
+    <франция>France</франция>
+	<french_polynesia>French Polynesia</french_polynesia>
+	<gabon>Gabon</gabon>
+	<gambia>Gambia</gambia>
+	<georgia>Georgia</georgia>
+    <германия>Germany</германия>
+	<ghana>Ghana</ghana>
+	<gibraltar>Gibraltar</gibraltar>
+	<greece>Greece</greece>
+	<greenland>Greenland</greenland>
+	<grenada>Grenada</grenada>
+	<guam>Guam</guam>
+	<guatemala>Guatemala</guatemala>
+	<guernsey>Guernsey</guernsey>
+	<guinea>Guinea</guinea>
+	<guinea-bissau>Guinea-Bissau</guinea-bissau>
+	<guyana>Guyana</guyana>
+	<haiti>Haiti</haiti>
+	<honduras>Honduras</honduras>
+    <гонконг>Hong kong</гонконг>
+    <венгрия>Hungary</венгрия>
+    <исландия>Iceland</исландия>
+    <индия>India</индия>
+	<indonesia>Indonesia</indonesia>
+	<iran>Iran</iran>
+	<iraq>Iraq</iraq>
+	<ireland>Ireland</ireland>
+	<isle_of_man>Isle of Man</isle_of_man>
+    <израиль>Israel</израиль>
+    <италия>Italy</италия>
+	<jamaica>Jamaica</jamaica>
+    <япония>Japan</япония>
+	<jersey>Jersey</jersey>
+	<jordan>Jordan</jordan>
+	<kazakhstan>Kazakhstan</kazakhstan>
+	<kenya>Kenya</kenya>
+	<kiribati>Kiribati</kiribati>
+	<kuwait>Kuwait</kuwait>
+	<kyrgyzstan>Kyrgyzstan</kyrgyzstan>
+	<laos>Laos</laos>
+	<latvia>Latvia</latvia>
+	<lebanon>Lebanon</lebanon>
+	<lesotho>Lesotho</lesotho>
+	<liberia>Liberia</liberia>
+	<libya>Libya</libya>
+	<liechtenstein>Liechtenstein</liechtenstein>
+	<lithuania>Lithuania</lithuania>
+	<luxembourg>Luxembourg</luxembourg>
+	<macedonia>Macedonia</macedonia>
+	<madagascar>Madagascar</madagascar>
+	<malawi>Malawi</malawi>
+	<malaysia>Malaysia</malaysia>
+	<maldives>Maldives</maldives>
+	<mali>Mali</mali>
+	<malta>Malta</malta>
+	<marshall_islands>Marshall Islands</marshall_islands>
+	<mauritania>Mauritania</mauritania>
+	<mauritius>Mauritius</mauritius>
+    <мексика>Mexico</мексика>
+	<micronesia>Micronesia</micronesia>
+	<moldova>Moldova</moldova>
+    <монако>Monaco</монако>
+	<mongolia>Mongolia</mongolia>
+	<montenegro>Montenegro</montenegro>
+	<montserrat>Montserrat</montserrat>
+	<morocco>Morocco</morocco>
+	<mozambique>Mozambique</mozambique>
+	<myanmar>Myanmar</myanmar>
+	<namibia>Namibia</namibia>
+	<nauru>Nauru</nauru>
+	<nepal>Nepal</nepal>
+    <нидерланды>Netherlands</нидерланды>
+	<netherlands_antilles>Netherlands Antilles</netherlands_antilles>
+    <новая_зеланидия>New_zealand</новая_зеланидия>
+	<nicaragua>Nicaragua</nicaragua>
+	<niger>Niger</niger>
+	<nigeria>Nigeria</nigeria>
+	<niue>Niue</niue>
+	<norfolk_island>Norfolk Island</norfolk_island>
+	<northern_mariana_islands>Northern Mariana Islands</northern_mariana_islands>
+	<north_korea>North Korea</north_korea>
+    <норвегия>Norway</норвегия>
+	<oman>Oman</oman>
+	<pakistan>Pakistan</pakistan>
+	<palau>Palau</palau>
+	<palestinian_territory>Palestinian Territory</palestinian_territory>
+	<panama>Panama</panama>
+	<papua_new_guinea>Papua New Guinea</papua_new_guinea>
+	<paraguay>Paraguay</paraguay>
+    <перу>Peru</перу>
+	<philippines>Philippines</philippines>
+	<pitcairn>Pitcairn</pitcairn>
+    <польша>Poland</польша>
+    <португалия>Portugal</португалия>
+	<puerto_rico>Puerto Rico</puerto_rico>
+	<qatar>Qatar</qatar>
+	<romania>Romania</romania>
+    <россия>Russia</россия>
+	<rwanda>Rwanda</rwanda>
+	<san_marino>San Marino</san_marino>
+	<sao_tome_and_principe>Sao Tome and Principe</sao_tome_and_principe>
+	<saudi_arabia>Saudi Arabia</saudi_arabia>
+	<senegal>Senegal</senegal>
+    <сербия>Serbia</сербия>
+	<seychelles>Seychelles</seychelles>
+	<sierra_leone>Sierra Leone</sierra_leone>
+	<singapore>Singapore</singapore>
+	<slovakia>Slovakia</slovakia>
+	<slovenia>Slovenia</slovenia>
+	<solomon_islands>Solomon Islands</solomon_islands>
+	<somalia>Somalia</somalia>
+	<south_africa>South Africa</south_africa>
+	<south_korea>South Korea</south_korea>
+    <испания>Spain</испания>
+	<sri_lanka>Sri Lanka</sri_lanka>
+	<saint_kitts_and_nevis>Saint Kitts and Nevis</saint_kitts_and_nevis>
+	<saint_helena>Saint Helena</saint_helena>
+	<saint_lucia>Saint Lucia</saint_lucia>
+	<saint_vincent_and_the_grenadines>Saint Vincent and the Grenadines</saint_vincent_and_the_grenadines>
+	<sudan>Sudan</sudan>
+	<suriname>Suriname</suriname>
+	<swaziland>Swaziland</swaziland>
+    <швеция>Sweden</швеция>
+    <швейцария>Switzerland</швейцария>
+	<syria>Syria</syria>
+    <тайвань>Taiwan</тайвань>
+	<tajikistan>Tajikistan</tajikistan>
+	<tanzania>Tanzania</tanzania>
+    <тайланд>Thailand</тайланд>
+	<togo>Togo</togo>
+	<tonga>Tonga</tonga>
+	<trinidad_and_tobago>Trinidad and Tobago</trinidad_and_tobago>
+	<tunisia>Tunisia</tunisia>
+	<turkey>Turkey</turkey>
+	<turkmenistan>Turkmenistan</turkmenistan>
+	<turks_and_caicos_islands>Turks and Caicos Islands</turks_and_caicos_islands>
+	<tuvalu>Tuvalu</tuvalu>
+	<uganda>Uganda</uganda>
+	<ukraine>Ukraine</ukraine>
+	<united_arab_emirates>United Arab Emirates</united_arab_emirates>
+    <объединенное_королевство>United kingdom</объединенное_королевство>
+    <соединенные_штаты>United states</соединенные_штаты>
+	<uruguay>Uruguay</uruguay>
+	<uzbekistan>Uzbekistan</uzbekistan>
+	<vanuatu>Vanuatu</vanuatu>
+	<vatican>Vatican</vatican>
+	<venezuela>Venezuela</venezuela>
+	<vietnam>Vietnam</vietnam>
+	<u.s._virgin_islands>U.S. Virgin Islands</u.s._virgin_islands>
+	<wallis_and_futuna>Wallis and Futuna</wallis_and_futuna>
+	<samoa>Samoa</samoa>
+	<yemen>Yemen</yemen>
+	<zambia>Zambia</zambia>
+	<zimbabwe>Zimbabwe</zimbabwe>
+	<serbia_and_montenegro>Serbia and Montenegro</serbia_and_montenegro>
+	<bouvet_island>Bouvet Island</bouvet_island>
+	<saint_barthélemy>Saint Barthélemy</saint_barthélemy>
+	<bonaire_saint_eustatius_and_saba>Bonaire, Saint Eustatius and Saba</bonaire_saint_eustatius_and_saba>
+	<cocos_islands>Cocos Islands</cocos_islands>
+	<curaçao>Curaçao</curaçao>
+	<macao>Macao</macao>
+	<western_sahara>Western Sahara</western_sahara>
+	<south_georgia_and_the_south_sandwich_islands>South Georgia and the South Sandwich Islands</south_georgia_and_the_south_sandwich_islands>
+	<french_guiana>French Guiana</french_guiana>
+	<guadeloupe>Guadeloupe</guadeloupe>
+	<heard_island_and_mcdonald_islands>Heard Island and McDonald Islands</heard_island_and_mcdonald_islands>
+	<kosovo>Kosovo</kosovo>
+	<martinique>Martinique</martinique>
+	<saint_martin>Saint Martin</saint_martin>
+	<saint_pierre_and_miquelon>Saint Pierre and Miquelon</saint_pierre_and_miquelon>
+	<new_caledonia>New Caledonia</new_caledonia>
+	<reunion>Reunion</reunion>
+	<french_southern_territories>French Southern Territories</french_southern_territories>
+	<sint_maarten>Sint Maarten</sint_maarten>
+	<svalbard_and_jan_mayen>Svalbard and Jan Mayen</svalbard_and_jan_mayen>
+	<south_sudan>South Sudan</south_sudan>
+	<tokelau>Tokelau</tokelau>
+	<east_timor>East Timor</east_timor>
+	<united_states_minor_outlying_islands>United States Minor Outlying Islands</united_states_minor_outlying_islands>
+	<mayotte>Mayotte</mayotte>
+	<democratic_republic_of_the_congo>Democratic Republic of the Congo</democratic_republic_of_the_congo>
+    <великобритания>UK</великобритания>
+	<u.s.a.>USA</u.s.a.>
+	<usa>USA</usa>
+    <с.ш.а.>USA</с.ш.а.>
+    <сша>USA</сша>
+    <югославия>Yugoslavia</югославия>
+	
+    <!-- Reverse Genres -->
+    <!-- <боевик>Action_and_adventure</боевик> -->
+    <боевик>Action</боевик>
+    <action>Action</action>
+    <для_взрослых>Adult</для_взрослых>
+    <приключения>Adventure</приключения>
+    <!-- <анимация>Animated</анимация> -->
+    <!-- <анимация>Animation</анимация> -->
+    <аниме>Anime</аниме>    
+    <биография>Biography</биография>
+    <!-- <blank>Blank</blank> -->
+    <!-- <болливуд>Bollywood</болливуд> -->
+    <детский>Children</детский>
+    <!-- <рождество>Christmas</рождество> -->
+    <комедия>Comedy</комедия>
+    <концерт>Concert</концерт>
+    <криминал>Crime</криминал>
+    <!-- <disaster>Disaster</disaster> -->
+    <документальный>Documentary</документальный>
+    <драма>Drama</драма>
+    <семейный>Family</семейный>
+    <фэнтези>Fantasy</фэнтези>
+    <фильм-нуар>Film-noir</фильм-нуар>
+    <игра>Game-show</игра>
+    <!-- <хэллоуин>Halloween</хэллоуин> -->
+    <!-- <хентаи>Hentai</хентаи> -->
+    <!-- <history-or-epic>History-or-epic</history-or-epic> -->
+    <история>History</история>
+    <!-- <home-and-garden>Home-and-garden</home-and-garden> -->
+    <ужасы>Horror</ужасы>
+    <!-- <independent>Independent</independent> -->
+    <!-- <интервью>Interview</интервью> -->
+    <!-- <karaoke>Karaoke</karaoke> -->
+    <martial-arts>Martial-arts</martial-arts>
+    <!-- <короткометражка>Mini-series</короткометражка> -->
+    <!-- <mini-tv-series>Mini-tv-series</mini-tv-series> -->
+    <!-- <monster>Monster</monster> -->
+    <музыка>Music</музыка>
+    <!-- <musical>Musical</musical> -->
+    <!-- <мистика>Mystery</мистика> -->
+    <!-- <природа>Nature</природа> -->
+    <новости>News</новости>
+    <!-- <пост-апокалипсис>Post-apocalypse</пост-апокалипсис> -->
+    <реальное_ТВ>Reality</реальное_ТВ>
+    <!--  <reality-tv>Reality</reality-tv> -->
+    <!--  <религия>Religion</религия> -->
+    <!--  <romance>Romance</romance> -->
+    <научный>Sci-fi</научный>
+    <!--  <sci-fi>Sci-fi</sci-fi> -->
+    <!--  <science-fiction>Science-fiction</science-fiction> -->
+    <!--  <short>Short</short> -->
+    <!-- <smart>Smart</smart> -->
+    <!-- <мыльная_опера>Soap</мыльная_опера> -->
+    <!-- <special-interest>Special-interest</special-interest> -->
+    <спорт>Sport</спорт>
+    <!-- <stageplay>Stageplay</stageplay> -->
+    <!-- <stand-up>Stand up</stand-up>  -->
+    <!-- <superhero>Superhero</superhero> -->
+    <!-- <supernatural>Supernatural</supernatural>  -->
+    <ток-шоу>Talk-show</ток-шоу> -->
+    <триллер>Thriller</триллер>
+    <!-- <tv-shows>Tv-shows</tv-shows> -->
+    <!-- <unknown>Unknown</unknown> -->
+    <военный>War</военный>
+    <вестерн>Western</вестерн>
+    <!-- <рестлинг>Wrestling</рестлинг> -->
+    
+    <!-- END REVERSE TRANSLATIONS!!!!! translations in the tags english as content between the tags!!! -->
+    
+    
+    <!-- BEGIN HELP -->
+    <walls>Index Walls</walls>
+    <movie>Movie Details</movie>
+
+    <!-- WALL -->
+    <keypad_wall>На позицию (0=0%, 1=10%,…)</keypad_wall>
+    <home_wall>На главную</home_wall>
+    <home_wall_pb>ВЫЙТИ</home_wall_pb>
+    <return_wall>На один шаг назад</return_wall>
+    <left_wall>Навигация вверх/вниз/влево/вправо</left_wall>
+    <hyperscroll_wall>(удерживайте для быстрой прокрутки)</hyperscroll_wall>
+    <right_wall></right_wall>
+    <up_wall></up_wall>
+    <down_wall></down_wall>
+    <info_wall></info_wall>
+    <pageup_wall>На следующую/предыдущую страницу</pageup_wall>
+    <pagedown_wall></pagedown_wall>
+    <mute_wall></mute_wall>
+    <menu_wall>Открыть/закрыть меню</menu_wall>
+    
+    <eject_wall>Выйти</eject_wall>
+    <search_wall>Открыть меню</search_wall>
+    <red_wall>Красный:</red_wall>
+    <redlink_wall>На главную</redlink_wall>
+    <green_wall>Зеленый:</green_wall>
+    <greenlink_wall>На главную</greenlink_wall>
+    <yellow_wall>Желтый:</yellow_wall>
+    <yellowlink_wall>На главную</yellowlink_wall>
+    <blue_wall>Голубой:</blue_wall>
+    <bluelink_wall>На страницу приложений</bluelink_wall>
+    <enter_wall>Показать стенку</enter_wall>
+    <stop_wall></stop_wall>
+    <play_wall>Воспроизвести видео / все видео в плейлисте</play_wall>
+    <play_alt1_wall></play_alt1_wall>
+    <pause_wall></pause_wall>
+    <rewind_wall></rewind_wall>
+    <fastforward_wall></fastforward_wall>
+    <skipback_wall></skipback_wall>
+    <skipforward_wall></skipforward_wall>
+    
+    <!-- SET -->
+    <keypad_set>На позицию (0=0%, 1=10%,…)</keypad_set>
+    <home_set>На главную</home_set>
+    <home_set_pb>ВЫЙТИ</home_set_pb>
+    <return_set>Назад</return_set>
+    <left_set>Навигация вверх/вниз</left_set>
+    <hyperscroll_set>(удерживайте для быстрой прокрутки)</hyperscroll_set>
+    <right_set></right_set>
+    <up_set></up_set>
+    <down_set></down_set>
+    <info_set></info_set>
+    <pageup_set>На следующую/предыдущую страницу</pageup_set>
+    <pagedown_set></pagedown_set>
+    <mute_set></mute_set>
+    <menu_set>Открыть/закрыть меню</menu_set>
+    
+    <eject_set>ВЫЙТИ</eject_set>
+    <search_set>Открыть меню</search_set>
+    <red_set>Красный:</red_set>
+    <redlink_set>На главную</redlink_set>
+    <green_set>Зеленый:</green_set>
+    <greenlink_set>На главную</greenlink_set>
+    <yellow_set>Желтый:</yellow_set>
+    <yellowlink_set>На главную</yellowlink_set>
+    <blue_set>Голубой:</blue_set>
+    <bluelink_set>На страницу приложений</bluelink_set>
+    <enter_set>На страницу с подробностями Фильма/Сериала</enter_set>
+    <stop_set></stop_set>
+    <play_set>Воспроизвести видео / все видео в плейлисте</play_set>
+    <play_alt1_set></play_alt1_set>
+    <pause_set></pause_set>
+    <rewind_set></rewind_set>
+    <fastforward_set></fastforward_set>
+    <skipback_set></skipback_set>
+    <skipforward_set></skipforward_set>
+
+    <!-- MOVIE -->
+    <keypad_movie>Выбрать главу фильма (1=глава1, 2=глава2,…)</keypad_movie>
+    <home_movie>На главную</home_movie>
+    <home_movie_pb>ВЫЙТИ</home_movie_pb>
+    <return_movie>Назад</return_movie>
+    <left_movie>Навигация вверх/вниз/влево/вправо</left_movie>
+    <hyperscroll_movie>*показать только информацию о фильме</hyperscroll_movie>
+    <right_movie></right_movie>
+    <up_movie></up_movie>
+    <down_movie></down_movie>
+    <info_movie>показать информацию о фильме*</info_movie>
+    <info_alt1_movie>(дополнительные материалы, трейлеры, описания)</info_alt1_movie>
+    <pageup_movie></pageup_movie>
+    <pagedown_movie></pagedown_movie>
+    <mute_movie></mute_movie>
+    <menu_movie>Открыть/закрыть меню</menu_movie>
+    
+    <eject_movie>ВЫЙТИ</eject_movie>
+    <search_movie>Открыть меню</search_movie>
+    <red_movie>Красный:</red_movie>
+    <redlink_movie>На главную</redlink_movie>
+    <green_movie>Зеленый:</green_movie>
+    <greenlink_movie>На главную</greenlink_movie>
+    <yellow_movie>Желтый:</yellow_movie>
+    <yellowlink_movie>На главную</yellowlink_movie>
+    <blue_movie>Голубой:</blue_movie>
+    <bluelink_movie>На страницу приложений</bluelink_movie>
+    <enter_movie>Воспроизвести видео / Показать список частей</enter_movie>
+    <enter_alt1_movie>*Информация о фильме: воспроизвести трейлер или дополнителные материалы</enter_alt1_movie>
+    <stop_movie></stop_movie>
+    <play_movie></play_movie>
+    <play_alt1_movie></play_alt1_movie>
+    <play_movie_pb>Воспроизвести видео / все видео в плейлисте</play_movie_pb>
+    <play_alt1_movie_pb>*Информация о фильме: воспроизвести трейлер или дополнителные материалы</play_alt1_movie_pb>
+    <pause_movie></pause_movie>
+    <rewind_movie></rewind_movie>
+    <fastforward_movie></fastforward_movie>
+    <skipback_movie></skipback_movie>
+    <skipforward_movie></skipforward_movie>
+
+    <!-- TV -->
+    
+    <keypad_tv>На позицию (0=0%, 1=10%,…)</keypad_tv>
+    <home_tv>На главную</home_tv>
+    <home_tv_pb>ВЫЙТИ</home_tv_pb>
+    <return_tv>Назад</return_tv>
+    <left_tv>Навигация вверх/вниз</left_tv>
+    <hyperscroll_tv></hyperscroll_tv>
+    <right_tv></right_tv>
+    <up_tv></up_tv>
+    <down_tv></down_tv>
+    <info_tv></info_tv>
+    <pageup_tv>К странице следующего/предыдущего эпизода</pageup_tv>
+    <pagedown_tv></pagedown_tv>
+    <mute_tv></mute_tv>
+    <menu_tv>Открыть/закрыть меню</menu_tv>
+    
+    <eject_tv>ВЫЙТИ</eject_tv>
+    <search_tv>Открыть меню</search_tv>
+    <red_tv>Красный:</red_tv>
+    <redlink_tv>На главную</redlink_tv>
+    <green_tv>Зеленый:</green_tv>
+    <greenlink_tv>На главную</greenlink_tv>
+    <yellow_tv>Желтый:</yellow_tv>
+    <yellowlink_tv>На главную</yellowlink_tv>
+    <blue_tv>Голубой:</blue_tv>
+    <bluelink_tv>На страницу приложений</bluelink_tv>
+    <enter_tv>Воспроизвести эпизод</enter_tv>
+    <enter_alt1_tv></enter_alt1_tv>
+    <stop_tv></stop_tv>
+    <enter_tv>Воспроизвести эпизод</enter_tv>
+    <play_tv>Воспроизвести все (начиная с выбранного эпизода)</play_tv>
+    <play_alt1_tv></play_alt1_tv>
+    <pause_tv>Воспроизвести случайный эпизод</pause_tv>
+    <rewind_tv></rewind_tv>
+    <fastforward_tv>Воспроизвести последний эпизод</fastforward_tv>
+    <skipback_tv></skipback_tv>
+    <skipforward_tv></skipforward_tv>
+    <!-- END HELP -->
+</translation> 

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+	EVERSION German HELP prompts
+-->
+<translation>
+	<walls>Index Walls</walls>
+	<set>Set</set>
+	<movie>Movie Details</movie>
+	<tv>TV Details</tv>	
+	<!-- WALL -->
+	<keypad_wall>Sprung zu Position (0=0%, 1=10%,…)</keypad_wall>
+	<home_wall>Zum Hauptmenü</home_wall>
+	<home_wall_pb>Eversion beenden</home_wall_pb>
+	<return_wall>Eine Aktion zurück</return_wall>
+	<left_wall>Navigiere hoch/runter/links/rechts</left_wall>
+	<hyperscroll_wall>(gedrückt halten für schnelles Scrollen)</hyperscroll_wall>
+	<right_wall></right_wall>
+	<up_wall></up_wall>
+	<down_wall></down_wall>
+	<info_wall>Quickinfo-Popup öffnen*</info_wall>
+	<pageup_wall>Zur nächsten/vorherigen Seite</pageup_wall>
+	<pagedown_wall>*Quickinfo-Popup: Handlung hoch/runter</pagedown_wall>
+	<mute_wall></mute_wall>
+	<menu_wall>Menü öffnen/schließen</menu_wall>
+	
+	<eject_wall>Eversion beenden</eject_wall>
+	<search_wall>Hilfe öffnen/schließen</search_wall>
+	<redlink_wall>Zum Hauptmenü</redlink_wall>
+	<greenlink_wall>Zum Hauptmenü</greenlink_wall>
+	<yellowlink_wall>Zum Hauptmenü</yellowlink_wall>
+	<bluelink_wall>Beenden und Apps-Center starten</bluelink_wall>
+	<enter_wall>Gewählte Film-/Serien-/Set-Seite öffnen</enter_wall>
+	<enter_wall_pb>Gewählte Film-/Serien-/Set-Seite öffnen</enter_wall_pb>
+	<stop_wall></stop_wall>
+	<play_wall>Video abspielen / Alle Videos in Wiedergabeliste abspielen</play_wall>
+	<play_alt1_wall></play_alt1_wall>
+	<pause_wall></pause_wall>
+	<rewind_wall></rewind_wall>
+	<fastforward_wall></fastforward_wall>
+	<skipback_wall></skipback_wall>
+	<skipforward_wall></skipforward_wall>
+	<reset_wall>Eversion neu starten</reset_wall>
+	
+	<!-- SET -->
+	<keypad_set>Sprung zu Position (0=0%, 1=10%,…)</keypad_set>
+	<home_set>Zum Hauptmenü</home_set>
+	<home_set_pb>Eversion beenden</home_set_pb>
+	<return_set>Eine Aktion zurück</return_set>
+	<left_set>Navigiere hoch/runter</left_set>
+	<hyperscroll_set>(gedrückt halten für schnelles Scrollen)</hyperscroll_set>
+	<right_set></right_set>
+	<up_set></up_set>
+	<down_set></down_set>
+	<info_set>Quickinfo-Popup öffnen*</info_set>
+	<pageup_set>Zur nächsten/vorherigen Seite</pageup_set>
+	<pagedown_set>*Quickinfo-Popup: Handlung hoch/runter</pagedown_set>
+	<mute_set></mute_set>
+	<menu_set>Menü öffnen/schließen</menu_set>
+	
+	<eject_set>Eversion beenden</eject_set>
+	<search_set>Hilfe öffnen/schließen</search_set>
+	<redlink_set>Zum Hauptmenü</redlink_set>
+	<greenlink_set>Zum Hauptmenü</greenlink_set>
+	<yellowlink_set>Zum Hauptmenü</yellowlink_set>
+	<bluelink_set>Beenden und Apps-Center starten</bluelink_set>
+	<enter_set>Film-/Serien-Details öffnen</enter_set>
+	<enter_set_pb>Film-/Serien-Details öffnen</enter_set_pb>
+	<stop_set></stop_set>
+	<play_set>Video abspielen / Alle Videos in Wiedergabeliste abspielen</play_set>
+	<play_alt1_set></play_alt1_set>
+	<pause_set></pause_set>
+	<rewind_set></rewind_set>
+	<fastforward_set></fastforward_set>
+	<skipback_set></skipback_set>
+	<skipforward_set></skipforward_set>
+	<reset_set>Eversion neu starten</reset_set>
+
+	<!-- MOVIE -->
+	<keypad_movie>Teil von Multi-Part-Film wählen (1=Teil1, 2=Teil2,…)</keypad_movie>
+	<home_movie>Zum Hauptmenü</home_movie>
+	<home_movie_pb>Eversion beenden</home_movie_pb>
+	<return_movie>Eine Aktion zurück</return_movie>
+	<left_movie>Navigiere hoch/runter/links/rechts</left_movie>
+	<hyperscroll_movie>*nur im Filminfo-Popup</hyperscroll_movie>
+	<right_movie></right_movie>
+	<up_movie></up_movie>
+	<down_movie></down_movie>
+	<info_movie>Filminfo-Popup aufrufen*</info_movie>
+	<info_alt1_movie>(Extras, Trailers, vollst. Handlung)</info_alt1_movie>
+	<pageup_movie></pageup_movie>
+	<pagedown_movie></pagedown_movie>
+	<pagedown_alt1_movie>Handlung hoch/runter blättern</pagedown_alt1_movie>
+	<mute_movie></mute_movie>
+	<menu_movie>Menü öffnen/schließen</menu_movie>
+	
+	<eject_movie>Eversion beenden</eject_movie>
+	<search_movie>Hilfe öffnen/schließen</search_movie>
+	<redlink_movie>Zum Hauptmenü</redlink_movie>
+	<greenlink_movie>Zum Hauptmenü</greenlink_movie>
+	<yellowlink_movie>Zum Hauptmenü</yellowlink_movie>
+	<bluelink_movie>Beenden und Apps-Center starten</bluelink_movie>
+	<enter_movie>Video abspielen / Multi-Part Auswahl</enter_movie>
+	<enter_alt1_movie>*Filminfo-Popup: Trailer & Extras abspielen</enter_alt1_movie>
+	<stop_movie></stop_movie>
+	<play_movie></play_movie>
+	<play_alt1_movie></play_alt1_movie>
+	<play_movie_pb>Video abspielen / Multi-Part Auswahl</play_movie_pb>
+	<play_alt1_movie_pb>*Filminfo-Popup: Trailer & Extras abspielen</play_alt1_movie_pb>
+	<pause_movie></pause_movie>
+	<rewind_movie></rewind_movie>
+	<fastforward_movie></fastforward_movie>
+	<skipback_movie></skipback_movie>
+	<skipforward_movie></skipforward_movie>
+	<reset_movie>Eversion neu starten</reset_movie>
+
+	<!-- TV -->
+	<keypad_tv>Sprung zu Position (0=0%, 1=10%,…)</keypad_tv>
+	<home_tv>Zum Hauptmenü</home_tv>
+	<home_tv_pb>Eversion beenden</home_tv_pb>
+	<return_tv>Eine Aktion zurück</return_tv>
+	<left_tv>Navigiere hoch/runter</left_tv>
+	<hyperscroll_tv></hyperscroll_tv>
+	<right_tv></right_tv>
+	<up_tv></up_tv>
+	<down_tv></down_tv>
+	<info_tv>Episoden Index öffnen</info_tv>
+	<pageup_tv>Zur nächsten/vorherigen Seite</pageup_tv>
+	<pagedown_tv></pagedown_tv>
+	<mute_tv></mute_tv>
+	<menu_tv>Menü öffnen/schließen</menu_tv>
+	
+	<eject_tv>Eversion beenden</eject_tv>
+	<search_tv>Hilfe öffnen/schließen</search_tv>
+	<redlink_tv>Zum Hauptmenü</redlink_tv>
+	<greenlink_tv>Zum Hauptmenü</greenlink_tv>
+	<yellowlink_tv>Zum Hauptmenü</yellowlink_tv>
+	<bluelink_tv>Beenden und Apps-Center starten</bluelink_tv>
+	<enter_tv>Gewählte Episode abspielen</enter_tv>
+	<enter_alt1_tv></enter_alt1_tv>
+	<enter_tv_pb>Gewählte Episode abspielen</enter_tv_pb>
+	<stop_tv></stop_tv>
+	<play_tv>Alles abspielen (ab gewählter Episode)</play_tv>
+	<play_alt1_tv></play_alt1_tv>
+	<pause_tv>Zufalls-Episode abspielen</pause_tv>
+	<rewind_tv></rewind_tv>
+	<fastforward_tv>Letzte Episode abspielen</fastforward_tv>
+	<skipback_tv></skipback_tv>
+	<skipforward_tv></skipforward_tv>
+	<reset_tv>Eversion neu starten</reset_tv>
+
+</translation>

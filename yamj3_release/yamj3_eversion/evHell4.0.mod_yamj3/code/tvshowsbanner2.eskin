@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+	
+	<background>
+		<file>[:@media:]backgrounds/background_[:#tvshowsbannerbg:].swf</file>
+	</background>
+
+	<include>common.navinfotop</include>
+	<include>common.techinfobottom</include>	
+	
+	<image>
+		<name>2rowinfobgr</name>
+		<file>[:@media:]wall/2rowinfobgr.swf</file>
+		<swap>true</swap>
+		<posx>5</posx>
+		<posy>500</posy>
+		<width>1270</width>
+		<height>190</height>
+	</image>
+	
+	<text>
+		<name>title</name>
+		<segname>index</segname>
+		<display>[:fulltitle,upper:]</display>
+		<posx>15</posx>
+		<posy>505</posy>
+		<width>785</width>
+		<height>35</height>
+		<size>27</size>  
+		<color>wall.title.color</color>
+		<hyper>4</hyper>
+	</text>	
+
+	<text>
+		<name>genre_prompt</name>
+		<display>[:%genres,upper:]</display>
+		<posx>15</posx>
+		<posy>545</posy>
+		<width>115</width>
+		<height>25</height>
+		<size>18</size>  
+		<color>wall.label.color</color>
+	</text>	
+	<text>
+		<name>genres</name>
+		<segname>index</segname>
+		<hyper>3</hyper>	
+		<display>[:genres,upper,4:]</display>
+		<posx>130</posx>
+		<posy>545</posy>
+		<width>670</width>
+		<height>25</height>
+		<size>18</size>  
+		<color>wall.data.color</color>
+	</text>		
+	<text>
+		<name>actor_prompt</name>
+		<display>[:%actors,upper:]</display>
+		<posx>15</posx>
+		<posy>568</posy>
+		<width>115</width>
+		<height>50</height>
+		<size>18</size>  
+		<color>wall.label.color</color>
+	</text>	
+	<text>
+		<name>actor</name>
+		<segname>index</segname>
+		<hyper>3</hyper>	
+		<display>[:actors,8:]</display>
+		<posx>130</posx>
+		<posy>568</posy>
+		<width>1135</width>
+		<height>50</height>
+		<size>18</size>  
+		<color>wall.data.color</color>
+	</text>	
+
+	<text>
+		<name>plot</name>
+		<display>[:smartplot,trun770,blank:]</display>
+		<segname>index</segname>
+		<posx>15</posx>
+		<posy>591</posy>
+		<width>1255</width>
+		<height>100</height>
+		<wordwrap>true</wordwrap>
+		<size>17</size>  
+		<color>tv.data.color</color>
+		<hyper>3</hyper>
+	</text>	
+	
+	<image>
+		<name>company</name>
+		<file>[:@eskin:]evhell_overlay/resources/company/[:company,nospaces,lower:].png</file>
+		<swap>true</swap>
+		<posx>1110</posx>
+		<posy>500</posy>
+		<width>127</width>
+		<height>86</height>
+		<segname>index</segname>
+		<hyper>2</hyper>	
+	</image>
+	
+	
+	<segment>
+		<name>index</name>
+		<startx>2</startx>
+		<starty>33</starty>
+		<endx>1277</endx>
+		<endy>498</endy>
+		<scroll>1</scroll>
+		<cursor>
+		<file>[:@media:]cursors/cursor.405.75.[:#thickness:].[:#rounded:].FCCF10.true.phf</file>
+			<above>true</above>
+			<posx>-1</posx>
+			<posy>1</posy>
+		</cursor>				
+		<tile>
+			<cols>3</cols>
+			<rows>5</rows>
+			<width>425</width>
+			<height>93</height>
+			<image>
+				<name>banner</name>
+				<file>[:@jukebox:][:smartbanner1small:]</file>
+				<posx>2</posx>
+				<posy>3</posy>
+				<width>422</width>
+				<height>77</height>
+			</image>
+			<image>
+				<name>watched</name>
+				<file>[:@media:]purity/watched/[:watched:].swf</file>
+				<posx>2</posx>
+				<posy>2</posy>
+				<width>60</width>
+<!-- 			<height>60</height> -->
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+			</image>
+
+		</tile>
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>	
+<!-- Plot pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>plotpopup</file>
+	</remote>	
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>plotpopup</file>
+	</remote>	
+	</segment>	
+</eskin>

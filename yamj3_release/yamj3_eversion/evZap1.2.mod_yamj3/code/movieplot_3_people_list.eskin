@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+	<if>
+	<condition>[:plot,length:] &lt;= 503</condition>
+	<text>
+		<name>plot1</name>
+		<display>[:plot,trun500,unknown:]</display>
+		<posx>360</posx>
+		<posy>415</posy>
+		<width>650</width>
+		<height>185</height>
+		<wordwrap>true</wordwrap>
+		<size>22</size>
+		<color>FFFFFF</color>
+	</text>
+	</if>
+	<if>
+	<condition>[:plot,length:] &lt;= 1006</condition>
+	<text>
+		<name>plot2</name>
+		<display>[:plot,slice503,trun500:]</display>
+		<posx>360</posx>
+		<posy>415</posy>
+		<width>650</width>
+		<height>185</height>
+		<wordwrap>true</wordwrap>
+		<size>22</size>
+		<color>FFFFFF</color>
+	</text>
+	</if>
+	<text>
+		<name>plot3</name>
+		<display>[:plot,slice1006,trun500:]</display>
+		<posx>360</posx>
+		<posy>415</posy>
+		<width>650</width>
+		<height>185</height>
+		<wordwrap>true</wordwrap>
+		<size>22</size>
+		<color>FFFFFF</color>
+	</text>
+	<image>
+		<name>up_on</name>
+		<file>[:@media:]common/up_on.swf</file>
+		<posx>970</posx>
+		<posy>600</posy>
+		<width>15</width>
+		<height>10.6</height>
+	</image>		
+	<image>
+		<name>down_on</name>
+		<condition>[:plot,length:] &gt; 1509</condition>
+		<file>[:@media:]common/down_on.swf</file>
+		<posx>985</posx>
+		<posy>600</posy>
+		<width>15</width>
+		<height>10.6</height>
+	</image>
+<!-- ********************************* MOD PEOPLE LIST ******************************** -->
+<!--     display list of person with there job and the photo for each person            -->
+<!--       press ENTER to switch to the list of movies for that person                  -->
+<!-- ********************************************************************************** -->	
+	<image>
+		<name>peoplenoimage</name>
+		<segname>peoplelist</segname>
+		<file>[:@media:]common/no_people.jpg</file>
+		<posx>1135</posx>
+		<posy>560</posy>
+		<width>100</width>
+		<height>140</height>
+		<hyper>4</hyper>
+	</image>
+	<image>
+		<name>pimage</name>
+		<segname>peoplelist</segname>
+		<file>[:photo:]</file>
+		<posx>1135</posx>
+		<posy>560</posy>
+		<width>100</width>
+		<height>140</height>
+		<hyper>4</hyper>
+	</image>
+	<image>
+		<name>peopleframe</name>
+		<segname>peoplelist</segname>
+		<file>[:@media:]movie/thumbframe.[:person@job,lower:].swf</file>
+		<posx>1131.5</posx>
+		<posy>555.5</posy>
+		<width>107.5</width>
+		<height>146.5</height>
+		<hyper>4</hyper>
+	</image>
+	<text>
+		<name>peoplepos</name>
+		<segname>peoplelist</segname>
+			<display>[:@curpos:] / [:@totaltiles:]</display>
+			<posx>1030</posx>
+			<posy>600</posy>
+			<width>65</width>
+			<height>30</height>
+			<size>20</size>
+			<bold>true</bold>
+			<wordwrap>false</wordwrap>
+			<color>FFFFFF</color>
+			<align>right</align>
+			<hyper>4</hyper>
+	</text>
+	<segment>
+	<condition>[:plot,length:] &gt; 1509</condition>
+        <name>peoplelist</name>
+        <datasource>people</datasource>
+		<startx>1030</startx>
+		<starty>405</starty>
+		<endx>1265</endx>
+		<endy>715</endy> 
+        <scroll>2</scroll>        
+		<cursor>
+           <file>[:@media:]common/cursor.205.25.1.2.C5EAFF.true.phf</file> 
+            <above>true</above>
+            <posx>0</posx>
+            <posy>2</posy>
+        </cursor>       
+        <tile>
+            <cols>1</cols>
+			<rows>5</rows>
+            <width>215</width>
+            <height>30</height>
+            <text>
+                <name>mcTitle2</name>
+				<condition>[:person@job,lower:] == director || [:person@job,lower:] == writer</condition>
+                <display>[:person@name:] - [:person@job,evtrans:]</display> 
+                <posx>2</posx>
+                <posy>2</posy>
+                <width>215</width>
+                <height>30</height>
+                <size>20</size>  
+                <align>left</align>
+                <color>FFFFFF</color>
+            </text> 
+			<text>
+                <name>mcTitle</name>
+				<condition>[:person@job,lower:] == actor</condition>
+                <display>[:person@name:] ([:person@character:])</display> 
+                <posx>2</posx>
+                <posy>2</posy>
+                <width>215</width>
+                <height>30</height>
+                <size>20</size>  
+                <align>left</align>
+                <color>FFFFFF</color>
+            </text>			
+        </tile>  
+		<remote>
+		<condition>[:person:] !== UNKNOWN</condition>
+            <button>ENTER</button>
+            <action>SWITCH</action>    
+            <data>Person_[:person@index:]_1</data>    
+        </remote> 
+		<!-- Previous plot_2 -->
+		<remote>
+			<button>PAGEUP</button>
+			<action>BACK</action>	
+			<file>movieplot_2_people_list</file>
+		</remote>
+		<!-- Next plot_4 -->
+		<remote>
+			<button>PAGEDOWN</button>
+			<action>EXTRA</action>	
+			<file>movieplot_4_people_list</file>
+		</remote>
+    </segment> 
+	
+	<segment>
+		<condition>[:plot,length:] &lt; 1510</condition>
+        <name>peoplelist</name>
+        <datasource>people</datasource>
+		<startx>1030</startx>
+		<starty>405</starty>
+		<endx>1265</endx>
+		<endy>715</endy> 
+        <scroll>2</scroll>        
+		<cursor>
+           <file>[:@media:]common/cursor.205.25.1.2.C5EAFF.true.phf</file> 
+            <above>true</above>
+            <posx>0</posx>
+            <posy>2</posy>
+        </cursor>       
+        <tile>
+            <cols>1</cols>
+			<rows>5</rows>
+            <width>215</width>
+            <height>30</height>
+            <text>
+                <name>mcTitle</name>
+                <display>[:person@name:] - [:person@job,evtrans:]</display> 
+                <posx>2</posx>
+                <posy>2</posy>
+                <width>215</width>
+                <height>30</height>
+                <size>20</size>  
+                <align>left</align>
+                <color>FFFFFF</color>
+            </text>    
+        </tile>  
+		<remote>
+		<condition>[:person:] !== UNKNOWN</condition>
+            <button>ENTER</button>
+            <action>SWITCH</action>    
+            <data>Person_[:person@index:]_1</data>    
+        </remote> 
+		<!-- Previous plot_2 -->
+		<remote>
+			<button>PAGEUP</button>
+			<action>BACK</action>	
+			<file>movieplot_2_people_list</file>
+		</remote>
+    </segment> 
+
+<!-- ********************************* MOD PEOPLE *********************************** -->
+<!--     remote INFO or EGUAL or COMMA call infomoviescreeen_large_people_list        -->
+<!--     display people wall and call extra with pagedown/pageup remote               -->
+<!-- ******************************************************************************** -->
+	<remote>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviescreen_large_people_list</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>infomoviescreen_large_people_list</file>
+	</remote>
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviescreen_large_people_list</file>
+	</remote>	
+<!-- *************************** MOD PEOPLE *********************************** -->		
+<!-- Next plot_4 -->
+	<remote>
+		<condition>[:plot,length:] &gt;1509</condition>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>movieplot_4_people_list</file>
+	</remote>
+<!-- Previous plot_2 -->
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>		
+	<remote>
+		<button>SEMICOLON</button>
+		<action>BACK</action>	
+		<data>1</data>
+	</remote>
+	<remote>
+	   <button>PLAY</button>
+	   <action>PLAYALL</action>
+	</remote>	
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>NUMPAD</button>
+		<action>PLAYPART</action>	
+	</remote>	
+	<remote>
+		<button>SEARCH</button>
+		<action>SCREEN</action>
+		<file>help/help_[:#nmtmodel,lower:]_movie</file>
+	</remote>	
+	<remote>
+		<button>REPEAT</button>
+		<action>RESET</action>
+		<title>[:%reset:]</title>
+	</remote>
+</eskin>

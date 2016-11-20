@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+
+	<background>
+		<file>[:@media:]backgrounds/background_[:#tvshowseasonbg:].swf</file>
+	</background>
+	
+	<image>
+		<name>bottombgr</name>
+		<condition>[:#tvshowseason:] == true</condition>
+		<file>[:@media:]wall/bottom.swf</file>
+		<posx>0</posx>
+		<posy>686</posy>
+		<width>1280</width>
+		<height>34</height>
+	</image>
+	
+	<image>
+		<name>movieinfobgr</name>
+		<file>[:@media:]wall/movieinfobgrtv.swf</file>
+		<posx>105</posx>
+		<posy>146</posy>
+		<width>1070</width>
+		<height>328</height>
+	</image>
+	
+	<image>
+        <name>footerimg</name>
+        <segname>index</segname>
+        <file>[:@jukebox:][:baseFilename:].footer_posters.png</file>
+        <posx>185</posx>
+        <posy>420</posy>
+        <width>910</width>
+        <height>51</height>
+        <hyper>3</hyper>
+    </image>    
+    
+    <image>
+        <name>footerimghash</name>
+        <segname>index</segname>
+        <file>[:@jukebox:][:baseFilename,cut1,lower,nospaces:]/[:baseFilename,cut2,lower,nospaces:]/[:baseFilename:].footer_posters.png</file>
+        <posx>185</posx>
+        <posy>420</posy>
+        <width>910</width>
+        <height>51</height>
+        <hyper>3</hyper>
+    </image> 
+	
+	
+	
+	<text>
+		<name>title</name>
+		<segname>index</segname>
+		<display>[:title,trun47,blank:]</display>
+		<posx>115</posx>
+		<posy>145</posy>
+		<width>622</width>
+		<height>35</height>
+		<size>30</size>  
+		<color>tv.title.color</color>
+	</text>	
+	
+	<image>
+		<name>footerepisode</name>
+		<segname>index</segname>
+		<file>[:@jukebox:][:baseFilename:].footer_episodes.png</file>
+		<posx>115</posx>
+		<posy>178</posy>
+		<width>1080</width>
+		<height>10</height>
+		<keepaspect>true</keepaspect>
+		<haligned>left</haligned>
+		<valigned>center</valigned>
+		<hyper>3</hyper>
+	</image>
+	
+	<image>
+		<name>banner</name>
+		<segname>index</segname>
+		<file>[:@jukebox:][:banner1medium:]</file>
+		<swap>true</swap>
+		<posx>630</posx>
+		<posy>46</posy>
+		<width>619</width>
+<!-- 	<height>128</height> -->
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+		<hyper>3</hyper>
+	</image>
+	
+	<text>
+		<name>year_prompt</name>
+		<display>[:%year,upper:]:</display>
+		<posx>115</posx>
+		<posy>185</posy>
+		<width>155</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>
+	
+	<text>
+		<name>year</name>
+		<segname>index</segname>
+		<display>[:year,blank:]</display>
+		<posx>280</posx>
+		<posy>185</posy>
+		<width>370</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+	</text>	
+	
+	<text>
+		<name>season_prompt</name>
+		<display>[:%season,upper:]:</display>
+		<posx>650</posx>
+		<posy>185</posy>205
+		<width>155</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>
+	
+	<text>
+		<name>season</name>
+		<segname>index</segname>
+		<display>[:smarttitle,blank:]</display>
+		<posx>805</posx>
+		<posy>185</posy>205
+		<width>370</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+		<hyper>2</hyper>
+	</text>	
+	
+	<text>
+		<name>director_prompt</name>
+		<display>[:%directors,upper:]:</display>
+		<posx>115</posx>
+		<posy>205</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>
+	<text>
+		<name>director</name>
+		<segname>index</segname>
+		<display>[:directors,3,blank:]</display>
+		<posx>280</posx>
+		<posy>205</posy>
+		<width>422</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+	</text>	
+	
+	<text>
+		<name>writer_prompt</name>
+		<display>[:%writers,upper:]:</display>
+		<posx>650</posx>
+		<posy>205</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>	
+	<text>
+		<name>writer</name>
+		<segname>index</segname>
+		<display>[:person-Writer-1-name,unknown:]&#xd;[:person-Writer-2-name,blank:]</display>
+		<posx>805</posx>
+		<posy>205</posy>
+		<width>422</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+	</text>		
+	
+	<text>
+		<name>rating_prompt</name>
+		<display>[:%rating,upper:]:</display>
+		<posx>115</posx>
+		<posy>225</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>tv.label.color</color>
+	</text>	
+	<image>
+		<name>rating_image</name>
+		<condition>[:score:] != UNKNOWN</condition>
+		<segname>index</segname>
+		<file>[:@media:]common/star/star[:score,round,blank:].swf</file>
+		<posx>280</posx>
+		<posy>232</posy>
+		<width>74</width>
+		<height>14</height>
+	</image>
+	
+	<text>
+		<name>genre_prompt</name>
+		<display>[:%genres,upper:]:</display>
+		<posx>650</posx>
+		<posy>225</posy>
+		<width>155</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>
+	
+	<text>
+		<name>genres</name>
+		<segname>index</segname>
+		<display>[:genres,3,blank:]</display>
+		<posx>805</posx>
+		<posy>225</posy>
+		<width>370</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+	</text>	
+	
+	<text>
+		<name>plot</name>
+		<display>[:smartplot,blank:]</display>
+		<segname>index</segname>
+		<posx>115</posx>
+		<posy>247</posy>
+		<width>1050</width>
+		<height>175</height>
+		<wordwrap>true</wordwrap>
+		<size>19</size>  
+		<color>tv.data.color</color>
+		<hyper>3</hyper>
+	</text>	
+	
+	<segment>
+		<name>index</name>
+		<startx>14</startx>
+		<starty>510</starty>
+		<endx>1265</endx>
+		<endy>720</endy>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]cursors/cursor.125.185.[:#thickness:].[:#rounded:].FCCF10.true.phf</file>
+			<above>true</above>
+			<posx>6</posx>
+			<posy>0</posy>
+		</cursor>				
+		<tile>
+			<cols>9</cols>
+			<rows>1</rows>
+			<width>139</width>
+			<height>210</height>
+			<image>
+				<name>thumbnailtrue</name>
+				<condition>[:#tvshowseason:] == true</condition>
+				<file>[:@jukebox:][:smartposter1small:]</file>
+				<posx>7</posx>
+				<posy>0</posy>
+				<width>125</width>
+<!-- 			<height>210</height> -->	
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>top</valigned>
+			</image>
+			<image>
+				<name>thumbnailfalse</name>
+				<condition>[:#tvshowseason:] == false</condition>
+				<file>[:@jukebox:][:smartposter1large:]</file>
+				<posx>7</posx>
+				<posy>0</posy>
+				<width>125</width>
+<!-- 			<height>185</height> -->	
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>top</valigned>
+			</image>
+		</tile>
+		<fanart>
+			<file>[:@jukebox:][:fanart1large:]</file>
+			<hyper>3</hyper>
+		</fanart>	
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>		
+	</segment>	
+	
+</eskin>

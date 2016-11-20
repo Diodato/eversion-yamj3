@@ -1,0 +1,213 @@
+This is a quick and dirty port of eversion R0179 for YAMJ3.
+Manual Installation:
+--------------------
+If you already have a Jukebox :
+
+1) downlaod yamj3_eversion.zip
+2) unzip where you want this new jukebox 
+3) update the configuration with the following instructions
+4) inside the PCH navigate to the yamj3_eversion folder and press enter on eversion flash entry or install in the apps (like yamj) and point to folder wher you have unzip eversion.phf 
+
+Configuration:
+--------------
+There are three required settings in the esettings.xml file:
+a) address and port of the YAMJ3 server
+	<yamj3coreurl>http://127.0.0.1:8888/yamj3/</yamj3coreurl>
+
+CHANGE the 127.0.0.1 address with the one where the YAMJ3 server is running 
+
+b) adjust scanner/player translation paths
+	<yamj3librarypaths>T:\video\Film\</yamj3librarypaths>
+	<yamj3playerpaths>file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO/video/Film</yamj3playerpaths>
+
+change the library path to the root path where the YAMJ3 file scanner is fetching the video  (-d option of the filescanner.cmd or .sh)
+change the player path to reflect the player mount corresponding to the library path (i.e. network_share) could be the same than the yamj playerpath
+
+c) server single query chunk size (optional, will default to 18)
+	<yamj3chunksize>24</yamj3chunksize>
+
+ideally equal to the maximal number of poster tiles on the movie screen (24 if wall configured as 3 rows 8 tiles each)
+don't raise too much as eversion can run out of memory.
+
+
+
+
+Limitations:
+------------
+- the YAMJ3 scrapper stores multiple fanart, banners, posters for each mediafile but only the first returned by the server is used 
+- single file playback (no automatic multiple part playback, etc)
+
+Source code:
+------------
+The porting to YAMJ3 was my first contact with Flash and Action Script so no flaming please.
+A lot of the original code is still in place though never used (called). 
+
+Bugs:
+-----
+Probably lots.
+
+Comments:
+---------
+- tested only on PCH C200
+- tested with mod evZap1.2.mod_yamj3 is include in the distribution 
+- tested with evstreamed.mod_yamj3 
+- tested with terraNOVA3.6.mod_yamj3 
+- tested with evHell4.0.mod_yamj3
+- tested with pfpScope
+- tested with Whisper 
+
+all the modifications are in the mod_yamj3 and do not need to be reapplied if you don't need your own mod 
+
+for user modifications :
+
+Modification in the eskins
+---------
+SPECIAL PEOPLE 
+---------
+	general information : 
+   (People index is a hard place to go and the limitation of the eversion architecture need to find a workaround)
+	People index is now splitted in alphabetical people Index, to allow to shorten the amount of data fetched for each entry, 
+	there is a new screen which list the alphabetical selector,
+	the lastname (now mandatory) is used to perform the selection, 
+	click on the person photo to display all the video where he is referenced,
+	click on the video to select detail video (movie or series) 
+	
+	implementation: 
+	it's implemented with the following steps 
+	
+	1) - inside settings.xml (under the eskin folder), add the 26 entries  of <userlistx>lastname-x</userlistx> 
+		by exemple <userlist7>lastname-a,lastname-b,lastname-c,lastname-d,lastname-e,lastname-f,lastname-g,lastname-h,lastname-i,lastname-j,lastname-k,lastname-l,lastname-m,lastname-n,lastname-o,lastname-p,lastname-q,lastname-r,lastname-s,lastname-t,lastname-u,lastname-v,lastname-w,lastname-x,lastname-y,lastname-z</userlist7>
+			
+	2) - create people.control under the eskin folder (the same folder than home.control) each entry need to be implemented in people.control
+	for each alphabetical add 
+	<insert>						<!-- should be insert --> 
+		<info>userlist7</info>  	<!-- the same userlist than the userlist in settings.xml -->
+		<action>PRELOAD</action>	<!-- should be a PRELOAD action -->
+		<file>people.poster.fanart.bio2</file>		<!-- the eskin file to display the A search results --> 
+		<data>index</data>			<!-- should be setted as an index --> 					
+	</insert>						<!-- clode the insert section -->
+	
+	
+	3) - to display on the wall add to the home.control 
+	<item>						<!-- should be an item --> 
+		<name>People</name>		<!-- add to the wall -->
+		<action>screen</action>	<!-- display as a new screen --> 
+		<title>[:%people:]</title> <!-- translate a you want in language setted in esettings.xml --> 
+		<originaltitle>people</originaltitle>  <!-- don't change the original name --> 
+		<file>thewall.people</file>		<!-- the file in the eskin which display the alphabetical available list --> 
+	</item> 					<!-- close the item section -->
+	
+	4) - to display on the menu list add in menu.control 
+	<!-- Add people entry to the menu list this need to install people mod --> 
+	<!-- the menupeople.eskins and mod the wallfull_people.eskins -->
+	<item>						<!-- should be an item --> 
+		<name>People</name>		<!-- add to the menu -->
+		<action>screen</action> <!-- display as a list , a screen above -->
+		<title>[:%people:]</title> <!-- translate a you want in language setted in esettings.xml --> 
+		<originaltitle>people</originaltitle> <!-- don't change the original name -->
+		<file>themenu.people</file>		<!-- the file in the eskin which display the alphabetical available list --> 
+	</item> 					<!-- clode the item section -->	
+	
+	5) - in the eskin segment (thewall.people.eskin) specify to use the people.control in the control section of the segment 
+	<segment>
+		<name>menu</name>
+		<control>[:@eskin:]categories</control>
+		.....
+		<tile>
+			.......
+			<image>
+				<name>title_poster</name>
+				<file>[:@media:]common/title/[:title,last1:].png</file>
+				......
+			</image>
+		</tile>
+	</segment>
+	
+	- People entry could be added inside the home.control and menu.control independently 
+	
+	
+	- inside detail movie / series each photo reference <file>[:@jukebox:]People/[:person@name:].jpg</file>
+     has to be replaced with <file>[:photo:]</file>
+	- inside the index  a new  argument could be used to display the photo  <file>[:photo:]</file>
+
+	
+	now available : 
+					[:person@name:]
+					[:person@job:]
+					[:person@index:] to use with <data> :  the id of the yamj3 person in the db 
+					[:person@character:]
+					[:photo:]
+					[:person-Actor-1-photo:] return the photo (image) to 1rst actor in the video 
+					
+	when using the peoplemenu inside the eskin don't forget to add the control instruction 
+	<control>[:@eskin:]people</control>
+
+SPECIAL CATEGORY 
+---------	
+	general information: 
+	now each category index is available : Genres,Certification,Ratings,Title,Year,Set
+	if each are independant (and react by there own) they couldn't be added at the homelist yet, but could be added in the menulist 
+	if all of them are using the same eskins, you could list in the same userlist 
+	
+	implementation: 
+	
+	1) - edit settings.xml to add each userlist in  (under the eskin folder)  -  7 userlist are available
+		<userlist>Genres</userlist>
+		<userlist2>Certification</userlist2>
+		<userlist3>Year</userlist3>
+		<userlist4>Ratings</userlist4>
+		<userlist5>Set</userlist5>
+		<userlist6>Title</userlist6>
+		<userlist7>lastname-a, ......</userlist7>
+		
+		or 
+		<userlist>Genres,Certification,Ratings,Title,Year,Set</userlist>
+		
+		
+	2) -  edit settings.xml to add each category you want to be displayed in the menulist 
+		<menulist>Other,Genres,Title,Year,Set,Ratings,Certification</menulist>
+		
+		nothing to edit on the menu.control , each menulist are with the same aspect 
+	
+	3) - edit home.control to add each category you want to be displayed on the wall   (carefull to match with the userlist number) 
+	<insert>
+        <name>Genres</name>
+		<info>userlist</info>
+        <title>[:%genre:]</title>
+        <originaltitle>genres</originaltitle>
+		<action>PRELOAD</action>
+	    <file>wallfull_genre</file>
+	    <data>index</data>        
+	</insert>
+	.......
+	<insert>
+        <name>Title</name>
+		<info>userlist6</info>
+        <title>[:%title:]</title>
+        <originaltitle>title</originaltitle>
+		<action>PRELOAD</action>
+	    <file>wallfull_title</file>
+	    <data>index</data>
+	</insert>
+	
+	now available : 
+	[:flagcertification:]   return the short country code (2 chars)  this could be used directly to display flags country image with [:flagcertification:].png 
+	[:certification:] return the certification qualifier for each count by ex: TV-14 for US 
+	[:country:]	 return the short country code (2 chars) of the movie
+	
+	implemented multi : 
+	[:multi-/movie/awards/event/award-1-/award:]
+	[:multi-/movie/awards/event/award-1-/award-won:]
+	[:multi-/movie/awards/event-1-/event/award-nominated:]
+	[:multi-/movie/awards/event-1-/event/award-year:]
+	[:multi-/movie/awards/event[@name='Grammy Awards']-1-/event/award-won:]
+	[:multi-/movie/awards/event[@name='Grammy Awards']-1-/event/award-nominated:]
+	[:multi-/movie/awards/event[@name='Grammy Awards']-1-/event/award-year:]
+	[:multi-/movie/subtitles/subtitle/subtitle-1-/subtitle-langugageFull:]
+	[:multi-/movie/subtitles/subtitle/subtitle-1-/subtitle-languageFull:]
+	
+	added : 
+	[:title,yamj3clean:]  suppress the :: added in the title for inside use 
+	[:title,last1:]  return the last char in the title (last1 for 1 char , last2 for 2 char , ......)
+	
+	

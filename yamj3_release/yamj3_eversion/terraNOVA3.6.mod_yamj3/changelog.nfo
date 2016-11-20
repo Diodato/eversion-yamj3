@@ -1,0 +1,153 @@
+
+Changelog:
+==========
+
+3.6
+* Added: Changing between People Wall Mode 24 / 48 thru 'settings-default.xml'.
+
+3.5
+* Added: Displaying different 'Category Certification Images', choices are located in 'settings-default.xml'.
+* Added: Displaying different 'Genre Certification Images', choices are located in 'settings-default.xml'.
+
+3.4
+* Added: Dummy 'people' photo to all pages when no image is there.
+* Added: Dummy 'video image' to tv show pages when no image is there.
+* Added: Cursor color (silver).
+* Fixed: Increased speed of browsing throughout the skin.
+
+3.3
+* Added: Cursor customization, basically change the settings within 'settings-default.xml' to 
+  having, reflection (fast/slow), colors (white/yellow/red/green/blue) and shiny (true/false). 
+  Also cursors adjust when in overscan mode.
+
+3.2
+* Added: Moved 'Cast/Person/Writer/Director' into a 'People' page within home, 
+  'settings-default.xml' to (userlist3).
+* Changed: Shifted 'Certification/Genres/Title/Year/Ratings/Set/Country/Award' within 
+  'settings-default.xml' to (userlist4).
+* Added: Made the ability to have People as 48 wall mode. At this time you must change 
+  '\terraNOVA\people.control' inside from 'main.people.wall.24' to 'main.people.wall.48'.
+* Added: Weather tab names within 'settings-default.xml' can be now modifiable name/code per city.
+* Added: ALL bottom info tech bars for all pages movies/tvshows you can chose the different 
+  types of 'Specific Audio Codec/Channels Display'. ie. you can have it as either Audio Codec 
+  'AC3' or 'AC3 (en) / AC3 (fr)' and Audio Channels '5.1' or '6 / 6'.
+* Removed: Translations, as eversion comes with an more updated file system.
+
+3.1
+* Added: Info Popup for ALL movies index pages, (list 8/15 and wall 8/24/48), just press 
+  'Info' button on remote.
+* Added: Trailers page can be changed to either 16 (with runtime/outline) or 24 (standard) 
+  via 'settings-default.xml'under 'indexTrailers'.
+* Updated: Weather Page to newest available (much thanx to safran64).
+* Changed: Index TV Set from 10 banners to 8 banners to accommodate bottom bar.
+* Added: Bottom menu to TV Shows Details Page, use PageUP/PageDOWN to change between 
+  (outline full/outline half/episodes/cast/fanart) pages. I also added an info popup to 
+  (episodes) page but it's not quite working 100% yet.
+* Added: Backgrounds to some pages (home/main categories/main categories wall/trailer wall 
+  16/trailer wall 24/movie wall 24/movie wall 48/tv banner 14/tv banner21) just replace under 
+  \terraNOVA\media\background\*.png.
+
+3.0
+* Fixed: Movie Details Pages are easily usable now with PageUP/PageDOWN buttons. You can change 
+  starting page in 'settings-default.xml' and still be able to navigate between ALL pages. Must 
+  use eversion R0137 minimum. Also to backtrack thru any page use 'BACK' or 'RETURN" key on remote.
+* Added: IndexPEOPLE, basically this lets you chose what pages to use for Cast/Person/Writer/Director,
+  changeable in 'settings-default.xml', must use eversion R0137 minimum.
+* Fixed: Darkened the genres icons fiinix green/blue.
+
+2.9
+* Fixed: Re-did some of the movie detail pages, I put the select bar on the bottom and moved 
+  stuff around.
+* Fixed: Help screen in home menu for some reason was missing the top 4 select bars.
+
+2.8
+* Added: By pressing 'MENU' on your remote, it will bring up a menu. Can be used anywhere in 
+  the skin.
+* Fixed: Adjusted the movie details trailer page, you can select it as a default page in 
+  'settings-default.xml', or use it from 'movie.wall.(2).6.all.detail' by pressing 'INFO'.
+* Removed: Movie Details 6 (Detail/Trailer) Outline as it had already a Plot Section.
+
+2.7
+* Added: When in 'Movie Details All 1 Page' if you press 'Info' button it will take you to a 
+  trailers page.
+
+2.6
+* Fixed: 'Movie Details All 1 Page' Subtitles/Video Container.
+* Removed: 'Movie Details All 1 Page' Certification Icon (duplicate), there is one already under 
+  title, replaced it with Trailer Icon Yes/No feature.
+* Added: All company icons are now in media\custom\company\*.png.
+
+2.5
+* Added: Alternative genres icons, still working on adjustments for displaying them better sized.
+* Fixed: Language translations. Instructions are below under 'translations'.
+* Fixed: 'Movie Details ALL 1 Page' adjusted locations of items. There might be some issues still 
+  with 'Video Source' 'Language Flag' and 'Subtitles'.
+* Fixed: Adjusted many things throughout the skin for translations so they would not be getting 
+  cut off mid word.
+
+2.4
+* Added: Added a 1 page movie details. This is still work in progress because I am trying to get 
+  all the images in their correct directories/categories, ie, video source/codec/container, etc.
+* Added: To List Mode 8, watched/unwatched icon (tick/cross) and fixed runtime.
+* Added: List Mode 15, watched/unwatched icon (tick/cross), added company logo and fixed runtime.
+* Fixed: Runtime changed through other pages.
+* Added: Company Logos, keep in mind you must have the eversion pack also (Eversion All In One
+  Package v0.2.7 r0108 with Color Studio Logos) to see them.
+* Added: Added new category genre icons, fiinix black/white.
+* Added: Userlist, you can move a category from 'menulist' into 'userlist', this will make 
+  the category appear in the home menu.
+
+2.3
+* Added: Some translations files, just a dozen words that might have been missing.
+
+2.2
+* Fixed: Flags with black would be difficult to see on a black background, added white edge 
+  around flag.
+* Added: Changed Movie Details Cast page to 5 actors, 1 writer and 1 director.
+
+2.1
+* Fixed: Details outline/plot/cast/details pages bottom bar had white box.
+* Added: To movie list 8 added certification and runtime.
+* Added: To movie list 15 added certification, runtime and ratings bar.
+
+2.0
+* Added: More background art/overlays so pages look somewhat decent.
+* Fixed: Skin was majorly redesigned over a 2 week period.
+
+1.9
+* Fixed: Minor adjustments.
+
+1.8
+* Added: A movie wall added, displaying 8 covers.
+
+1.7
+* Added: A movie list added.
+
+1.6
+* Fixed: Case sensitivity on icons for home/categories pages.
+* Fixed: Minor adjustments in categories wall.
+
+1.5
+* Added: Some extra fr translation home icons.
+* Fixed: The help menu was not working properly.
+
+1.4
+* Fixed: Changed most of the layout to include the length of foreign language translations.
+* Fixed: Also renamed lots of home/category icons to foreign languages. So using ie. fr.xml 
+  should display all icons and wording.
+* Updated: Weather Channel.
+
+1.3
+* Added: Category Ratings images.
+* Fixed: Resized most of the category images to proper sizes.
+* Added: FR to weather.
+* Fixed: Added % to almost all fields for language support.
+* Added: Started to add more Awards images.
+
+1.2
+* Added: Info page to movie details, just press 'PageDOWN'.
+* Added: Added animated cursor to home/categories page.
+* Fixed: Overlays were not working properly, you can disable them in settings-default.xml.
+
+1.1
+* Initial release, very basic.

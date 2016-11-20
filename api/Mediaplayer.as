@@ -658,6 +658,7 @@ class api.Mediaplayer {
 				Mediaplayer.delayedqueuecheck();
 			} else if(Mediaplayer.mountqueue[0].file.indexOf("NETWORK_SHARE") != -1) { // NETWORK_SHARE
 				// If we haven't updated this queue run, get the share list now..
+				queuenow=true;  // fix yamj3 playing 
 				if(Mediaplayer.sharesupdated==false) {
 					Mediaplayer.sharesupdated=true;
 					Preloader.update(Common.evPrompts.updateshare);

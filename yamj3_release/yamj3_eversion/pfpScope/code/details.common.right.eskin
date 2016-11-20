@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!--
+	******************************************************************
+	Many elements in this file are appear twice, the second time with 
+	.index added to the name.  This is because this file is "included"
+	from areas that both require and don't require a segmant name.
+	The two versions should be identical except that the .index 
+	also includes a segname and hyper line.
+	
+	genres-250, rating, and year-cert-runtime also required additional
+	conditions on the non .index version to prevent plain text from 
+	being added where it shouldn't be.
+	******************************************************************
+-->
+
+	<!-- Fanart -->
+	<image>
+		<name>fanart</name>
+		<file>[:@jukebox:][:fanart:]</file>
+		<posx>313</posx>
+		<posy>89</posy>
+		<width>967</width>
+		<height>544</height>
+	</image>
+	<image>
+		<name>fanart.index</name>
+		<file>[:@jukebox:][:fanart:]</file>
+		<segname>index</segname>
+		<hyper>1</hyper>
+		<posx>313</posx>
+		<posy>89</posy>
+		<width>967</width>
+		<height>544</height>
+	</image>
+
+	<!-- Poster, title, genre, star rating and plot -->
+	<image>
+		<name>details.bg</name>
+		<file>[:@media:]movie/details.bg.png</file>
+		<posx>318</posx>
+		<posy>410</posy>
+		<width>957</width>
+		<height>220</height>
+	</image>
+	<image>
+		<name>poster</name>
+		<file>[:@jukebox:][:poster:]</file>
+		<posx>332</posx>
+		<posy>345</posy>
+		<width>184</width>
+		<height>272</height>
+	</image>
+	<image>
+		<name>poster.index</name>
+		<file>[:@jukebox:][:poster:]</file>
+		<segname>index</segname>
+		<hyper>2</hyper>
+		<posx>332</posx>
+		<posy>345</posy>
+		<width>184</width>
+		<height>272</height>
+	</image>
+	<image>
+		<name>poster.overlay</name>
+		<file>[:@media:]movie/overlay.png</file>
+		<posx>332</posx>
+		<posy>345</posy>
+		<width>184</width>
+		<height>272</height>
+	</image>
+	<text>
+		<name>title</name>
+		<display>[:fulltitle:]</display>
+		<posx>528</posx>
+		<posy>418</posy>		
+		<width>678</width>
+		<height>25</height>
+		<size>20</size>
+		<color>title.color1</color>
+	</text>
+	<text>
+		<name>title.index</name>
+		<display>[:fulltitle:]</display>
+		<segname>index</segname>
+		<hyper>3</hyper>
+		<posx>528</posx>
+		<posy>418</posy>		
+		<width>678</width>
+		<height>25</height>
+		<size>20</size>
+		<color>title.color1</color>
+	</text>
+	<text>
+		<name>genres-250</name>
+		<condition>[:top250:] != -1 ++ [:@indextype:] !== MOVIESET ++ [:@indextype:] !== TVSET</condition>
+		<display>[:%top250:]: #[:top250:], [:genres,5,blank:]</display>
+		<posx>528</posx>
+		<posy>438</posy>
+		<width>500</width>
+		<height>25</height>
+		<align>left</align>
+		<size>18</size>  
+		<italic>true</italic>
+		<color>data.title.color2</color>
+	</text>	
+	<text>
+		<name>genres-250.index</name>
+		<condition>[:top250:] != -1</condition>
+		<display>[:%top250:]: #[:top250:], [:genres,5,blank:]</display>
+		<segname>index</segname>
+		<hyper>3</hyper>
+		<posx>528</posx>
+		<posy>438</posy>
+		<width>500</width>
+		<height>25</height>
+		<align>left</align>
+		<size>18</size>  
+		<italic>true</italic>
+		<color>data.title.color2</color>
+	</text>	
+	<text>
+		<name>genres</name>
+		<condition>[:top250:] = -1 ++ [:@indextype:] !== MOVIESET ++ [:@indextype:] !== TVSET</condition>
+		<display>[:genres,6,blank:]</display>
+		<posx>528</posx>
+		<posy>438</posy>
+		<width>500</width>
+		<height>25</height>
+		<align>left</align>
+		<size>18</size>  
+		<italic>true</italic>
+		<color>data.title.color2</color>
+	</text>	
+	<text>
+		<name>genres.index</name>
+		<condition>[:top250:] = -1</condition>
+		<display>[:genres,6,blank:]</display>
+		<segname>index</segname>
+		<hyper>3</hyper>
+		<posx>528</posx>
+		<posy>438</posy>
+		<width>500</width>
+		<height>25</height>
+		<align>left</align>
+		<size>18</size>  
+		<italic>true</italic>
+		<color>data.title.color2</color>
+	</text>	
+	<image>
+		<name>rating_image</name>
+		<file>[:@media:]starrating/star[:score,round:].png</file>
+		<posx>1072</posx>
+		<posy>418</posy>
+		<width>115</width>
+		<height>20</height>
+	</image>		
+	<image>
+		<name>rating_image.index</name>
+		<file>[:@media:]starrating/star[:score,round:].png</file>
+		<segname>index</segname>
+		<hyper>3</hyper>
+		<posx>1072</posx>
+		<posy>418</posy>
+		<width>115</width>
+		<height>20</height>
+	</image>		
+	<text>
+		<name>rating</name>
+		<condition>[:@indextype:] !== MOVIESET ++ [:@indextype:] !== TVSET</condition>
+		<display>[:rating,blank:]/100</display>
+		<posx>1195</posx>
+		<posy>418</posy>
+		<width>200</width>
+		<height>32</height>
+		<size>20</size>  
+		<color>data.title.color1</color>
+	</text>
+	<text>
+		<name>rating.index</name>
+		<display>[:rating,blank:]/100</display>
+		<segname>index</segname>
+		<hyper>3</hyper>
+		<posx>1195</posx>
+		<posy>418</posy>
+		<width>200</width>
+		<height>32</height>
+		<size>20</size>  
+		<color>data.title.color1</color>
+	</text>
+	<text>
+		<name>year-cert-runtime</name>
+		<condition>[:certification:] != UNKNOWN ++ [:@indextype:] !== MOVIESET ++ [:@indextype:] !== TVSET</condition>
+		<display>[:year,blank:],  [:certification,upper:],  [:runtime,blank:]</display>
+		<posx>1052</posx>
+		<posy>438</posy>
+		<width>200</width>
+		<height>25</height>
+		<align>right</align>
+		<size>18</size>  
+		<color>data.title.color2</color>
+	</text>
+	<text>
+		<name>year-cert-runtime.index</name>
+		<condition>[:certification:] != UNKNOWN</condition>
+		<display>[:year,blank:],  [:certification,upper:],  [:runtime,blank:]</display>
+		<segname>index</segname>
+		<hyper>3</hyper>
+		<posx>1052</posx>
+		<posy>438</posy>
+		<width>200</width>
+		<height>25</height>
+		<align>right</align>
+		<size>18</size>  
+		<color>data.title.color2</color>
+	</text>
+	<text>
+		<name>year-certunrated-runtime</name>
+		<condition>[:certification:] = UNKNOWN ++ [:@indextype:] !== MOVIESET ++ [:@indextype:] !== TVSET</condition>
+		<display>UNRATED,  [:year,blank:],  [:runtime,blank:]</display>
+		<posx>1052</posx>
+		<posy>438</posy>
+		<width>200</width>
+		<height>25</height>
+		<align>right</align>
+		<size>18</size>  
+		<color>data.title.color2</color>
+	</text>
+	<text>
+		<name>year-certunrated-runtime.index</name>
+		<condition>[:certification:] = UNKNOWN</condition>
+		<display>UNRATED,  [:year,blank:],  [:runtime,blank:]</display>
+		<segname>index</segname>
+		<hyper>3</hyper>
+		<posx>1052</posx>
+		<posy>438</posy>
+		<width>200</width>
+		<height>25</height>
+		<align>right</align>
+		<size>18</size>  
+		<color>data.title.color2</color>
+	</text>
+	<text>
+		<name>plot</name>
+		<display>[:plot:]</display>
+		<posx>528</posx>
+		<posy>460</posy>		
+		<width>732</width>
+		<height>180</height>
+		<size>18</size>
+		<wordwrap>true</wordwrap>
+		<color>data.title.color1</color>
+	</text>
+	<text>
+		<name>plot.index</name>
+		<display>[:plot:]</display>
+		<segname>index</segname>
+		<hyper>3</hyper>
+		<posx>528</posx>
+		<posy>460</posy>		
+		<width>732</width>
+		<height>180</height>
+		<size>18</size>
+		<wordwrap>true</wordwrap>
+		<color>data.title.color1</color>
+	</text>
+</eskin>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!-- Segements - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:segment -->	
+<!-- Segements-tiles - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:tile -->	
+<!-- Artwork Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:artvariables -->	
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+
+ 	<image>
+		<name>videoimage</name>
+		<segname>eplist</segname>  <!-- segname and hyper are necessary for the TV episode list -->
+		<hyper>3</hyper>
+		<swap>true</swap>
+		<file>[:@jukebox:][:videoimage:]</file>  <!-- Eversion variable holding the name of the episode image YAMJ created-->
+		<posx>12</posx>
+		<posy>496</posy>
+		<width>270</width>
+		<height>155</height>
+	</image>
+</eskin>

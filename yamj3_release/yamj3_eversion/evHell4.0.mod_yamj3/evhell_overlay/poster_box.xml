@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overlay>
+    <layer after="true">
+        <name>videosource</name>
+		<left>0</left>
+		<top>0</top>
+		<align>left</align>
+		<valign>top</valign>
+        <images>
+            <image value="SDTV" filename="/covers/p_ssdtv.png"/>
+            <image value="HDTV" filename="/covers/p_shdtv.png"/>
+            <image value="EDTV" filename="/covers/p_sedtv.png"/>
+            <image value="HDDVD" filename="/covers/p_shddvd.png"/>
+            <image value="bluray" filename="/covers/p_sbluray.png"/>
+            <image value="DVDRip" filename="/covers/p_sdvdrip.png"/>
+            <image value="WEBDL" filename="/covers/p_swebdl.png"/>
+            <image value="DVD" filename="/covers/p_sdvd.png"/>
+            <image value="3D" filename="/covers/p_s3d.png"/>
+            <image value="CAM" filename="/covers/p_sdvdcam.png"/>			
+            <image value="R5" filename="/covers/p_sdvdr5.png"/>			
+            <image value="SCREENER" filename="/covers/p_sdvdscreener.png"/>
+            <image value="TS" filename="/covers/p_sdvdts.png"/>			
+        </images>
+    </layer>
+	
+    <layer after="true">
+        <name>videosource/TV/HD</name>
+		<left>0</left>
+		<top>0</top>
+		<align>left</align>
+		<valign>top</valign>
+        <images>
+			<image name="videosource" value="unknown/true/hd" filename="/covers/p_shdtv.png"/>
+			<image name="videosource" value="unknown/false/hd" filename="/covers/p_sunknown.png"/>
+			<image name="videosource" value="unknown/false/hd" filename="/covers/p_sunknown.png"/>
+			<image name="videosource" value="unknown/false/false" filename="/covers/p_sunknown.png"/>		
+        </images>
+    </layer>
+
+    <layer after="true">
+        <name>TV/videosource/videoout</name>
+		<left>0</left>
+		<top>0</top>
+		<align>left</align>
+		<valign>top</valign>
+        <images>
+			<image name="TV" value="true/unknown/24i" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/24p" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/720p 24Hz" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/720p 30Hz" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/720p 60Hz" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/1080p 25Hz" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/1080p 24Hz" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/1080 30Hz" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/1080p 30Hz" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/1080p 50Hz" filename="/covers/p_shdtv.png"/>
+			<image name="TV" value="true/unknown/NTSC 30" filename="/covers/p_ssdtv.png"/>
+			<image name="TV" value="true/unknown/NTSC 30i" filename="/covers/p_ssdtv.png"/>
+			<image name="TV" value="true/unknown/NTSCp" filename="/covers/p_ssdtv.png"/>
+			<image name="TV" value="true/unknown/NTSC 30p" filename="/covers/p_ssdtv.png"/>
+			<image name="TV" value="true/unknown/PAL 25" filename="/covers/p_ssdtv.png"/>
+			<image name="TV" value="true/unknown/PAL 25p" filename="/covers/p_ssdtv.png"/>
+			<image name="TV" value="true/unknown/PAL 25i" filename="/covers/p_ssdtv.png"/>
+        </images>
+    </layer>
+
+    <layer after="true">
+        <name>rating</name>
+        <left>224</left>
+        <top>19</top>
+        <align>left</align>
+        <valign>top</valign>
+        <images>
+            <image value="0" filename="/rating/b_star0.png"/>
+            <image value="10" filename="/rating/b_star1.png"/>
+            <image value="20" filename="/rating/b_star2.png"/>
+            <image value="30" filename="/rating/b_star3.png"/>
+            <image value="40" filename="/rating/b_star4.png"/>
+            <image value="50" filename="/rating/b_star5.png"/>
+            <image value="60" filename="/rating/b_star6.png"/>
+            <image value="70" filename="/rating/b_star7.png"/>
+            <image value="80" filename="/rating/b_star8.png"/>
+            <image value="90" filename="/rating/b_star9.png"/>
+            <image value="100" filename="/rating/b_star10.png"/>
+        </images>
+    </layer>	
+</overlay>

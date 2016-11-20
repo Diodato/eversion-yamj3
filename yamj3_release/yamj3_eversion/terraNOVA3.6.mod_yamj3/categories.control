@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<control>
+
+<insert>
+<info>userlist4</info>
+<action>PRELOAD</action>
+<file>main.categories.wall</file>
+<data>index</data>		
+</insert>
+
+</control>

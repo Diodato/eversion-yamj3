@@ -1,0 +1,180 @@
+<settings>	
+<!--********************** NOT UPDATE FRIENDLY  *********************
+	This file will be overwritten by any skin updates.  If you want
+	to make changes to any of these values you should create a file
+	called settings.xml in the same folder and place all your edits
+	there.  
+	******************************************************************-->
+	<startpage>home</startpage>  						<!-- What page does Eversion load on startup. Valid options are home or the first of any index xml file (Other_All_1, Other_Unwatched_1, Title_D_1, Ratings_9.0-9.9_1, etc)  -->
+
+    <!-- ************************ HOME PAGES ************************ -->
+	<menuHOME>home</menuHOME>							<!-- File used if startpage = home.  Valid choices are: home -->
+    <!-- ************************ INDEX PAGES ************************ -->
+    <!-- Possible values: tvshowsbanner1, tvshowsbanner2, tvshowsbanner3 -->
+	<!-- indexTV is the TV Shows index -->
+	<indexTV>tvshowsbanner1</indexTV>
+	<!-- indexNEWTV is the New-TV index -->	
+	<indexNEWTV>tvshowsbanner1</indexNEWTV>
+
+    <!-- Possible values: tvshowseason, tvshowseasonbig -->	
+	<!-- indexTVSET is a tv show set of seasons -->
+	<indexTVSET>tvshowseasonbig</indexTVSET>
+
+    <!-- Possible values: moviewall1row, moviewall2row, moviewall3row, moviewall4row, listview -->	
+	<!-- indexMOVIE is the Movies index -->
+	<indexMOVIE>moviewall4row</indexMOVIE>
+	<!-- indexNEWMOVIE is the New-Movies index -->
+	<indexNEWMOVIE>moviewall4row</indexNEWMOVIE>
+	<!-- indexMOVIESET is a boxset of movies -->
+	<indexMOVIESET>set1row</indexMOVIESET>
+	<!-- indexINDEX is everything else -->
+	<indexINDEX>moviewall3row</indexINDEX>
+    <!-- Lundman trailer (Youtube) index wall. -->
+    <!--     <indexTrailers>trailerwall</indexTrailers>  -->
+	
+    <!-- ************************ DETAIL PAGES ************************ -->
+    <!-- Possible values: tvinfoepisodes, tvshowepisodewall, tvshowepscroll, tvshowinfo -->	
+	<!-- details tv is the skin style for tv season -->
+	<detailsTV>tvinfoepisodes</detailsTV>
+
+    <!-- Possible values: movieinfoover, movieinfo_clean  -->		
+	<!-- details movie is the skin style for a movie -->
+	<detailsMOVIE>movieinfo_clean</detailsMOVIE>
+
+    <!-- ************************ People PAGES ************************ -->
+    <!-- Possible values: people -->	
+	<!-- indexPEOPLE is the skin style for people pages -->
+	<indexPEOPLE>peopleinfo</indexPEOPLE>
+ 	
+    <!-- ************************ CATEGORIES ************************ -->
+	<!-- This is the main menu e.g. all, movie, tv shows etc. enable these with the categories.xml in YAMJ -->
+	<!-- Possible values: Other,Library  -->
+	<homelist>Other,Library</homelist>
+	
+	<!-- These are the categories in the category submenu, remove to remove from menu prefered is to remove in YAMJ -->
+	<!-- Possible values: Genres,Title,Certification,Year,Country,Award,Ratings,Set  -->
+	<menulist>Genres,Title,Certification,Year,Country,Award,Ratings,Set</menulist>	
+	
+	<!-- These are the categories in the people submenu, remove to remove from menu prefered is to remove in YAMJ -->
+	<!-- Possible values: Cast,Director,Writer,Person  -->
+	<userlist>Cast,Director,Writer,Person</userlist>
+	<userlist2>lastname-a,lastname-b,lastname-c,lastname-d,lastname-e,lastname-f,lastname-g,lastname-h,lastname-i,lastname-j,lastname-k,lastname-l,lastname-m,lastname-n,lastname-o,lastname-p,lastname-q,lastname-r,lastname-s,lastname-t,lastname-u,lastname-v,lastname-w,lastname-x,lastname-y,lastname-z</userlist2>
+	
+	<!-- ************************ CURSOR Moviewalls ************************ -->
+	<!-- Possible values: 0 or 10 (0 is a corner, 10 is rounded)  -->	
+	<rounded>10</rounded>
+	
+	<!-- Possible values: 1 2 4 (1: thin, 2: medium, 4: thick)  -->	
+	<thickness>2</thickness>	
+	
+    <!-- ************************ OTHER ************************ -->
+	
+	<!-- This will only affect the big actor photo the small in the segment indicates whether there are info and bio provided -->	
+	<showtop250>true</showtop250>										<!-- True or false -->		
+
+	<!-- Show purity info in listview -->	
+	<showpurityinlistv>false</showpurityinlistv>						<!-- True or false -->		
+
+	<!-- Show watched indicator on walls -->	
+	<showwatchedonwalls>true</showwatchedonwalls>						<!-- True or false -->	
+	
+	<!-- Show large season number on tvseasonbig -->	
+	<tvshowseasonbig>false</tvshowseasonbig>								<!-- True or false -->	
+	
+    <!-- ************************ COLORS ************************ -->
+	<clock.color>efdfcd</clock.color> 								<!-- Color for the global.clock -->
+
+	<home.color>493D32</home.color> 								<!-- Color for home text -->
+	<home.highlight.color>efdfcd</home.highlight.color> 			<!-- Color for home selected text -->
+
+	<menu.header.color>FFFFFF</menu.header.color> 					<!-- Color for menu header -->
+	<menu.color>5E5E5E</menu.color> 								<!-- Color for menu text -->
+	<menu.highlight.color>FFFFFF</menu.highlight.color> 			<!-- Color for menu selected text -->
+
+	<about.header.color>042084</about.header.color> 				<!-- Color for headers on the about screen -->
+	<about.label.color>7C0303</about.label.color> 					<!-- Color for labels on the about screen -->
+	<about.data.color>efdfcd</about.data.color> 					<!-- Color for data on the about screen -->
+
+	<list.data.color>BBBBBB</list.data.color> 						<!-- Color for general data on list screens --> 
+	<list.list.color>AAAAAA</list.list.color>						<!-- Color for lists text -->
+	<list.list.highlight.color>FFFFFF</list.list.highlight.color>	<!-- Color for lists selected text -->
+
+	<wall.title.color>D3AA46</wall.title.color> 					<!-- Color for the title on the wall screens --> 
+	<wall.label.color>99CCFF</wall.label.color> 					<!-- Color for labels on the wall screens -->
+	<wall.data.color>efdfcd</wall.data.color>
+
+	<help.title.color>808080</help.title.color> 					<!-- Color for the title on the wall screens --> 
+	<help.label.color>FFFFFF</help.label.color> 					<!-- Color for labels on the wall screens -->
+	<help.highlight.color>FFFFFF</help.highlight.color>				<!-- Color for lists highlighted text -->
+	<help.dim.color>AAAAAA</help.dim.color>							<!-- Color for lists dimmed text -->
+
+	<mediainfo.color>efdfcd</mediainfo.color>						<!-- Color for title related data -->
+
+	<movie.data.color>efdfcd</movie.data.color> 					<!-- Color for general data on movie screens --> 
+	<movie.title.color>D3AA46</movie.title.color> 					<!-- Color for the title on movie screens --> 
+	<movie.plot.color>FFFFFF</movie.plot.color> 					<!-- Color for the outline on movie screens --> 
+	<movie.label.color>99CCFF</movie.label.color>					<!-- Color for labels on the movie screens -->
+
+	<tv.title.color>D3AA46</tv.title.color> 						<!-- Color for the title on tv screens --> 	
+	<tv.data.color>efdfcd</tv.data.color> 							<!-- Color for general data on tv screens --> 
+	<tv.label.color>99CCFF</tv.label.color>							<!-- Color for labels on the tv screens -->
+	<tv.episode.color>AAAAAA</tv.episode.color>						<!-- Color for the episode title on the tv screens --> 
+	<tv.episode.highlight.color>efdfcd</tv.episode.highlight.color>	<!-- Color for the highlighted episode title on the tv screens --> 
+	<tv.outline.color>efdfcd</tv.outline.color> 					<!-- Color for the outline on tv screens --> 
+
+	    <!-- ************************ BACKGROUNDS ************************ -->
+    <!-- Possible values: black, blackflower, blue, bluebar, blueflower, bubbles, green, greenbar, greenflower, raster, red, redbar, redflower  -->
+	<homebg>bluebar</homebg>
+	<category_menubg>redbar</category_menubg>
+	<categoriesbg>red</categoriesbg>
+	<userlistbg>greenbar</userlistbg>
+	<peoplebg>raster</peoplebg>
+		
+	<moviewall1rowbg>black</moviewall1rowbg>	    				<!-- Normally fanart -->
+	<moviewall2rowbg>black</moviewall2rowbg>
+	<moviewall3rowbg>black</moviewall3rowbg>
+	<moviewall4rowbg>black</moviewall4rowbg>
+	<moviesetbg>black</moviesetbg>									<!-- Normally fanart -->
+	<tvshowsbannerbg>blue</tvshowsbannerbg>
+	<tvshowsbanner1rowbg>black</tvshowsbanner1rowbg>		    	<!-- Normally fanart -->
+	<tvshowseasonbg>black</tvshowseasonbg>		    				<!-- Normally fanart -->
+	<tvshowepisodewall>raster</tvshowepisodewall>
+	<trailerbg>red</trailerbg>
+	<weatherbg>bubbles</weatherbg>
+	<set1rowbg>black</set1rowbg>	    				<!-- Normally fanart -->
+	
+    <!-- Possible values: black, blue, green, orig, red  -->
+	<listview>red</listview>
+	
+	    <!-- ************************ REFLECTIONS ************************ -->
+    <!-- Whether the poster or thumbnail will have a reflection or not  -->
+	<movieinfooverreflection>true</movieinfooverreflection>				<!-- Reflection on thumbnail True or false -->
+	<tvshowsbanner2reflection>true</tvshowsbanner2reflection>			<!-- Reflection on thumbnail True or false -->	
+	<movieinfo_cleanreflection>true</movieinfo_cleanreflection>			<!-- Reflection on thumbnail True or false -->		
+	<moviewall1reflection>true</moviewall1reflection>					<!-- Reflection on thumbnail True or false -->
+	<moviewall1reflectionwall>false</moviewall1reflectionwall>			<!-- Reflection on thumbnail True or false -->
+	<moviewall2reflection>true</moviewall2reflection>					<!-- Reflection on thumbnail True or false -->
+	<moviewall3reflection>true</moviewall3reflection>					<!-- Reflection on thumbnail True or false -->
+	<moviewall4reflection>true</moviewall4reflection>					<!-- Reflection on thumbnail True or false -->
+	<tvshowsbanner1reflection>true</tvshowsbanner1reflection>			<!-- Reflection on thumbnail True or false -->	
+	<tvshowsbanner1reflectionwall>false</tvshowsbanner1reflectionwall>			<!-- Reflection on thumbnail True or false -->	
+	<tvshowseason>true</tvshowseason>									<!-- Reflection on thumbnail True or false -->
+	
+    <!-- ************************ OTHER ************************ -->
+	<!-- Movie details certification images to use: mpaa, bbfc, csa or germany -->
+	<certification>mpaa</certification>
+	
+	<!-- Category certification images to use: au, de, fr, ie, nl, uk, us -->	
+	<!-- The info and indexes have to be correct for this to function correctly -->
+	<categorycert>us</categorycert>
+	
+    <!-- ************************ WEATHER ************************ -->
+    <!-- Date language (EN, DE, FR; default = EN) -->
+    <datelang>EN</datelang>
+    <!-- Temperature unit: C or F (°C/°F; affects also other units like mph, etc.)  -->
+    <units>C</units>
+    <!-- Weather city code. Go to http://edg3.co.uk/snippets/weather-location-codes/ to find out. -->
+    <!-- Examples: GMXX0087 = Munich, USNY0996 = New York -->
+	<!-- <citycode1>GMXX0087</citycode1>  -->
+	<citycode1>SWXX0031</citycode1>
+</settings>

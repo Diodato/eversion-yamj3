@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>	
+<!--******************************************************************
+	This .eskin file contains code that is common to many screens so
+	it's been separated out on it's own and is "included" by the other
+	.eskin files.
+
+	This file is identical to common.mediainfo except for the use of the 
+	index segname and hyper.
+	
+	Used with:
+	lowlist.text.summary
+	lowlist.banner.summary
+	******************************************************************-->
+<!-- Hyper - See: http://www.dentedboxes.com/doku.php/eversion:eskins:dev -->	
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+<!-- Conditions - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:if -->	
+
+	<!-- Media info -->
+	<if>
+		<condition>[:videoSource:] != NO</condition>  <!-- This block is done if the condition is true-->
+		<segname>index</segname>  <!-- segname and hyper are necessary for evaluating the condition -->
+		<hyper>3</hyper>
+		<image>
+			<name>source.bg</name>
+			<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+			<posx>278</posx>
+			<posy>670</posy>
+			<width>108.75</width>
+			<height>45</height>
+		</image>	
+		<image>
+			<name>source</name>
+			<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
+			<hyper>3</hyper>
+			<file>[:@sharedmedia:]purityflags/video/custom/[:videoSource:].png</file>  <!-- Eversion variables holding the video Source, if none found display nothing -->
+			<posx>278</posx>
+			<posy>663</posy>
+			<width>108.75</width>
+			<height>62</height>
+			<align>center</align>  <!-- By default align is left -->
+			<keepaspect>true</keepaspect>
+		</image>
+	</if>
+	<image>
+		<name>videocodec.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>389</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>	
+	<image>
+		<name>videocodec</name>
+		<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
+		<hyper>3</hyper>
+		<file>[:@sharedmedia:]purityflags/video/custom/[:smartvideocodec:].png</file>  <!-- Eversion variables holding the video codec, if none found display nothing -->
+		<posx>389</posx>
+		<posy>663</posy>
+		<width>108.75</width>
+		<height>60</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>	
+	<image>
+		<name>audiocodec.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>500</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>
+	<image>
+		<name>audiocodec</name>
+		<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
+		<hyper>3</hyper>
+		<file>[:@sharedmedia:]purityflags/audio/custom/[:flagaudiocodec:].png</file>  <!-- Eversion variables holding the audio codec, if none found display nothing -->
+		<posx>500</posx>
+		<posy>662</posy>
+		<width>108.75</width>
+		<height>60</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>	
+		<image>
+		<name>audiochannel.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>608</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>
+	<image>
+		<name>audiochannel</name>
+		<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
+		<hyper>3</hyper>
+		<file>[:@sharedmedia:]purityflags/audio/custom/[:flagchannels:].png</file>  <!-- Eversion variables holding the audio channel, if none found display nothing -->
+		<posx>608</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>	
+	<image>
+		<name>resolution.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>716</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>	
+	<image>
+		<name>resolution</name>
+		<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
+		<hyper>3</hyper>
+		<file>[:@sharedmedia:]purityflags/video/custom/[:flagresolution:].png</file>  <!-- Eversion variables holding the video resolution, if none found display nothing -->
+		<posx>716</posx>
+		<posy>673</posy>
+		<width>108.75</width>
+		<height>45</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>	
+	<image>
+		<name>aspectratio.bg</name>
+		<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+		<posx>824</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+	</image>
+	<image>
+		<name>aspectratio</name>
+		<segname>index</segname>  <!-- segname and hyper are necessary for evaluating the condition -->
+		<hyper>3</hyper>
+		<file>[:@sharedmedia:]purityflags/aspectratio/custom/comercial/[:flagaspect:].png</file>  <!-- Eversion variables holding the aspect ratio, if none found display nothing -->
+		<posx>824</posx>
+		<posy>670</posy>
+		<width>108.75</width>
+		<height>45</height>
+		<align>center</align>  <!-- By default align is left -->
+		<keepaspect>true</keepaspect>
+	</image>
+	<if>
+		<condition>[:flagcertification:] != NO</condition>
+		<segname>index</segname>  <!-- segname and hyper are necessary for evaluating the condition -->
+		<hyper>3</hyper>
+		<image>
+			<name>cert.bg</name>
+			<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+			<posx>932</posx>
+			<posy>670</posy>
+			<width>108.75</width>
+			<height>45</height>
+		</image>	
+		<image>
+			<name>cert</name>
+			<segname>index</segname>  <!-- segname and hyper are necessary for evaluating the condition -->
+			<hyper>3</hyper>
+			<file>[:@sharedmedia:]purityflags/ratings/custom/[:#certification,lower:][:flagcertification:].png</file>
+			<posx>933</posx>
+			<posy>673</posy>
+			<width>108</width>
+			<height>36</height>
+			<align>center</align>
+			<keepaspect>true</keepaspect>
+		</image>
+	</if>
+	<if>
+		<condition>[:subtitles:] != NO</condition>  <!-- This block is done if the condition is true-->
+		<segname>index</segname>  <!-- segname and hyper are necessary for evaluating the condition -->
+		<hyper>3</hyper>
+		<image>
+			<name>subtitle.bg</name>
+			<file>[:@sharedmedia:]purityflags/flag_frame.png</file>
+			<posx>1148</posx>
+			<posy>670</posy>
+			<width>108.75</width>
+			<height>45</height>
+		</image>	
+		<image>
+			<name>subtitle</name>
+			<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
+			<hyper>3</hyper>
+			<file>[:@sharedmedia:]purityflags/subtitle.png</file>  <!-- Use the language files to display localized "subtitle", in upper case -->
+			<posx>1165</posx>
+			<posy>668</posy>
+			<width>75</width>
+			<height>50</height>
+			<align>center</align>  <!-- By default align is left -->
+			<keepaspect>true</keepaspect>
+		</image>
+	</if>
+</eskin>

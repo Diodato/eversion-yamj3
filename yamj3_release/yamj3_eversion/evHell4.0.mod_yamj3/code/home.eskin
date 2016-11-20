@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+
+	<background>
+		<file>[:@media:]backgrounds/background_[:#homebg:].swf</file>
+	</background>
+	
+	<segment>
+		<name>segMenubar</name>
+		<control>[:@eskin:]home</control>
+		<hyperscroll>false</hyperscroll>
+		<startx>28</startx>
+		<starty>250</starty>
+		<endx>1258</endx>
+		<endy>525</endy>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]home/menucursor.swf</file>
+			<above>false</above>
+			<posx>20</posx>
+			<posy>20</posy>
+			<width>220</width>
+			<height>220</height>  
+		</cursor>
+		<tile>
+			<cols>5</cols>
+			<rows>1</rows>
+			<width>246</width>
+			<height>270</height>
+			<static>false</static>
+			<offset>0</offset>
+			<first>1</first>
+			<image>
+				<name>menubgs</name>
+				<file>[:@media:]home/[:originaltitle,nospaces,lower:]_small.swf</file>
+				<highlight>false</highlight>
+				<posx>40</posx>
+				<posy>40</posy>
+				<width>180</width>
+				<height>180</height>  
+			</image>
+			<image>
+				<name>menubgl</name>
+				<file>[:@media:]home/[:originaltitle,nospaces,lower:].swf</file>
+				<highlight>true</highlight>
+				<posx>20</posx>
+				<posy>20</posy>
+				<width>220</width>
+				<height>220</height>  
+			</image>
+			<text>
+				<name>txtMenu</name>
+				<condition>[:originaltitle,lower:] != tv shows</condition>
+				<display>[:originaltitle,evtrans:]</display>
+				<posx>20</posx>
+				<posy>240</posy>
+				<width>200</width>
+				<height>35</height>
+				<size>24</size>  
+				<align>center</align>
+				<color>home.color</color>
+				<hlcolor>home.highlight.color</hlcolor>
+			</text>
+			<text>
+				<name>txtMenuTV</name>
+				<condition>[:originaltitle,lower:] == tv shows</condition>
+				<display>[:%tv-shows:]</display>
+				<posx>20</posx>
+				<posy>240</posy>
+				<width>200</width>
+				<height>35</height>
+				<size>24</size>  
+				<align>center</align>
+				<color>home.color</color>
+				<hlcolor>home.highlight.color</hlcolor>
+			</text>
+		</tile>
+	</segment>
+</eskin>

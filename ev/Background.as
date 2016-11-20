@@ -284,8 +284,9 @@ class ev.Background {
 			Data.loadXML("eversion/settings/skinsettings-default.xml", Background.bad_beta1update);
 		}
 
-		// yamj versions.
-		Data.loadXML(Common.evSettings.yamjdatapath+"jukebox_details.xml", Background.ver_jbdetailsloaded);
+		// available for yamj versions only
+		// commented for yamj3.
+		// Data.loadXML(Common.evSettings.yamjdatapath+"jukebox_details.xml", Background.ver_jbdetailsloaded);
 	}
 
 	public static function bad_beta1update(success) {

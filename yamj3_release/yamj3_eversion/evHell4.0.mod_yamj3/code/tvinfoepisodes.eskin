@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart1large:]</file>
+	</background>
+	
+	<image>
+		<name>tvepisodes</name>
+		<file>[:@media:]movie/tvepisodes.swf</file>
+		<posx>0</posx>
+		<posy>520</posy>
+		<width>1280</width>
+		<height>200</height>
+	</image>
+	
+	<image>
+		<name>movieinfobgr</name>
+		<file>[:@media:]wall/movieinfobgrtv.swf</file>
+		<posx>105</posx>
+		<posy>146</posy>
+		<width>1070</width>
+		<height>328</height>
+	</image>
+
+	<image>
+        <name>footerimg</name>
+        <segname>index</segname>
+        <file>[:@jukebox:][:baseFilename:].footer_posters.png</file>
+        <posx>185</posx>
+        <posy>420</posy>
+        <width>910</width>
+        <height>51</height>
+    </image>    
+    
+    <image>
+        <name>footerimghash</name>
+        <segname>index</segname>
+        <file>[:@jukebox:][:baseFilename,cut1,lower,nospaces:]/[:baseFilename,cut2,lower,nospaces:]/[:baseFilename:].footer_posters.png</file>
+        <posx>185</posx>
+        <posy>420</posy>
+        <width>910</width>
+        <height>51</height>
+    </image> 
+	
+	<text>
+		<name>title</name>
+		<display>[:title,trun47,blank:]</display>
+		<posx>115</posx>
+		<posy>145</posy>
+		<width>622</width>
+		<height>35</height>
+		<size>30</size>  
+		<color>tv.title.color</color>
+	</text>	
+	
+	<image>
+		<name>footerepisode</name>
+		<file>[:@jukebox:][:baseFilename:].footer_episodes.png</file>
+		<posx>115</posx>
+		<posy>178</posy>
+		<width>1080</width>
+<!-- 	<height>10</height>  -->
+		<keepaspect>true</keepaspect>
+		<haligned>left</haligned>
+		<valigned>center</valigned>
+	</image>
+	
+	<image>
+		<name>banner</name>
+		<file>[:@jukebox:][:banner1medium:]</file>
+		<swap>true</swap>
+		<posx>630</posx>
+		<posy>46</posy>
+		<width>619</width>
+<!-- 	<height>128</height> --> 	
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+	</image>
+	
+	<text>
+		<name>year_prompt</name>
+		<display>[:%year,upper:]:</display>
+		<posx>115</posx>
+		<posy>185</posy>
+		<width>155</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>
+	
+	<text>
+		<name>year</name>
+		<display>[:year,blank:]</display>
+		<posx>280</posx>
+		<posy>185</posy>
+		<width>370</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+	</text>	
+	
+	<text>
+		<name>season_prompt</name>
+		<display>[:%season,upper:]:</display>
+		<posx>650</posx>
+		<posy>185</posy>205
+		<width>155</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>
+	
+	<text>
+		<name>season</name>
+		<display>[:season,blank:]</display>
+		<posx>805</posx>
+		<posy>185</posy>205
+		<width>370</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+	</text>	
+	
+	<text>
+		<name>director_prompt</name>
+		<display>[:%directors,upper:]:</display>
+		<posx>115</posx>
+		<posy>205</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>
+	<text>
+		<name>director</name>
+		<display>[:directors,3,blank:]</display>
+		<posx>280</posx>
+		<posy>205</posy>
+		<width>422</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+	</text>	
+	
+	<text>
+		<name>writer_prompt</name>
+		<display>[:%writers,upper:]:</display>
+		<posx>650</posx>
+		<posy>205</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>	
+	<text>
+		<name>writer</name>
+		<display>[:person-Writer-1-name,unknown:]&#xd;[:person-Writer-2-name,blank:]</display>
+		<posx>805</posx>
+		<posy>205</posy>
+		<width>422</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+	</text>		
+	
+	<text>
+		<name>rating_prompt</name>
+		<display>[:%rating,upper:]:</display>
+		<posx>115</posx>
+		<posy>225</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>tv.label.color</color>
+	</text>	
+	<image>
+		<name>rating_image</name>
+		<condition>[:score:] != UNKNOWN</condition>
+		<segname>eplist</segname>
+		<file>[:@media:]common/star/star[:score,round,blank:].swf</file>
+		<posx>280</posx>
+		<posy>232</posy>
+		<width>74</width>
+		<height>14</height>
+		<hyper>2</hyper>
+	</image>
+	
+	<text>
+		<name>genre_prompt</name>
+		<display>[:%genres,upper:]:</display>
+		<posx>650</posx>
+		<posy>225</posy>
+		<width>155</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.label.color</color>
+	</text>
+	
+	<text>
+		<name>genres</name>
+		<display>[:genres,3,blank:]</display>
+		<posx>805</posx>
+		<posy>225</posy>
+		<width>370</width>
+		<height>25</height>
+		<size>19</size>  
+		<color>tv.data.color</color>
+	</text>	
+	
+	<text>
+		<name>plot</name>
+		<display>[:smartplot,blank:]</display>
+		<segname>eplist</segname>
+		<posx>115</posx>
+		<posy>247</posy>
+		<width>1050</width>
+		<height>175</height>
+		<wordwrap>true</wordwrap>
+		<size>19</size>  
+		<color>tv.data.color</color>
+		<hyper>3</hyper>
+	</text>	
+	
+	<image>
+		<name>extras</name>
+		<condition>[:isextras:] == YES</condition>
+		<file>[:@media:]movie/Extrasstardim.swf</file>
+		<posx>1030</posx>
+		<posy>529</posy>
+		<width>11</width>
+		<height>10</height>
+	</image>		
+		
+	<segment>
+		<name>eplist</name>
+		<datasource>episodes</datasource>
+		<startx>0</startx>
+		<starty>555</starty> 
+		<endx>208</endx>
+		<endy>117</endy> 
+		<scroll>1</scroll>
+		
+		<cursor>
+			<file>[:@media:]movie/cursor.208.117.2.5.C5EAFF.true.phf</file>
+			<above>true</above>
+			<posx>25</posx>
+			<posy>0</posy>
+		</cursor>		
+		
+		<tile>
+			<cols>5</cols>
+			<rows>1</rows>
+			<width>256</width>
+			<height>165</height>
+			<image>
+				<name>videoimage</name>
+				<file>[:@jukebox:][:videoimage:]</file>
+				<posx>26</posx>
+				<posy>0</posy> 
+				<width>208</width>
+<!-- 			<height>117</height> -->
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+			</image>
+			<text>
+				<name>epnumber</name>
+				<display>[:episode:]</display>
+				<align>right</align>
+				<posx>0</posx>
+				<posy>2</posy>
+				<width>24</width>
+				<height>23</height>
+				<size>18</size>  
+				<bold>true</bold>
+				<color>tv.episode.color</color>
+				<hlcolor>tv.episode.highlight.color</hlcolor>
+			</text>	
+			<text>
+				<name>title</name>
+				<display>[:title,blank:]</display>
+				<align>center</align>
+				<posx>0</posx>
+				<posy>117</posy>
+				<width>256</width>
+				<height>23</height>
+				<size>18</size>  
+				<color>tv.episode.color</color>
+				<hlcolor>tv.data.color</hlcolor>
+			</text>	
+			<text>
+				<name>aired</name>
+				<display>[:aired,blank:]</display>
+				<align>center</align>
+				<posx>0</posx>
+				<posy>139</posy>
+				<width>256</width>
+				<height>23</height>
+				<size>18</size>  
+				<color>tv.episode.color</color>
+				<hlcolor>tv.data.color</hlcolor>
+			</text>	
+			<image>
+				<name>epwatched</name>
+				<file>[:@media:]movie/epwatched[:watched:].swf</file>
+				<posx>212</posx>
+				<posy>138</posy> 
+				<width>25</width>
+				<height>25</height>
+			</image>
+		</tile>
+		
+		<remote>
+			<button>PLAY</button>
+			<action>PLAYFROMHERE</action>	
+		</remote>		
+		<remote>
+			<button>PAUSE</button>
+			<action>PLAYRANDOM</action>	
+		</remote>		
+		<remote>
+			<button>SELECT</button>
+			<action>PLAYSINGLE</action>	
+		</remote>	
+		<remote>
+			<button>FASTFORWARD</button>
+			<action>PLAYLAST</action>	
+		</remote>	
+	</segment>	
+	
+	<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>tvdetailpopup</file>
+	</remote>	
+	<remote>
+		<button>SEMICOLON</button>
+		<action>EXTRA</action>	
+		<file>tvdetailpopup</file>
+	</remote>
+	
+<!-- Go back -->
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	<remote>
+	   <button>RETURN</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	
+<!-- Next tab plot -->
+	<remote>
+		<button>GREEN</button>
+		<action>EXTRA</action>	
+		<file>tvinfoplot</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>tvinfoplot</file>
+	</remote>
+	
+<!-- Fanart only -->
+	<remote>
+		<button>YELLOW</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+	
+</eskin>

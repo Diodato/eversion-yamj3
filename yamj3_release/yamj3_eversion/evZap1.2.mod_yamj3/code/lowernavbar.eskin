@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>			
+	<!-- ######### Tile number indicators ########## -->
+	<text>
+		<name>tiles</name>
+		<segname>index</segname>
+		<hyper>4</hyper>
+		<display>[:@curpos:] / [:@totaltiles:]</display>
+		<align>right</align>
+		<posx>1070</posx>
+		<posy>683</posy>
+		<width>125</width>
+		<height>30</height>
+		<size>20</size>
+		<color>808080</color>
+	</text>	 	 	
+	<image>
+		<name>up_off</name>
+		<file>[:@media:]common/up_off.swf</file>
+		<posx>1205</posx>
+		<posy>690</posy>
+		<width>15</width>
+		<height>10.6</height>
+	</image>		
+	<image>
+		<name>down_off</name>
+		<file>[:@media:]common/down_off.swf</file>
+		<posx>1220</posx>
+		<posy>690</posy>
+		<width>15</width>
+		<height>10.6</height>
+	</image>	
+	<image>
+		<name>up_on</name>
+		<segname>index</segname>
+		<condition>[:@curpos:] != 1</condition>
+		<file>[:@media:]common/up_on.swf</file>
+		<posx>1205</posx>
+		<posy>690</posy>
+		<width>15</width>
+		<height>10.6</height>
+		<hyper>4</hyper>
+	</image>		
+	<image>
+		<name>down_on</name>
+		<segname>index</segname>
+		<condition>[:@curpos:] != [:@totaltiles:]</condition>
+		<file>[:@media:]common/down_on.swf</file>
+		<posx>1220</posx>
+		<posy>690</posy>
+		<width>15</width>
+		<height>10.6</height>
+		<hyper>4</hyper>
+	</image>		
+	<text>
+		<name>title</name>
+		<condition>[:year:] != </condition>
+		<segname>index</segname>
+		<display>[:title,upper,unknown:] ([:year:])</display>
+		<posx>250</posx>
+		<posy>680</posy>
+		<width>750</width>
+		<height>35</height>
+		<size>26</size>
+		<align>center</align>
+		<color>FFFFFF</color>
+		<hyper>4</hyper>
+	</text>	
+	<text>
+		<name>title1</name>
+		<condition>[:year:] == </condition>
+		<segname>index</segname>
+		<display>[:title,upper,unknown:]</display>
+		<posx>250</posx>
+		<posy>680</posy>
+		<width>750</width>
+		<height>35</height>
+		<size>26</size>
+		<align>center</align>
+		<color>FFFFFF</color>
+		<hyper>4</hyper>
+	</text>		
+	<image>
+		<name>rating_image</name>
+		<segname>index</segname>
+		<file>[:@media:]common/star/star[:score,round:].swf</file>
+		<posx>35</posx>
+		<posy>685</posy>
+		<width>115</width>
+		<height>20</height>
+		<hyper>4</hyper>
+	</image>
+	<!-- Activate to get rating values, e.g. 7.5/10 -->
+	<!-- <text>
+		<name>rating</name>
+		<condition>[:rating:] != UNKNOWN ++ [:rating:] != -1</condition>
+		<segname>index</segname>
+		<display>[:score:] / 10</display>
+		<posx>160</posx>
+		<posy>685</posy>
+		<width>75</width>
+		<height>30</height>
+		<size>18</size>
+		<color>909090</color>
+		<hyper>4</hyper>
+	</text>	
+	<text>
+		<name>rating_unknown</name>
+		<condition>[:rating:] = UNKNOWN || [:rating:] = -1</condition>
+		<segname>index</segname>
+		<display>? / 10</display>
+		<posx>160</posx>
+		<posy>685</posy>
+		<width>75</width>
+		<height>30</height>
+		<size>18</size>
+		<color>909090</color>
+		<hyper>4</hyper>
+	</text>	-->
+</eskin>

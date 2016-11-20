@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!--******************************************************************
+	This .eskin file contains code that is common to many screens so
+	it's been separated out on it's own and is "included" by the other
+	.eskin files.
+	
+	Used with:
+	movie
+	
+	******************************************************************-->
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+<!-- Conditions - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:if -->	
+<!-- Shared eskin - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:shared -->	
+
+    <control>
+		<fullscreen>false</fullscreen>  <!-- Leave the previous screen visible -->  
+		<clearhighresbg>false</clearhighresbg>  <!--  Don't clear the hiresbackground (if avail)  -->
+    </control>
+
+	<!-- Included eskin files -->
+	<include>movie.remote</include>
+	
+	<!-- Background-->
+	<image>
+		<name>top250.bg</name>
+		<condition>[:top250:] != -1</condition>
+		<file>[:@media:]common/whisper/top250.bg.png</file>
+		<posx>1023</posx>
+		<posy>48</posy>
+		<width>257</width>
+		<height>30</height>
+	</image>
+	<text>
+		<name>top250.label</name>
+		<condition>[:top250:] != -1</condition>  <!-- This block is only done if the title is in the top 250  -->
+		<display>[:%top250,upper:]:</display>
+		<posx>1063</posx>
+		<posy>48</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>22</size>    
+		<color>movie.plot.color</color>
+	</text>
+	<text>
+		<name>top250</name>
+		<condition>[:top250:] != -1</condition>  <!-- This block is only done if the title is in the top 250  -->
+		<display>#[:top250:]</display>  <!-- Use the language files to display localized "Top250" + top250# + up to 5 genres found in the XML YAMJ created, if no genres display nothing  -->
+		<posx>1163</posx>
+		<posy>48</posy>
+		<width>100</width>
+		<height>25</height>
+		<size>22</size>    
+		<color>movie.plot.color</color>
+	</text>
+	<image>
+		<name>details.bg</name>
+		<file>[:@media:]movie/3.other/details.light.bg.png</file>
+		<posx>282</posx>
+		<posy>474</posy>
+		<width>943</width>
+		<height>196</height>
+	</image>
+	<text>
+		<name>plot</name>
+		<display>[:smartplot:]</display>  <!-- Eversion variable holding the title plot -->
+		<posx>298</posx>
+		<posy>476</posy>
+		<width>910</width>
+		<height>115</height>
+		<size>22</size>  
+		<wordwrap>true</wordwrap>  <!-- By default is false -->
+		<color>movie.title.color</color>
+	</text>
+	<text>
+		<name>director.label</name>
+		<display>[:%directors:]:</display>  <!-- Use the language files to display localized "directors" -->
+		<posx>298</posx>
+		<posy>592</posy>
+		<width>120</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.label.color</color>
+	</text>
+	<text>
+		<name>director</name>
+		<display>[:directors,3:]</display>  <!-- Display up to 3 directors found in the XML YAMJ created, if none found display nothing -->
+		<posx>398</posx>
+		<posy>592</posy>
+		<width>370</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.data.color</color>
+	</text>			
+	<text>
+		<name>genres.label</name>
+		<display>[:%genres:]:</display>  <!-- Use the language files to display localized "genres" -->
+		<posx>298</posx>
+		<posy>616</posy>
+		<width>120</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.label.color</color>
+	</text>	
+	<text>
+		<name>genres</name>  <!-- Be sure to use a different name from the one just above as Eversion does not like two items with the same name  -->
+		<display>[:genres,3,blank:]</display>  <!-- Use the language files to display localized "genres"  -->
+		<posx>398</posx>
+		<posy>616</posy>
+		<width>370</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.data.color</color>
+	</text>
+	<text>
+		<name>actor.label</name>
+		<display>[:%actors:]:</display>  <!-- Use the language files to display localized "actors" -->
+		<posx>298</posx>
+		<posy>640</posy>
+		<width>120</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.label.color</color>
+	</text>	
+	<text>
+		<name>actor</name>
+		<display>[:actors,5:]</display>  <!-- Display up to 10 actors found in the XML YAMJ created, if none found display nothing -->
+		<posx>398</posx>
+		<posy>640</posy>
+		<width>910</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>movie.data.color</color>
+	</text>
+	<!-- Remote commands -->
+	<remote>
+	   <button>BACK</button>  <!-- Go back one level -->
+	   <action>BACK</action>
+	   <data>2</data>  <!-- Special (due to the passthrough in movie): 1 would only get us back to the movie screen with no details -->
+	</remote>	
+	<remote>  <!-- This is what opens the info page for movie screens (for the pc)-->
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>movie.data.extended</file>  <!-- The page to open -->
+	</remote>			
+	<remote>  <!-- This is what opens the info page for movie screens -->
+		<button>INFO</button>  
+		<action>EXTRA</action>	
+		<file>movie.data.extended</file>  <!-- The page to open -->
+	</remote>
+</eskin>

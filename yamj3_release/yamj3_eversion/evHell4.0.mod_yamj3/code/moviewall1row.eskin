@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@media:]backgrounds/background_[:#moviewall1rowbg:].swf</file>
+	</background>
+	
+	<include>common.navinfotop</include>	
+	
+	<image>
+		<name>bottombgr</name>
+		<condition>[:#moviewall1reflectionwall:] == false</condition>
+		<file>[:@media:]wall/bottom.swf</file>
+		<posx>0</posx>
+		<posy>686</posy>
+		<width>1280</width>
+		<height>34</height>
+	</image>
+
+	<image>
+		<name>movieinfobgr</name>
+		<file>[:@media:]wall/movieinfobgr.swf</file>
+		<posx>105</posx>
+		<posy>65</posy>
+		<width>1070</width>
+		<height>410</height>
+	</image>	
+		
+	<image>
+		<name>postertrue</name>
+		<condition>[:#moviewall1reflection:] == true</condition>
+		<file>[:@jukebox:][:smartposter1small:]</file>
+		<segname>index</segname>
+		<swap>true</swap>
+		<posx>80</posx>
+		<posy>40</posy>
+		<width>254</width>
+		<!--	<height>376</height> -->
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+		<hyper>4</hyper>
+	</image>
+	<image>
+		<name>posterfalse</name>
+		<condition>[:#moviewall1reflection:] == false</condition>
+		<file>[:@jukebox:][:smartposter1large:]</file>
+		<segname>index</segname>
+		<swap>true</swap>
+		<posx>80</posx>
+		<posy>40</posy>
+		<width>254</width>
+		<!--	<height>376</height> -->
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+		<hyper>4</hyper>
+	</image>
+		
+	<image>
+        <name>footerimg</name>
+        <segname>index</segname>
+        <file>[:@jukebox:][:baseFilename:].footer_posters.png</file>
+        <posx>185</posx>
+        <posy>420</posy>
+        <width>910</width>
+        <height>51</height>
+        <hyper>4</hyper>
+    </image>    
+    
+    <image>
+        <name>footerimghash</name>
+        <segname>index</segname>
+        <file>[:@jukebox:][:baseFilename,cut1,lower,nospaces:]/[:baseFilename,cut2,lower,nospaces:]/[:baseFilename:].footer_posters.png</file>
+        <posx>185</posx>
+        <posy>420</posy>
+        <width>910</width>
+        <height>51</height>
+        <hyper>4</hyper>
+    </image> 
+	
+	<text>
+		<name>title</name>
+		<segname>index</segname>
+		<display>[:fulltitle,trun47:]</display>
+		<posx>340</posx>
+		<posy>65</posy>
+		<width>635</width>
+		<height>35</height>
+		<size>30</size>  
+		<color>wall.title.color</color>
+		<hyper>4</hyper>
+	</text>	
+	
+	<text>
+		<name>year</name>
+		<segname>index</segname>
+		<display>[:year,blank:]</display>
+		<posx>1070</posx>
+		<posy>65</posy>
+		<width>100</width>
+		<height>35</height>
+		<size>30</size> 
+		<align>center</align>
+		<color>wall.title.color</color>
+		<hyper>3</hyper>
+	</text>
+	
+	<image>
+		<name>top250bgr</name>
+		<segname>index</segname>
+		<condition>[:top250:] != -1 ++ [:#showtop250:] == true</condition>
+		<file>[:@media:]wall/top250.swf</file>
+		<posx>1065</posx>
+		<posy>105</posy>
+		<width>100</width>
+		<height>50</height>
+		<hyper>3</hyper>
+	</image>
+	<text>
+		<name>top250</name>
+		<segname>index</segname>
+		<condition>[:top250:] != -1 ++ [:#showtop250:] == true</condition>
+		<display>[:top250:]</display>
+		<posx>1095</posx>
+		<posy>123</posy>
+		<width>42</width>
+		<height>28</height>
+		<size>24</size> 
+		<bold>true</bold>
+		<align>center</align>
+		<color>000000</color>
+		<hyper>3</hyper>
+	</text>		
+	
+	<text>
+		<name>genre_prompt</name>
+		<display>[:%genres,upper:]:</display>
+		<posx>340</posx>
+		<posy>105</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>wall.label.color</color>
+	</text>
+	
+	<text>
+		<name>genres</name>
+		<display>[:genres,5,blank:]</display>
+		<segname>index</segname>
+		<posx>550</posx>
+		<posy>105</posy>
+		<width>689</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>wall.data.color</color>
+		<hyper>2</hyper>
+	</text>	
+	
+	<text>
+		<name>director_prompt</name>
+		<display>[:%directors,upper,blank:]:</display>
+		<posx>340</posx>
+		<posy>125</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>wall.label.color</color>
+	</text>
+	<text>
+		<name>director</name>
+		<display>[:directors,3,blank:]</display>
+		<segname>index</segname>
+		<posx>550</posx>
+		<posy>125</posy>
+		<width>689</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>wall.data.color</color>
+		<hyper>2</hyper>
+	</text>	
+	
+	<text>
+		<name>writer_prompt</name>
+		<display>[:%writers,upper:]:</display>
+		<posx>340</posx>
+		<posy>145</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>wall.label.color</color>
+	</text>	
+	<text>
+		<name>writer</name>
+		<display>[:person-Writer-1-name,blank:]&#xd;[:person-Writer-2-name,blank:]</display>
+		<segname>index</segname>
+		<posx>550</posx>
+		<posy>145</posy>
+		<width>689</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>wall.data.color</color>
+		<hyper>2</hyper>
+	</text>		
+	
+	<text>
+		<name>rating_prompt</name>
+		<display>[:%rating,upper:]:</display>
+		<posx>340</posx>
+		<posy>165</posy>
+		<width>200</width>
+		<height>25</height>
+		<size>20</size>  
+		<color>wall.label.color</color>
+	</text>	
+	<image>
+		<name>rating_image</name>
+		<condition>[:score:] != UNKNOWN</condition>
+		<segname>index</segname>
+		<file>[:@media:]common/star/star[:score,round,blank:].swf</file>
+		<posx>550</posx>
+		<posy>168</posy>
+		<width>74</width>
+		<height>14</height>
+		<hyper>3</hyper>
+	</image>	
+	
+	<text>
+		<name>plot</name>
+		<display>[:smartplot,blank:]</display>
+		<segname>index</segname>
+		<posx>340</posx>
+		<posy>195</posy>
+		<width>825</width>
+		<height>200</height>
+		<wordwrap>true</wordwrap>
+		<size>19</size>  
+		<color>FFFFFF</color>
+		<hyper>3</hyper>
+	</text>	
+
+	<segment>
+		<name>index</name>
+		<startx>14</startx>
+		<starty>510</starty>
+		<endx>1265</endx>
+		<endy>720</endy>
+		<scroll>1</scroll>
+		<cursor>
+			<file>[:@media:]cursors/cursor.125.185.[:#thickness:].[:#rounded:].FCCF10.true.phf</file>
+			<above>true</above>
+			<posx>3</posx>
+			<posy>-5</posy>
+		</cursor>				
+		<tile>
+			<cols>9</cols>
+			<rows>1</rows>
+			<width>139</width>
+			<height>210</height>
+			<image>
+				<name>thumbnailtrue</name>
+				<condition>[:#moviewall1reflectionwall:] == true</condition>
+				<file>[:@jukebox:][:smartposter1small:]</file>
+				<posx>7</posx>
+				<posy>0</posy>
+				<width>125</width>
+<!--					<height>210</height> -->
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>top</valigned>
+			</image>
+			<image>
+				<name>thumbnailfalse</name>
+				<condition>[:#moviewall1reflectionwall:] == false</condition>
+				<file>[:@jukebox:][:smartposter1large:]</file>
+				<posx>7</posx>
+				<posy>0</posy>
+				<width>125</width>
+<!--					<height>185</height> -->
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>top</valigned>
+			</image>
+			<image>
+				<name>watched</name>
+				<condition>[:#showwatchedonwalls:] == true</condition>
+				<file>[:@media:]purity/watched/[:watched:].swf</file>
+				<posx>7</posx>
+				<posy>0</posy>
+				<width>50</width>
+<!-- 			<height>50</height> -->
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+			</image>
+		</tile>
+		<fanart>
+			<file>[:@jukebox:][:fanart1large:]</file>
+			<hyper>3</hyper>
+		</fanart>
+		<remote>
+		   <button>BACK</button>
+		   <action>BACK</action>
+		   <data>1</data>
+		</remote>		
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>		
+<!-- Plot pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>plotpopup</file>
+	</remote>	
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>plotpopup</file>
+	</remote>	
+	</segment>			
+</eskin>

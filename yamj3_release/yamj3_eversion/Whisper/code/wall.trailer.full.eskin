@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+
+    <control>
+		<fullscreen>true</fullscreen>  <!-- Clear the previous screen  -->
+		<clearhighresbg>true</clearhighresbg>  <!--  Clear the hires background (if avail)  -->
+    </control>
+
+	<!-- Background -->
+	<background>
+		<file>[:@media:]wall/background.png</file>  <!-- The image is at \media\wall\1.eskin.used\background.png -->
+	</background>
+
+	<!-- Included eskin files -->
+	<!-- These have been carefully ordered to ensure that they are drawn in the order we want  -->	
+	<image>
+		<name>indexbg</name>
+		<file>[:@media:]common/blank.png</file>
+		<posx>1084</posx>
+		<posy>8</posy>
+		<width>165</width>
+		<height>33.30</height>
+	</image>
+	<text>
+		<name>indexname</name>
+		<segname>trailerfeed</segname>
+		<display>[:@indexname:]</display>
+		<posx>1093</posx>
+		<posy>9</posy>		
+		<width>180</width>
+		<height>28</height>
+		<size>24</size>
+		<align>left</align>
+		<color>808080</color>
+	</text>
+	<image>
+		<name>pagebg</name>
+		<file>[:@media:]common/blank.png</file>
+		<posx>35</posx>
+		<posy>674</posy>
+		<width>120</width>
+		<height>30</height>
+	</image>
+	<text>
+		<name>pagenavfull</name>
+		<display>[:@pagecurrent:] / [:@pagetotal:]</display>
+		<align>right</align>
+		<posx>40</posx>
+		<posy>673</posy>
+		<width>90</width>
+		<height>28</height>
+		<size>24</size>  
+		<color>808080</color>
+	</text>
+	<text>
+		<name>title</name>
+		<segname>trailerfeed</segname>  <!-- segname and hyper are necessary for the walls -->
+		<hyper>4</hyper>
+		<display>[:title:]</display>
+		<posx>195</posx>
+		<posy>673</posy>
+		<width>880</width>
+		<height>37</height>
+		<size>32</size>  
+		<color>FFFFFF</color>
+		<align>center</align>
+	</text>
+	<image>
+		<name>totalbg</name>
+		<file>[:@media:]common/blank.png</file>
+		<posx>1084</posx>
+		<posy>674</posy>
+		<width>165</width>
+		<height>30</height>
+	</image>
+	<text>
+		<name>cursorloc</name>
+		<align>right</align>
+		<posx>1096</posx>
+		<posy>673</posy>
+		<width>58</width>
+		<height>28</height>
+		<size>24</size>  
+		<color>808080</color>
+	</text>
+	<text>
+		<name>total</name>
+		<segname>trailerfeed</segname>  <!-- segname and hyper are necessary for the walls -->
+		<hyper>4</hyper>
+		<display> / [:@totaltiles:]</display>
+		<posx>1120</posx>
+		<posy>673</posy>		
+		<width>80</width>
+		<height>28</height>
+		<size>24</size>
+		<align>right</align>
+		<color>808080</color>
+	</text>
+	<segment>
+		<name>trailerfeed</name>
+		<datasource>lundman</datasource>
+		<startx>27</startx>
+		<starty>44</starty>
+		<tilesize>true</tilesize>
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]wall/1.eskin.used/thumbnail.cursor.png</file>
+			<above>true</above>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>151</width>
+			<height>212</height>  
+		</cursor>		
+		<tile>
+			<cols>8</cols>
+			<rows>3</rows>
+			<width>151</width>
+			<height>212</height>
+			<image>
+				<name>thumbnail</name>
+				<file>[:cover:]</file>
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>131</width>
+				<height>192</height>
+			</image>			
+		</tile>		
+
+		<!-- Remote commands -->
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYFILE</action>
+		</remote>					
+	</segment>	
+</eskin>

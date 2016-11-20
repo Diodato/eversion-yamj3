@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Control file for MENU of Eversion evstreamed eskin. 
+In this skin this file is not needed
+For more info: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:control
+-->
+<control>
+	<insert>
+		<info>menulist</info>
+		<action>PRELOAD</action>
+		<file>categories</file>
+        <data>index</data>		
+	</insert>
+	<item>
+		<name>People</name>
+		<action>screen</action>
+		<title>[:%people:]</title>
+		<originaltitle>people</originaltitle>
+		<file>people_menu</file>
+	</item> 
+</control>

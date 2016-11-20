@@ -1,0 +1,84 @@
+<settings>	
+	<!-- ********* OVERALL SETTINGS -->	
+
+	<!-- eskin to use -->
+	<eskin>evZap1.2.mod_yamj3</eskin>
+	<!--<eskin>Whisper</eskin>-->
+		
+	<!-- What translation file should the skin use for prompts -->
+	<translation>fr_zap.xml</translation>
+	<!--<translation>en.xml</translation>-->
+	<!-- clock format.  Options 12=12hour, 24=24hour) -->
+	<clock>24</clock>	
+	<!-- date format:  Options 1=MM-DD-YYYY, 2=YYYY-MM-DD, 3=MM/DD/YYYY, 4=YYYY/MM/DD, 5=DD-MM-YYYY, 6=DD/MM/YYYY  -->
+	<date>6</date>
+	
+	<!-- ************ EPISODES -->
+	
+	<!-- set to true to enable specials to merge with seasons in their proper airing order 
+	     note: does not work everywhere yet, work in progress
+		       requires thetvdb specials airing information in yamj R2524+  -->			   
+	<epmerge>false</epmerge>
+	
+	<!-- which player for single video files?  (avi, mkv, etc) -->
+	<playersingle>NATIVE</playersingle>
+	<!-- which player for iso files? -->
+	<playeriso>NATIVE</playeriso>
+	<!-- which player for VIDEO_TS rips? -->
+	<playervideots>NATIVE</playervideots>
+	<!-- which player for BDMV rips? -->
+	<playerbdmv>NATIVE</playerbdmv> 
+	
+	<!-- ******** PRELOADER  -->
+	<!-- The preloader is the box that appears in the upper left corner to tell you why your waiting.
+	     to make sure the preloader doesn't slow things down, it waits to appear and animate
+		 
+		 All times are in milliseconds but you'll find the low end nature of the cpu that time can drift-->
+
+	<!-- time in milliseconds to appear if needed (500 minimum and default) -->
+	<preloadstart>100</preloadstart>
+	<!-- time in milliseconds to start animating AFTER it appears (1000 minimum, default 2000) -->
+	<preloadanimate>500</preloadanimate>	
+	<playercheckmounts>true</playercheckmounts>
+
+	<!-- some firmware works better if we do not try to mount shared and then play.
+	     auto: attempt to determine automatically the best setting to use based on your hardware and firmware
+		 true: force it to always do the full mounting eversion has always done
+		 false: for it to never do full mounting no matter what firmware you using
+
+		 This option only works if:
+		   1: nfs://, smb:// and nfs-tcp:// paths are used.
+		   2: smb:// paths with username and password require the encrypted password.  use the yamj app to find this password
+		   3: file:// network share paths with playercheckmounts enabled.  gaya firmware with smb passwords will never work.
+    -->
+	<fullmounts>true</fullmounts>
+
+	<!-- bypass api: when set to true, failures to talk to hardware players will disable instead of error -->
+	<bypassapi>true</bypassapi>
+
+    <!-- ********* OVERSCAN SETTINGS -->
+	
+	<!-- Overscan is when your tv enlarges the image and it appears the edges are cut off.  The best fix for the highest
+	     quality is to change the overscan mode.  Sometimes called overscan, dot by dot, 1:1 pixel mapping, and sometimes
+		 a special per input zoom mode.
+		 
+		 When you can't fix your tv, the below settings will have eversion adjust the image.  -->
+		 
+	<!-- overscan: set to true to enable overscan scaling -->
+	<overscan>true</overscan>
+	
+	<!-- % of the image to shrink in the x (horizontal) and y (vertical) direction. 
+         Most TVs are between 5 and 7, 5.5, 6.31, etc are valid settings	-->
+	<overscanx>5</overscanx>
+	<overscany>5</overscany>	
+	
+	<!-- When using standard backgrounds, should overscan also resize the background -->
+	<overscanbg>true</overscanbg>
+	<!-- used to verify settings match interface version -->
+    <eversion>R3000</eversion>
+	<!-- YAMJ3 settings -->
+	<yamj3coreurl>http://192.168.1.8:8888/yamj3/</yamj3coreurl>
+	<yamj3librarypaths>T:\video\Film\</yamj3librarypaths>
+	<yamj3playerpaths>file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO/video/Film/</yamj3playerpaths>
+	<yamj3chunksize>24</yamj3chunksize>
+</settings>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!-- Segements - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:segment -->	
+<!-- Segements-tiles - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:tile -->	
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+<!-- Artwork Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:artvariables -->	
+<!-- Conditions - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:if -->	
+
+    <control>
+		<fullscreen>true</fullscreen>  <!-- Clear the previous screen  -->
+		<clearhighresbg>false</clearhighresbg>  <!--  Don't clear the hires background (if avail)  -->
+    </control>
+
+	<!-- Background -->
+	<background>
+		<file>[:@media:]list/1.eskin.used/background.png</file> 
+	</background>
+
+	<!-- Background image for the list details -->
+	<image>
+		<name>details.bg</name>
+		<file>[:@media:]list/1.eskin.used/list.bg.png</file>
+		<posx>0</posx>
+		<posy>359</posy>
+		<width>1280</width>
+		<height>362</height>
+	</image>
+
+	<!-- Included eskin files -->
+	<!-- These have been carefully ordered to ensure that they are drawn in the order we want  -->
+    <include>tv.title.bar(index)</include>	
+	<include>tv.set.poster.summary</include>
+	<include>tv.poster.summary.data</include>
+
+	<!-- The list of posters below the summary -->
+    <segment>
+        <name>index</name>
+        <startx>52</startx>
+        <starty>515</starty>
+        <endx>1261</endx>
+        <endy>204</endy>
+        <scroll>1</scroll>
+        <cursor>
+            <file>[:@media:]wall/cursor.png</file>
+			<above>true</above>
+            <above>true</above>
+            <posx>5</posx>
+            <posy>6</posy>
+            <width>142</width>
+            <height>200</height>  
+        </cursor>		
+		<tile>
+			<cols>8</cols>
+			<rows>1</rows>
+            <width>146</width>
+            <height>207</height>
+            <image>
+                <name>thumbnail</name>
+                <file>[:@jukebox:][:thumbnail:]</file>
+				<altfile>[:@media:]dummy/dummy.jpg</altfile>
+                <posx>10</posx>
+                <posy>10</posy>
+                <width>131</width>
+                <height>192</height>
+				<keepaspect>true</keepaspect>
+			</image>		
+		</tile>
+
+		<!-- Fanart -->
+		<fanart>
+			<file>[:@jukebox:][:smartfanart1large:]</file><!-- Eversion artwork variable holding the name of the fanart YAMJ created-->
+			<hyper>1</hyper>
+		</fanart>		
+
+		<!-- Remote commands -->
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>		
+	</segment>	
+</eskin>

@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>false</fullscreen>
+    </control>
+	<text>
+		<name>plot1</name>
+		<display>[:plot,trun500,unknown:]</display>
+		<posx>360</posx>
+		<posy>415</posy>
+		<width>650</width>
+		<height>185</height>
+		<wordwrap>true</wordwrap>
+		<size>22</size>
+		<color>FFFFFF</color>
+	</text>
+	<image>
+		<name>down_on</name>
+		<condition>[:plot,length:] &gt; 503</condition>
+		<file>[:@media:]common/down_on.swf</file>
+		<posx>985</posx>
+		<posy>600</posy>
+		<width>15</width>
+		<height>10.6</height>
+	</image>	
+
+<!-- ********************************* MOD PEOPLE LIST ******************************** -->
+<!--     display list of person with there job and the photo for each person            -->
+<!--       press ENTER to switch to the list of movies for that person                  -->
+<!-- ********************************************************************************** -->	
+	<image>
+		<name>peoplenoimage</name>
+		<segname>peoplelist</segname>
+		<file>[:@media:]common/no_people_[:#people_max_poster:].jpg</file>
+		<posx>1135</posx>
+		<posy>560</posy>
+		<width>100</width>
+		<height>140</height>
+		<hyper>4</hyper>
+	</image>
+	<image>
+		<name>pimage</name>
+		<condition>[:#people_max_poster:] == true</condition>
+		<segname>peoplelist</segname>
+		<file>[:photo:]</file>
+		<posx>1135</posx>
+		<posy>560</posy>
+		<width>100</width>
+		<height>140</height>
+		<hyper>4</hyper>
+	</image>
+	<image>
+		<name>peopleframe</name>
+		<segname>peoplelist</segname>
+		<file>[:@media:]movie/thumbframe.[:person@job,lower:]_[:#people_max_poster:].swf</file>
+		<posx>1131.5</posx>
+		<posy>555.5</posy>
+		<width>107.5</width>
+		<height>146.5</height>
+		<hyper>4</hyper>
+	</image>
+	<text>
+		<name>peoplepos</name>
+		<segname>peoplelist</segname>
+			<display>[:@curpos:] / [:@totaltiles:]</display>
+			<posx>1030</posx>
+			<posy>600</posy>
+			<width>65</width>
+			<height>30</height>
+			<size>20</size>
+			<bold>true</bold>
+			<wordwrap>false</wordwrap>
+			<color>FFFFFF</color>
+			<align>right</align>
+			<hyper>4</hyper>
+	</text>
+	<segment>
+	<condition>[:#people_max_poster:] == true</condition>
+        <name>peoplelist</name>
+        <datasource>people</datasource>
+		<startx>1030</startx>
+		<starty>405</starty>
+		<endx>1265</endx>
+		<endy>715</endy> 
+        <scroll>2</scroll>        
+		<cursor>
+           <file>[:@media:]common/cursor.205.25.1.2.C5EAFF.true.phf</file> 
+            <above>true</above>
+            <posx>0</posx>
+            <posy>2</posy>
+        </cursor>       
+        <tile>
+            <cols>1</cols>
+			<rows>5</rows>
+            <width>215</width>
+            <height>30</height>
+            <text>
+                <name>mcTitle2</name>
+				<condition>[:person@job,lower:] == director || [:person@job,lower:] == writer</condition>
+                <display>[:person@name:] - [:person@job,evtrans:]</display> 
+                <posx>2</posx>
+                <posy>2</posy>
+                <width>215</width>
+                <height>30</height>
+                <size>20</size>  
+                <align>left</align>
+                <color>FFFFFF</color>
+            </text> 
+			<text>
+                <name>mcTitle</name>
+				<condition>[:person@job,lower:] == actor</condition>
+                <display>[:person@name:] ([:person@character:])</display> 
+                <posx>2</posx>
+                <posy>2</posy>
+                <width>215</width>
+                <height>30</height>
+                <size>20</size>  
+                <align>left</align>
+                <color>FFFFFF</color>
+            </text>			
+        </tile>  
+		<remote>
+            <button>ENTER</button>
+            <action>SWITCH</action>    
+            <data>person_[:person@name,yamjfilename:]_1</data>    
+        </remote> 
+		<remote>
+			<button>PAGEDOWN</button>
+			<action>EXTRA</action>	
+			<file>movieplot_2_people_list</file>
+		</remote>
+    </segment> 
+	<segment>
+	<condition>[:#people_max_poster:] == false</condition>
+        <name>peoplelist</name>
+        <datasource>people</datasource>
+		<startx>1030</startx>
+		<starty>405</starty>
+		<endx>1265</endx>
+		<endy>715</endy> 
+        <scroll>2</scroll>        
+		<cursor>
+           <file>[:@media:]common/cursor.205.25.1.2.C5EAFF.true.phf</file> 
+            <above>true</above>
+            <posx>0</posx>
+            <posy>2</posy>
+        </cursor>       
+        <tile>
+            <cols>1</cols>
+			<rows>7</rows>
+            <width>215</width>
+            <height>30</height>
+            <text>
+                <name>mcTitle</name>
+                <display>[:person@name:] - [:person@job,evtrans:]</display> 
+                <posx>2</posx>
+                <posy>2</posy>
+                <width>215</width>
+                <height>30</height>
+                <size>20</size>  
+                <align>left</align>
+                <color>FFFFFF</color>
+            </text>    
+        </tile>  
+		<remote>
+            <button>ENTER</button>
+            <action>SWITCH</action>    
+            <data>person_[:person@name,yamjfilename:]_1</data>    
+        </remote> 
+		<remote>
+			<button>PAGEDOWN</button>
+			<action>EXTRA</action>	
+			<file>movieplot_2_people_list</file>
+		</remote>
+    </segment> 
+<!--   add extras display segment -->
+	<image>
+		<name>extras_icon_on</name>
+		<segname>extraslist</segname>
+		<hyper>4</hyper>
+		<file>[:@media:]common/icon_extras_yes.swf</file>
+		<posx>360</posx>
+		<posy>599</posy>
+		<width>73</width>
+		<height>15</height>
+	</image>
+	<image>
+		<name>left_on</name>
+		<segname>extraslist</segname>	
+		<hyper>4</hyper>
+		<file>[:@media:]common/l_on.swf</file>
+		<posx>440</posx>
+		<posy>599</posy>
+		<width>10.6</width>
+		<height>15</height>
+	</image>
+	<image>
+		<name>right_on</name>
+		<segname>extraslist</segname>	
+		<hyper>4</hyper>
+		<file>[:@media:]common/r_on.swf</file>
+		<posx>935</posx>
+		<posy>599</posy>
+		<width>10.6</width>
+		<height>15</height>
+	</image>
+	
+	<segment>
+		<name>extraslist</name>
+		<condition>[:isextras:] == YES</condition>
+		<datasource>extras</datasource>
+		<hyperscroll>false</hyperscroll>
+		<startx>450</startx>
+		<starty>595</starty>
+		<scroll>1</scroll>		
+		<tile>
+			<cols>2</cols>
+			<rows>1</rows>
+			<width>245</width>
+			<height>25</height>
+			<text>
+				<name>mc</name>
+				<display>[:title:]</display>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>240</width>
+				<height>25</height>
+				<size>19</size>
+				<color>808080</color>
+				<hlcolor>FFFFFF</hlcolor>
+			</text>	
+		</tile>
+		<!-- Next plot_2 -->
+	
+		<remote>
+			<button>PLAY</button>
+			<action>PLAYFILE</action>	
+		</remote>			
+		<remote>
+			<button>SELECT</button>
+			<action>PLAYFILE</action>	
+		</remote>	
+		<remote>
+		   <button>EGUAL</button>
+		   <action>EXTRA</action>
+		   <file>movieplot_1_people_list</file>
+		</remote>	
+	</segment>
+	
+<!-- end add extras display segment -->
+<!-- ********************************* MOD PEOPLE *********************************** -->
+<!--     remote INFO or EGUAL or COMMA call infomoviescreeen_large_people_list        -->
+<!--     display people wall and call extra with pagedown/pageup remote               -->
+<!-- ******************************************************************************** -->
+	<remote>
+		<button>EQUAL</button>
+		<action>EXTRA</action>	
+		<file>infomoviescreen_large_people_list</file>
+	</remote>
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>infomoviescreen_large_people_list</file>
+	</remote>
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>infomoviescreen_large_people_list</file>
+	</remote>	
+
+<!-- *************************** MOD PEOPLE *********************************** -->		
+<!-- Next plot_2 -->
+<!--	<remote>
+		<condition>[:plot,length:] &gt; 503</condition>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>movieplot_2_people_list</file>
+	</remote> -->
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>index</data>
+	</remote>			
+	<remote>
+		<button>PLAY</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>PAUSE</button>
+		<action>PLAYALL</action>	
+	</remote>		
+	<remote>
+		<button>SELECT</button>
+		<action>PLAYALL</action>	
+	</remote>	
+	<remote>
+		<button>NUMPAD</button>
+		<action>PLAYPART</action>	
+	</remote>
+	<remote>
+		<button>SEARCH</button>
+		<action>SCREEN</action>
+		<file>help/help_[:#nmtmodel,lower:]_movie</file>
+	</remote>	
+	<remote>
+		<button>REPEAT</button>
+		<action>RESET</action>
+		<title>[:%reset:]</title>
+	</remote>
+</eskin>

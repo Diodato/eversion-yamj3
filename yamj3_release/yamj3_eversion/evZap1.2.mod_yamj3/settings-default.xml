@@ -1,0 +1,135 @@
+<settings>	
+	<!-- Startscreen: home (=menuHome, see below), Other_All_1, Other_Movies_1,...(=YAMJ files) -->
+    <startpage>home</startpage>
+
+	<!-- ##########  HOME MENU  ########## -->
+	<!-- Home menu design: home_ev (evStreamed like), home_v8 (Popbox V8 like), home_300 (PCH A/C-300 like), home_zap (Zappiti like) -->
+	<menuHOME>home_v8</menuHOME>
+
+	<!-- Show current temperature and weather (PCH A/C-300 like) -->
+	<current_weather>true</current_weather>
+	<!-- Show 3-day weather forecast (PCH C-300 like) -->
+	<home_forecast>false</home_forecast>
+	
+	<!-- Enable single background fanart in home menu (true, false) -->
+	<homebg>false</homebg>
+	
+	<!-- Enable background fanart slideshow in home menu (true, false) -->
+	<homeslideshow>true</homeslideshow>
+	<!-- Home menu slideshow start delay (values [sec]: 1(=minimum), 2, 3,...) -->
+	<startdelay>1.5</startdelay>
+	<!-- Home menu slideshow interval (values [sec]: 1(=minimum), 2, 3,...) -->
+	<interval>3</interval>
+
+	
+    <!-- ##########  INDEX PAGES  ########## -->
+	<!-- indexindex is everything else. Values: wallfull, infowall, wallfull2row, infolist -->
+	<indexINDEX>wallfull</indexINDEX>
+	<!-- indexmovie is the Movies and New-Movies index. Values: wallfull, infowall, wallfull2row, infolist -->
+	<indexMOVIE>wallfull</indexMOVIE>
+	<!-- indextv is the TV Shows and New-TV index. Values: wallfull, infowall, wallfullbanner, infobanner, wallfull2row, wallfullbanner2col, infobanner2col -->
+	<indexTV>wallfullbanner</indexTV>
+	<!-- indexmovieset is a boxset of movies. Values: infolist -->
+	<indexMOVIESET>infolist</indexMOVIESET>
+	<!-- indextvset is a tv show set of seasons. Values: infolistbanner -->
+	<indexTVSET>infolistbanner</indexTVSET>
+	<!-- Lundman trailer (Youtube) index wall. Values: trailerfullwall, trailerinfowall, trailerfullwall2row -->
+	<indexTrailers>trailerfullwall</indexTrailers>
+
+	<!-- Frame colors of thumbnails on index wall. Values: HEX code, e.g. ffffff=white, 000000=black, 3d0000=blue -->
+	<!-- READ INSTRUCTIONS! Works only with thumbframe(_fade).evColor#.swf (tools folder)!!! -->
+	<thumbnail_color1>ffffff</thumbnail_color1>
+	<thumbnail_color2>3d0000</thumbnail_color2>
+	<thumbnail_color3>ffffff</thumbnail_color3>
+	<thumbnail_color4>ffffff</thumbnail_color4>
+	
+	<!-- Show videosource overlay on index thumbnails (true/false). Decreases scrolling speed! -->
+	<index_vidsource>false</index_vidsource>
+	<!-- Dim index tiles that are not selected. Values [%]: 0 (=off), 10, 20, 25, 33, 40, 50, 60 -->
+	<dimtile>33</dimtile>
+	<!-- Fade-in index tiles (true, false) -->
+	<fadetiles>true</fadetiles>
+	
+	
+	<!-- ##########  CURSOR SETTINGS  ########## -->
+	<!-- Cursor style: 1: Yellow cursor +refl | 2: Yellow cursor norefl | 3: PCH-300 +refl1 | 4: PCH-300 +refl2 | 5: PCH-300 norefl -->
+	<!-- Yellow cursor is a bit faster -->
+	<cursor>1</cursor>
+	<!-- List cursor style: 0: no cursor | 1: evStreamed | 2: Yellow cursor | 3: PCH-300 -->
+	<listcursor>2</listcursor>
+
+	
+	<!-- ##########  DETAIL PAGES  ########## -->	
+	
+	<!-- Skin style for MOVIE details page -->
+	<detailsMOVIE>movie</detailsMOVIE>
+	
+	<!-- Show animated "3D" icon on movie details screen (true/false) -->
+	<3danimate>true</3danimate>
+	<!-- Show videosource OR 2nd audioinfo in lower mediainfo bar on movie detail pages (values: none, videosource, audioinfo) -->
+	<!-- !!!2nd "audioinfo" NOT WORKING YET!!! -->
+	<addinfo_movie>videosource</addinfo_movie>
+	<!-- Show videosource in right section of movie detail pages (true/false) -->
+	<vidsource_movie>false</vidsource_movie>
+	<!-- Style of small audiochannels on movie detail pages:
+	1: flags+channel icon | 2: flags+digits (2.0, 5.1, etc.) | 3: language list -->
+	<audioinfo_movie>1</audioinfo_movie>
+	<!-- Show tagline or original title in infomoviepopup (values: tagline, originaltitle) -->
+	<popuptag>tagline</popuptag>
+	
+	<!-- Skin style for TV season details page (episode list) -->
+	<!-- tv1: contains listview of episodes. Use overlay_fanart_tvdetail.png (normal or bright) as YAMJ fanart overlay (rename to overlay_fanart_tv.png)! -->
+	<!-- tv2: contains TV show infos (runtime, year, actors, genre). Use overlay_fanart_tvlist.png (normal or bright) as YAMJ fanart overlay (rename to overlay_fanart_tv.png)! -->
+	<detailsTV>tv1</detailsTV>
+	
+	<!-- Show banner or TV show name on TV details screen (values: banner, name) -->
+	<series_name>banner</series_name>
+	<!-- Show episode rating (=true) or TV show rating (=false) on TV details screen (true/false) -->
+	<episoderating>true</episoderating>
+	<!-- Show first aired info on TV details screen (true/false) -->
+	<firstaired>false</firstaired>
+	<!-- Show videosource OR 2nd audioinfo in lower mediainfo bar on TV detail pages (values: none, videosource, audioinfo) -->
+	<!-- !!! "audioinfo" NOT WORKING YET!!! -->
+	<addinfo_tv>videosource</addinfo_tv>
+	<!-- Show videosource or genres in right section of tv2 detail pages (values: videosource, genre) -->
+	<right_tvinfo>genre</right_tvinfo>
+	<!-- Style of small audiochannels on TV detail pages:   -->
+	<!-- 1: audio flags+channel icon | 2: audio flags+channel digits (2.0, 5.1, etc.) | 3: language list | 4: language flag+channel icon (2.0, 5.1, etc.) | 5: language flag+channel digits (2.0, 5.1, etc.) -->
+	<audioinfo_tv>5</audioinfo_tv>
+	
+
+	<!-- ##########  WEATHER SETTINGS  ########## -->
+	<!-- Temperatur unit: °C/°F (values: C, F)  -->
+	<units>c</units>
+	<!-- Weather city code. To find out goto http://edg3.co.uk/snippets/weather-location-codes/  -->
+	<!-- Examples: GMXX0087 = Munich, GMXX0007 = Berlin, USNY0996 = New York 
+	<citycode>GMXX0087</citycode>-->  <!-- this one is for home menu weather data -->
+	<citycode1>GMXX0087</citycode1>	  <!-- if "citycode" is empty or inactive home menu weather data = citycode1 -->
+	<citycode2>GMXX0007</citycode2>
+	<citycode3>USNY0996</citycode3>
+
+
+	<!-- ##########  COMMON SETTINGS  ########## -->
+	<!-- Skin language. Has effect on date (values: EN, DE, FR; default = EN) -->
+	<skinlang>en</skinlang>
+
+	<!-- Help setting: media player model (values: C300, A300, C200, A200, Popbox, PopboxV8, Asiabox) -->
+	<!-- Note: A200=A210 -->
+	<nmtmodel>C200</nmtmodel>
+	
+	<!-- Certification setting. Values: mpaa, mpaa_wide, germany, fsk, bbfc -->
+	<certification>mpaa</certification>
+	
+	<!-- Limit aspect ratio to 4:3, 16:9 and 21:9 (true, false) -->
+	<limitaspect>true</limitaspect>
+	
+	<!-- Show clock with date on all pages (true, false); does not affect home menu clock -->
+	<largeclock>true</largeclock>
+	
+	<!-- Categories for home/side menu -->
+	<!-- Other,Genres,Title,Certification,Year,Library,Cast,Director,Writer,Country,Set,Award,Person,Ratings -->
+	<homelist>Other,Year</homelist>
+	<menulist>Other,Genres,Title,Library,Year,Set,Ratings</menulist>
+	<userlist>Genres</userlist>
+	
+</settings>

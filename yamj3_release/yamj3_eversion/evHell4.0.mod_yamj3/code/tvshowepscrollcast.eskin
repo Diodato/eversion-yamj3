@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@jukebox:][:fanart:]</file>
+		<highres>true</highres>
+	</background>	
+	
+	
+	<image>
+		<name>episodebg</name>
+		<file>[:@media:]movie/epscrollbgr.swf</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	</image>
+	
+	<image>
+		<name>bigbanner</name>
+		<file>[:@jukebox:][:banner1medium:]</file>
+		<posx>850</posx>
+		<posy>20</posy> 
+		<width>400</width>
+<!-- 	<height>83</height> -->
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+	</image>	
+			
+	<image>
+		<name>imgActorL1</name>
+		<condition>[:person:] !== UNKNOWN</condition>
+		<segname>peoplelist</segname>
+		<file>[:photo:]</file>
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+		<posx>943</posx>
+		<posy>160</posy>
+		<width>214</width>
+<!-- <height>314</height> -->
+		<hyper>4</hyper>
+	</image>
+	
+	<image>
+		<name>imgActordL2</name>
+		<condition>[:person:] == UNKNOWN</condition>
+		<segname>peoplelist</segname>
+		<file>[:photo:]</file>
+		<altfile>[:@media:]movie/portraitlarge.swf</altfile>
+		<keepaspect>true</keepaspect>
+		<haligned>center</haligned>
+		<valigned>center</valigned>
+		<posx>943</posx>
+		<posy>160</posy>
+		<width>214</width>
+<!-- <height>314</height> -->
+		<hyper>4</hyper>
+	</image>	
+	
+	<text>
+		<name>txtName</name>
+		<segname>peoplelist</segname>
+		<display>[:person@name,blank:]</display>
+		<posx>860</posx>
+		<posy>490</posy>
+		<width>380</width>
+		<height>27</height>
+		<size>23</size>  
+		<align>center</align>
+		<color>tv.data.color</color>
+		<hyper>4</hyper>
+	</text>		
+	
+	<text>
+		<name>txtCharacter</name>
+		<segname>peoplelist</segname>
+		<display>[:person@character,blank:]</display>
+		<posx>860</posx>
+		<posy>515</posy>
+		<width>380</width>
+		<height>27</height>
+		<size>23</size>  
+		<align>center</align>
+		<color>tv.data.color</color>
+		<hyper>4</hyper>
+	</text>	
+	
+	<text>
+		<name>txtJob</name>
+		<segname>peoplelist</segname>
+		<display>[:person@job,evtrans,blank:]</display>
+		<posx>860</posx>
+		<posy>540</posy>
+		<width>380</width>
+		<height>27</height>
+		<size>23</size>  
+		<align>center</align>
+		<color>tv.data.color</color>
+		<hyper>4</hyper>
+	</text>
+		
+	<text>
+		<name>btnRed</name>
+		<display>Back</display>
+		<posx>85</posx>
+		<posy>680</posy>
+		<width>150</width>
+		<height>20</height>
+		<size>14</size>  
+		<align>left</align>
+		<color>tv.data.color</color>
+	</text>	
+	
+	<text>
+		<name>btnGreen</name>
+		<display>N/A</display>
+		<posx>280</posx>
+		<posy>680</posy>
+		<width>150</width>
+		<height>20</height>
+		<size>14</size>  
+		<align>left</align>
+		<color>tv.data.color</color>
+	</text>	
+
+	<text>
+		<name>btnYellow</name>
+		<display>Show fanart</display>
+		<posx>475</posx>
+		<posy>680</posy>
+		<width>150</width>
+		<height>20</height>
+		<size>14</size>  
+		<align>left</align>
+		<color>tv.data.color</color>
+	</text>	
+
+	<text>
+		<name>btnBlue</name>
+		<display>Home</display>
+		<posx>670</posx>
+		<posy>680</posy>
+		<width>150</width>
+		<height>20</height>
+		<size>14</size>  
+		<align>left</align>
+		<color>tv.outline.color</color>
+	</text>		
+	
+	<segment>
+		<name>peoplelist</name>
+		<datasource>people</datasource>
+		<startx>83</startx>
+		<starty>41</starty>
+		<endx>803</endx>
+		<endy>678</endy> 
+		<scroll>2</scroll>		
+		<cursor>
+			<file>[:@media:]common/cursor.720.49.1.2.C5EAFF.true.phf</file>
+			<above>true</above>
+			<posx>0</posx>
+			<posy>0</posy>
+		</cursor>		
+		<tile>
+			<cols>1</cols>
+			<rows>13</rows>
+			<width>720</width>
+			<height>49</height>
+			
+			<image>
+				<name>imgActorS1</name>
+				<condition>[:person:] !== UNKNOWN</condition>
+				<file>[:photo:]</file>
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>32</width>
+<!-- 		<height>47</height> -->
+			</image>
+				
+			<image>
+				<name>imgActorS2</name>
+				<condition>[:person:] == UNKNOWN</condition>
+				<file>[:photo:]</file>
+				<altfile>[:@media:]movie/portraitsmall.swf</altfile>
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>32</width>
+<!-- 		<height>47</height> -->
+			</image>
+				
+			<text>
+				<name>txtName</name>
+				<display>[:person@name,blank:]</display>
+				<posx>40</posx>
+				<posy>13</posy>
+				<width>205</width>
+				<height>22</height>
+				<size>18</size>  
+				<align>left</align>
+				<color>tv.episode.color</color>
+				<hlcolor>tv.data.color</hlcolor>
+			</text>		
+			
+			<text>
+				<name>txtCharacter</name>
+				<display>[:person@character,blank:]</display>
+				<posx>245</posx>
+				<posy>13</posy>
+				<width>325</width>
+				<height>22</height>
+				<size>18</size>  
+				<align>left</align>
+				<color>tv.episode.color</color>
+				<hlcolor>tv.data.color</hlcolor>
+			</text>	
+			
+			<text>
+				<name>txtJob</name>
+				<display>[:person@job,evtrans,blank:]</display>
+				<posx>635</posx>
+				<posy>13</posy>
+				<width>150</width>
+				<height>22</height>
+				<size>18</size>  
+				<align>left</align>
+				<color>tv.episode.color</color>
+				<hlcolor>tv.data.color</hlcolor>
+			</text>
+			
+			<image>
+				<name>imgInfo</name>
+				<condition>[:person,nospaces:] !== UNKNOWN</condition>
+				<file>[:@media:]movie/info.swf</file>
+				<posx>590</posx>
+				<posy>10</posy>
+				<width>30</width>
+				<height>30</height>
+			</image>
+			
+
+		</tile>	
+
+		<remote>
+			<condition>[:person:] !== UNKNOWN</condition>
+            <button>SELECT</button>
+            <action>SWITCH</action>    
+            <data>Person_[:person@name,yamjfilesafe:]_1</data>    
+        </remote>            
+        <remote>
+			<condition>[:person:] !== UNKNOWN</condition>
+            <button>END</button>
+            <action>SWITCH</action>    
+            <data>Person_[:person@name,yamjfilesafe:]_1</data>    
+        </remote>
+		
+	</segment>
+		
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>	
+	
+	<remote>
+		<button>RED</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	<remote>
+		<button>SPACE</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>
+	
+<!-- Tech info pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>	
+	
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>moviedetailpopup</file>
+	</remote>
+	
+<!-- Fanart only -->
+	<remote>
+		<button>YELLOW</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	<remote>
+		<button>SEMICOLON</button>
+		<action>EXTRA</action>	
+		<file>fanart</file>
+	</remote>
+	
+<!-- Block any other button -->
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>
+	
+	
+</eskin>

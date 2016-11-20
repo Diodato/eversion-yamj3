@@ -89,8 +89,10 @@ class tools.Preloader {
 	public static function animate() {
 		if(Preloader.parentMC.preload._visible!=undefined && (Preloader.message != null && Preloader.message != undefined)) {
 				if(Common.evSettings.preloadstart==0) {
+					trace ("Preloader animate show 1");
 					_global["setTimeout"](Preloader.show, 1);
 				} else {
+					trace ("Preloader animate show " + Common.evSettings.preloadstart);
 					_global["setTimeout"](Preloader.show, Common.evSettings.preloadstart);
 				}
 			trace("animating");

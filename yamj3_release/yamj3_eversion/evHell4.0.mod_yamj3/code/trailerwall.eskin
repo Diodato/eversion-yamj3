@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+	
+	<background>
+		<file>[:@media:]backgrounds/background_[:#trailerbg:].swf</file>
+	</background>
+	
+	<include>common.navinfotop</include>
+
+	<text>
+		<name>title</name>
+		<segname>wall</segname>
+		<display>[:title,upper:]</display>
+		<posx>40</posx>
+		<posy>680</posy>
+		<width>900</width>
+		<height>29</height>
+		<size>26</size>  
+		<color>wall.title.color</color>
+		<hyper>4</hyper>
+	</text>
+	
+	<segment>
+		<name>wall</name>
+		<datasource>lundman</datasource>
+		<startx>27</startx>
+		<starty>44</starty>
+		<endx>1252</endx>
+		<endy>680</endy>
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]wall/cursor.131.192.4.0.FCCF10.true.phf</file>
+			<above>true</above>
+			<posx>10</posx>
+			<posy>10</posy>
+		</cursor>		
+		<tile>
+			<cols>8</cols>
+			<rows>3</rows>
+			<width>151</width>
+			<height>212</height>
+			<image>
+				<name>thumbnail</name>
+				<file>[:cover:]</file>
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>131</width>
+				<height>192</height>
+			</image>			
+		</tile>		
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYFILE</action>
+		</remote>					
+	</segment>	
+	
+</eskin>

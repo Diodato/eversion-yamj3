@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+    </control>
+
+	
+	<background>
+		<file>[:@media:]backgrounds/background_[:#moviewall3rowbg:].swf</file>
+	</background>
+	
+	<include>common.navinfotop</include>
+	<include>common.techinfobottom</include>
+
+	<segment>
+		<name>index</name>
+		<startx>14</startx>
+		<starty>34</starty>
+		<endx>1265</endx>
+		<endy>679</endy>
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]cursors/cursor.125.185.[:#thickness:].[:#rounded:].FCCF10.true.phf</file>
+			<above>true</above>
+			<posx>3</posx>
+			<posy>2</posy>
+		</cursor>				
+		<tile>
+			<cols>9</cols>
+			<rows>3</rows>
+			<width>139</width>
+			<height>220</height>
+			<image>
+				<name>thumbnailtrue</name>
+				<condition>[:#moviewall3reflection:] == true</condition>
+				<file>[:@jukebox:][:smartposter1small:]</file>
+				<posx>7</posx>
+				<posy>7</posy>
+				<width>125</width>
+<!-- 			<height>208</height> -->	
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>top</valigned>
+			</image>
+			<image>
+				<name>thumbnailfalse</name>
+				<condition>[:#moviewall3reflection:] == false</condition>
+				<file>[:@jukebox:][:smartposter1large:]</file>
+				<posx>7</posx>
+				<posy>7</posy>
+				<width>125</width>
+<!-- 			<height>185</height> -->	
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>top</valigned>
+			</image>
+			<image>
+				<name>watched</name>
+				<condition>[:#showwatchedonwalls:] == true</condition>
+				<file>[:@media:]purity/watched/[:watched:].swf</file>
+				<posx>7</posx>
+				<posy>7</posy>
+				<width>50</width>
+<!-- 			<height>50</height> -->
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+			</image>
+		</tile>
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>	
+<!-- Plot pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>plotpopup</file>
+	</remote>	
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>plotpopup</file>
+	</remote>	
+	</segment>	
+</eskin>

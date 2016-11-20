@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!--******************************************************************
+	This .eskin file contains code that is common to many screens so
+	it's been separated out on it's own and is "included" by the other
+	.eskin files.
+	
+	Used with:
+	movie1
+	movie2
+	movie3
+	******************************************************************-->
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+<!-- Conditions - See: http://www.dentedboxes.com/doku.php/eversion:eskins:block:if -->	
+
+	<!-- Poster -->
+	<image>
+		<name>poster.index</name>
+		<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
+		<hyper>3</hyper>
+		<file>[:@jukebox:][:@indexurl:]_large.jpg</file>  <!-- Eversion artwork variable holding the name of the poster YAMJ created-->
+		<posx>25</posx>
+		<posy>160</posy>
+		<width>257</width>
+		<height>340</height>
+		<keepaspect>true</keepaspect>
+		<swap>true</swap>
+	</image>
+</eskin>

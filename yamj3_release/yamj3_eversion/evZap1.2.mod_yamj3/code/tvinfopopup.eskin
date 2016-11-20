@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>false</fullscreen>
+    </control>
+	<image>
+		<name>bgoverlay</name>
+		<file>[:@media:]wall/zap_bg_indexinfo.swf</file>
+		<posx>265</posx>
+		<posy>135</posy>
+		<width>750</width>
+		<height>450</height>
+	</image>
+	<text>
+		<name>title_short</name>
+		<condition>[:title,length:] =&lt; 38</condition>
+		<display>[:episode:]. [:title,unknown:]</display>
+		<posx>295</posx>
+		<posy>150</posy>
+		<width>585</width>
+		<height>35</height>
+		<size>28</size>
+		<bold>true</bold>		
+		<color>FFFFFF</color>
+	</text>	
+	<text>
+		<name>title_long</name>
+		<condition>[:title,length:] &gt; 38</condition>
+		<display>[:episode:]. [:title,unknown:]</display>
+		<posx>295</posx>
+		<posy>147</posy>
+		<width>585</width>
+		<height>55</height>
+		<size>23</size>
+		<bold>true</bold>		
+		<color>FFFFFF</color>
+		<wordwrap>true</wordwrap>
+	</text>	
+	<text>
+		<name>plot</name>
+		<segname>eplist</segname>
+		<hyper>4</hyper>
+		<display>[:plot,unknown:]</display>
+		<posx>295</posx>
+		<posy>195</posy>
+		<width>690</width>
+		<height>300</height>
+		<wordwrap>true</wordwrap>
+		<size>24</size>
+		<leading>3</leading>
+		<color>DDDDDD</color>
+	</text>
+	<image>
+		<name>runtime_icon</name>
+		<file>[:@media:]common/icon_time.swf</file>
+		<posx>880</posx>
+		<posy>155</posy>
+		<width>18</width>
+		<height>20.55</height>
+	</image>
+	<text>
+		<name>runtime</name>
+		<display>[:runtime,unknownlower:]</display>
+		<posx>905</posx>
+		<posy>153</posy>
+		<width>80</width>
+		<height>25</height>
+		<size>25</size>
+		<color>FFFFFF</color>
+	</text>
+<!-- not used with yamj3
+	<image>
+		<name>mediainfo_footer</name>
+		<file>[:@jukebox:][:baseFilename:].footer_indexinfo.png</file>
+		<posx>285</posx>
+		<posy>515</posy>
+		<width>778</width>
+		<height>51</height>
+	</image>	-->
+</eskin>

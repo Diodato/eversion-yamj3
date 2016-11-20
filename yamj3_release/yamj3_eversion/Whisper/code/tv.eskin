@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!-- Artwork Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:artvariables -->	
+<!-- Variables - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:variables -->	
+
+     <control>
+		<fullscreen>true</fullscreen><!-- Clear the previous screen, note this only removes the last screen not any others before it which may still be visible  -->
+		<clearhighresbg>false</clearhighresbg>  <!--  Don't clear the hires background (if avail)  -->
+    </control>
+	
+	<!-- Background image for the episode details -->
+	<image>
+		<name>details.bg</name>
+		<file>[:@media:]tv/1.eskin.used/tv.bg.png</file>
+		<posx>0</posx>
+		<posy>475</posy>
+		<width>1280</width>
+		<height>300</height>
+	</image>
+	
+	<!-- Included eskin files -->
+	<!-- These have been carefully ordered to ensure that they are drawn in the order we want  -->
+	<include>tv.title.bar</include>	
+	<include>tv.data</include>	
+	<include>mediainfo</include>
+	
+	<!-- Background -->
+	<background>
+		<file>[:@jukebox:][:smartfanart1.large:]</file>  <!-- Eversion artwork variable holding the name of the fanart YAMJ created-->
+	</background>		
+</eskin>

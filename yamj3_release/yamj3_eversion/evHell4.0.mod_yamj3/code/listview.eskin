@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>true</clearhighresbg>
+    </control>
+
+	<image>
+		<name>imgfanart1large</name>
+		<segname>index</segname>
+		<file>[:@jukebox:][:fanart1large:]</file>
+		<swap>true</swap>
+		<posx>-40</posx>
+		<posy>100</posy>
+		<width>1010</width>
+		<height>568</height>
+		<hyper>4</hyper>
+	</image>
+
+	<image>
+		<name>imgposterFile</name>
+		<segname>index</segname>
+		<file>[:@jukebox:][:posterFile:]</file>
+		<swap>true</swap>
+		<posx>918</posx>
+		<posy>91</posy>
+		<width>348</width>
+		<height>537</height>
+		<hyper>4</hyper>
+	</image>
+	
+	<image>
+		<name>imglistview</name>
+		<file>[:@media:]backgrounds/listview_[:#listview:].swf</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>720</height>
+	</image>
+	
+	<image>
+        <name>footerimg</name>
+        <segname>index</segname>
+		<condition>[:#showpurityinlistv:] == true</condition>
+        <file>[:@jukebox:][:baseFilename:].footer_posters.png</file>
+		<posx>73</posx>
+		<posy>673</posy>
+		<width>785</width>
+		<height>44</height>
+		<hyper>3</hyper>
+    </image>    
+    
+    <image>
+        <name>footerimghash</name>
+        <segname>index</segname>
+		<condition>[:#showpurityinlistv:] == true</condition>
+        <file>[:@jukebox:][:baseFilename,cut1,lower,nospaces:]/[:baseFilename,cut2,lower,nospaces:]/[:baseFilename:].footer_posters.png</file>
+		<posx>73</posx>
+		<posy>673</posy>
+		<width>785</width>
+		<height>44</height>
+		<hyper>3</hyper>
+    </image> 
+
+	<image>
+		<name>imgfooterawards</name>
+		<segname>index</segname>
+		<file>[:@jukebox:][:baseFilename:].footer_awards.png</file>
+		<posx>930</posx>
+		<posy>649</posy>
+		<width>324</width>
+		<height>22</height>
+		<hyper>3</hyper>
+	</image>
+	
+	<text>
+		<name>Listitems</name>
+		<segname>index</segname>
+		<display>[:@totaltiles:] ITEMS</display>
+		<posx>50</posx>
+		<posy>55</posy>
+		<width>600</width>
+		<height>40</height>
+		<align>left</align>
+		<color>list.data.color</color>
+		<bold>true</bold>
+		<size>28</size>
+	</text>
+	
+	<text>
+		<name>Page1</name>
+		<segname>index</segname>
+		<display>PAGE       OF [:@pagetotal:]</display>
+		<posx>700</posx>
+		<posy>55</posy>
+		<width>200</width>
+		<height>40</height>
+		<align>left</align>
+		<color>list.data.color</color>
+		<size>28</size>
+	</text>
+	
+	<text>
+		<name>Page2</name>
+		<segname>index</segname>
+		<display>[:@pagecurrent:]</display>
+		<posx>760</posx>
+		<posy>55</posy>
+		<width>55</width>
+		<height>40</height>
+		<align>right</align>
+		<color>list.data.color</color>
+		<size>28</size>
+		<hyper>4</hyper>
+	</text>
+	
+	<image>
+		<name>top250bgr</name>
+		<segname>index</segname>
+		<condition>[:top250:] != -1 ++ [:#showtop250:] == true</condition>
+		<file>[:@media:]wall/top250.swf</file>
+		<posx>918</posx> 
+		<posy>33</posy> 
+		<width>100</width>
+		<height>50</height>
+		<hyper>3</hyper>
+	</image>
+	<text>
+		<name>top250</name>
+		<segname>index</segname>
+		<condition>[:top250:] != -1 ++ [:#showtop250:] == true</condition>
+		<display>[:top250:]</display>
+		<posx>948</posx> 
+		<posy>51</posy> 
+		<width>42</width>
+		<height>28</height>
+		<size>24</size> 
+		<bold>true</bold>
+		<align>center</align>
+		<color>000000</color>
+		<hyper>3</hyper>
+	</text>		
+	
+	<image>
+		<name>rating_image</name>
+		<condition>[:score:] != UNKNOWN</condition>
+		<segname>index</segname>
+		<file>[:@media:]common/star/star[:score,round,blank:].swf</file>
+		<posx>1192</posx>
+		<posy>67</posy>
+		<width>74</width>
+		<height>14</height>
+		<hyper>3</hyper>
+	</image>	
+	
+	<segment>
+		<name>index</name>
+		<startx>25</startx>
+		<starty>100</starty>
+		<endx>912</endx>
+		<endy>660</endy>
+		<scroll>2</scroll>
+		<cursor>
+			 <file>[:@media:]wall/cursor.866.33.2.0.FCCF10.true.phf</file>
+			 <above>false</above>
+			 <posx>7</posx>
+			 <posy>0</posy>
+		</cursor>
+	 <tile>
+			<cols>1</cols>
+			<rows>14</rows>
+			<width>872</width>
+			<height>40</height>
+			
+			<image>
+				<name>watched1</name>
+				<condition>[:#showwatchedonwalls:] == true</condition>
+				<file>[:@media:]movie/epwatched[:watched:].swf</file>
+				<posx>847</posx>
+				<posy>4</posy> 
+				<width>25</width>
+				<height>25</height>
+			</image>
+	
+			<text>
+				<name>Year</name>
+				<display>[:year,blank:]</display>
+				<posx>20</posx>
+				<posy>5</posy>
+				<width>50</width>
+				<height>30</height>
+				<align>left</align>
+				<color>list.list.color</color>
+				<hlcolor>list.list.highlight.color</hlcolor>
+			    <size>23</size>
+			</text>
+			<text>
+				<name>Movie_title</name>
+				<display>[:fulltitle:]</display>
+				<posx>80</posx>
+				<posy>5</posy>
+				<width>620</width>
+				<height>30</height>
+				<align>left</align>
+				<color>list.list.color</color>
+				<hlcolor>list.list.highlight.color</hlcolor>
+			    <size>23</size>
+			</text>
+			
+			<text>
+				<name>runtime</name>
+				<display>[:runtime,trun4,blank:]</display>
+				<posx>700</posx>
+				<posy>5</posy>
+				<width>147</width>
+				<height>30</height>
+				<align>left</align>
+				<color>list.list.color</color>
+				<hlcolor>list.list.highlight.color</hlcolor>
+				<size>23</size>  
+			</text>	
+		</tile>
+		<remote>
+		   <button>PLAY</button>
+		   <action>PLAYALL</action>
+		</remote>	
+<!-- Plot pop-up -->
+	<remote>
+		<button>INFO</button>
+		<action>EXTRA</action>	
+		<file>plotpopup</file>
+	</remote>	
+	<remote>
+		<button>COMMA</button>
+		<action>EXTRA</action>	
+		<file>plotpopup</file>
+	</remote>			
+	</segment>			
+	
+	</eskin>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+<!--******************************************************************
+	This .eskin file contains code that is used on the movie details page.
+	
+	Used with:
+	tv
+	
+	******************************************************************-->
+
+	<!-- Add an underlay bar to the top of the screen, useful when the background is not black  -->
+	<image>
+		<name>upper.navbar.bg</name>
+		<file>[:@media:]wall/topbar_overlay.png</file>
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<height>50</height>
+	</image>
+	<text>
+		<name>title</name>
+		<display>[:fulltitle:]</display>  <!-- Eversion variable holding the title -->
+		<posx>25</posx>
+		<posy>5</posy>
+		<width>770</width>
+		<height>40</height>
+		<size>32</size>  
+		<color>movie.title.color</color>
+	</text>
+	<image>
+		<name>studiologo.index</name>
+		<file>[:@sharedmedia:]company/[:company:].png</file>
+		<posx>900</posx>
+		<posy>0</posy>
+		<width>100</width>
+		<height>50</height>
+		<keepaspect>true</keepaspect>
+	</image>	
+	<text>
+		<name>runtime</name>
+		<segname>index</segname>  <!-- segname and hyper are necessary for evaluating the condition -->
+		<hyper>2</hyper>
+		<display>[:runtime:]</display>  <!-- Display the runtime found in the XML YAMJ created -->
+		<posx>900</posx>
+		<posy>5</posy>
+		<width>160</width>
+		<height>40</height> 
+		<size>30</size>  
+		<color>movie.plot.color</color>
+	</text>
+	<text>  <!-- This one is only used for tv due to the segname. -->
+		<name>type.label.episode</name>
+		<segname>eplist</segname>  <!-- segname is necessary for the TV episode list, hyper is not needed since this data does not change -->
+		<display>[:@indexkind:]</display>  <!-- An Eversion variable holding a friendly name of the kind of index we are currenly using, in uppercase  -->
+		<posx>1040</posx>
+		<posy>5</posy>		
+		<width>115</width>
+		<height>40</height>
+		<size>30</size>
+		<color>movie.plot.color</color>
+	</text>
+	<text> 
+		<name>cursorloc</name>  <!-- special block name which shows # (cursor location) faster than an eskin can -->
+		<posx>1143</posx>
+		<posy>5</posy>
+		<width>60</width>
+		<height>40</height>
+		<size>30</size>  
+		<align>right</align>  <!-- By default align is left -->
+		<color>nav.data.color</color>
+	</text>
+		<!-- Media count -->
+	<text>  <!-- This one is only used for tv due to the segname. -->
+		<name>total.episode</name>
+		<segname>eplist</segname>  <!-- segname is necessary for the TV episode list, hyper is not needed since this data does not change -->
+		<display>/[:@totaltiles:]</display>  <!-- An Eversion variable holding the number of titles in a segment  -->
+		<posx>1200</posx>
+		<posy>5</posy>		
+		<width>60</width>
+		<height>40</height>
+		<size>30</size>
+		<align>left</align>  <!-- By default align is left -->
+		<color>nav.data.color</color>
+	</text>
+</eskin>

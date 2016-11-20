@@ -1,0 +1,65 @@
+v6.0
+- modify mod implement yamjv3
+- change eskin name to evZap1.2_mod_yamj3
+v5.3 (evZap V1.2.1 mandatory) 
+- modify mod to make it compatible with evZap V1.2.1
+v5.2
+- modify people screen to display movie fanart if people fanart doesn't exists
+- modify people screen to display the movies' list on the top rather than bottom
+- add cast/writer/director/perso to people name depending from where it's displayed
+v5.1 (Yamj R2972)
+- add general filmography to detail person
+- modify : reintroduce people menu instaed of person menu with Yamj R2972 which can treat Cast/Director/Writer as Person
+- modify: clean some background to avoid modification with other mod
+- add white frame with people poster in people menu
+v5.0 (eversion R0160 and Yamj R2967 mandatory)
+- add biography, people fanart, people poster
+- modify: indexPeople to introduce people.fanart.poster.bio.eskin
+- modify: home.control to direct link person to wallfull_person
+- modify: settings to reduce userlist3 to person - include cast,writer,director 
+v4.3
+- fixed remote call to list of movies only if exists
+v4.2
+- fixed Person instead of person
+v4.1
+- modify movie detail screen with people
+- add info remote for extras if extras 
+v4.0
+- add a full wall people photo with INFO remote inside detail movie page 
+- fix extra
+- add crew to en_zap 
+- fix character to fr_zap
+v3.2
+- add no photo image
+- modify : people_max_poster if false display only text with detail page 
+v3.1
+- add with large plot dynamic list of photos for people
+- add info button for person list 
+- add frame with color depending of job 
+- add dummy photo
+v3.0
+- add list of people in detail movie with dynamic poster
+V2.5
+- modify the contents of the zip to add compatibility with legion_evzap_overlays MOD
+V2.4
+- add unknown.jpg file stored to under People folder 
+V2.3
+- add compatibility with overlays MOD (legion455) 
+- add 4 mod in settings.xml 
+V2.2 (eversion R0134 mandatory) 
+- add some missing thumb (home_Cast_on_V8, .....) 
+V2.1
+- use [:#menuHOME,slice5:] instead of new parameter
+V2.0:
+- add People Menu in main Page
+- add People categories menu (Cast, Director, Writer, Person)
+- add People Poster page for the above categories
+- add People Categories in Menulist
+V1.2
+- fixed: extras
+v1.1:
+- fixed: bug in people_max_poster 
+V1.0
+- add people with max poster in detail page 
+- add people with adjusted poster in detail page 
+

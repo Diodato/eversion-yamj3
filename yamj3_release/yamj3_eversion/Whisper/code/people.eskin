@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+    <control>
+		<fullscreen>true</fullscreen>
+		<clearhighresbg>false</clearhighresbg>
+    </control>
+	
+	<background>
+		<file>[:@media:]backgrounds/background_[:#peoplebg:].swf</file>
+	</background>
+	
+	<include>common.navinfotop</include>
+
+	<text>
+		<name>subtext</name>
+		<display>[:name:] [:title,upper:]</display>
+		<posx>0</posx>
+		<posy>700</posy>
+		<width>1280</width>
+		<height>20</height>
+		<size>14</size>
+		<align>center</align>
+		<color>menu.header.color</color>
+		<segname>index</segname>
+		<hyper>4</hyper>
+	</text>
+	
+	<segment>
+		<name>index</name>
+		<hyperscroll>false</hyperscroll>
+		<startx>5</startx>
+		<starty>30</starty>
+		<endx>1280</endx>
+		<endy>720</endy>
+		<scroll>2</scroll>
+		<cursor>
+			<file>[:@media:]categories/cursor.123.180.1.0.ffff00.true.phf</file>
+			<above>true</above>
+			<posx>2</posx>
+			<posy>0</posy>
+			<scroll>2</scroll>
+		</cursor>
+		<tile>
+			<cols>10</cols>		
+			<rows>3</rows>
+			<width>127</width>
+			<height>230</height>
+			<!-- translated -->
+			<text>
+				<name>mc</name>
+				<display>[:title:]</display>
+				<posx>2</posx>
+				<posy>180</posy>
+				<width>123</width>
+				<height>50</height>
+				<size>14</size>
+				<wordwrap>true</wordwrap>
+				<align>center</align>
+				<color>menu.color</color>
+				<hlcolor>menu.highlight.color</hlcolor>
+			</text>	
+			
+			<image>
+				<name>thumbnail2</name>
+				<file>[:@media:]movie/portraitlarge.swf</file>
+				<posx>2</posx>
+				<posy>0</posy>
+				<width>123</width>
+<!-- 			<height>180</height> -->
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+			</image>
+			
+			<image>
+				<name>thumbnail3</name>
+				<file>[:@jukebox:]People/[:title:].jpg</file>
+				<altfile>[:@jukebox:]Photos/[:title:].jpg</altfile>
+				<posx>2</posx>
+				<posy>0</posy>
+				<width>123</width>
+<!-- 			<height>180</height> -->
+				<keepaspect>true</keepaspect>
+				<haligned>center</haligned>
+				<valigned>center</valigned>
+			</image>
+			
+		</tile>
+	</segment>		
+
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>
+	<remote>
+	   <button>BACK</button>
+	   <action>BACK</action>
+	   <data>1</data>
+	</remote>	
+	<remote>
+	   <button>MENU</button>
+	   <action>BACK</action>
+	   <data>3</data>
+	</remote>	
+	<remote>
+	   <button>ALL</button>
+	   <action>BLOCK</action>
+	</remote>	
+</eskin>

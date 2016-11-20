@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<eskin>
+	<info>
+	  <name>evHell</name>
+	  <version>4.0</version>
+	  <homepage>http://www.dentedboxes.com</homepage>
+	</info>
+	<settings>
+	    <starttype>home</starttype>
+		<home>home</home>	
+		<menu>categories_menu</menu>
+		<userlist>people_menu</userlist> 
+		<index default="moviewall1row">moviewall1row, moviewall2row, moviewall3row, moviewall4row, listview, listview_overscan, tvshowsbanner1, tvshowsbanner2, tvshowsbanner3, tvshowseason, tvshowseasonbig, peopleinfo, set1row</index>
+		<movie default="movieinfoover">movieinfoover,movieinfo_clean</movie>
+		<tv default="tvinfoepisodes">tvshowepscroll, tvshowepisodewall, tvinfoepisodes, tvshowinfo</tv>
+	</settings>
+</eskin>
+
+
+
+
+

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<eskin>
+
+	<!-- Filesize, ie. 1.36 GB -->
+
+<text>
+<name>filesize</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:fileSize,blank:]</display>
+<posx>10</posx>
+<posy>685</posy>
+<width>110</width>
+<height>30</height>
+<size>18</size>
+<align>center</align>
+<bold>true</bold>
+<color>tech.filesize.color</color>
+</text>
+
+	<!-- Container, ie. AVI -->
+
+<text>
+<name>container</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:smartcontainer,upper,blank:]</display>
+<posx>125</posx>
+<posy>685</posy>
+<width>110</width>
+<height>30</height>
+<size>18</size>  
+<align>center</align>
+<bold>true</bold>
+<color>tech.container.color</color>
+</text>	
+
+	<!-- Video Codec, ie. XVID -->
+
+<text>
+<name>videocodec</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:smartvideocodec,blank:]</display>
+<posx>240</posx>
+<posy>685</posy>
+<width>110</width>
+<height>30</height>
+<size>18</size>
+<align>center</align>
+<bold>true</bold>
+<color>tech.video.color</color>
+</text>
+
+	<!-- Resolution, ie. SD -->
+
+<text>
+<name>res</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:smartres,blank:]</display>
+<posx>355</posx>
+<posy>685</posy>
+<width>110</width>
+<height>30</height>
+<size>18</size>
+<align>center</align>
+<bold>true</bold>
+<color>tech.resolution.color</color>
+</text>	
+
+	<!-- Video Ratio, ie. 2.35:1 -->
+
+<text>
+<name>vratio</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:smartaspect,blank:]</display>
+<posx>470</posx>
+<posy>685</posy>
+<width>110</width>
+<height>30</height>
+<size>18</size>  
+<align>center</align>
+<bold>true</bold>
+<color>tech.vratio.color</color>
+</text>
+
+	<!-- Audio Codec, ie. AC3 -->
+
+<text>
+<name>audio.codec.min</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<condition>[:#audio.codec,lower:] = audio.codec.min</condition>
+<display>[:smartaudiocodec,blank,upper:]</display>
+<posx>585</posx>
+<posy>685</posy>
+<width>110</width>
+<height>30</height>
+<size>18</size>  
+<align>center</align>
+<bold>true</bold>
+<color>tech.audio.color</color>
+</text>		
+
+	<!-- Audio Codec, ie. AC3 (en) / AC3 (fr) -->
+
+<text>
+<name>audio.codec.full</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<condition>[:#audio.codec,lower:] = audio.codec.full</condition>
+<display>[:audioCodec,blank,upper:]</display>
+<posx>585</posx>
+<posy>689</posy>
+<width>110</width>
+<height>30</height>
+<size>11</size>  
+<align>center</align>
+<bold>true</bold>
+<color>tech.audio.color</color>
+</text>		
+
+	<!-- Audio Channels, ie. 5.1 -->
+
+<text>
+<name>audio.channels.min</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<condition>[:#audio.channels,lower:] = audio.channels.min</condition>
+<display>[:smartchannels,blank:]</display>
+<posx>700</posx>
+<posy>685</posy>
+<width>110</width>
+<height>30</height>
+<size>18</size>  
+<align>center</align>
+<bold>true</bold>
+<color>tech.channels.color</color>
+</text>		
+
+	<!-- Audio Channels, ie. 6 / 6 -->
+
+<text>
+<name>audio.channels.full</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<condition>[:#audio.channels,lower:] = audio.channels.full</condition>
+<display>[:audioChannels,blank:]</display>
+<posx>700</posx>
+<posy>685</posy>
+<width>110</width>
+<height>30</height>
+<size>18</size>  
+<align>center</align>
+<bold>true</bold>
+<color>tech.channels.color</color>
+</text>		
+
+	<!-- Show Status, ie. Status: ENDED -->
+
+<text>
+<name>showStatus</name>
+<condition>[:showStatus:] != UNKNOWN</condition>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:%status,blank:]:   [:showStatus,upper,blank:]</display>
+<posx>840</posx>
+<posy>685</posy>
+<width>190</width>
+<height>30</height>
+<size>18</size>  
+<align>left</align>
+<bold>true</bold>
+<color>tech.show.status.color</color>
+</text>
+
+	<!-- Top 250, ie. # 124 -->
+
+<text>
+<name>top250</name>
+<condition>[:top250:] != -1</condition>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:%top250,blank:]:   # [:top250,blank:]</display>
+<posx>840</posx>
+<posy>685</posy>
+<width>190</width>
+<height>30</height>
+<size>18</size>  
+<align>left</align>
+<bold>true</bold>
+<color>tech.top250.color</color>
+</text>		
+
+	<!-- Index Kind, ie. Titles: -->
+
+<text>
+<name>indexkind</name>
+<display>[:@indexkind:]:</display>
+<posx>1075</posx>
+<posy>685</posy>		
+<width>95</width>
+<height>30</height>
+<size>18</size>
+<align>left</align>
+<bold>true</bold>
+<color>tech.index.kind.color</color>
+</text>	
+
+	<!-- Index, ie. "23 /    " -->
+
+<text>
+<name>cursor</name>
+<segname>index</segname>
+<hyper>4</hyper>
+<display>[:@curpos:] /</display>
+<posx>1145</posx>
+<posy>685</posy>
+<width>58</width>
+<height>30</height>
+<align>right</align>
+<size>18</size>  
+<bold>true</bold>
+<color>tech.index.color</color>
+</text>		
+
+	<!-- Index, ie. "     255" -->
+
+<text>
+<name>total</name>
+<display>[:@totaltiles:]</display>
+<posx>1205</posx>
+<posy>685</posy>
+<width>42</width>
+<height>30</height>
+<align>left</align>
+<size>18</size>  
+<bold>true</bold>
+<color>tech.index.total.color</color>
+</text>
+
+</eskin>
