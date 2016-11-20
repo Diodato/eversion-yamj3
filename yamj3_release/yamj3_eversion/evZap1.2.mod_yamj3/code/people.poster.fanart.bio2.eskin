@@ -74,18 +74,19 @@
 	</text>
 	<!-- display no_people image in case of no photo- will be overwriten by the real photo if exists --> 
 	<image>
-		<name>actor nophoto</name>		
+		<name>actor nophoto</name>	
+			<segname>index</segname> 		
 			<file>[:@media:]common/no_people.jpg</file>
 			<posx>50</posx>
 			<posy>332</posy>
 			<width>225</width>
 			<height>337</height>
+			<hyper>4</hyper>
 	</image>
 	<!-- display people photo - will overwrite no_people.jpg by the real photo if exists  -->
 	<image>
 		<name>actor photo</name>
 		<segname>index</segname> 
-		<condition>[:photo:] != undefined</condition>
 			<file>[:photo:]</file>
 			<posx>50</posx>
 			<posy>332</posy>
@@ -169,10 +170,10 @@
 		<color>ffffff</color>
 		<hyper>4</hyper>
 	</text>
-	<!--   GENERAL FILMOGRAPHY -->
+	<!--   GENERAL FILMOGRAPHY  == NOT IMPLEMENTED YET
 	<if>
 	<condition>[:multi-/movie/filmography/movie-1-/movie-name,undefined:] != undefined</condition>  <!-- don't show filmography if nothing to display -->
-	<image>
+<!--	<image>
 		<name>filmo frame</name>
 		<file>[:@media:]common/biobackdrop50.png</file>
 		<posx>710</posx>
@@ -313,7 +314,7 @@
 		<size>20</size>  
 		<color>ffffff</color>
 	</text> 
-	</if>
+	</if> -->   
 	<!--    NAVBAR     -->
 	<!--<text>
         <name>people_cast</name>
@@ -904,6 +905,7 @@
 				<posy>14.5</posy>
 				<width>125</width>
 				<height>183</height>
+				<hyper>4</hyper>
 			</image>
 			<image>
 				<name>photo</name>
@@ -912,6 +914,7 @@
 				<posy>14.5</posy>
 				<width>125</width>
 				<height>183</height>
+				<hyper>4</hyper>
 			</image>
 <!--			<image>
 				<name>thumbnail_dim</name>
