@@ -1,6 +1,5 @@
-ï»¿// Eversion, the flash interface for YAMJ on the Syabas Embedded Players
+// Eversion, the flash interface for YAMJ on the Syabas Embedded Players
 // Copyright (C) 2012  Bryan Socha, aka Accident
-// Copyright (C) 2015  Diodato
 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -52,8 +51,10 @@ class api.dataYAMJ {
 	// constructor
 	function dataYAMJ() {
 		this.fn = {onLoadyamjXML:Delegate.create(this, this.onLoadyamjXML),
+				   onLoadcatXML:Delegate.create(this, this.onLoadcatXML),
 				   parsedata:Delegate.create(this, this.xml_parse),
-				   episodes_findspecials:Delegate.create(this, this.episodes_findspecials)
+				   episodes_findspecials:Delegate.create(this, this.episodes_findspecials),
+				   onLoadcatsmallXML:Delegate.create(this,this.onLoadcatsmallXML)
 			};
 
 		this.artsize=new Array("SMALL","MEDIUM","LARGE","ORIGINAL");
@@ -82,40 +83,485 @@ class api.dataYAMJ {
 		this.currentindexcategory=null;
 	}
 
-	private function originaltitle_fix(testname:String) {
-		var originalName="UNKNOWN";
 
-		testname=testname.toLowerCase();
-		//if(testname.indexOf("other") != -1) {
-		//	originalName="other";
-		//} else
-		if(testname.indexOf("genre") != -1) {
-			originalName="genre";
-		} else if(testname.indexOf("title") != -1) {
-			originalName="title";
-		} else if(testname.indexOf("certification") != -1) {
-			originalName="certification";
-		} else if(testname.indexOf("year") != -1) {
-			originalName="year";
-		} else if(testname.indexOf("library") != -1) {
-			originalName="library";
-		} else if(testname.indexOf("cast") != -1) {
-			originalName="cast";
-		} else if(testname.indexOf("director") != -1) {
-			originalName="director";
-		} else if(testname.indexOf("country") != -1) {
-			originalName="country";
-		} else if(testname.indexOf("set") != -1) {
-			originalName="set";
-		} else if(testname.indexOf("award") != -1) {
-			originalName="award";
-		} else if(testname.indexOf("person") != -1) {
-			originalName="person";
-		} else if(testname.indexOf("ratings") != -1) {
-			originalName="ratings";
+// ****************************** EPISODES *****************************
+	public function episodes(xml:XMLNode, callBack:Function) {
+		this.Callback=callBack;
+
+		// check if we can attempt set load
+		var setname=XPathAPI.selectSingleNode(xml, "/movie/indexes/index[@type='Set']").attributes.encoded.toString();
+		//trace("@@@ set name: "+setname);
+		if(setname.toLowerCase() != "set" && Common.evSettings.epmerge=="true") {
+			trace("@@@ attempting to find season 0 in set Set_"+setname+"_1");
+
+			this.indexXML=new Array();
+			this.indexXML[0]=xml;
+
+			this.baseIndexName="Set_"+setname+"_";
+			//trace("basename is "+this.baseIndexName);
+
+			// have the first page loaded
+			Data.loadXML(Common.evSettings.yamjdatapath+this.baseIndexName+"1.xml", this.fn.episodes_findspecials);
+		} else {
+			trace("set loading skipped");
+			this.episodeswithset(xml, null, callBack);
+		}
+	}
+
+	private function episodes_findspecials(success:Boolean, xml:XML,errorcode) {
+		if(success) {
+			//trace("set file ready to parse");
+
+			var xmlNodeList:Array = XPathAPI.selectNodeList(xml.firstChild, "/library/movies/movie");
+			var xmlDataLen:Number = xmlNodeList.length;
+			//trace(xmlDataLen+" seasons to check in this file");
+
+			for (var i:Number = 0; i < xmlDataLen; i++) {
+				var season:String=XPathAPI.selectSingleNode(xmlNodeList[i], "/movie/season").firstChild.nodeValue.toString();
+				if(season=="0") {
+					//trace("found season 0, merging!");
+					this.episodeswithset(this.indexXML[0], xmlNodeList[i], this.Callback);
+					return;
+				} else {
+					//trace("skipped season "+season);
+				}
+			}
+			//trace("ready to check for more set pages");
+			var indexNode = XPathAPI.selectSingleNode(xml.firstChild, "/library/category/index[@current='true'][@first='"+this.baseIndexName+"1']");
+			var itemCurrent = XPathAPI.selectSingleNode(indexNode, "/index").attributes.currentIndex.toString();
+			var itemLast = XPathAPI.selectSingleNode(indexNode, "/index").attributes.lastIndex.toString();
+			//trace("current: "+itemCurrent+" last: "+itemLast);
+			if(itemCurrent!=itemLast) {
+				var next=int(itemCurrent)+1;
+				Data.loadXML(Common.evSettings.yamjdatapath+this.baseIndexName+next+".xml", this.fn.episodes_findspecials);
+			} else {
+				//trace("no more set pages to check");
+				this.episodeswithset(this.indexXML[0], null, this.Callback);
+			}
+		} else {
+			//trace("failed to load");
+			this.episodeswithset(this.indexXML[0], null, this.Callback);
+		}
+	}
+
+	public function episodeswithset(xml:XMLNode, tvset:XMLNode, callBack:Function) {
+		this.fn.parsedata=Delegate.create(this, this.hardparse);
+
+		var season:String=XPathAPI.selectSingleNode(xml, "/movie/season").firstChild.nodeValue.toString();
+
+		if(season!="0") {
+			//trace("season "+season+" looking for specials");
+			var specials:Array=extract_season(season, "0", tvset);
+		}
+		var episodes:Array=extract_season(season, null, xml);
+
+
+		//trace("ready to merge");
+
+		var addto:Array=new Array();
+		var lastepisode:Number=-1;
+
+		if(specials!=null) {
+			//trace(".. merging in specials");
+
+			var playnum:Number=1;
+			for(var i=0;i<specials.length;i++) {  // loop the specials
+				trace("special "+i+": beforeep "+specials[i].special.beforeep+" after "+specials[i].special.airsafter);
+
+				if(specials[i].special.airsafter) {
+					trace(".. after after");
+					if(episodes !=null && episodes != undefined && episodes.length>0) {
+						for(var e=0;e<episodes.length;e++) {
+							if(episodes[e].skip==true) continue;
+
+							episodes[e].playnum=playnum;
+							trace(".... inserting ep "+episodes[e].episode+" playnum "+playnum);
+							lastepisode=episodes[e].episode;
+							playnum++;
+							addto.push(episodes[e]);
+						}
+						episodes=null;
+					}
+					trace(".... inserting special "+specials[i].episode+" playnum "+playnum);
+					specials[i].playnum=playnum;
+					playnum++;
+					addto.push(specials[i]);
+				} else if(specials[i].special.beforeep!=0) {
+					trace(".. SP"+specials[i].episode+": specialairs before, looking for episode "+specials[i].special.beforeep);
+
+					if(episodes !=null && episodes != undefined && episodes.length>0) {
+						var checkep=int(specials[i].special.beforeep);
+						for(var e=0;e<episodes.length;e++) {
+							if(episodes[e].skip==true) continue;
+
+							trace("checking: season "+episodes[e].season+" episode "+episodes[e].episode);
+							if(int(episodes[e].episode) >= checkep && episodes[e].special == null) {
+								trace("found "+episodes[e].episode+" stopping search");
+								break;
+							} else {
+								episodes[e].playnum=playnum;
+								trace(".... inserting ep "+episodes[e].episode+" playnum "+playnum);
+								lastepisode=episodes[e].episode;
+								playnum++;
+								addto.push(episodes[e]);
+								episodes[e].skip=true;
+							}
+						}
+						trace(".... inserting special "+specials[i].episode+" playnum "+playnum);
+						specials[i].playnum=playnum;
+						playnum++;
+						addto.push(specials[i]);
+					} else {
+						if(lastepisode > specials[i].special.beforeep) {
+							trace(".. no more episodes to search, dr who time warped specials clause, re-re-remerging");
+							episodes=addto;
+							addto=new Array();
+							i--;
+							playnum=1;
+							lastepisode=-1;
+						} else {
+							trace(".... no more episodes inserting special "+specials[i].episode+" playnum "+playnum);
+							specials[i].playnum=playnum;
+							playnum++;
+							addto.push(specials[i]);
+						}
+					}
+				}
+			}
+			//trace("done with specials");
+
+			// add the missing episodes still left
+			if(episodes.length>0) {
+				trace("more episodes remain to be merged");
+				for(var i=0;i<episodes.length;i++) {
+					if(episodes[i].skip==true) continue;
+
+					episodes[i].playnum=playnum;
+					trace(".... inserting ep "+episodes[i].episode+" playnum "+playnum);
+					playnum++;
+					addto.push(episodes[i]);
+				}
+			}
+		} else {
+			trace(".. no specials to merge.");
+			addto=episodes;
 		}
 
-		return(originalName);
+		if(addto.length<1) {
+			trace("no eps");
+			callBack("ERROR", Common.evPrompts.noeps);
+		} else {
+			trace("returning ep array");
+			callBack(null,null,addto);
+		}
+	}
+
+	private function extract_season(season, special, xml) {
+		//trace("extracting season "+season+" special "+special);
+		if(xml==null || xml==undefined) return(null);
+
+		if(special!=null) {
+			//trace(".. extract specials ");
+			var xmlNodeList:Array = XPathAPI.selectNodeList(xml, "/movie/files/file[@season='0']");
+			if(xmlNodeList.length<1) {
+				//trace("no specials to extract");
+				return(null);
+			}
+		} else {
+			//trace(".. extracting normal season");
+			var xmlNodeList:Array = XPathAPI.selectNodeList(xml, "/movie/files/file");
+		}
+
+		var totalTitles=xmlNodeList.length;
+		//trace(totalTitles+" records");
+
+
+		var showtitle=this.xml_parse("title",xml); // tv show title name
+		var addto=new Array();
+		for(var i=0;i<totalTitles;i++) {
+			// get the first/last parts
+			var firstpart=int(XPathAPI.selectSingleNode(xmlNodeList[i], "/file").attributes.firstPart.toString());
+			var lastpart=int(XPathAPI.selectSingleNode(xmlNodeList[i], "/file").attributes.lastPart.toString());
+			var newpart=true;
+
+			// loop the episodes in this record
+			for(var u=firstpart;u<=lastpart;u++) {
+				if(special!=null) {
+					var airbefore=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/airsInfo[@part='"+u+"'").attributes.beforeEpisode.toString();
+					var airbefores=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/airsInfo[@part='"+u+"'").attributes.beforeSeason.toString();
+					var airafter=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/airsInfo[@part='"+u+"'").attributes.afterSeason.toString();
+
+					trace(".. airs afterseason "+airafter+" beforeseason "+airbefores+" before episode "+airbefore);
+					var specs:Object=new Object();
+					if(airbefores==season) {
+						specs.beforeep=airbefore;
+						//specs.beforeep=airbefores;
+						specs.airsafter=false;
+					} else if(airafter==season) {
+						specs.airsafter=true;
+						specs.beforeep=0;
+					} else {
+						trace("skipped, not for "+season);
+						continue;
+					}
+					trace("+++ settings used: airsafter: "+specs.airsafter+" beforeep " + specs.beforeep);
+				}
+				// extra the details of this episode
+				var title=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileTitle[@part='"+u+"']").firstChild.nodeValue.toString();
+				var watched=XPathAPI.selectSingleNode(xmlNodeList[i], "/file").attributes.watched.toString();
+				var filePlot=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/filePlot[@part='"+u+"']").firstChild.nodeValue.toString();
+				var fileRating=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileRating[@part='"+u+"']").firstChild.nodeValue.toString();
+				var file=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileURL").firstChild.nodeValue.toString();
+				var zcd=XPathAPI.selectSingleNode(xmlNodeList[i], "/file").attributes.zcd.toString();
+				var fileImageFile=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileImageFile[@part='"+u+"']").firstChild.nodeValue.toString();
+				var fileImageURL=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileImageURL[@part='"+u+"']").firstChild.nodeValue.toString();
+				var aired=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/firstAired[@part='"+u+"']").firstChild.nodeValue.toString();
+
+				// setup play name
+				if(newpart) {
+					if(special!=null) {
+						var playseason="00";
+					} else {
+						if(season.length<2) var playseason="0"+season;
+						   else var playseason=season;
+					}
+					var showpart=firstpart.toString();
+					if(showpart.length<2) showpart="0"+showpart;
+
+					if(firstpart!=lastpart) {  // multiple-episode video
+						var showlastpart=lastpart.toString();
+						if(showlastpart.length<2) showlastpart="0"+showlastpart;
+						var name=showtitle+" "+Common.evPrompts.seasonshort+playseason+Common.evPrompts.episodeshort+showpart+" - "+Common.evPrompts.episodeshort+showlastpart;
+					} else {					// single episode video with epname
+						var name=showtitle+" "+Common.evPrompts.seasonshort+playseason+Common.evPrompts.episodeshort+showpart+": "+title;
+					}
+					if(special!=null) name=name+" ("+Common.evPrompts.special.toUpperCase()+")";
+				}
+
+				var scoreyamj=Math.round(int(fileRating)/10)*10;
+				var score=int(fileRating)/10;
+				var scorefive=Math.round((int(fileRating)/20)*10)/10;
+
+				addto.push({playnum:i+1, playname:name, score:score.toString(),score10:score.toString(),score5:scorefive.toString(),scoreyamj:scoreyamj.toString(),zcd:zcd, newpart:newpart, url:file, aired:aired, rating:fileRating, season:season, episode:u, title:title, watched:watched, plot:filePlot, smartplot:filePlot, smartoutline:filePlot, outline:filePlot, videoimage:fileImageFile, special:specs, videoimageurl:fileImageURL});
+				newpart=false;
+			}
+		}
+
+		if(addto.length!=0) return(addto);
+
+		return(null);
+	}
+
+	public function hardparse(field:String,titledata,howmany:Number):String {
+		switch(field) {
+			case 'episode':
+				if(titledata.special!=undefined) return(Common.evPrompts.special.toUpperCase()+titledata[field]);
+				// break missing on purpose
+			default:
+				return(titledata[field]);
+		}
+	}
+
+// ****************************** CATEGORIES *****************************
+
+	public function getCat(callBack:Function):Void {
+		this.Callback=callBack;
+
+		// load up the categories
+		Data.loadXML(Common.evSettings.yamjdatapath+"Categories_small.xml", this.fn.onLoadcatsmallXML);
+	}
+
+	public function onLoadcatsmallXML(success:Boolean, xml:XML):Void {
+		if(success) {
+			this.onLoadcatXML(success, xml);
+	    } else {
+			Data.loadXML(Common.evSettings.yamjdatapath+"Categories.xml", this.fn.onLoadcatXML);
+		}
+	}
+
+	private function onLoadcatXML(success:Boolean, xml:XML) {
+		if(success) {
+			trace("loaded categories.xml");
+
+			// prep the global
+			delete Common.indexes;
+			Common.indexes=new Array();
+
+			// prep what we're looking for
+			var needed:Array=new Array();
+			needed=needed.concat(Common.esSettings.homelist.split(","),Common.esSettings.menulist.split(","));
+			if(Common.esSettings.userlist!=undefined &&  Common.esSettings.userlist!=null) needed=needed.concat(Common.esSettings.userlist.split(","));
+			if(Common.esSettings.userlist2!=undefined &&  Common.esSettings.userlist2!=null) needed=needed.concat(Common.esSettings.userlist2.split(","));
+			if(Common.esSettings.userlist3!=undefined &&  Common.esSettings.userlist3!=null) needed=needed.concat(Common.esSettings.userlist3.split(","));
+			if(Common.esSettings.userlist4!=undefined &&  Common.esSettings.userlist4!=null) needed=needed.concat(Common.esSettings.userlist4.split(","));
+
+			for(var i=0;i<needed.length;i++) {
+				if(Common.indexes[needed[i].toLowerCase()] == undefined) processCat(xml, needed[i]);
+			}
+
+			// prepare the homelist
+			var homedata:Array=new Array();
+			var homelist:Array=new Array();
+			homelist=Common.esSettings.homelist.split(",");
+			for(var i=0;i<homelist.length;i++) {
+				//trace(".. adding "+homelist[i]+" to home");
+
+				if(Common.indexes[homelist[i].toLowerCase()]!= undefined) {
+					homedata=homedata.concat(Common.indexes[homelist[i].toLowerCase()]);
+					//trace("... success");
+				} // else trace("... didn't exist");
+			}
+
+			// send it off (if we have something)
+			if(homedata.length>0) {
+				Common.indexes["homelist"]=homedata;
+			}
+
+			// cleaner
+			delete homedata;
+			delete homelist;
+
+			// prepare the menulist
+			homelist=new Array();
+			homedata=new Array();
+			homelist=Common.esSettings.menulist.split(",");
+
+			for(var i=0;i<homelist.length;i++) {
+				//trace(".. adding "+homelist[i]+" to menu");
+
+				if(Common.indexes[homelist[i].toLowerCase()]!= undefined) {
+					homedata.push({action:"catlist", arraydata:homelist[i].toLowerCase(), title:Common.evPrompts[homelist[i].toLowerCase()],originaltitle:homelist[i].toLowerCase()});
+				}
+			}
+
+			// send it off (if we have something)
+			if(homedata.length>0) {
+				Common.indexes["menulist"]=homedata;
+			}
+
+			if(Common.esSettings.userlist!=undefined &&  Common.esSettings.userlist!=null) {
+				// prepare the userlist
+				homelist=new Array();
+				homedata=new Array();
+				homelist=Common.esSettings.userlist.split(",");
+
+				for(var i=0;i<homelist.length;i++) {
+					if(Common.indexes[homelist[i].toLowerCase()]!= undefined) {
+						homedata.push({action:"catlist", arraydata:homelist[i].toLowerCase(), title:Common.evPrompts[homelist[i].toLowerCase()],originaltitle:homelist[i].toLowerCase()});
+					}
+				}
+
+				// send it off (if we have something)
+				if(homedata.length>0) {
+					Common.indexes["userlist"]=homedata;
+				}
+			}
+
+			if(Common.esSettings.userlist2!=undefined &&  Common.esSettings.userlist2!=null) {
+				// prepare the userlist
+				homelist=new Array();
+				homedata=new Array();
+				homelist=Common.esSettings.userlist2.split(",");
+
+				for(var i=0;i<homelist.length;i++) {
+
+					if(Common.indexes[homelist[i].toLowerCase()]!= undefined) {
+						homedata.push({action:"catlist", arraydata:homelist[i].toLowerCase(), title:Common.evPrompts[homelist[i].toLowerCase()],originaltitle:homelist[i].toLowerCase()});
+						//trace("... success");
+					} // else trace("... didn't exist");
+				}
+
+				// send it off (if we have something)
+				if(homedata.length>0) {
+					Common.indexes["userlist2"]=homedata;
+				}
+			}
+
+			if(Common.esSettings.userlist3!=undefined &&  Common.esSettings.userlist3!=null) {
+				// prepare the userlist
+				homelist=new Array();
+				homedata=new Array();
+				homelist=Common.esSettings.userlist3.split(",");
+
+				for(var i=0;i<homelist.length;i++) {
+					//trace(".. adding "+homelist[i]+" to user");
+
+					if(Common.indexes[homelist[i].toLowerCase()]!= undefined) {
+						homedata.push({action:"catlist", arraydata:homelist[i].toLowerCase(), title:Common.evPrompts[homelist[i].toLowerCase()],originaltitle:homelist[i].toLowerCase()});
+						//trace("... success");
+					} // else trace("... didn't exist");
+				}
+
+				// send it off (if we have something)
+				if(homedata.length>0) {
+					Common.indexes["userlist3"]=homedata;
+				}
+			}
+
+			if(Common.esSettings.userlist4!=undefined &&  Common.esSettings.userlist4!=null) {
+				// prepare the userlist
+				homelist=new Array();
+				homedata=new Array();
+				homelist=Common.esSettings.userlist4.split(",");
+
+				for(var i=0;i<homelist.length;i++) {
+					//trace(".. adding "+homelist[i]+" to user");
+
+					if(Common.indexes[homelist[i].toLowerCase()]!= undefined) {
+						homedata.push({action:"catlist", arraydata:homelist[i].toLowerCase(), title:Common.evPrompts[homelist[i].toLowerCase()],originaltitle:homelist[i].toLowerCase()});
+						//trace("... success");
+					} // else trace("... didn't exist");
+				}
+
+				// send it off (if we have something)
+				if(homedata.length>0) {
+					Common.indexes["userlist4"]=homedata;
+				}
+			}
+			this.Callback();
+
+			// cleaner
+			delete homedata;
+			delete homelist;
+		} else {
+			this.Callback(null, Common.evPrompts.enoload+Common.evSettings.yamjdatapath+"Categories.xml");
+		}
+	}
+
+	private function processCat(xml:XML, what:String) {
+		//trace("processing "+what);
+
+		var addto:Array=new Array();
+		var place=0;
+
+		// pull out node with info
+		var xmlNodeList:Array = XPathAPI.selectNodeList(xml.firstChild, "/library/category[@name='"+what+"']/index");
+		var xmlDataLen:Number = xmlNodeList.length;
+
+		if(xmlDataLen>0) {
+			//trace("found "+xmlDataLen+" "+what);
+			for (var i:Number = 0; i < xmlDataLen; i++) {
+				var itemNode = xmlNodeList[i];
+				//this.indexXML[itemCurrent][i]=itemNode;
+				var name = XPathAPI.selectSingleNode(itemNode, "/index").attributes.name.toString();
+				var originalName = XPathAPI.selectSingleNode(itemNode, "/index").attributes.originalName.toString();
+				var index= XPathAPI.selectSingleNode(itemNode, "/index").firstChild.nodeValue.toString();
+				if(index==undefined) index=XPathAPI.selectSingleNode(itemNode, "/index").attributes.filename.toString();
+				//trace("+++++ ORIGINALNAME: "+originalName);
+				if(originalName==undefined || originalName==null || originalName=="") {
+					originalName=originaltitle_fix(index);
+					//trace("+++++ ORIGINALNAME2: "+originalName);
+					if(originalName=="UNKNOWN") originalName=name;
+				}
+				//trace("+++++ ORIGINALNAME FINAL: "+originalName);
+				//trace("index "+index+" named "+name+ " originalname "+originalName);
+				addto[place]={action:"SWITCH", data:index, file:index, title:name, originaltitle:originalName};
+				place++;
+			}
+			Common.indexes[what.toLowerCase()]=addto;
+			//trace(Common.indexes[what]);
+		}
+		delete addto;
 	}
 
 
@@ -392,6 +838,43 @@ class api.dataYAMJ {
 		// xml, friendly name, type, number of pages, total number of tiles in the index
 		this.processingCallback(tempindex,indexName,indexType,int(itemLast),total,originalName);
 	}
+
+	private function originaltitle_fix(testname:String) {
+		var originalName="UNKNOWN";
+
+		testname=testname.toLowerCase();
+		//if(testname.indexOf("other") != -1) {
+		//	originalName="other";
+		//} else
+		if(testname.indexOf("genre") != -1) {
+			originalName="genre";
+		} else if(testname.indexOf("title") != -1) {
+			originalName="title";
+		} else if(testname.indexOf("certification") != -1) {
+			originalName="certification";
+		} else if(testname.indexOf("year") != -1) {
+			originalName="year";
+		} else if(testname.indexOf("library") != -1) {
+			originalName="library";
+		} else if(testname.indexOf("cast") != -1) {
+			originalName="cast";
+		} else if(testname.indexOf("director") != -1) {
+			originalName="director";
+		} else if(testname.indexOf("country") != -1) {
+			originalName="country";
+		} else if(testname.indexOf("set") != -1) {
+			originalName="set";
+		} else if(testname.indexOf("award") != -1) {
+			originalName="award";
+		} else if(testname.indexOf("person") != -1) {
+			originalName="person";
+		} else if(testname.indexOf("ratings") != -1) {
+			originalName="ratings";
+		}
+
+		return(originalName);
+	}
+
 // ************************** data processing ******************************
 
 	public function process_data(field:String,titleXML,howmany:Number):String {
@@ -488,17 +971,17 @@ class api.dataYAMJ {
 					if(itemResult=="UNKNOWN" || itemResult==null || itemResult==undefined) {
 						itemResult=XPathAPI.selectSingleNode(titleXML, "/movie/plot").firstChild.nodeValue.toString();
 					}
-					itemResult=StringUtil.remove(itemResult, "See full summary Â»");
+					itemResult=StringUtil.remove(itemResult, "See full summary »");
 					itemResult=StringUtil.remove(itemResult, "{br}");
 					break;
 				case 'outline':
 					itemResult=XPathAPI.selectSingleNode(titleXML, "/movie/outline").firstChild.nodeValue.toString();
-					itemResult=StringUtil.remove(itemResult, "See full summary Â»");
+					itemResult=StringUtil.remove(itemResult, "See full summary »");
 					itemResult=StringUtil.remove(itemResult, "{br}");
 					break;
 				case 'plot':
 					itemResult=XPathAPI.selectSingleNode(titleXML, "/movie/plot").firstChild.nodeValue.toString();
-					itemResult=StringUtil.remove(itemResult, "See full summary Â»");
+					itemResult=StringUtil.remove(itemResult, "See full summary »");
 					itemResult=StringUtil.remove(itemResult, "{br}");
 					break;
 				case 'smartplot':
@@ -506,7 +989,7 @@ class api.dataYAMJ {
 					if(itemResult=="UNKNOWN" || itemResult==null || itemResult==undefined) {
 						itemResult=XPathAPI.selectSingleNode(titleXML, "/movie/outline").firstChild.nodeValue.toString();
 					}
-					itemResult=StringUtil.remove(itemResult, "See full summary Â»");
+					itemResult=StringUtil.remove(itemResult, "See full summary »");
 					itemResult=StringUtil.remove(itemResult, "{br}");
 					break;
 				case 'fulltitle':
@@ -674,6 +1157,10 @@ class api.dataYAMJ {
 							itemResult="H264";
 						}else if(itemResult.indexOf("MPEG") != -1) {
 							itemResult="MPEG";
+						}else if(itemResult.indexOf("H.265") != -1) {
+							itemResult="H265";
+						}else if(itemResult.indexOf("UHD") != -1) {
+							itemResult="UHD";
 						}else if(itemResult.indexOf("MICROSOFT") != -1) {
 							itemResult="VC1";
 						} else {
@@ -1278,8 +1765,6 @@ class api.dataYAMJ {
 				return(null);
 		}
 
-
-
 		return(artwork_new(titleXML, findkind, which, size.toUpperCase(), legacy, smart));
 	}
 
@@ -1381,286 +1866,4 @@ class api.dataYAMJ {
 				return(null);
 		}
 	}
-
-
-
-
-// ****************************** EPISODES *****************************
-	public function episodes(xml:XMLNode, callBack:Function) {
-		this.Callback=callBack;
-
-		// check if we can attempt set load
-		var setname=XPathAPI.selectSingleNode(xml, "/movie/indexes/index[@type='Set']").attributes.encoded.toString();
-		//trace("@@@ set name: "+setname);
-		if(setname.toLowerCase() != "set" && Common.evSettings.epmerge=="true") {
-			trace("@@@ attempting to find season 0 in set Set_"+setname+"_1");
-
-			this.indexXML=new Array();
-			this.indexXML[0]=xml;
-
-			this.baseIndexName="Set_"+setname+"_";
-			//trace("basename is "+this.baseIndexName);
-
-			// have the first page loaded
-			Data.loadXML(Common.evSettings.yamjdatapath+this.baseIndexName+"1.xml", this.fn.episodes_findspecials);
-		} else {
-			trace("set loading skipped");
-			this.episodeswithset(xml, null, callBack);
-		}
-	}
-
-	private function episodes_findspecials(success:Boolean, xml:XML,errorcode) {
-		if(success) {
-			//trace("set file ready to parse");
-
-			var xmlNodeList:Array = XPathAPI.selectNodeList(xml.firstChild, "/library/movies/movie");
-			var xmlDataLen:Number = xmlNodeList.length;
-			//trace(xmlDataLen+" seasons to check in this file");
-
-			for (var i:Number = 0; i < xmlDataLen; i++) {
-				var season:String=XPathAPI.selectSingleNode(xmlNodeList[i], "/movie/season").firstChild.nodeValue.toString();
-				if(season=="0") {
-					//trace("found season 0, merging!");
-					this.episodeswithset(this.indexXML[0], xmlNodeList[i], this.Callback);
-					return;
-				} else {
-					//trace("skipped season "+season);
-				}
-			}
-			//trace("ready to check for more set pages");
-			var indexNode = XPathAPI.selectSingleNode(xml.firstChild, "/library/category/index[@current='true'][@first='"+this.baseIndexName+"1']");
-			var itemCurrent = XPathAPI.selectSingleNode(indexNode, "/index").attributes.currentIndex.toString();
-			var itemLast = XPathAPI.selectSingleNode(indexNode, "/index").attributes.lastIndex.toString();
-			//trace("current: "+itemCurrent+" last: "+itemLast);
-			if(itemCurrent!=itemLast) {
-				var next=int(itemCurrent)+1;
-				Data.loadXML(Common.evSettings.yamjdatapath+this.baseIndexName+next+".xml", this.fn.episodes_findspecials);
-			} else {
-				//trace("no more set pages to check");
-				this.episodeswithset(this.indexXML[0], null, this.Callback);
-			}
-		} else {
-			//trace("failed to load");
-			this.episodeswithset(this.indexXML[0], null, this.Callback);
-		}
-	}
-
-	public function episodeswithset(xml:XMLNode, tvset:XMLNode, callBack:Function) {
-		this.fn.parsedata=Delegate.create(this, this.hardparse);
-
-		var season:String=XPathAPI.selectSingleNode(xml, "/movie/season").firstChild.nodeValue.toString();
-
-		if(season!="0") {
-			//trace("season "+season+" looking for specials");
-			var specials:Array=extract_season(season, "0", tvset);
-		}
-		var episodes:Array=extract_season(season, null, xml);
-
-
-		//trace("ready to merge");
-
-		var addto:Array=new Array();
-		var lastepisode:Number=-1;
-
-		if(specials!=null) {
-			//trace(".. merging in specials");
-
-			var playnum:Number=1;
-			for(var i=0;i<specials.length;i++) {  // loop the specials
-				trace("special "+i+": beforeep "+specials[i].special.beforeep+" after "+specials[i].special.airsafter);
-
-				if(specials[i].special.airsafter) {
-					trace(".. after after");
-					if(episodes !=null && episodes != undefined && episodes.length>0) {
-						for(var e=0;e<episodes.length;e++) {
-							if(episodes[e].skip==true) continue;
-
-							episodes[e].playnum=playnum;
-							trace(".... inserting ep "+episodes[e].episode+" playnum "+playnum);
-							lastepisode=episodes[e].episode;
-							playnum++;
-							addto.push(episodes[e]);
-						}
-						episodes=null;
-					}
-					trace(".... inserting special "+specials[i].episode+" playnum "+playnum);
-					specials[i].playnum=playnum;
-					playnum++;
-					addto.push(specials[i]);
-				} else if(specials[i].special.beforeep!=0) {
-					trace(".. SP"+specials[i].episode+": specialairs before, looking for episode "+specials[i].special.beforeep);
-
-					if(episodes !=null && episodes != undefined && episodes.length>0) {
-						var checkep=int(specials[i].special.beforeep);
-						for(var e=0;e<episodes.length;e++) {
-							if(episodes[e].skip==true) continue;
-
-							trace("checking: season "+episodes[e].season+" episode "+episodes[e].episode);
-							if(int(episodes[e].episode) >= checkep && episodes[e].special == null) {
-								trace("found "+episodes[e].episode+" stopping search");
-								break;
-							} else {
-								episodes[e].playnum=playnum;
-								trace(".... inserting ep "+episodes[e].episode+" playnum "+playnum);
-								lastepisode=episodes[e].episode;
-								playnum++;
-								addto.push(episodes[e]);
-								episodes[e].skip=true;
-							}
-						}
-						trace(".... inserting special "+specials[i].episode+" playnum "+playnum);
-						specials[i].playnum=playnum;
-						playnum++;
-						addto.push(specials[i]);
-					} else {
-						if(lastepisode > specials[i].special.beforeep) {
-							trace(".. no more episodes to search, dr who time warped specials clause, re-re-remerging");
-							episodes=addto;
-							addto=new Array();
-							i--;
-							playnum=1;
-							lastepisode=-1;
-						} else {
-							trace(".... no more episodes inserting special "+specials[i].episode+" playnum "+playnum);
-							specials[i].playnum=playnum;
-							playnum++;
-							addto.push(specials[i]);
-						}
-					}
-				}
-			}
-			//trace("done with specials");
-
-			// add the missing episodes still left
-			if(episodes.length>0) {
-				trace("more episodes remain to be merged");
-				for(var i=0;i<episodes.length;i++) {
-					if(episodes[i].skip==true) continue;
-
-					episodes[i].playnum=playnum;
-					trace(".... inserting ep "+episodes[i].episode+" playnum "+playnum);
-					playnum++;
-					addto.push(episodes[i]);
-				}
-			}
-		} else {
-			trace(".. no specials to merge.");
-			addto=episodes;
-		}
-
-		if(addto.length<1) {
-			trace("no eps");
-			callBack("ERROR", Common.evPrompts.noeps);
-		} else {
-			trace("returning ep array");
-			callBack(null,null,addto);
-		}
-	}
-
-	private function extract_season(season, special, xml) {
-		//trace("extracting season "+season+" special "+special);
-		if(xml==null || xml==undefined) return(null);
-
-		if(special!=null) {
-			//trace(".. extract specials ");
-			var xmlNodeList:Array = XPathAPI.selectNodeList(xml, "/movie/files/file[@season='0']");
-			if(xmlNodeList.length<1) {
-				//trace("no specials to extract");
-				return(null);
-			}
-		} else {
-			//trace(".. extracting normal season");
-			var xmlNodeList:Array = XPathAPI.selectNodeList(xml, "/movie/files/file");
-		}
-
-		var totalTitles=xmlNodeList.length;
-		//trace(totalTitles+" records");
-
-
-		var showtitle=this.xml_parse("title",xml); // tv show title name
-		var addto=new Array();
-		for(var i=0;i<totalTitles;i++) {
-			// get the first/last parts
-			var firstpart=int(XPathAPI.selectSingleNode(xmlNodeList[i], "/file").attributes.firstPart.toString());
-			var lastpart=int(XPathAPI.selectSingleNode(xmlNodeList[i], "/file").attributes.lastPart.toString());
-			var newpart=true;
-
-			// loop the episodes in this record
-			for(var u=firstpart;u<=lastpart;u++) {
-				if(special!=null) {
-					var airbefore=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/airsInfo[@part='"+u+"'").attributes.beforeEpisode.toString();
-					var airbefores=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/airsInfo[@part='"+u+"'").attributes.beforeSeason.toString();
-					var airafter=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/airsInfo[@part='"+u+"'").attributes.afterSeason.toString();
-
-					trace(".. airs afterseason "+airafter+" beforeseason "+airbefores+" before episode "+airbefore);
-					var specs:Object=new Object();
-					if(airbefores==season) {
-						specs.beforeep=airbefore;
-						//specs.beforeep=airbefores;
-						specs.airsafter=false;
-					} else if(airafter==season) {
-						specs.airsafter=true;
-						specs.beforeep=0;
-					} else {
-						trace("skipped, not for "+season);
-						continue;
-					}
-					trace("+++ settings used: airsafter: "+specs.airsafter+" beforeep " + specs.beforeep);
-				}
-				// extra the details of this episode
-				var title=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileTitle[@part='"+u+"']").firstChild.nodeValue.toString();
-				var watched=XPathAPI.selectSingleNode(xmlNodeList[i], "/file").attributes.watched.toString();
-				var filePlot=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/filePlot[@part='"+u+"']").firstChild.nodeValue.toString();
-				var fileRating=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileRating[@part='"+u+"']").firstChild.nodeValue.toString();
-				var file=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileURL").firstChild.nodeValue.toString();
-				var zcd=XPathAPI.selectSingleNode(xmlNodeList[i], "/file").attributes.zcd.toString();
-				var fileImageFile=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileImageFile[@part='"+u+"']").firstChild.nodeValue.toString();
-				var fileImageURL=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/fileImageURL[@part='"+u+"']").firstChild.nodeValue.toString();
-				var aired=XPathAPI.selectSingleNode(xmlNodeList[i], "/file/firstAired[@part='"+u+"']").firstChild.nodeValue.toString();
-
-				// setup play name
-				if(newpart) {
-					if(special!=null) {
-						var playseason="00";
-					} else {
-						if(season.length<2) var playseason="0"+season;
-						   else var playseason=season;
-					}
-					var showpart=firstpart.toString();
-					if(showpart.length<2) showpart="0"+showpart;
-
-					if(firstpart!=lastpart) {  // multiple-episode video
-						var showlastpart=lastpart.toString();
-						if(showlastpart.length<2) showlastpart="0"+showlastpart;
-						var name=showtitle+" "+Common.evPrompts.seasonshort+playseason+Common.evPrompts.episodeshort+showpart+" - "+Common.evPrompts.episodeshort+showlastpart;
-					} else {					// single episode video with epname
-						var name=showtitle+" "+Common.evPrompts.seasonshort+playseason+Common.evPrompts.episodeshort+showpart+": "+title;
-					}
-					if(special!=null) name=name+" ("+Common.evPrompts.special.toUpperCase()+")";
-				}
-
-				var scoreyamj=Math.round(int(fileRating)/10)*10;
-				var score=int(fileRating)/10;
-				var scorefive=Math.round((int(fileRating)/20)*10)/10;
-
-				addto.push({playnum:i+1, playname:name, score:score.toString(),score10:score.toString(),score5:scorefive.toString(),scoreyamj:scoreyamj.toString(),zcd:zcd, newpart:newpart, url:file, aired:aired, rating:fileRating, season:season, episode:u, title:title, watched:watched, plot:filePlot, smartplot:filePlot, smartoutline:filePlot, outline:filePlot, videoimage:fileImageFile, special:specs, videoimageurl:fileImageURL});
-				newpart=false;
-			}
-		}
-
-		if(addto.length!=0) return(addto);
-
-		return(null);
-	}
-
-	public function hardparse(field:String,titledata,howmany:Number):String {
-		switch(field) {
-			case 'episode':
-				if(titledata.special!=undefined) return(Common.evPrompts.special.toUpperCase()+titledata[field]);
-				// break missing on purpose
-			default:
-				return(titledata[field]);
-		}
-	}
-
 }

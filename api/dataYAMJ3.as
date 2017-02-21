@@ -612,7 +612,7 @@ class api.dataYAMJ3 {
 				else
 			{
 				trace("getYAMJ3personIndexData prepare getDataYAMJ3 with index: " +Index)
-				getDataYAMJ3(yamj3coreurl + "api/index/person.json?sortdir=ASC&dataitems=biography,birthName,artwork&artwork=photo&artworksortdir=DESC&search="+ Index + "&field=last_name&mode=START&sortby=last_name&page="+this.currentChunk+"&perpage=" + ev.Common.evSettings.yamj3chunksize + "&max=2500" , callBack, null, this.fn.onGetYAMJ3personIndexData);
+				getDataYAMJ3(yamj3coreurl + "api/index/person.json?sortdir=ASC&dataitems=filmography_inside,biography,birthName,artwork&artwork=photo&artworksortdir=DESC&search="+ Index + "&field=last_name&mode=START&sortby=last_name&page="+this.currentChunk+"&perpage=" + ev.Common.evSettings.yamj3chunksize + "&max=2500" , callBack, null, this.fn.onGetYAMJ3personIndexData);
 			}
 				
 			}
@@ -631,6 +631,17 @@ class api.dataYAMJ3 {
 					 if (jsonData["results"][i]["artwork"][0]["filename"] == undefined || jsonData["results"][i]["artwork"][0]["filename"] == null)
 						{tmp_photo = "undefined"}
 					trace ("onGetYAMJ3personIndexData results[" + i+ "][name]: " + jsonData["results"][i]["name"])
+					var tmp_filmography:String = "";
+					var tmp_filmography_len:Number=jsonData["results"][i]["filmography"].length
+					for(var j:Number=0;j<tmp_filmography_len;j++){	
+						tmp_filmography += jsonData["results"][i]["filmography"][j]["title"] + " (" + jsonData["results"][i]["filmography"][j]["year"] + ")";  
+						if (jsonData["results"][i]["filmography"][j]["role"]) 
+							{tmp_filmography += " - " + jsonData["results"][i]["filmography"][j]["role"];}
+						else {tmp_filmography += " - " + jsonData["results"][i]["filmography"][j]["job"];}
+						tmp_filmography += "\n"
+						}
+					
+				//	trace ("onGetYAMJ3personIndexData results[" + i+ "][filmography]: "+ jsonData["results"][i]["filmography"][0]["title"])
 					addto.push(
 								{action: "SWITCH",
 								data: "Person_" + jsonData["results"][i]["id"] + "::" + jsonData["results"][i]["name"] + "_1",
@@ -642,7 +653,8 @@ class api.dataYAMJ3 {
 								birthplace: jsonData["results"][i]["birthPlace"],
 								biography: jsonData["results"][i]["biography"],
 								year: birthday_split[0],
-								birthname: jsonData["results"][i]["birthName"]}
+								birthname: jsonData["results"][i]["birthName"],
+								filmography: tmp_filmography}
 							); 
 				}
 			callBack(null,null,addto);

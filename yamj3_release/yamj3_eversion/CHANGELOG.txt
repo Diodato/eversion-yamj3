@@ -1,4 +1,7 @@
 Yamj3_Eversion Changelog
+V1.4
+ - add filmography inside with people display , used by evZap 
+ - change eversion to R3001 common.as and esettings 
 V1.3:
 - fixed readme and changelog with .txt extension 
 

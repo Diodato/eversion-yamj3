@@ -56,13 +56,13 @@
 			<file>[:@media:]common/biobackdrop50.png</file>
 			<posx>37</posx>
 			<posy>320</posy>
-			<width>1210</width>
+			<width>672</width>
 			<height>360</height>
 
 		</image>
 	<text>
 		<name>biography label</name>
-		<display>[:%biography:]:</display> 
+		<display>[:%biography:]</display> 
 		<posx>290</posx>
 		<posy>322</posy>
 		<width>150</width>
@@ -102,6 +102,8 @@
 		<width>239</width>
 		<height>351</height>
 	</image>
+<!--	<if>
+	<condition>[:birthname,blank:] == ""</condition>
 	<text>
 		<name>actor name</name>
 		<segname>index</segname>
@@ -116,15 +118,16 @@
 		<color>ff0000</color>
 		<hyper>4</hyper>
 	</text>	
+	</if>-->
 	<text>
 		<name>actor birthname</name>
 		<segname>index</segname>
 		<display>[:birthname:]</display> 
-		<posx>780</posx>
+		<posx>450</posx>
 		<posy>323</posy>
-		<width>450</width>
+		<width>350</width>
 		<height>35</height>
-		<align>right</align>  
+		<align>left</align>  
 		<size>24</size>
 		<bold>true</bold>
 		<color>ff0000</color>
@@ -136,7 +139,7 @@
 		<display>[:birthday,blank:]</display> 
 		<posx>290</posx>
 		<posy>353</posy>
-		<width>150</width>
+		<width>100</width>
 		<height>30</height>
 		<align>left</align>  
 		<size>20</size>  
@@ -147,11 +150,11 @@
 		<name>birthplace 1</name>
 		<segname>index</segname>
 		<display>[:birthplace,blank:]</display> 
-		<posx>780</posx>
+		<posx>395</posx>
 		<posy>353</posy>
-		<width>450</width>
+		<width>310</width>
 		<height>30</height>
-		<align>right</align>  
+		<align>left</align>  
 		<size>20</size>  
 		<color>ffffff</color>
 		<hyper>4</hyper>
@@ -159,10 +162,10 @@
 	<text>
 		<name>biography 1</name>
 		<segname>index</segname>
-		<display>[:biography,trun1430,blank:]</display> 
+		<display>[:biography,trun715,blank:]</display> 
 		<posx>290</posx>
 		<posy>377</posy>
-		<width>940</width>
+		<width>420</width>
 		<height>305</height>
 		<align>justify</align>  
 		<wordwrap>true</wordwrap>
@@ -170,10 +173,10 @@
 		<color>ffffff</color>
 		<hyper>4</hyper>
 	</text>
-	<!--   GENERAL FILMOGRAPHY  == NOT IMPLEMENTED YET
+	<!--   GENERAL FILMOGRAPHY  
 	<if>
 	<condition>[:multi-/movie/filmography/movie-1-/movie-name,undefined:] != undefined</condition>  <!-- don't show filmography if nothing to display -->
-<!--	<image>
+	<image>
 		<name>filmo frame</name>
 		<file>[:@media:]common/biobackdrop50.png</file>
 		<posx>710</posx>
@@ -195,22 +198,24 @@
 	</text>
 	<text>
 		<name>movie 1</name>
-		<display>[:multi-/movie/filmography/movie-1-/movie-year,blank:]  [:multi-/movie/filmography/movie-1-/movie-name,blank:]</display> 
+		<segname>index</segname>
+		<display>[:filmography:]</display> 
 		<posx>730</posx>
 		<posy>352</posy>
 		<width>510</width>
-		<height>30</height>
+		<height>330</height>
 		<align>left</align>  
 		<size>20</size>  
 		<color>ffffff</color>
+		<hyper>4</hyper>
 	</text>
-	<text>
+<!--	<text>
 		<name>movie 2</name>
-		<display>[:multi-/movie/filmography/movie-2-/movie-year,blank:]  [:multi-/movie/filmography/movie-2-/movie-name,blank:]</display> 
+		<display>movie2[:multi-/movie/filmography/movie-2-/movie-year,blank:]  [:multi-/movie/filmography/movie-2-/movie-name,blank:]</display> 
 		<posx>730</posx>
 		<posy>382</posy>
 		<width>510</width>
-		<height>30</height>
+		<height>100</height>
 		<align>left</align>  
 		<size>20</size>  
 		<color>ffffff</color>
@@ -314,8 +319,8 @@
 		<size>20</size>  
 		<color>ffffff</color>
 	</text> 
-	</if> -->   
-	<!--    NAVBAR     -->
+	<!-- </if>    
+	   NAVBAR     -->
 	<!--<text>
         <name>people_cast</name>
 		<condition>[:@indexurl:] contains Cast_</condition>
