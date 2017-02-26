@@ -152,7 +152,7 @@
 <!-- ########## MIDDLE: title, rating, genre, plot, audioinfo, subtitleinfo ######## -->
 	<text>
 		<name>title2</name>
-		<display>(common.movie)[:fulltitle,upper,unknown:]</display>
+		<display>[:fulltitle,upper,unknown:]</display>
 		<posx>360</posx>
 		<posy>337</posy>
 		<width>820</width>

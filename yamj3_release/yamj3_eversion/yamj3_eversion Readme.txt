@@ -37,10 +37,19 @@ note for translation paths:
 	<yamj3playerpaths>file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO/video/Film  , file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO2/video/Series</yamj3playerpaths>
 in this exemple Film and Series are stored on 2 network_share SYNO and SYNO2 
 
-d)	eversion version is R3001
+d)	eversion version is R3002
 	adjust inside jukebox/erversion/settings/esettings.xml (create this file if it doesn't exists)
-	<eversion>R3001</eversion>
-
+	<eversion>R3002</eversion>
+e) add a new paramter which allow eversion to call title , title_sort, title_original 
+	<yamj3preferedtitletype>title</yamj3preferedtitletype>
+	this parameter is used in the yamj3 API to sort he title depneding of the title type choosen, it's also used the fetch movie by letter 
+	by example: 
+	"the walking dead" , id the is declared as strip.prefix 
+	with title parameter "the walking dead" will be found under T
+	with title_sort parameter "the walking dead" will be found under W
+	with title_original parameter "the walking dead" will be found under T
+	
+	this independant of the [:originaltitle:] or [:sorttitle:] used in the eskin , which is used to display title, title_sort, title_original and doesn't chnage the sort option used in eversion_yamj3
 
 Limitations:
 ------------
@@ -148,6 +157,8 @@ SPECIAL PEOPLE
 					[:person@character:]
 					[:photo:]
 					[:person-Actor-1-photo:] return the photo (image) to 1rst actor in the video 
+					[:sorttitle:]  return the title_sort field , which use the yamj3.strip.prefix list  
+					[:originaltitle:]  return the title_original field   
 					
 	when using the peoplemenu inside the eskin don't forget to add the control instruction 
 	<control>[:@eskin:]people</control>

@@ -1,4 +1,11 @@
 Yamj3_Eversion Changelog
+v1.6
+- add yamj3preferedtitletype parameter in eversion esettings-default.xml
+- add :originaltitle: field 
+- fix :sorttitle: for tv shows 
+v1.5
+- add :sorttitle: field 
+- change title filtering to use title_sort field rather than title (title_sort use strip.prefix) 
 V1.4
  - add filmography inside with people display , used by evZap 
  - change eversion to R3001 common.as and esettings 

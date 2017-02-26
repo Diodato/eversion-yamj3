@@ -75,10 +75,12 @@
 	<!-- When using standard backgrounds, should overscan also resize the background -->
 	<overscanbg>true</overscanbg>
 	<!-- used to verify settings match interface version -->
-    <eversion>R3001</eversion>
+    <eversion>R3002</eversion>
 	<!-- YAMJ3 settings -->
 	<yamj3coreurl>http://192.168.1.8:8888/yamj3/</yamj3coreurl>
 	<yamj3librarypaths>T:\video\Film\</yamj3librarypaths>
 	<yamj3playerpaths>file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO/video/Film/</yamj3playerpaths>
 	<yamj3chunksize>24</yamj3chunksize>
+	<!-- add this value to select tile, title_sort, title_original -->
+	<yamj3preferedtitletype>title_sort</yamj3preferedtitletype>
 </settings>

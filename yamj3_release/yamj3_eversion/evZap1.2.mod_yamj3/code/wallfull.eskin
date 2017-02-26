@@ -47,7 +47,7 @@
 			</image>
 			<text>
 				<name>textthumbnail</name>
-				<display>[:title:]</display>
+				<display>[:sorttitle:]</display>
 				<posx>13</posx>
 				<posy>14.5</posy>
 				<width>125</width>

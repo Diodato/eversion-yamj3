@@ -441,6 +441,8 @@ class ev.EVSettings {
 			Common.evSettings.yamj3librarypaths="";
 		if(Common.evSettings.yamj3playerpaths==null || Common.evSettings.yamj3playerpaths==undefined)
 			Common.evSettings.yamj3playerpaths="";
+		if(Common.evSettings.yamj3preferedtitletype==null || Common.evSettings.yamj3preferedtitletype==undefined)
+			Common.evSettings.yamj3preferedtitletype="title";
 		
 	}
 

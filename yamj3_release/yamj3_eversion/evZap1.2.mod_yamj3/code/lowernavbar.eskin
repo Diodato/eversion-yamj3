@@ -56,7 +56,7 @@
 		<name>title</name>
 		<condition>[:year:] != </condition>
 		<segname>index</segname>
-		<display>[:title,upper,unknown:] ([:year:])</display>
+		<display>[:sorttitle,upper,unknown:] ([:year:])</display>
 		<posx>250</posx>
 		<posy>680</posy>
 		<width>750</width>

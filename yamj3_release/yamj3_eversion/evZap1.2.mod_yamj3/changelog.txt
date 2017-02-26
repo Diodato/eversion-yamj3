@@ -1,3 +1,5 @@
+v6.1
+- modify lowernavbar.eskin and wallfull.eskin to use :sorttitle: 
 v6.0
 - modify mod implement yamjv3
 - change eskin name to evZap1.2_mod_yamj3
