@@ -1043,6 +1043,9 @@ class api.dataYAMJ3 {
 	private function getIndex(callBack:Function):Void {
 		trace ("dataYAMJ3 function getIndex");
 		var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
+		var yamj3newdaysmovie:String = ev.Common.evSettings["yamj3newdaysmovie"];
+		var yamj3newdaystv:String = ev.Common.evSettings["yamj3newdaystv"];
+		var yamj3newdaysvideo:String = ev.Common.evSettings["yamj3newdaysvideo"];
 		var yamj3preferedtitletype = ev.Common.evSettings["yamj3preferedtitletype"];
 		var title_sort:String = "title";
 		
@@ -1135,10 +1138,10 @@ class api.dataYAMJ3 {
 						break;
 					case "New-Movies" :
 					case "New-MOVIES" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-80-file", callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-" + yamj3newdaysmovie + "-file", callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "New-TV" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-80-file", callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-" + yamj3newdaystv + "-file", callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "TV Shows" :
 						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
@@ -1147,7 +1150,7 @@ class api.dataYAMJ3 {
 						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "New" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-80-file", callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-" + yamj3newdaysvideo + "-file", callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "3D" :
 						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&include=videosource-3D&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
@@ -1201,7 +1204,17 @@ class api.dataYAMJ3 {
 				}
 			}
 			else if (jsonData["status"]["status"] == 404)
-				callBack(null, "YAMJ3 onGetIndex_getDetails : "+jsonData["status"]["message"]+" for " + this.indexCategory);
+			{
+				switch (this.indexCategory) {
+					case "New" :
+					case "New-Movies" :
+					case "New-MOVIES" :
+					case "New-TV" :
+							callBack(jsonData["results"],this.indexCategory,"",0,0,"");
+					default: 
+							callBack(null, "YAMJ3 onGetIndex_getDetails : "+jsonData["status"]["message"]+" for " + this.indexCategory);
+				}
+			}
 		}
 		else
 			callBack(null, "YAMJ3 onGetIndex_getDetails DB access for getIndexInfo/getData error");

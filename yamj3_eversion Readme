@@ -1,4 +1,4 @@
-This is a quick and dirty port of eversion R0179 for YAMJ3 and eversion version is R3001
+This is a quick and dirty port of eversion R0179 for YAMJ3 and eversion version is R3003
 Manual Installation:
 --------------------
 If you already have a Jukebox :
@@ -37,9 +37,9 @@ note for translation paths:
 	<yamj3playerpaths>file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO/video/Film  , file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO2/video/Series</yamj3playerpaths>
 in this exemple Film and Series are stored on 2 network_share SYNO and SYNO2 
 
-d)	eversion version is R3002
+d)	eversion version is R3003
 	adjust inside jukebox/erversion/settings/esettings.xml (create this file if it doesn't exists)
-	<eversion>R3002</eversion>
+	<eversion>R3003</eversion>
 e) add a new paramter which allow eversion to call title , title_sort, title_original 
 	<yamj3preferedtitletype>title</yamj3preferedtitletype>
 	this parameter is used in the yamj3 API to sort he title depneding of the title type choosen, it's also used the fetch movie by letter 
@@ -50,7 +50,14 @@ e) add a new paramter which allow eversion to call title , title_sort, title_ori
 	with title_original parameter "the walking dead" will be found under T
 	
 	this independant of the [:originaltitle:] or [:sorttitle:] used in the eskin , which is used to display title, title_sort, title_original and doesn't chnage the sort option used in eversion_yamj3
-
+f) add new value to select the number of days for new TV and movie, movie only, TV only 
+	<yamj3newdaysvideo>80</yamj3newdaysvideo>
+	this value to select the number of days for new TV and movie
+	<yamj3newdaysmovie>80</yamj3newdaysmovie>
+	this value to select the number of days for new movies, this value overwrite the newdaysvideo only for movie search 
+	<yamj3newdaystv>80</yamj3newdaystv>
+	this value to select the number of days for new TV, this value overwrite the newdaysvideo only for TV search 
+	
 Limitations:
 ------------
 - the YAMJ3 scrapper stores multiple fanart, banners, posters for each mediafile but only the first returned by the server is used 

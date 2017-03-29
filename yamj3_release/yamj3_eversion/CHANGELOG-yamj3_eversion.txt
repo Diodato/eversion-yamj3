@@ -1,4 +1,8 @@
 Yamj3_Eversion Changelog
+V1.7
+- add <yamj3newdaysvideo> default = 80 days, this value to select the number of days for new TV and movie
+- add <yamj3newdaysmovie> default = 80 days, this value to select the number of days for new movies, this value overwrite the newdaysvideo only for movie search 
+- add <yamj3newdaystv> default = 80 days, add this value to select the number of days for new TV, this value overwrite the newdaysvideo only for TV search
 v1.6
 - add yamj3preferedtitletype parameter in eversion esettings-default.xml
 - add :originaltitle: field 
