@@ -8,6 +8,8 @@
 
     <!-- Category types to display for home or menu -->
 	<homelist>Other,Library</homelist>
+	<!-- added to allow to have Set enry in home page of evstreamed -->
+	<userlist>Set</userlist>
 	<menulist>Other,Genres,Title,Library,Year,Rating</menulist>
 
 	<!-- Movie details certification images to use: mpaa, bbfc, csa or germany -->

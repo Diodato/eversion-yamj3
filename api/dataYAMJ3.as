@@ -1043,26 +1043,38 @@ class api.dataYAMJ3 {
 	private function getIndex(callBack:Function):Void {
 		trace ("dataYAMJ3 function getIndex");
 		var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
+		if(yamj3coreurl==null || yamj3coreurl==undefined)
+			{callBack(null, Common.evPrompts.enoindexfilename);}
+			
+		// set new days value , if not setted in esettings then apply default value = 80 days 
 		var yamj3newdaysmovie:String = ev.Common.evSettings["yamj3newdaysmovie"];
 		var yamj3newdaystv:String = ev.Common.evSettings["yamj3newdaystv"];
 		var yamj3newdaysvideo:String = ev.Common.evSettings["yamj3newdaysvideo"];
-		var yamj3preferedtitletype = ev.Common.evSettings["yamj3preferedtitletype"];
-		var title_sort:String = "title";
+		if(yamj3newdaysmovie==null || yamj3newdaysmovie==undefined)
+			{yamj3newdaysmovie = '80';}
+		if(yamj3newdaystv==null || yamj3newdaystv==undefined)
+			{yamj3newdaystv = '80';}
+		if(yamj3newdaysvideo==null || yamj3newdaysvideo==undefined)
+			{yamj3newdaysvideo = '80';}
 		
+		// set title type from essttings value, default is title 
+		var yamj3preferedtitletype = ev.Common.evSettings["yamj3preferedtitletype"];	
+		var title_sort:String = "title";
 		switch(yamj3preferedtitletype) {
 				case "title" :
-				title_sort = "title"
+				title_sort = "title";
 				break;
 				case "title_sort" :
-				title_sort = "sortTitle"
+				title_sort = "sortTitle";
 				break;
 				case "title_original" :
-				title_sort = "originalTitle"
+				title_sort = "originalTitle";
+				break;
+				default:
+				title_sort = "title";
 				break;
 		}
 		trace("dataYAMJ3 function getIndex yamj3preferedtitletype: " + yamj3preferedtitletype + " title_sort: " + title_sort);
-		if(yamj3coreurl==null || yamj3coreurl==undefined)
-			{callBack(null, Common.evPrompts.enoindexfilename);}
 			
 		// specific index based on base Index
 		if (this.baseIndex != "Other")
@@ -1970,7 +1982,7 @@ class api.dataYAMJ3 {
 					}
 					break;
 				case 'rating':
-					itemResult="";
+					itemResult="?";
 					if(titleArr["ratings"][0].rating!=undefined)
 					{
 						var score:Number=Math.round((int(titleArr["ratings"][0].rating)*10)/10);

@@ -115,8 +115,8 @@
 		</remote>	
 		<remote>
 			<button>EQUAL</button>
-			<action>EXTRA</action>	
-			<file>indexinfopopup</file>
+			 <action>PLAYALL</action>	
+	<!--		<file>indexinfopopup</file> -->
 		</remote>			
 		<remote>
 			<button>INFO</button>

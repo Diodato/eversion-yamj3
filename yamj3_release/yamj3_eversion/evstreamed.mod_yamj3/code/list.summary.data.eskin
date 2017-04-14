@@ -71,7 +71,7 @@
 		<name>rating</name>
 		<segname>index</segname>  <!-- segname and hyper are necessary for the lists -->
 		<hyper>2</hyper>
-		<display>[:rating:]/100</display>  <!-- Display the rating found in the XML YAMJ created + "/100" -->
+		<display>[:rating:]</display>  <!-- updated for yamj3 without /100 -->
 		<posx>415</posx>
 		<posy>457</posy>
 		<width>200</width>

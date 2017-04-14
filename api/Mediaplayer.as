@@ -220,15 +220,22 @@ class api.Mediaplayer {
 		// translate library to player paths
 		var libraryPaths:Array=Common.evSettings.yamj3librarypaths.split(",");
 		var playerPaths:Array=Common.evSettings.yamj3playerpaths.split(",");
-		for(var i:Number=0; i<libraryPaths.length; ++i)
-			if(StringUtil.beginsWith(filename, libraryPaths[i]))
+
+		for(var j:Number=0; j<libraryPaths.length; ++j)
+		{
+			var temp_path:String=StringUtil.trim(libraryPaths[j]);
+		//	trace ("translated filename: " + filename + " libraryPaths["+ j + "]: " + libraryPaths[j] + " temp_path:" + temp_path);
+			if(StringUtil.beginsWith(filename, temp_path))
 			{
 				//StringUtil.sub
-				filename = playerPaths[i] + filename.substring(libraryPaths[i].length);
+				filename = StringUtil.trim(playerPaths[j]) + filename.substring(temp_path.length);
 				if(filename.indexOf("\\") != -1)
-					filename = filename.split("\\").join("/");
+					{filename = filename.split("\\").join("/");}
+				trace(".... translated library to player paths: " + filename);
+				// callback ("ERROR", filename);  // just for test stop the player 
 				break;
 			}
+		}
 		// make sure we're ready to go
 		Mediaplayer.resetQueue();
 

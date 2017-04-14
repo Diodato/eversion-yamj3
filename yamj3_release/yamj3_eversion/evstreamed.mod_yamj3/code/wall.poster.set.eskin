@@ -13,14 +13,11 @@
 	<!-- Included eskin files -->
 	<!-- These have been carefully ordered to ensure that they are drawn in the order we want  -->
 	<include>common.upper.underlay</include>
-	<include>common.upper.index</include>
 	<include>global.clock</include>
-	<include>wall.common.mediainfo</include>
-	<include>common.upper.studiologo(index)</include>
 	<include>common.upper.navbar</include>
 	<include>wall.common.lower.underlay</include>
-	<include>wall.common.title</include>
-	<include>common.lower.navbar</include>
+	<include>wall.set.title</include>
+	<include>common.lower.navbar</include> 
 
 	<!-- Draw the thumbnails (3 rows of 8) -->
 	<segment>

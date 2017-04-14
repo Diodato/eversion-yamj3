@@ -1,10 +1,14 @@
 Eversion Changelog
 R3003:
+- add Set in evstreamed eskin
+- fix multi playerpath
+- fix 80 days
+- fix R3003
 - add <yamj3newdaysvideo> default = 80 days, this value to select the number of days for new TV and movie
 - add <yamj3newdaysmovie> default = 80 days, this value to select the number of days for new movies, this value overwrite the newdaysvideo only for movie search 
 - add <yamj3newdaystv> default = 80 days, add this value to select the number of days for new TV, this value overwrite the newdaysvideo only for TV search
 R3002:
-- add yamj3preferedtitletype parameter in esettings-default.xml (avalaible value titel, title_sort, title_original)
+- add yamj3preferedtitletype parameter in esettings-default.xml (avalaible value title, title_sort, title_original)
 R3001:
 - update YAMJ3 support release
 R3000:

@@ -7,11 +7,65 @@
 	******************************************************************-->
 <!-- Actions - See: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:actions  -->	
 
-	<!-- List all the categories defined in \evstreamed\settings-default.xml in the homelist property-->
+	<!-- List all the categories defined in \evstreamed\settings-default.xml in the homelist property -->
 	<insert>
 		<info>homelist</info>
 	</insert>
-
+	<!-- List categories which could added or removed each by each , therefore comment the above general homelist insert and choose  what category you want to display -->
+<!--
+	<item>
+        <name>All</name>
+        <action>SWITCH</action>
+        <title>[:%all:]</title>
+        <originaltitle>all</originaltitle>
+        <data>Other_All_1</data> 
+    </item> 
+	<item>
+        <name>Movies</name>
+        <action>SWITCH</action>
+        <title>[:%movies:]</title>
+        <originaltitle>movies</originaltitle>
+        <data>Other_Movies_1</data>
+    </item>
+	<item>
+        <name>New-TV</name>
+        <action>SWITCH</action>
+        <title>[:%new-tv:]</title>
+        <originaltitle>new-tv</originaltitle>
+        <data>Other_New-TV_1</data>
+    </item>	
+	<item>
+        <name>New-Movies</name>
+        <action>SWITCH</action>
+        <title>[:%new-movies:]</title>
+        <originaltitle>new-movies</originaltitle>
+        <data>Other_New-MOVIES_1</data>
+    </item>	
+	<item>
+        <name>TV shows</name>
+        <action>SWITCH</action>
+        <title>[:%tv-shows:]</title>
+        <originaltitle>TV Shows</originaltitle>
+	    <data>Other_TV Shows_1</data>
+    </item> 
+ <item>
+        <name>3D</name>
+        <action>SWITCH</action>
+        <title>[:%3d:]</title>
+        <originaltitle>3D</originaltitle>
+        <data>Other_3D_1</data>
+    </item> 
+-->
+	<!-- add the set entry need to add userlist in evstreamed property -->
+	<insert>
+        <name>Set</name>
+		<info>userlist</info>
+        <title>[:%set:]</title>
+        <originaltitle>Sets</originaltitle>
+		<action>PRELOAD</action>
+	    <file>wall.poster.set</file>
+	    <data>index</data>       
+	</insert>
 	<!-- Go to trailers -->
 	<item>
 		<action>SWITCH</action>

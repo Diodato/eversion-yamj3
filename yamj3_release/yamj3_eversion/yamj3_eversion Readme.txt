@@ -33,8 +33,8 @@ don't raise too much as eversion can run out of memory.
 note for translation paths:
 	translation could be setted for many libraries , if so separate each of them with ',' and be carefull to set the same order with library and player 
 	b) adjust scanner/player translation paths
-	<yamj3librarypaths>T:\video\Film\ , V:\video\Series\</yamj3librarypaths>
-	<yamj3playerpaths>file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO/video/Film  , file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO2/video/Series</yamj3playerpaths>
+	<yamj3librarypaths>T:\video\Film\,V:\video\Series\</yamj3librarypaths>
+	<yamj3playerpaths>file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO/video/Film/  ,file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO2/video/Series</yamj3playerpaths>
 in this exemple Film and Series are stored on 2 network_share SYNO and SYNO2 
 
 d)	eversion version is R3003
