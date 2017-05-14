@@ -28,7 +28,7 @@
 		<width>1070</width>
 		<height>328</height>
 	</image>
-	
+<!--	
 	<image>
         <name>footerimg</name>
         <segname>index</segname>
@@ -50,7 +50,8 @@
         <height>51</height>
         <hyper>3</hyper>
     </image> 
-	
+-->
+	<include>common.tvmediainfo</include>
 	<text>
 		<name>title</name>
 		<segname>index</segname>
@@ -63,21 +64,31 @@
 		<color>tv.title.color</color>
 		<hyper>2</hyper>
 	</text>	
-	
-	<image>
-		<name>footerepisode</name>
+	<text>
+		<name>titletxt</name>
 		<segname>index</segname>
-		<file>[:@jukebox:][:baseFilename:].footer_episodes.png</file>
+		<display>[:episode:]</display>
 		<posx>115</posx>
 		<posy>178</posy>
 		<width>1080</width>
-		<height>10</height>
+		<height>35</height>
+		<size>30</size>  
+		<color>tv.title.color</color>
+		<hyper>2</hyper>
+	</text>	
+<!--	<image>
+		<name>footerepisode</name>
+		<segname>index</segname>
+		<file>[:@media:]movie/season/[:epcount:].swf</file>
+		<posx>1120</posx>
+		<posy>150</posy>
+		<width>35</width>
 		<keepaspect>true</keepaspect>
 		<haligned>left</haligned>
 		<valigned>center</valigned>
 		<hyper>2</hyper>
 	</image>
-	
+-->	
 	<image>
 		<name>banner</name>
 		<segname>index</segname>

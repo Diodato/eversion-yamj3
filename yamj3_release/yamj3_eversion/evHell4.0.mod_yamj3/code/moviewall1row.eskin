@@ -60,7 +60,7 @@
 		<valigned>center</valigned>
 		<hyper>4</hyper>
 	</image>
-		
+<!--		
 	<image>
         <name>footerimg</name>
         <segname>index</segname>
@@ -82,7 +82,20 @@
         <height>51</height>
         <hyper>4</hyper>
     </image> 
-	
+-->
+	<include>common.tvmediainfo</include>
+
+	<!--
+    <image>
+        <name>footerimghash</name>
+        <file>[:@jukebox:][:baseFilename,cut1,lower,nospaces:]/[:baseFilename,cut2,lower,nospaces:]/[:baseFilename:].footer_posters.png</file>
+		<posx>185</posx>
+		<posy>510</posy>
+		<width>910</width>
+		<height>51</height>
+    </image> 
+	-->
+
 	<text>
 		<name>title</name>
 		<segname>index</segname>
@@ -90,7 +103,7 @@
 		<posx>340</posx>
 		<posy>65</posy>
 		<width>635</width>
-		<height>35</height>
+		<height>38</height>
 		<size>30</size>  
 		<color>wall.title.color</color>
 		<hyper>4</hyper>

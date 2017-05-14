@@ -944,7 +944,7 @@ class ev.Screen {
 					var neweskin:String=command.substr(8);
 					//this.nextScreen=new Screen(this.parentMC, this.fn.onScreenReturn, {kind:"SCREEN",eskin:neweskin,data:data.raw.data});
 					this.onScreenReturn("eskinjump", command, {kind:"SCREEN",eskin:neweskin,aux:data.raw});
-				} else if(StringUtil.endsWith(command, "_1")) {  // JUMP TO INDEX
+				} else if(StringUtil.endsWith(command, "_1") || StringUtil.endsWith(command, "_1_SERIES") || StringUtil.endsWith(command, "_1_MOVIE")) {  // JUMP TO INDEX
 					trace("jump to "+command+" requested");
 					this.onScreenReturn("jumpto", command);
 				} else {

@@ -60,7 +60,7 @@
 		<valigned>center</valigned>
 		<hyper>4</hyper>
 	</image>
-
+<!--
 	<image>
         <name>footerimg</name>
         <segname>index</segname>
@@ -82,7 +82,8 @@
         <height>51</height>
         <hyper>4</hyper>
     </image> 
-
+-->
+	<include>common.mediainfo</include>
 	<text>
 		<name>title</name>
 		<segname>index</segname>

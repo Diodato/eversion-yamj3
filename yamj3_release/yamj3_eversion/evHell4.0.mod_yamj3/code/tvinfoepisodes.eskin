@@ -26,7 +26,7 @@
 		<width>1070</width>
 		<height>328</height>
 	</image>
-
+<!--
 	<image>
         <name>footerimg</name>
         <segname>index</segname>
@@ -46,36 +46,186 @@
         <width>910</width>
         <height>51</height>
     </image> 
-	
+-->
+	<!-- yamj3 : ajout media info , remplace footer_poster -->
+<!--	<text>
+        <name>footertxt</name>
+		<display>[:videosource:] - [:company,lower,nospaces,estrans:] - [:certification:] - [:country:] - [:container:] - [:videocodec:] - [:aspect:] - [:audiocodec,nospaces:] - [:audiochannels:] - [:subtitles,lower:] - [:fps:] - [:runtime:]</display>
+		<posx>185</posx>
+		<posy>480</posy>
+		<width>910</width>
+		<height>51</height>		
+    </text>
+-->
+
+	<image>
+        <name>videosourceimg</name>
+        <file>[:@media:]purity/videosource/videosource_[:videosource,lower:].swf</file> 
+		<posx>195</posx>
+		<posy>420</posy>
+		<width>60</width>
+		<height>51</height>
+    </image>
+	<text>
+        <name>nocompanyxt</name>
+		<display> _ </display>
+		<posx>280</posx>
+		<posy>430</posy>
+		<width>40</width>
+		<height>51</height>
+    </text>	
+	<image>
+        <name>companyimg</name>
+        <file>[:@media:]purity/company/[:company,lower,nospaces,estrans:]</file> 
+		<posx>255</posx>
+		<posy>420</posy>
+		<width>80</width>
+		<height>51</height>
+    </image> 
+	<image>
+        <name>certificationimg</name>
+        <file>[:@media:]categories/certification/[:flagcertification,cut2,lower,nospaces:]/[:flagcertification,slice3,lower:].swf</file> 
+		<posx>345</posx>
+		<posy>426</posy>
+		<width>40</width>
+		<height>40</height>
+    </image> 
+	<image>
+        <name>countryimg</name>
+        <file>[:@media:]purity/flags/[:country,lower:].png</file> 
+		<posx>410</posx>
+		<posy>424</posy>
+		<width>45</width>
+		<height>45</height>
+    </image>  
+	<image>
+        <name>containerimg</name>
+        <file>[:@media:]purity/container/container_[:container,lower:].swf</file> 
+		<posx>465</posx>
+		<posy>423</posy>
+		<width>60</width>
+		<height>45</height>
+    </image>
+	<image>
+        <name>videocodecimg</name>
+        <file>[:@media:]purity/videocodec/vidcod_[:videocodec,lower:].swf</file> 
+		<posx>530</posx>
+		<posy>423</posy>
+		<width>60</width>
+		<height>45</height>
+    </image>
+	<image>
+        <name>aspectimg</name>
+        <file>[:@media:]purity/aspect/aspect_[:aspect,lower:].swf</file> 
+		<posx>600</posx>
+		<posy>423</posy>
+		<width>65</width>
+		<height>45</height>
+    </image>
+	<image>
+        <name>audiocodecimg</name>
+        <file>[:@media:]purity/audiocodec/audcod_[:audiocodec,lower,nospaces:].swf</file> 
+		<posx>675</posx>
+		<posy>423</posy>
+		<width>60</width>
+		<height>45</height>
+    </image>
+	<image>
+        <name>channelimg</name>
+        <file>[:@media:]purity/channel/audch_[:audiochannels,lower:].swf</file> 
+		<posx>745</posx>
+		<posy>423</posy>
+		<width>65</width>
+		<height>45</height>
+    </image>
+	<text>
+        <name>subtxt</name>
+		<display>[:%subtitle:]</display>
+		<posx>810</posx>
+		<posy>420</posy>
+		<width>90</width>
+		<height>51</height>
+    </text>
+	<text>
+        <name>nosubtxt</name>
+		<display> _ </display>
+		<posx>835</posx>
+		<posy>430</posy>
+		<width>40</width>
+		<height>51</height>
+    </text>
+	<image>
+        <name>subimg</name>
+		<condition>[:subtitles,lower:] != no</condition>
+        <file>[:@media:]purity/flags/[:subtitles,lower:].png</file> 
+		<posx>830</posx>
+		<posy>440</posy>
+		<width>35</width>
+		<height>25</height>
+    </image>
+	<image>
+        <name>fpsimg</name>
+        <file>[:@media:]purity/fps/fps_[:fps,lower:].swf</file> 
+		<posx>900</posx>
+		<posy>423</posy>
+		<width>65</width>
+		<height>45</height>
+    </image>
+	<text>
+        <name>runtimelabel</name>
+		<display>[:%runtime:]</display>
+		<posx>985</posx>
+		<posy>420</posy>
+		<width>90</width>
+		<height>51</height>
+    </text>
+	<text>
+        <name>runtimetxt</name>
+		<display>[:runtime,1,trun55,blank:]</display>
+		<posx>980</posx>
+		<posy>440</posy>
+		<width>90</width>
+		<height>51</height>
+    </text>	
+<!-- fin ajout mediainfo --> 
 	<text>
 		<name>title</name>
 		<display>[:title,trun47,blank:]</display>
 		<posx>115</posx>
 		<posy>145</posy>
 		<width>622</width>
-		<height>35</height>
+		<height>38</height>
 		<size>30</size>  
 		<color>tv.title.color</color>
 	</text>	
-	
-	<image>
+	<text>
+		<name>txtepisodecount</name>
+		<display>[:epcount:]</display>
+		<posx>1120</posx>
+		<posy>150</posy>
+		<width>100</width>
+		<height>38</height>
+		<size>30</size>  
+		<color>tv.title.color</color>
+	</text>	
+<!--	<image>
 		<name>footerepisode</name>
-		<file>[:@jukebox:][:baseFilename:].footer_episodes.png</file>
-		<posx>115</posx>
-		<posy>178</posy>
-		<width>1080</width>
-<!-- 	<height>10</height>  -->
+		<condition>[:epcount:] &lt 6 </condition>
+		<file>[:@media:]movie/season/[:epcount:].swf</file>
+		<posx>1120</posx>
+		<posy>150</posy>
+		<width>35</width>
 		<keepaspect>true</keepaspect>
 		<haligned>left</haligned>
 		<valigned>center</valigned>
-	</image>
+	</image>-->
 	
 	<image>
 		<name>banner</name>
 		<file>[:@jukebox:][:banner1medium:]</file>
 		<swap>true</swap>
 		<posx>630</posx>
-		<posy>46</posy>
+		<posy>25</posy>
 		<width>619</width>
 <!-- 	<height>128</height> --> 	
 		<keepaspect>true</keepaspect>
@@ -139,7 +289,7 @@
 	</text>
 	<text>
 		<name>director</name>
-		<display>[:directors,3,blank:]</display>
+		<display>[:directors,3,trun40,blank:]</display>
 		<posx>280</posx>
 		<posy>205</posy>
 		<width>422</width>
@@ -160,7 +310,7 @@
 	</text>	
 	<text>
 		<name>writer</name>
-		<display>[:person-Writer-1-name,unknown:]&#xd;[:person-Writer-2-name,blank:]</display>
+		<display>[:person-Writer-1-name,unknown:] [:person-Writer-2-name,blank:]</display>
 		<posx>805</posx>
 		<posy>205</posy>
 		<width>422</width>
@@ -181,7 +331,7 @@
 	</text>	
 	<image>
 		<name>rating_image</name>
-		<condition>[:score:] != UNKNOWN</condition>
+		<condition>[:score:] != UNKNOWN || != NaN</condition>
 		<segname>eplist</segname>
 		<file>[:@media:]common/star/star[:score,round,blank:].swf</file>
 		<posx>280</posx>

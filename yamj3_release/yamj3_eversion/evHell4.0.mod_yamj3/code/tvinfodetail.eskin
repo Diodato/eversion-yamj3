@@ -23,7 +23,7 @@
 		<display>[:%language:]</display>
 		<posx>15</posx>
 		<posy>565</posy>
-		<width>100</width>
+		<width>200</width>
 		<height>25</height>
 		<size>17</size>  
 		<color>movie.label.color</color>
@@ -31,10 +31,10 @@
 	
 	<image>
 		<name>footeraudiolanguages</name>
-		<file>[:@jukebox:][:baseFilename:].footer_audiolanguages.png</file>
+		<file>[:@media:]purity/flags/[:audiocodeclanguagecode,lower:].png</file>
 		<posx>115</posx>
 		<posy>555</posy>
-		<width>751</width>
+		<width>51</width>
 		<height>51</height>
 	</image>
 	
@@ -43,7 +43,7 @@
 		<display>[:%audiocodec:]</display>
 		<posx>15</posx>
 		<posy>616</posy>
-		<width>100</width>
+		<width>200</width>
 		<height>25</height>
 		<size>17</size>  
 		<color>movie.label.color</color>
@@ -51,10 +51,10 @@
 	
 	<image>
 		<name>footeraudiocodecs</name>
-		<file>[:@jukebox:][:baseFilename:].footer_audiocodecs.png</file>
+		<file>[:@media:]purity/audiocodec/audcod_[:audiocodec,lower:].swf</file>
 		<posx>115</posx>
 		<posy>606</posy>
-		<width>751</width>
+		<width>70</width>
 		<height>51</height>
 	</image>
 	
@@ -63,7 +63,7 @@
 		<display>[:%channels:]</display>
 		<posx>15</posx>
 		<posy>667</posy>
-		<width>100</width>
+		<width>200</width>
 		<height>25</height>
 		<size>17</size>  
 		<color>movie.label.color</color>
@@ -71,10 +71,10 @@
 
 	<image>
 		<name>footeraudiochannels</name>
-		<file>[:@jukebox:][:baseFilename:].footer_audiochannels.png</file>
-		<posx>115</posx>
+		<file>[:@media:]purity/channel/audch_[:audiochannels,lower:].swf</file>
+		<posx>105</posx>
 		<posy>657</posy>
-		<width>751</width>
+		<width>81</width>
 		<height>51</height>
 	</image>	
 
@@ -83,7 +83,7 @@
 		<display>[:%subtitles:]</display>
 		<posx>655</posx>
 		<posy>565</posy>
-		<width>100</width>
+		<width>200</width>
 		<height>25</height>
 		<size>17</size>  
 		<color>movie.label.color</color>
@@ -91,41 +91,41 @@
 
 	<image>
 		<name>footersubtitle</name>
-		<file>[:@jukebox:][:baseFilename:].footer_subtitles.png</file>
+		<file>[:@media:]purity/flags/[:subtitles,lower:].png</file>
 		<posx>755</posx>
 		<posy>555</posy>
-		<width>751</width>
+		<width>51</width>
 		<height>51</height>
 	</image>
-	
+
 	<text>
 		<name>company_prompt</name>
-		<display>[:$company:]</display>
+		<display>[:$company:]: [:company:]</display>
 		<posx>655</posx>
 		<posy>616</posy>
-		<width>100</width>
+		<width>200</width>
 		<height>25</height>
 		<size>17</size>  
 		<color>movie.label.color</color>
 	</text>
-	<image>
+<!--	<image>
 		<name>imgfooter_companies</name>
 		<file>[:@eskin:]evhell_overlay/resources/company/[:company,nospaces,lower:].png</file>
 		<posx>755</posx>
 		<posy>606</posy>
-<!-- 	<width>751</width> -->
+		<width>751</width> 
 		<height>51</height>
 		<keepaspect>true</keepaspect>
 		<haligned>center</haligned>
 		<valigned>top</valigned>
 	</image>	
-
+-->
 	<text>
 		<name>country_prompt</name>
 		<display>[:$country:]</display>
 		<posx>655</posx>
 		<posy>667</posy>
-		<width>100</width>
+		<width>200</width>
 		<height>25</height>
 		<size>17</size>  
 		<color>movie.label.color</color>
@@ -133,10 +133,10 @@
 	
 	<image>
 		<name>imgfooter_countries</name>
-		<file>[:@jukebox:][:baseFilename:].footer_countries.png</file>
+		<file>[:@media:]purity/flags/[:country,lower:].png</file>
 		<posx>755</posx>
 		<posy>657</posy>
-		<width>751</width>
+		<width>51</width>
 		<height>51</height>
 	</image>	
 	

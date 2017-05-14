@@ -27,7 +27,7 @@
 		<height>328</height>
 	</image>
 	
-	<image>
+<!--	<image>
         <name>footerimg</name>
         <segname>index</segname>
         <file>[:@jukebox:][:baseFilename:].footer_posters.png</file>
@@ -49,7 +49,8 @@
         <hyper>3</hyper>
     </image> 
 	
-	
+-->
+	<include>common.tvmediainfo</include>
 	
 	<text>
 		<name>title</name>
@@ -58,11 +59,11 @@
 		<posx>115</posx>
 		<posy>145</posy>
 		<width>622</width>
-		<height>35</height>
+		<height>38</height>
 		<size>30</size>  
 		<color>tv.title.color</color>
 	</text>	
-	
+<!--	
 	<image>
 		<name>footerepisode</name>
 		<segname>index</segname>
@@ -76,14 +77,14 @@
 		<valigned>center</valigned>
 		<hyper>3</hyper>
 	</image>
-	
+-->	
 	<image>
 		<name>banner</name>
 		<segname>index</segname>
 		<file>[:@jukebox:][:banner1medium:]</file>
 		<swap>true</swap>
 		<posx>630</posx>
-		<posy>46</posy>
+		<posy>28</posy>
 		<width>619</width>
 <!-- 	<height>128</height> -->
 		<keepaspect>true</keepaspect>
@@ -152,7 +153,7 @@
 	<text>
 		<name>director</name>
 		<segname>index</segname>
-		<display>[:directors,3,blank:]</display>
+		<display>[:directors,3,trun40,blank:]</display>
 		<posx>280</posx>
 		<posy>205</posy>
 		<width>422</width>

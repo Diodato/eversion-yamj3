@@ -1,4 +1,6 @@
-﻿// Eversion, the flash interface for YAMJ on the Syabas Embedded Players
+﻿
+
+// Eversion, the flash interface for YAMJ on the Syabas Embedded Players
 // Copyright (C) 2012  Bryan Socha, aka Accident
 // Copyright (C) 2015  Diodato
 
@@ -52,7 +54,6 @@ class api.dataYAMJ3 {
 	private var tmpJsonDataPerson=null;
 	private var tmpJsonDataPerson2=null;
 	private var tmpJsonDataPersonSeries=null;
-	
 	private var alphabetic:String="abcdefghijklmnopqrstuvwxyz";
 	
 	
@@ -900,7 +901,8 @@ class api.dataYAMJ3 {
 			this.indexOriginalName=this.indexCategory;
 			this.currentChunk=int(tmp[2]);
 			this.yamj3Id=int(tmp[3]);
-		 // trace( "getIndexInfo url:" + url + " baseIndex: " + tmp[0] + " indexCategory: " + tmp[1] + " currentChunk: " + tmp[2] + " yamj3Id: " + tmp[3]);
+			
+		  trace( "getIndexInfo before treat url:" + url + " baseIndex: " + tmp[0] + " indexCategory: " + tmp[1] + " currentChunk: " + tmp[2] + " yamj3Id: " + tmp[3]);
 		
 		if (url.indexOf("Set") != -1 ) 
 			{
@@ -1023,7 +1025,7 @@ class api.dataYAMJ3 {
 		}
 		//	this.indexName=this.indexCategory;
 		//  callBack(null, "getIndexInfo url:" + url + " baseIndex: " + tmp[0] + " indexCategory: " + tmp[1] + " currentChunk: " + tmp[2] + " yamj3Id: " + tmp[3]);
-			trace( "YAMJ3 getIndexInfo url:" + url + " baseIndex: " + this.baseIndex + " indexCategory: " + this.indexCategory + " currentChunk: " + this.currentChunk + " yamj3Id: " + this.yamj3Id);
+			trace( "YAMJ3 getIndexInfo after treat url:" + url + " baseIndex: " + this.baseIndex + " indexCategory: " + this.indexCategory + " currentChunk: " + this.currentChunk + " yamj3Id: " + this.yamj3Id);
 		
 		this.infoProcessing=true;
 			getIndex(callBack);
@@ -1212,7 +1214,7 @@ class api.dataYAMJ3 {
 				this.getDetailsCount=len;
 				this.tmpJsonData=jsonData;
 				for(var i=0;i<len;++i) {
-					getDetailsSeasons(i, callBack);
+					this.getDetailsSeasons(i, callBack);
 				}
 			}
 			else if (jsonData["status"]["status"] == 404)
@@ -1238,26 +1240,27 @@ class api.dataYAMJ3 {
 		var i=Number(passthroughData);
 		if (this.baseIndex === "Person")
 		{
-	//	callBack(null, "YAMJ3 getDetailsSeasons this.tmpJsonDataPerson[i]['type']" + this.tmpJsonDataPerson[i]["type"] + " this.baseIndex " + this.baseIndex);
+	//	callBack(null, "YAMJ3 function getDetailsSeasons this.tmpJsonDataPerson["+i+"]['type']: " + this.tmpJsonDataPerson[i]["type"] + " this.baseIndex " + this.baseIndex);
+		trace("dataYAMJ3 function getDetailsSeasons this.tmpJsonDataPerson["+ i + "]['type']: " + this.tmpJsonDataPerson[i]["type"] + " this.baseIndex " + this.baseIndex);
 			if (this.tmpJsonDataPerson[i]["type"] == "SERIES") 
 			{
-				getDataYAMJ3(yamj3coreurl + "api/video/seriesinfo.json?id=" + this.tmpJsonDataPerson[i]["seriesId"] + "&dataitems=status,plot,outline,artwork,rating,certification&artwork=all", callBack, passthroughData, this.fn.onGetDetailsSeasons);
+				this.getDataYAMJ3(yamj3coreurl + "api/video/seriesinfo.json?id=" + this.tmpJsonDataPerson[i]["seriesId"] + "&dataitems=status,plot,outline,artwork,rating,certification&artwork=all", callBack, passthroughData, this.fn.onGetDetailsSeasons);
 				return;
 			}
-			onGetDetailsSeasons(true, null, callBack, passthroughData);
+			this.onGetDetailsSeasons(true, null, callBack, passthroughData);
 		}
 		else if(this.tmpJsonData["results"][i]["videoType"] == "SERIES")
-			{getDataYAMJ3(yamj3coreurl + "api/video/seriesinfo.json?id=" + this.tmpJsonData["results"][i]["id"] + "&dataitems=status,plot,outline,artwork,rating,certification&artwork=all", callBack, passthroughData, this.fn.onGetDetailsSeasons);}
+			{this.getDataYAMJ3(yamj3coreurl + "api/video/seriesinfo.json?id=" + this.tmpJsonData["results"][i]["id"] + "&dataitems=status,plot,outline,artwork,rating,certification&artwork=all", callBack, passthroughData, this.fn.onGetDetailsSeasons);}
 		else
 			{
 	//	if (this.baseIndex === "Person") {	callBack(null, "YAMJ3 getDetailsSeasons this.tmpJsonDataPerson[i]['type']" + this.tmpJsonDataPerson[i]["type"] + " this.baseIndex " + this.baseIndex);}
-				onGetDetailsSeasons(true, null, callBack, passthroughData);
+				this.onGetDetailsSeasons(true, null, callBack, passthroughData);
 				
 			}
 	}
 
 	private function onGetDetailsSeasons(success:Boolean, jsonData:Object, callBack:Function, passthroughData:Object) {
-		trace("dataYAMJ3 function onGetDetailsSeasons baseIndex " + this.baseIndex);
+		trace("dataYAMJ3 function onGetDetailsSeasons baseIndex " + this.baseIndex + " i=" + Number(passthroughData));
 		var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
 		var i=Number(passthroughData);
 		var yamj3preferedtitletype = ev.Common.evSettings["yamj3preferedtitletype"];
@@ -1274,46 +1277,61 @@ class api.dataYAMJ3 {
 				title_sort = "originalTitle"
 				break;
 		}
-		trace("dataYAMJ3 function onGetDetailsSeasons yamj3preferedtitletype: " + yamj3preferedtitletype + " title_sort: " + title_sort);
+		trace("dataYAMJ3 function onGetDetailsSeasons yamj3preferedtitletype: " + yamj3preferedtitletype + " title_sort: " + title_sort + " i=" + Number(passthroughData));
 		if(success && jsonData!=null)
 		{
 			if (this.baseIndex === "Person")
 			{
-				if (i === 0) 
+				if (i === 0 || this.tmpJsonDataPersonSeries == undefined) 
 				{
 					var __reg7 = new Array();
 					this.tmpJsonDataPersonSeries = {results: __reg7};
-					this.tmpJsonDataPersonSeries[i] = jsonData["results"][0];
-					trace("onGetDetailsSeasons this.tmpJsonDataPersonSeries[i].results[0].seasonList[0].sortTitle" + this.tmpJsonDataPersonSeries[i]["seasonList"][0]["sortTitle"]);
-				
-				//	callBack(null, "YAMJ3 onGetDetailsSeasons this.tmpJsonDataPersonSeries[i].results[0].seasonList[0].sortTitle" + this.tmpJsonDataPersonSeries[i]["seasonList"][0]["sortTitle"]);
+					trace("dataYAMJ3 function onGetDetailsSeasons this.tmpJsonDataPersonSeries : undefined or i=" +i);
+					this.tmpJsonDataPersonSeries["results"][i] = jsonData["results"][0];
+					trace("dataYAMJ3 function onGetDetailsSeasons jsonData['results'].length :" +jsonData["results"].length + " i=" + Number(passthroughData));					
+				//	callBack(null, "YAMJ3 onGetDetailsSeasons this.tmpJsonDataPersonSeries[i].results[0].seasonList[0].sortTitle: " + this.tmpJsonDataPersonSeries[i]["seasonList"][0]["sortTitle"]);
+				}
+			
+				else if (this.tmpJsonDataPersonSeries[i] == undefined)
+				{
+							trace("dataYAMJ3 function onGetDetailsSeasons this.tmpJsonDataPersonSeries[" +i +"] undefined" + " i=" + Number(passthroughData));
+							var __reg7 = new Array();
+							this.tmpJsonDataPersonSeries[i] = {results: __reg7};
+							this.tmpJsonDataPersonSeries["results"][i] = jsonData["results"][0];
 				}
 			}
-			else 
-			{this.tmpJsonData["results"][i]["seasonList"] = jsonData["results"][0]["seasonList"];}
+			this.tmpJsonDataPersonSeries["results"][i] = jsonData["results"][0];
+					if (this.tmpJsonDataPerson[i].type != "MOVIE") 
+						this.tmpJsonData["results"][i]["seasonList"] = jsonData["results"][0]["seasonList"];
+						trace("dataYAMJ3 function onGetDetailsSeasons this.tmpJsonDataPersonSeries["+i+"].results[0].seasonList[0].title: " + this.tmpJsonDataPersonSeries[i]["seasonList"][0]["title"] + " i=" + Number(passthroughData));
+				
+			
+			trace("dataYAMJ3 function onGetDetailsSeasons this.tmpJsonDataPersonSeries['results'].length :" +this.tmpJsonDataPersonSeries["results"].length + " i=" + Number(passthroughData));
+
+				
 		}
 		if (this.baseIndex === "Person")
 			{
 			 //  if (this.tmpJsonDataPerson[i]["videodataId"] === "undefined" || this.tmpJsonDataPerson[i]["seriesId"] === "undefined") {return;}
 			   if (this.tmpJsonDataPerson[i]["type"] === "MOVIE") 
 					{
-						trace ("onGetDetailsSeasons this.tmpJsonDataPerson[i].videodataId" + this.tmpJsonDataPerson[i].videodataId + " this.tmpJsonDataPerson[i].type: " + this.tmpJsonDataPerson[i].type);
-					//	 callBack(null, "YAMJ3 onGetDetailsSeasons this.tmpJsonDataPerson[i].videodataId" + this.tmpJsonDataPerson[i].videodataId + " this.tmpJsonDataPerson[i].type: " + this.tmpJsonDataPerson[i].type);
-						getDataYAMJ3(yamj3coreurl + "api/video/movie/" + this.tmpJsonDataPerson[i]["videodataId"]+ ".json?dataitems=status,plot,genre,files,rating,certification,studio,country,artwork,award&artwork=poster,fanart&sortby=" + title_sort , callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
+						trace ("dataYAMJ3 function onGetDetailsSeasons this.tmpJsonDataPerson["+i+"].videodataId: " + this.tmpJsonDataPerson[i].videodataId + " this.tmpJsonDataPerson[i].type: " + this.tmpJsonDataPerson[i].type + " i=" + Number(passthroughData));
+					//	 callBack(null, "YAMJ3 onGetDetailsSeasons this.tmpJsonDataPerson["+i+"].videodataId: " + this.tmpJsonDataPerson[i].videodataId + " this.tmpJsonDataPerson[i].type: " + this.tmpJsonDataPerson[i].type);
+						this.getDataYAMJ3(yamj3coreurl + "api/video/movie/" + this.tmpJsonDataPerson[i]["videodataId"]+ ".json?dataitems=status,plot,genre,files,rating,certification,studio,country,artwork,award&artwork=poster,fanart&sortby=" + title_sort , callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
 						return;
 					}
 			   else if (this.tmpJsonDataPerson[i].type === "SERIES")
 					{
-						trace ( "onGetDetailsSeasons this.tmpJsonDataPerson[i].seriesId" + this.tmpJsonDataPerson[i].seriesId + " this.tmpJsonDataPerson[i].type: " + this.tmpJsonDataPerson[i].type);
+						trace ( "dataYAMJ3 function onGetDetailsSeasons this.tmpJsonDataPerson["+i+"].seriesId: " + this.tmpJsonDataPerson[i].seriesId + " this.tmpJsonDataPerson[i].type: " + this.tmpJsonDataPerson[i].type + " i=" + Number(passthroughData));
 					//	 callBack(null, "YAMJ3 onGetDetailsSeasons this.tmpJsonDataPerson[i].seriesId" + this.tmpJsonDataPerson[__reg2].seriesId + " this.tmpJsonDataPerson[i].type: " + this.tmpJsonDataPerson[i].type);
-						getDataYAMJ3(yamj3coreurl + "api/video/series/" + this.tmpJsonDataPerson[i]["seriesId"] + ".json?dataitems=status,genre,files,rating,certification,studio,country,artwork&artwork=all&sortby=" + title_sort , callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
+						this.getDataYAMJ3(yamj3coreurl + "api/video/series/" + this.tmpJsonDataPerson[i]["seriesId"] + ".json?dataitems=status,genre,files,rating,certification,studio,country,artwork&artwork=all&sortby=" + title_sort , callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
 						return;
 					}
 				return;
 			}
 		else if(this.tmpJsonData["results"][i]["genreCount"]==0 || this.tmpJsonData["results"][i]["genreCount"]==undefined)
 		{	
-			trace("dataYAMJ3 function onGetDetailsSeasons this.tmpJsonData['results'][" + i + "]['videoType']" + this.tmpJsonData["results"][i]["videoType"]);
+			trace("dataYAMJ3 function onGetDetailsSeasons this.tmpJsonData['results'][" + i + "]['videoType']" + this.tmpJsonData["results"][i]["videoType"] + " i=" + Number(passthroughData));
 			switch(this.tmpJsonData["results"][i]["videoType"]) {
 				case 'MOVIE':
 					getDataYAMJ3(yamj3coreurl+"api/video/movie/"+this.tmpJsonData["results"][i]["id"]+".json?dataitems=status,genre,files,rating,studio,country,certification,award,artwork&artwork=all", callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
@@ -1344,15 +1362,32 @@ class api.dataYAMJ3 {
 			var i=Number(passthroughData);
 			if (this.baseIndex === "Person")
 			{
-				if (i === 0) 
+				if (i === 0 || this.tmpJsonData == undefined) 
 				{
+					trace("dataYAMJ3 function onGetDetailsGenresFiles inside Person this.tmpJsonData undefined or i=" + i  );
 					var __reg7 = new Array();
 					this.tmpJsonData = {totalCount: this.getDetailsCount, results: __reg7};
 				}
+				if (this.tmpJsonData["results"][i] == undefined) 
+				{
+					trace("dataYAMJ3 function onGetDetailsGenresFiles inside Person this.tmpJsonData[results][" + i  +  "] undefined");
+					var __reg7 = new Array();
+					this.tmpJsonData["results"][i] = {results: __reg7};
+				}
 			this.tmpJsonData["results"][i] = jsonData["result"];
+			trace("dataYAMJ3 function onGetDetailsGenresFiles inside Person this.tmpJsonData['results'][" + i + "]['videoType'] : " +this.tmpJsonData["results"][i]["videoType"] );
 			if (this.tmpJsonData["results"][i]["videoType"] === "SERIES")
 			{
-				this.tmpJsonData["results"][i]["seasonList"] = this.tmpJsonDataPersonSeries[i]["seasonList"] ;
+				trace("dataYAMJ3 function onGetDetailsGenresFiles inside Person and SERIES this.tmpJsonDataPersonSeries[results].length : " +this.tmpJsonDataPersonSeries["results"].length );
+				this.tmpJsonData["results"][i]["seasonList"] = this.tmpJsonDataPersonSeries["results"][i]["seasonList"] ;
+				
+					for(var j=0;j<i+1;++j) {
+					trace("dataYAMJ3 function onGetDetailsGenresFiles inside Person and SERIES this.tmpJsonData['results'][" + j + "]['seasonList'].length : " +this.tmpJsonData["results"][j]["seasonList"].length );
+					trace("dataYAMJ3 function onGetDetailsGenresFiles inside Person and SERIES this.tmpJsonDataPersonSeries['results'][" + j + "]['seasonList'].length : " + this.tmpJsonDataPersonSeries["results"][j]["seasonList"].length );
+					
+					}
+			
+			//	else {trace("dataYAMJ3 function onGetDetailsGenresFiles inside Person and SERIES this.tmpJsonData['results'][" + i + "]['seasonList'].length : " +this.tmpJsonData["results"][i]["seasonList"].length );}
 			}
 		//	callBack(null, "YAMJ3 reg3: " + i + " onGetDetailsGenresFiles this.tmpJsonData.results[i].seasonList[0].sortTitle" + this.tmpJsonData.results[i].seasonList[0].sortTitle );
 		//	callBack(null, "YAMJ3 reg3: " + i + " onGetDetailsGenresFiles this.tmpJsonData.results[i].id" + this.tmpJsonData.results[i].id );
@@ -1364,6 +1399,7 @@ class api.dataYAMJ3 {
 			this.tmpJsonData["results"][i]["ratings"]=jsonData["result"]["ratings"];
 			this.tmpJsonData["results"][i]["studios"]=jsonData["result"]["studios"];
 			this.tmpJsonData["results"][i]["countries"]=jsonData["result"]["countries"];
+			this.tmpJsonData["results"][i]["certifications"]=jsonData["result"]["certifications"];
 			}
 		}
 		var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
@@ -1372,7 +1408,7 @@ class api.dataYAMJ3 {
 		{
 			if (this.tmpJsonData["results"][i]["videoType"] === "MOVIE")
 				{
-				trace("onGetDetailsGenresFiles i: " + i + " this.tmpJsonData.results[i].id" + this.tmpJsonData["results"][i]["id"]);
+				trace("dataYAMJ3 function onGetDetailsGenresFiles baseIndex: Person i: " + i + " this.tmpJsonData.results[i].id: " + this.tmpJsonData["results"][i]["id"]);
 					this.getDataYAMJ3(yamj3coreurl + "api/person/movie.json?id=" + this.tmpJsonData["results"][i]["id"] + "&dataitems=status,artwork", callBack, passthroughData, this.fn.onGetDetailsPeople);
 					return;
 				}
@@ -1386,12 +1422,12 @@ class api.dataYAMJ3 {
 		//	callBack(null, "onGetDetailsGenresFiles reg3: " + __reg3 + " onGetDetailsGenresFiles this.tmpJsonData.results[__reg3].id" + this.tmpJsonData.results[__reg3].id);
 		if (this.indexCategory === "PEOPLE") 
         {
-			trace("onGetDetailsGenresFiles this.tmpJsonData.results[i].id" + this.tmpJsonData["results"][i]["id"]);
+			trace("dataYAMJ3 function onGetDetailsGenresFiles this.tmpJsonData.results[i].id" + this.tmpJsonData["results"][i]["id"]);
 			onGetDetailsPeople(true, null, callBack, passthroughData);
 			return;
 		}
 		else {
-		trace("onGetDetailsGenresFiles this.tmpJsonData['results'][" + i + "]['videoType']" + this.tmpJsonData["results"][i]["videoType"]);
+		trace("dataYAMJ3 function onGetDetailsGenresFiles this.tmpJsonData['results'][" + i + "]['videoType']" + this.tmpJsonData["results"][i]["videoType"]);
 		switch(this.tmpJsonData["results"][i]["videoType"]) {
 			case 'MOVIE':
 				getDataYAMJ3(yamj3coreurl+"api/person/movie.json?id="+this.tmpJsonData["results"][i]["id"]+"&dataitems=status,artwork", callBack, passthroughData, this.fn.onGetDetailsPeople);
@@ -1401,7 +1437,7 @@ class api.dataYAMJ3 {
 			//	onGetDetailsPeople(true, null, callBack, passthroughData);
 				break;
 			default:
-				trace("onGetDetailsGenres - unhandled videoType: "+this.tmpJsonData["results"][i]["videoType"]);
+				trace("dataYAMJ3 function onGetDetailsGenres - unhandled videoType: "+this.tmpJsonData["results"][i]["videoType"]);
 				onGetDetailsPeople(true, null, callBack, passthroughData);
 			}
 		}
@@ -1409,30 +1445,34 @@ class api.dataYAMJ3 {
 	}
 	
 	private function onGetDetailsPeople(success:Boolean, jsonData:Object, callBack:Function, passthroughData:Object) {
-		trace("dataYAMJ3 function onGetDetailsPeople");
+		trace("dataYAMJ3 function onGetDetailsPeople i=" + Number(passthroughData));
 		if(success && jsonData!=null) {
 			var i=Number(passthroughData);
 			if (this.baseIndex === "Person")
 			{	
+				trace("dataYAMJ3 function onGetDetailsPeople success && jsonData!=null i=" + Number(passthroughData));
 				this.tmpJsonData["results"][i]["people"] = jsonData["results"];
 				//if (i === this.getDetailsCount) {callBack(null, "YAMJ3 i: " + i + " onGetDetailsPeople this.tmpJsonData.results[i].people[0].id " + this.tmpJsonData["results"][i]["people"][0]["id"] + "  this.tmpJsonData.results[i].id: " +  this.tmpJsonData["results"][i]["id"]);}
 			}
 			else {this.tmpJsonData["results"][i]["people"]=jsonData["results"];}
-			
+			trace("dataYAMJ3 function onGetDetailsPeople this.tmpJsonData['results']["+i+"]['people'].length: " +this.tmpJsonData["results"][i]["people"].length);
 		}
+		else {	trace("dataYAMJ3 function onGetDetailsPeople success: "+success+"   && jsonData =null i=" + Number(passthroughData));}
+		trace("dataYAMJ3 function onGetDetailsPeople before this.getDetailsCount: " +this.getDetailsCount);
 		--this.getDetailsCount;
+		trace("dataYAMJ3 function onGetDetailsPeople after this.getDetailsCount: " +this.getDetailsCount);
 		if(this.getDetailsCount==0)
 			onGetIndex(success, callBack);
 	}
 	
 	private function onGetIndex(success:Boolean, callBack:Function):Void {
-		trace("dataYAMJ3 function onGetIndex");
+		trace("dataYAMJ3 function onGetIndex this.tmpJsonData['results'].length: " + this.tmpJsonData["results"].length);
 		if(success) {
 			if(this.infoProcessing) {
 				var total=int(this.tmpJsonData["totalCount"]);
 				var count=Common.evSettings.yamj3chunksize;
 				var pages=Math.ceil(total/count);
-				trace("onGetIndex if id: " + this.tmpJsonData["results"][0]["id"] + " Name: " +  this.indexName + " temp : " + this.indexTypeTemp +  " page: " + pages + " total: " + total +  " originalname : " + this.indexOriginalName); 
+				trace("onGetIndex if id: " + this.tmpJsonData["results"][this.getDetailsCount]["id"] + " Name: " +  this.indexName + " temp : " + this.indexTypeTemp +  " page: " + pages + " total: " + total +  " originalname : " + this.indexOriginalName + " this.getDetailsCount : " +this.getDetailsCount); 
 
 				callBack(
 					this.tmpJsonData["results"],
@@ -1443,7 +1483,7 @@ class api.dataYAMJ3 {
 					this.indexOriginalName);
 			}
 			else
-				{trace("onGetIndex else: " + this.tmpJsonData["results"][0]["id"] + " Name: " +  this.indexName + " temp : " + this.indexTypeTemp +  " page: " + pages + " total: " + total +  " originalname : " + this.indexOriginalName); 
+				{trace("onGetIndex else: " + this.tmpJsonData["results"][this.getDetailsCount]["id"] + " Name: " +  this.indexName + " temp : " + this.indexTypeTemp +  " page: " + pages + " total: " + total +  " originalname : " + this.indexOriginalName); 
 				callBack(this.tmpJsonData["results"],this.currentChunk);}
 		}
 		else
@@ -1462,7 +1502,7 @@ class api.dataYAMJ3 {
 						this.tmpJsonData = {totalCount: len_sets, results: a_sets};
 						this.getDetailsCount = len_sets;
 						for(var i=0;i<len_sets;++i) {
-							getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=movie&watched=all&include=boxset-" + jsonData["results"][i]["id"] + "&dataitems=status,artwork&artwork=poster" , callBack, i, this.fn.onGetDetailsSeasons2);
+							this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=movie&watched=all&include=boxset-" + jsonData["results"][i]["id"] + "&dataitems=status,artwork&artwork=poster" , callBack, i, this.fn.onGetDetailsSeasons2);
 						}
 					}
 				else if (this.baseIndex === "Person")		
@@ -1473,7 +1513,7 @@ class api.dataYAMJ3 {
 						this.tmpJsonData = {totalCount: len_person, results: a_person};
 						this.getDetailsCount = len_person;
 						for(var i=0;i<len_person;++i) {
-							getDataYAMJ3(yamj3coreurl + "api/video/season/" + jsonData["results"][0]["seasonList"][i]["seasonId"] + ".json?dataitems=status,artwork,plot,outline,files&artwork=all", callBack, i, this.fn.onGetDetailsSeasons2);	
+							this.getDataYAMJ3(yamj3coreurl + "api/video/season/" + jsonData["results"][0]["seasonList"][i]["seasonId"] + ".json?dataitems=status,artwork,plot,outline,files,country&artwork=all", callBack, i, this.fn.onGetDetailsSeasons2);	
 						}
 					}
 			else
@@ -1484,7 +1524,7 @@ class api.dataYAMJ3 {
 				this.tmpJsonData = {totalCount:len , results:a};
 				this.getDetailsCount=len;
 				for(var i=0;i<len;++i) {
-					getDataYAMJ3(yamj3coreurl + "api/video/season/" + jsonData["results"][0]["seasonList"][i]["seasonId"] + ".json?dataitems=status,artwork,plot,outline,files&artwork=all", callBack, i, this.fn.onGetDetailsSeasons2);
+					this.getDataYAMJ3(yamj3coreurl + "api/video/season/" + jsonData["results"][0]["seasonList"][i]["seasonId"] + ".json?dataitems=status,artwork,plot,outline,files,country&artwork=all", callBack, i, this.fn.onGetDetailsSeasons2);
 					}
 			}
 		}
@@ -1538,12 +1578,10 @@ class api.dataYAMJ3 {
 				this.tmpJsonDataPerson = this.tmpJsonDataPerson2["results"][0]["filmography"];
 				var len:Number = this.tmpJsonDataPerson.length;
 				this.getDetailsCount = len;
-
 			//	 callBack(null, "YAMJ3 DB onGetPerson_getDetails len: " + len);
                for(var i=0;i<len;++i) 
                 {
-					this.getDetailsSeasons(i, callBack);
-
+						this.getDetailsSeasons(i, callBack);
                 }
             
          //  callBack(null, "YAMJ3 DB onGetPerson_getDetails return len: " + len);
@@ -1653,15 +1691,25 @@ class api.dataYAMJ3 {
 
 // ****************************** EPISODES *****************************
 	public function episodes(titleArr:Object, callBack:Function) {
-		trace("dataYAMJ3 function episodes");
+		trace("dataYAMJ3 function episodes titleArr['videoType']:" + titleArr["videoType"] + " titleArr['id']: " + titleArr["id"] + " titleArr['seasonList'][0]['seasonId']: "  + titleArr["seasonList"][0]["seasonId"]);
 		// first load the fanart
 		var seasonId:Number;
-		if(titleArr["videoType"]=="SERIES")
-			seasonId=titleArr["seasonList"][0]["seasonId"];
-		else
-			seasonId=titleArr["seasonId"];
 		var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
-		getDataYAMJ3(yamj3coreurl+"api/video/season/"+seasonId+".json?dataitems=status,artwork,files&artwork=all", callBack, seasonId, this.fn.onEpisodesSeason);
+		if(titleArr["videoType"]=="SERIES")
+			{
+				seasonId=titleArr["seasonList"][0]["seasonId"];
+				if (titleArr["seasonList"][0]["seasonId"] ==undefined)
+					{getDataYAMJ3(yamj3coreurl + "api/video/seriesinfo.json?id=" + titleArr["id"] + "&dataitems=status,plot,outline,artwork,rating,certification&artwork=all", callBack, 0, this.fn.onGetDetailsSeasons);}
+				else 
+					getDataYAMJ3(yamj3coreurl+"api/video/season/"+seasonId+".json?dataitems=status,artwork,files,country&artwork=all", callBack, seasonId, this.fn.onEpisodesSeason);
+			}
+		else 
+			{
+				seasonId=titleArr["seasonId"];
+				getDataYAMJ3(yamj3coreurl+"api/video/season/"+seasonId+".json?dataitems=status,artwork,files,country&artwork=all", callBack, seasonId, this.fn.onEpisodesSeason);
+			}
+		
+		
 	}
 	
 	private function onEpisodesSeason(success:Boolean, jsonData:Object, callBack:Function, seasonId:Number) {
@@ -1673,7 +1721,7 @@ class api.dataYAMJ3 {
 				artwork_files[0] = jsonData["result"]["artwork"];
 				artwork_files[1] = jsonData["result"]["files"];
 				var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
-				getDataYAMJ3(yamj3coreurl+"api/video/episodes.json?seasonid="+seasonId+"&dataitems=status,artwork,outline,plot", callBack, artwork_files, this.fn.onEpisodesEpisodes);
+				getDataYAMJ3(yamj3coreurl+"api/video/episodes.json?seasonid="+seasonId+"&dataitems=status,artwork,outline,plot,files,country", callBack, artwork_files, this.fn.onEpisodesEpisodes);
 			}
 			else
 				callBack(null, "YAMJ3 DB access error code: "+jsonData["status"]["message"]+"for episodes");
@@ -1688,6 +1736,7 @@ class api.dataYAMJ3 {
 			if(jsonData["status"]["status"] == 200) {
 				// insert fanart and filename into each episode
 				var len:Number=jsonData["results"].length;
+				trace("dataYAMJ3 function onEpisodesEpisodes  episode count:" + len);
 				for(var i=0;i<len;++i)
 				{
 					jsonData["results"][i]["artwork"]=artwork_files[0];
@@ -1707,7 +1756,7 @@ class api.dataYAMJ3 {
 		trace("dataYAMJ3 function episodeswithset");
 		var seasonId:Number=titleArr["seasonId"];
 		var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
-		getDataYAMJ3(yamj3coreurl+"api/video/season/"+seasonId+".json?dataitems=status,artwork,files&artwork=all", callBack, seasonId, this.fn.onEpisodesSeason);
+		getDataYAMJ3(yamj3coreurl+"api/video/season/"+seasonId+".json?dataitems=status,artwork,files,country&artwork=all", callBack, seasonId, this.fn.onEpisodesSeason);
 	}
 
 // ****************************** PEOPLE *****************************
@@ -1831,6 +1880,7 @@ class api.dataYAMJ3 {
 				case 'epcount':
 				trace("******* epcount");
 					itemResult="0";
+					itemResult=titleArr["files"].length;
 					break;
 				case 'episode':
 					itemResult=titleArr["episode"]
@@ -2222,6 +2272,17 @@ class api.dataYAMJ3 {
 						//}
 					}
 					break;
+				case 'audiocodeclanguagecode':
+
+					itemResult="UNKNOWN";
+					if(titleArr["files"][0].audioCodecs[0].languageCode!=undefined)
+						itemResult=titleArr["files"][0].audioCodecs[0].languageCode.toUpperCase();	
+					break;
+				case 'audiocodeclanguage':
+					itemResult="UNKNOWN";
+					if(titleArr["files"][0].audioCodecs[0].language!=undefined)
+						itemResult=titleArr["files"][0].audioCodecs[0].language;				
+					break;
 				case 'audioChannels':
 				case 'audiochannels':
 				case 'flagchannels':
@@ -2242,8 +2303,10 @@ class api.dataYAMJ3 {
 				case 'country':
 					itemResult="UNKNOWN";
 					if(titleArr["countries"][0]["countryCode"]!=undefined);
+					{
 						itemResult=titleArr["countries"][0]["countryCode"].toUpperCase();
 					//	languageFullTo2Letters(titleArr["files"][0].audioCodecs[0].language.toUpperCase());
+					}
 					break;
 				case 'aspect':
 				case 'aspectyamj':

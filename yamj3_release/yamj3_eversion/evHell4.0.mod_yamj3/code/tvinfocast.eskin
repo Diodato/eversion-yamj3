@@ -173,16 +173,16 @@
 		</tile>	
 
 		<remote>
-			<condition>[:person:] !== UNKNOWN</condition>
+	<!--		<condition>[:person:] !== UNKNOWN</condition> -->
             <button>SELECT</button>
             <action>SWITCH</action>    
-            <data>Person_[:person@name,yamjfilesafe:]_1</data>    
+            <data>Person_[:person@index,yamjfilesafe:]_1</data>    
         </remote>            
         <remote>
-			<condition>[:person:] !== UNKNOWN</condition>
+	<!--		<condition>[:person:] !== UNKNOWN</condition> -->
             <button>END</button>
             <action>SWITCH</action>    
-            <data>Person_[:person@name,yamjfilesafe:]_1</data>    
+            <data>Person_[:person@index,yamjfilesafe:]_1</data>    
         </remote>
 
 	</segment>

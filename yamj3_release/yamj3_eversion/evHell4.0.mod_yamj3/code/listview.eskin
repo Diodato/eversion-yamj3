@@ -20,7 +20,7 @@
 	<image>
 		<name>imgposterFile</name>
 		<segname>index</segname>
-		<file>[:@jukebox:][:posterFile:]</file>
+		<file>[:@jukebox:][:poster:]</file>
 		<swap>true</swap>
 		<posx>918</posx>
 		<posy>91</posy>
@@ -37,7 +37,7 @@
 		<width>1280</width>
 		<height>720</height>
 	</image>
-	
+<!--	
 	<image>
         <name>footerimg</name>
         <segname>index</segname>
@@ -62,6 +62,174 @@
 		<hyper>3</hyper>
     </image> 
 
+	<include>common.mediainfo</include>-->
+		<!--  uncomment to test each value in the mediainfo bar
+	<text>
+        <name>footertxt</name>
+		<display>[:videosource:] - [:company,lower,nospaces,estrans:] - [:certification:] - [:country:] - [:container:] - [:videocodec:] - [:aspect:] - [:audiocodec,nospaces:] - [:audiochannels:] - [:subtitles,lower:] - [:fps:] - [:runtime:]</display>
+		<posx>185</posx>
+		<posy>570</posy>
+		<width>910</width>
+		<height>51</height>
+    </text>  -->
+	
+	<!-- begin yamj3 footer -->
+	<image>
+        <name>videosourceimg</name>
+		<segname>index</segname>
+        <file>[:@media:]purity/videosource/videosource_[:videosource,lower:].swf</file> 
+		<posx>40</posx>
+		<posy>673</posy>
+		<width>60</width>
+		<height>51</height>
+		<hyper>4</hyper>
+    </image>
+	<text>
+        <name>nocompanyxt</name>
+		<display> _ </display>
+		<posx>128</posx>
+		<posy>683</posy>
+		<width>40</width>
+		<height>51</height>
+    </text>	
+	<image>
+        <name>companyimg</name>
+		<segname>index</segname>
+        <file>[:@media:]purity/company/[:company,lower,nospaces,estrans:]</file> 
+		<posx>103</posx>
+		<posy>673</posy>
+		<width>80</width>
+		<height>51</height>
+		<hyper>4</hyper>
+    </image> 
+	<image>
+        <name>certificationimg</name>
+		<segname>index</segname>
+        <file>[:@media:]categories/certification/[:flagcertification,cut2,lower,nospaces:]/[:flagcertification,slice3,lower:].swf</file> 
+		<posx>192</posx>
+		<posy>679</posy>
+		<width>40</width>
+		<height>40</height>
+		<hyper>4</hyper>
+    </image> 
+	<image>
+        <name>countryimg</name>
+		<segname>index</segname>
+        <file>[:@media:]purity/flags/[:country,lower:].png</file> 
+		<posx>255</posx>
+		<posy>678</posy>
+		<width>45</width>
+		<height>45</height>
+		<hyper>4</hyper>
+    </image>  
+	<image>
+        <name>containerimg</name>
+		<segname>index</segname>
+        <file>[:@media:]purity/container/container_[:container,lower:].swf</file> 
+		<posx>312</posx>
+		<posy>675</posy>
+		<width>60</width>
+		<height>45</height>
+		<hyper>4</hyper>
+    </image>
+	<image>
+        <name>videocodecimg</name>
+		<segname>index</segname>
+        <file>[:@media:]purity/videocodec/vidcod_[:videocodec,lower:].swf</file> 
+		<posx>378</posx>
+		<posy>675</posy>
+		<width>60</width>
+		<height>45</height>
+		<hyper>4</hyper>
+    </image>
+	<image>
+        <name>aspectimg</name>
+		<segname>index</segname>
+        <file>[:@media:]purity/aspect/aspect_[:aspect,lower:].swf</file> 
+		<posx>448</posx>
+		<posy>673</posy>
+		<width>65</width>
+		<height>45</height>
+		<hyper>4</hyper>
+    </image>
+	<image>
+        <name>audiocodecimg</name>
+		<segname>index</segname>
+        <file>[:@media:]purity/audiocodec/audcod_[:audiocodec,lower,nospaces:].swf</file> 
+		<posx>523</posx>
+		<posy>673</posy>
+		<width>60</width>
+		<height>45</height>
+		<hyper>4</hyper>
+    </image>
+	<image>
+        <name>channelimg</name>
+		<segname>index</segname>
+        <file>[:@media:]purity/channel/audch_[:audiochannels,lower:].swf</file> 
+		<posx>593</posx>
+		<posy>673</posy>
+		<width>65</width>
+		<height>45</height>
+		<hyper>4</hyper>
+    </image>
+	<text>
+        <name>subtxt</name>
+		<display>[:%subtitle:]</display>
+		<posx>658</posx>
+		<posy>673</posy>
+		<width>90</width>
+		<height>51</height>
+    </text>
+	<text>
+        <name>nosubtxt</name>
+		<display> _ </display>
+		<posx>682</posx>
+		<posy>683</posy>
+		<width>40</width>
+		<height>51</height>
+    </text>
+	<image>
+        <name>subimg</name>
+		<segname>index</segname>
+		<condition>[:subtitles,lower:] != no</condition>
+        <file>[:@media:]purity/flags/[:subtitles,lower:].png</file> 
+		<posx>678</posx>
+		<posy>693</posy>
+		<width>35</width>
+		<height>25</height>
+		<hyper>4</hyper>
+    </image>
+	<image>
+        <name>fpsimg</name>
+		<segname>index</segname>
+        <file>[:@media:]purity/fps/fps_[:fps,lower:].swf</file> 
+		<posx>748</posx>
+		<posy>673</posy>
+		<width>65</width>
+		<height>45</height>
+		<hyper>4</hyper>
+    </image>
+	<text>
+        <name>runtimelabel</name>
+		<display>[:%runtime:]</display>
+		<posx>833</posx>
+		<posy>673</posy>
+		<width>90</width>
+		<height>51</height>
+    </text>
+	<text>
+        <name>runtimetxt</name>
+		<segname>index</segname>
+		<display>[:runtime,1,trun55,blank:]</display>
+		<posx>828</posx>
+		<posy>693</posy>
+		<width>90</width>
+		<height>51</height>
+		<hyper>4</hyper>
+    </text>
+
+	<!-- end yamj3 mediainfo -->
+<!--
 	<image>
 		<name>imgfooterawards</name>
 		<segname>index</segname>
@@ -71,7 +239,8 @@
 		<width>324</width>
 		<height>22</height>
 		<hyper>3</hyper>
-	</image>
+	</image> 
+-->
 	
 	<text>
 		<name>Listitems</name>
