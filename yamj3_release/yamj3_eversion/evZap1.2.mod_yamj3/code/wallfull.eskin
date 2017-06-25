@@ -96,6 +96,15 @@
 				<width>25</width>
 				<height>25</height>
 			</image>
+			<image>
+				<name>boxset</name>
+				<condition>[:mtype:] == MOVIESET</condition>
+				<file>[:@media:]common/icon_boxset_[:boxset:].png</file>
+				<posx>16</posx>
+				<posy>158</posy>
+				<width>25</width>
+				<height>40</height>
+			</image>
 <!-- code to add for test and display the contents of mtype smartres videosource 
 			<text>
 				<name>infomovie</name>

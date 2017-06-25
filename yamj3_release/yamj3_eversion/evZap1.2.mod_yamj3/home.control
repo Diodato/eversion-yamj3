@@ -130,6 +130,15 @@ For more info: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:control
 	    <file>wallfull_title</file>
 	    <data>index</data>
 	</insert>
+	<insert>
+        <name>Library</name>
+		<info>userlist8</info>
+        <title>[:%title:]</title>
+        <originaltitle>library</originaltitle>
+		<action>PRELOAD</action>
+	    <file>wallfull_library</file>
+	    <data>index</data>
+	</insert>
 <!--	<item>
 		<name>People</name>
 		<action>screen</action>

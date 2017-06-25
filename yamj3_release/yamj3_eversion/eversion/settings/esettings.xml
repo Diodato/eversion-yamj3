@@ -51,7 +51,7 @@
 		   2: smb:// paths with username and password require the encrypted password.  use the yamj app to find this password
 		   3: file:// network share paths with playercheckmounts enabled.  gaya firmware with smb passwords will never work.
     -->
-	<fullmounts>true</fullmounts>
+	<fullmounts>auto</fullmounts>
 
 	<!-- bypass api: when set to true, failures to talk to hardware players will disable instead of error -->
 	<bypassapi>true</bypassapi>

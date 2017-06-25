@@ -27,15 +27,15 @@
 	<!-- Other,Genres,Title,Certification,Year,Library,Cast,Director,Writer,Country,Set,Award,Person,Ratings -->
 	<!-- added userlist3 for people menu -->
 		<homelist>Other,Library</homelist>
-		<menulist>Other,Genres,Title,Year,Set,Ratings,Certification</menulist>
+		<menulist>Other,Genres,Title,Year,Set,Ratings,Certification,Library</menulist>
 		<userlist>Genres</userlist>
 		<userlist2>Certification</userlist2>
 		<userlist3>Year</userlist3>
 		<userlist4>Ratings</userlist4>
 		<userlist5>Set</userlist5>
 		<userlist6>Title</userlist6>
+		<userlist8>Library</userlist8>
 		<userlist7>lastname-a,lastname-b,lastname-c,lastname-d,lastname-e,lastname-f,lastname-g,lastname-h,lastname-i,lastname-j,lastname-k,lastname-l,lastname-m,lastname-n,lastname-o,lastname-p,lastname-q,lastname-r,lastname-s,lastname-t,lastname-u,lastname-v,lastname-w,lastname-x,lastname-y,lastname-z</userlist7>
-	
 
 	<!-- to increase the movie cover quality, set below to 'true',... cause evZap to use
          posters for the movie wall instead of thumbnails.    -->

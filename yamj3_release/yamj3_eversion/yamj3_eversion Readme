@@ -6,7 +6,7 @@ If you already have a Jukebox :
 1) download yamj3_eversion.zip
 2) unzip where you want this new jukebox 
 3) update the configuration with the following instructions
-4) inside the PCH navigate to the yamj3_eversion folder and press enter on eversion flash entry or install in the apps (like yamj) and point to folder wher you have unzip eversion.phf 
+4) inside the PCH navigate to the yamj3_eversion folder and press enter on eversion flash entry (eversion.phf) 
 
 Configuration:
 --------------
@@ -179,13 +179,14 @@ SPECIAL CATEGORY
 	
 	implementation: 
 	
-	1) - edit settings.xml to add each userlist in  (under the eskin folder)  -  7 userlist are available
+	1) - edit settings.xml to add each userlist in  (under the eskin folder)  -  8 userlist are available
 		<userlist>Genres</userlist>
 		<userlist2>Certification</userlist2>
 		<userlist3>Year</userlist3>
 		<userlist4>Ratings</userlist4>
 		<userlist5>Set</userlist5>
 		<userlist6>Title</userlist6>
+		<userlist8>Libary</userlist8>
 		<userlist7>lastname-a, ......</userlist7>
 		
 		or 
@@ -217,7 +218,16 @@ SPECIAL CATEGORY
 	    <file>wallfull_title</file>
 	    <data>index</data>
 	</insert>
-	
+	.......
+	<insert>
+        <name>Library</name>
+		<info>userlist8</info>
+        <title>[:%title:]</title>
+        <originaltitle>library</originaltitle>
+		<action>PRELOAD</action>
+	    <file>wallfull_library</file>
+	    <data>index</data>
+	</insert>
 	now available : 
 	[:flagcertification:]   return the short country code (2 chars)  this could be used directly to display flags country image with [:flagcertification:].png 
 	[:certification:] return the certification qualifier for each count by ex: TV-14 for US 

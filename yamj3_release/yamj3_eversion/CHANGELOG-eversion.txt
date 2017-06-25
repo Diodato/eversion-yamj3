@@ -1,4 +1,8 @@
 Eversion Changelog
+- add libray entry
+- fix Person_name_1 with movie and series target 
+- add boxset item , return true if part of a boxset otherwise false
+- modify mtype, return MOVIESET or TVSET if part of a boxset
 R3003:
 - add Set in evstreamed eskin
 - fix multi playerpath

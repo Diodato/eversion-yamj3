@@ -6,7 +6,7 @@ If you already have a Jukebox :
 1) download yamj3_eversion.zip
 2) unzip where you want this new jukebox 
 3) update the configuration with the following instructions
-4) inside the PCH navigate to the yamj3_eversion folder and press enter on eversion flash entry or install in the apps (like yamj) and point to folder wher you have unzip eversion.phf 
+4) inside the PCH navigate to the yamj3_eversion folder and press enter on eversion flash entry (eversion.phf)    
 
 Configuration:
 --------------
