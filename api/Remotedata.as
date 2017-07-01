@@ -186,6 +186,7 @@ class api.Remotedata {
 						case 'userlist5':
 						case 'userlist6':
 						case 'userlist7':
+						case 'userlist8':
 					/*	case 'personlist': */
 							trace(this.segDetails.xml.info+" for "+this.segDetails.xml.title);
 							this.indexType=this.segDetails.xml.info.toUpperCase();
@@ -296,6 +297,9 @@ class api.Remotedata {
 				
 					case "Genres":
 						this.yamj3.getYAMJ3genresIndexData(this.fn.harddataloaded1);
+						break;
+					case "Library":
+						this.yamj3.getYAMJ3libraryIndexData(this.fn.harddataloaded1);
 						break;
 					case "Certification":
 						this.yamj3.getYAMJ3certificationIndexData(this.fn.harddataloaded1);

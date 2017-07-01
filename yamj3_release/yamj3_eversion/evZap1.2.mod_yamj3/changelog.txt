@@ -1,4 +1,5 @@
 v6.2
+- add library entry
 - add boxset flag if part of a boxset
 v6.1
 - modify lowernavbar.eskin and wallfull.eskin to use :sorttitle: 

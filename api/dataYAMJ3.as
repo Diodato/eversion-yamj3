@@ -79,6 +79,7 @@ class api.dataYAMJ3 {
 			onGetYAMJ3yearIndexData:Delegate.create(this, this.onGetYAMJ3yearIndexData),
 			onGetYAMJ3titleIndexData:Delegate.create(this, this.onGetYAMJ3titleIndexData),
 			onGetYAMJ3certificationIndexData:Delegate.create(this, this.onGetYAMJ3certificationIndexData),
+			onGetYAMJ3libraryIndexData:Delegate.create(this, this.onGetYAMJ3libraryIndexData),
 			onGetYAMJ3ratingsIndexData:Delegate.create(this, this.onGetYAMJ3ratingsIndexData),
 			onGetPerson_getDetails:Delegate.create(this, this.onGetPerson_getDetails),
 			onGetDetailsPersonFiles2:Delegate.create(this, this.onGetDetailsPersonFiles2),
@@ -264,6 +265,14 @@ class api.dataYAMJ3 {
 		arr[i++]={action: "SWITCH", data: "YAMJ3", file: "YAMJ3", title: "Genres", originaltitle: "Genres"};
 		trace("dataYAMJ3 create indexes genres");
         Common.indexes["genres"]=arr;
+		delete arr;
+		
+		/************** library *************/
+		arr = new Array();
+		i = 0;
+		arr[i++]={action: "SWITCH", data: "YAMJ3", file: "YAMJ3", title: "Library", originaltitle: "Library"};
+		trace("dataYAMJ3 create indexes library");
+        Common.indexes["library"]=arr;
 		delete arr;
 		
 		/************** ratings *************/
@@ -518,6 +527,28 @@ class api.dataYAMJ3 {
 				// send it off (if we have something)
 				if(homedata.length>0) {
 					Common.indexes["userlist7"]=homedata;
+				}
+			}
+			
+			if(Common.esSettings.userlist8!=undefined &&  Common.esSettings.userlist8!=null) {
+				// prepare the userlist
+				homelist=new Array();
+				homedata=new Array();
+				homelist=Common.esSettings.userlist8.split(",");
+
+				for(var i=0;i<homelist.length;i++) {
+					//trace(".. adding "+homelist[i]+" to user");
+
+					if(Common.indexes[homelist[i].toLowerCase()]!= undefined) {
+						trace(".. adding "+homelist[i]+" to userlist8");
+						homedata.push({action:"catlist", arraydata:homelist[i].toLowerCase(), title:Common.evPrompts[homelist[i].toLowerCase()],originaltitle:homelist[i].toLowerCase()});
+						//trace("... success");
+					} // else trace("... didn't exist");
+				}
+
+				// send it off (if we have something)
+				if(homedata.length>0) {
+					Common.indexes["userlist8"]=homedata;
 				}
 			}
 			
@@ -881,7 +912,44 @@ class api.dataYAMJ3 {
 		else
 			callBack("ERROR", "YAMJ3 onGetYAMJ3certificationIndexData DB access for \'Certification\' error", null);
 	}
-
+	
+	/******* library ********/ 
+	
+	public function getYAMJ3libraryIndexData(callBack:Function) {
+		trace("dataYAMJ3 function getYAMJ3libraryIndexData");
+		var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
+		trace("In getYAMJ3libraryIndexData");
+		if(yamj3coreurl==null || yamj3coreurl==undefined)
+			callBack("ERROR","getYAMJ3libraryIndexData: yamj3coreurl undefined or null",null);
+		else
+			getDataYAMJ3(yamj3coreurl + "api/libraries/list.json?", callBack, null, this.fn.onGetYAMJ3libraryIndexData);
+	}
+	
+	private function onGetYAMJ3libraryIndexData(success:Boolean, jsonData:Object, callBack:Function) {
+		trace("dataYAMJ3 function onGetYAMJ3libraryIndexData");
+		if(success) {
+			if(jsonData["status"]["status"] == 200) {
+				var addto:Array=new Array();
+				var len:Number=jsonData["results"].length;
+				for(var i:Number=0;i<len;i++)			
+					addto.push(
+							{action: "SWITCH",
+								data: "Library_" + jsonData["results"][i]["id"] + "_1",
+								file: "Library_" + jsonData["results"][i]["i"] + "_1",
+								title: jsonData["results"][i]["name"],
+								basedirectory: jsonData["results"][i]["baseDirectory"],
+								client: jsonData["results"][i]["client"],
+								lastscanned: jsonData["results"][i]["lastscanned"]			
+								}
+							); 
+				callBack(null,null,addto);
+			}
+			else
+				callBack("ERROR", "YAMJ3 onGetYAMJ3libraryIndexData DB access error code: "+jsonData["status"]["message"]+"for 'Library' error", null);
+		}
+		else
+			callBack("ERROR", "YAMJ3 onGetYAMJ3libraryIndexData DB access for \'Library\' error", null);
+	}
 
 /************end new sequence for news entries **************/
 
@@ -981,6 +1049,10 @@ class api.dataYAMJ3 {
 			else if (url.indexOf("Year") != -1 ) 
 					{
 						this.indexTypeTemp = "year";
+					}
+			else if (url.indexOf("Library") != -1 ) 
+					{
+						this.indexTypeTemp = "library";
 					}
 			else if (url.indexOf("Certification") != -1 ) 
 					{
@@ -1084,10 +1156,13 @@ class api.dataYAMJ3 {
 			trace ("dataYAMJ3 function getIndex baseIndex: " + this.baseIndex);
 			switch(this.baseIndex) {
 				case "All" :
-				this.getDataYAMJ3(yamj3coreurl+"api/index/video.json?type=MOVIE,SERIES&page="+this.currentChunk+"&perpage="+Common.evSettings.yamj3chunksize+"&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+				this.getDataYAMJ3(yamj3coreurl+"api/index/video.json?type=MOVIE,SERIES&page="+this.currentChunk+"&perpage="+Common.evSettings.yamj3chunksize+"&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 				break;
 				case "Genres" :
 				this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&include=genre-" + this.indexCategory + "&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+				break;
+				case "Library" :
+				this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&include=library-" + this.indexCategory + "&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 				break;
 				case "Ratings" :
 				this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&include=rating-" + this.indexCategory + "&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
@@ -1145,38 +1220,38 @@ class api.dataYAMJ3 {
 				trace ("function getIndex indexCategory: " + this.indexCategory);
 				switch(this.indexCategory) {
 					case "All" :
-						this.getDataYAMJ3(yamj3coreurl+"api/index/video.json?type=MOVIE,SERIES&page="+this.currentChunk+"&perpage="+Common.evSettings.yamj3chunksize+"&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl+"api/index/video.json?type=MOVIE,SERIES&page="+this.currentChunk+"&perpage="+Common.evSettings.yamj3chunksize+"&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award,boxset&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 			        case "Movies" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "New-Movies" :
 					case "New-MOVIES" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-" + yamj3newdaysmovie + "-file", callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-" + yamj3newdaysmovie + "-file", callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "New-TV" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-" + yamj3newdaystv + "-file", callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award,boxset&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-" + yamj3newdaystv + "-file", callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "TV Shows" :
 						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "Top250" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award,boxset&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "New" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-" + yamj3newdaysvideo + "-file", callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart,banner&dataitems=status,plot,outline,rating,certification,award,boxset&sortby=videoYear DESC,createTimestamp DESC&watched=all&include=newest-" + yamj3newdaysvideo + "-file", callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "3D" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&include=videosource-3D&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&include=videosource-3D&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "HD" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&include=resolution-hd&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&include=resolution-hd&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "Unwatched" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&watched=false&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&watched=false&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "Watched" :
-						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award&watched=true&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&watched=true&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "Sets" :
 					   this.getDataYAMJ3(yamj3coreurl + "api/boxset/list.json?&sortby=name&sortdir=DESC&dataitems=artwork&artwork=poster&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize, callBack, null, this.fn.onGetIndex_getDetails);
@@ -1317,7 +1392,7 @@ class api.dataYAMJ3 {
 					{
 						trace ("dataYAMJ3 function onGetDetailsSeasons this.tmpJsonDataPerson["+i+"].videodataId: " + this.tmpJsonDataPerson[i].videodataId + " this.tmpJsonDataPerson[i].type: " + this.tmpJsonDataPerson[i].type + " i=" + Number(passthroughData));
 					//	 callBack(null, "YAMJ3 onGetDetailsSeasons this.tmpJsonDataPerson["+i+"].videodataId: " + this.tmpJsonDataPerson[i].videodataId + " this.tmpJsonDataPerson[i].type: " + this.tmpJsonDataPerson[i].type);
-						this.getDataYAMJ3(yamj3coreurl + "api/video/movie/" + this.tmpJsonDataPerson[i]["videodataId"]+ ".json?dataitems=status,plot,genre,files,rating,certification,studio,country,artwork,award&artwork=poster,fanart&sortby=" + title_sort , callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
+						this.getDataYAMJ3(yamj3coreurl + "api/video/movie/" + this.tmpJsonDataPerson[i]["videodataId"]+ ".json?dataitems=status,plot,genre,files,rating,certification,studio,country,artwork,award,boxset&artwork=poster,fanart&sortby=" + title_sort , callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
 						return;
 					}
 			   else if (this.tmpJsonDataPerson[i].type === "SERIES")
@@ -1334,7 +1409,7 @@ class api.dataYAMJ3 {
 			trace("dataYAMJ3 function onGetDetailsSeasons this.tmpJsonData['results'][" + i + "]['videoType']" + this.tmpJsonData["results"][i]["videoType"] + " i=" + Number(passthroughData));
 			switch(this.tmpJsonData["results"][i]["videoType"]) {
 				case 'MOVIE':
-					getDataYAMJ3(yamj3coreurl+"api/video/movie/"+this.tmpJsonData["results"][i]["id"]+".json?dataitems=status,genre,files,rating,studio,country,certification,award,artwork&artwork=all", callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
+					getDataYAMJ3(yamj3coreurl+"api/video/movie/"+this.tmpJsonData["results"][i]["id"]+".json?dataitems=status,genre,files,rating,studio,country,certification,award,boxset,artwork&artwork=all", callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
 					break;
 				case 'SERIES':
 					getDataYAMJ3(yamj3coreurl+"api/video/series/"+this.tmpJsonData["results"][i]["id"]+".json?dataitems=status,genre,files,rating,certification,studio,country,artwork&artwork=all", callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
@@ -1342,7 +1417,7 @@ class api.dataYAMJ3 {
 				default:
 					switch (this.indexTypeTemp) {
 					case 'Sets':
-					getDataYAMJ3(yamj3coreurl+"api/video/movie/"+this.tmpJsonData["results"][i]["id"]+".json?dataitems=status,genre,files,rating,certification,studio,country,award,artwork&artwork=all", callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
+					getDataYAMJ3(yamj3coreurl+"api/video/movie/"+this.tmpJsonData["results"][i]["id"]+".json?dataitems=status,genre,files,rating,certification,studio,country,award,boxset,artwork&artwork=all", callBack, passthroughData, this.fn.onGetDetailsGenresFiles);
 					break;
 					case 'PEOPLE':
 					//	 callBack(null, "YAMJ3 onGetDetailsSeasons PEOPLE i: " + i + " this.tmpJsonData['results'][i]['id']" + this.tmpJsonData["results"][i]["id"] + " photo: " + ev.Common.yamj3photourl + this.tmpJsonData["results"][i]["artwork"][0]["filename"]);
@@ -1403,18 +1478,22 @@ class api.dataYAMJ3 {
 			}
 		}
 		var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
+		// check with new param if we have to display photo for people in detail page, default value is yes
+		var artwork_needed:String = ",artwork";
+		if (ev.Common.evSettings.yamj3displayphoto == "false")
+			{artwork_needed = "";}
 		var i=Number(passthroughData);
 		if (this.baseIndex === "Person")
 		{
 			if (this.tmpJsonData["results"][i]["videoType"] === "MOVIE")
 				{
 				trace("dataYAMJ3 function onGetDetailsGenresFiles baseIndex: Person i: " + i + " this.tmpJsonData.results[i].id: " + this.tmpJsonData["results"][i]["id"]);
-					this.getDataYAMJ3(yamj3coreurl + "api/person/movie.json?id=" + this.tmpJsonData["results"][i]["id"] + "&dataitems=status,artwork", callBack, passthroughData, this.fn.onGetDetailsPeople);
+					this.getDataYAMJ3(yamj3coreurl + "api/person/movie.json?id=" + this.tmpJsonData["results"][i]["id"] + "&dataitems=status" + artwork_needed + "&max=" + ev.Common.evSettings.yamj3maxpeople , callBack, passthroughData, this.fn.onGetDetailsPeople);
 					return;
 				}
 			else if (this.tmpJsonData["results"][i]["videoType"] === "SERIES") 
 				{
-				//    this.getDataYAMJ3(yamj3coreurl + "api/person/series.json?id=" + this.tmpJsonData["results"][i]["id"] + "&dataitems=status,artwork", callBack, passthroughData, this.fn.onGetDetailsPeople);
+				//    this.getDataYAMJ3(yamj3coreurl + "api/person/series.json?id=" + this.tmpJsonData["results"][i]["id"] + "&dataitems=status" + artwork_needed + "&max=" + ev.Common.evSettings.yamj3maxpeople , callBack, passthroughData, this.fn.onGetDetailsPeople);
 					this.onGetDetailsPeople(true, null, callBack, passthroughData);
 				   return;
 				}
@@ -1430,10 +1509,10 @@ class api.dataYAMJ3 {
 		trace("dataYAMJ3 function onGetDetailsGenresFiles this.tmpJsonData['results'][" + i + "]['videoType']" + this.tmpJsonData["results"][i]["videoType"]);
 		switch(this.tmpJsonData["results"][i]["videoType"]) {
 			case 'MOVIE':
-				getDataYAMJ3(yamj3coreurl+"api/person/movie.json?id="+this.tmpJsonData["results"][i]["id"]+"&dataitems=status,artwork", callBack, passthroughData, this.fn.onGetDetailsPeople);
+				getDataYAMJ3(yamj3coreurl+"api/person/movie.json?id="+this.tmpJsonData["results"][i]["id"]+"&dataitems=status" + artwork_needed + "&max=" + ev.Common.evSettings.yamj3maxpeople , callBack, passthroughData, this.fn.onGetDetailsPeople);
 				break;
 			case 'SERIES':
-				getDataYAMJ3(yamj3coreurl+"api/person/series.json?id="+this.tmpJsonData["results"][i]["id"]+"&dataitems=status,artwork", callBack, passthroughData, this.fn.onGetDetailsPeople);
+				getDataYAMJ3(yamj3coreurl+"api/person/series.json?id="+this.tmpJsonData["results"][i]["id"]+"&dataitems=status" + artwork_needed + "&max=" + ev.Common.evSettings.yamj3maxpeople , callBack, passthroughData, this.fn.onGetDetailsPeople);
 			//	onGetDetailsPeople(true, null, callBack, passthroughData);
 				break;
 			default:
@@ -1539,8 +1618,12 @@ class api.dataYAMJ3 {
 		if(success && jsonData!=null) {
 			var i=Number(passthroughData);
 			var yamj3coreurl:String = ev.Common.evSettings["yamj3coreurl"];
+		// check with new param if we have to display photo for people in detail page, default value is yes
+			var artwork_needed:String = ",artwork";
+			if (ev.Common.evSettings.yamj3displayphoto == "false")
+				{artwork_needed = "";}
 			this.tmpJsonData["results"][i]=jsonData["result"];
-			getDataYAMJ3(yamj3coreurl+"api/person/season.json?id="+this.tmpJsonData["results"][i]["id"]+"&dataitems=status,artwork", callBack, passthroughData, this.fn.onGetDetailsPeople);
+			getDataYAMJ3(yamj3coreurl+"api/person/season.json?id="+this.tmpJsonData["results"][i]["id"] + "&dataitems=status" + artwork_needed + "&max=" + ev.Common.evSettings.yamj3maxpeople , callBack, passthroughData, this.fn.onGetDetailsPeople);
 			//	onGetDetailsPeople(true, null, callBack, passthroughData);
 				break;
 		}
@@ -1603,7 +1686,7 @@ class api.dataYAMJ3 {
                   if (this.tmpJsonDataPerson[len_bis]["type"] === "MOVIE") 
 					{
 				//	callBack(null, "YAMJ3 DB onGetDetailsPersonFiles this.tmpJsonDataPerson[__reg1].videodataId:" + this.tmpJsonDataPerson[__reg1].videodataId + "  __reg1 :" + __reg1);
-						this.getDataYAMJ3(yamj3coreurl+ "api/video/movie/" + this.tmpJsonDataPerson[len_bis]["videodataId"] + ".json?dataitems=status,genre,files,rating,certification,studio,country,plot,outline,artwork,award&artwork=all", callBack, len_bis, this.fn.onGetDetailsPersonFiles2);
+						this.getDataYAMJ3(yamj3coreurl+ "api/video/movie/" + this.tmpJsonDataPerson[len_bis]["videodataId"] + ".json?dataitems=status,genre,files,rating,certification,studio,country,plot,outline,artwork,award,boxset&artwork=all", callBack, len_bis, this.fn.onGetDetailsPersonFiles2);
 				return;
 					}
 				else {this.onGetDetailsPeople(true, null, callBack, passthroughData);}
@@ -1628,10 +1711,14 @@ class api.dataYAMJ3 {
 			this.tmpJsonData["results"][len]["videoType"]=jsonData["result"]["videoType"];
         }
         var yamj3coreurl:String = ev.Common.evSettings.yamj3coreurl;
+	// check with new param if we have to display photo for people in detail page, default value is yes
+		var artwork_needed:String = ",artwork";
+		if (ev.Common.evSettings.yamj3displayphoto == "false")
+			{artwork_needed = "";}
 		len = Number(passthroughData);
 		switch(this.tmpJsonData["results"][len]["videoType"]) {
 			case 'MOVIE':
-				getDataYAMJ3(yamj3coreurl + "api/person/movie.json?id=" + this.tmpJsonData["results"][len]["id"] + "&dataitems=status,artwork", callBack, passthroughData, this.fn.onGetPersonPeople);
+				getDataYAMJ3(yamj3coreurl + "api/person/movie.json?id=" + this.tmpJsonData["results"][len]["id"] + "&dataitems=status" + artwork_needed + "&max=" + ev.Common.evSettings.yamj3maxpeople , callBack, passthroughData, this.fn.onGetPersonPeople);
 				break;
 			case 'SERIES':
 				onGetDetailsPeople(true, null, callBack, passthroughData);
@@ -1862,7 +1949,7 @@ class api.dataYAMJ3 {
 //					itemResult="MOVIESET";
 //					itemResult="TVSET";
 						case "SERIES":
-							if(titleArr["seasonList"]!=undefined && titleArr["seasonList"].length > 1)
+							if((titleArr["seasonList"]!=undefined && titleArr["seasonList"].length > 1) || (titleArr["boxedSets"]!=undefined || titleArr["boxedSets"]!=null))
 								itemResult="TVSET";
 							else
 								itemResult="TV";
@@ -1871,7 +1958,10 @@ class api.dataYAMJ3 {
 							itemResult="TV";
 							break;
 						case "MOVIE":
-							itemResult="MOVIE"
+							if((titleArr["boxedSets"]!=undefined || titleArr["boxedSets"]!=null))
+								itemResult="MOVIESET";
+							else
+								itemResult="MOVIE"
 							break;
 						default:
 							itemResult="MOVIE";
@@ -1902,6 +1992,10 @@ class api.dataYAMJ3 {
 					break;
 				case 'setorder':
 					itemResult="NONE";
+					break;
+				case 'boxset':
+					itemResult="false";
+					if(titleArr["boxedSets"]!=undefined || titleArr["boxedSets"]!=null) itemResult="true";
 					break;
 				case 'watched':
 					itemResult="false";

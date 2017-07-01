@@ -1,4 +1,7 @@
 Eversion Changelog
+R3005:
+- add 2 new parameters yamj3displayphoto, yamj3maxpeople
+R3003: (skipped R3004)
 - add libray entry
 - fix Person_name_1 with movie and series target 
 - add boxset item , return true if part of a boxset otherwise false

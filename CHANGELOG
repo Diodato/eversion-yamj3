@@ -1,4 +1,10 @@
 Eversion Changelog
+R3005:
+- add 2 new parameters yamj3displayphoto, yamj3maxpeople
+R3003:
+- add library
+- add boxset item , return true if part of a boxset otherwise false
+- modify mtype, return MOVIESET or TVSET if part of a boxset
 R3002:
 - add yamj3preferedtitletype parameter in esettings-default.xml (avalaible value titel, title_sort, title_original)
 R3001:

@@ -1,4 +1,4 @@
-This is a quick and dirty port of eversion R0179 for YAMJ3 and eversion version is R3003
+This is a quick and dirty port of eversion R0179 for YAMJ3 and eversion version is R3005
 Manual Installation:
 --------------------
 If you already have a Jukebox :
@@ -37,7 +37,7 @@ note for translation paths:
 	<yamj3playerpaths>file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO/video/Film ,file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO2/video/Series</yamj3playerpaths>
 in this exemple Film and Series are stored on 2 network_share SYNO and SYNO2 
 
-d)	eversion version is R3003
+d)	eversion version is R3005
 	adjust inside jukebox/erversion/settings/esettings.xml (create this file if it doesn't exists)
 	<eversion>R3003</eversion>
 e) add a new paramter which allow eversion to call title , title_sort, title_original 
@@ -57,6 +57,10 @@ f) add new value to select the number of days for new TV and movie, movie only, 
 	this value to select the number of days for new movies, this value overwrite the newdaysvideo only for movie search 
 	<yamj3newdaystv>80</yamj3newdaystv>
 	this value to select the number of days for new TV, this value overwrite the newdaysvideo only for TV search 
+g) add this value to display photo on detail page, true = display, false = no display , default = true
+	<yamj3displayphoto>true</yamj3displayphoto>
+h) add this value to limit the amount of people on detail page, -1 no limit, xx = number is the max number of people fetched, default is -1 ,no limit
+	<yamj3maxpeople>-1</yamj3maxpeople>
 	
 Limitations:
 ------------

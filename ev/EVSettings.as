@@ -443,6 +443,10 @@ class ev.EVSettings {
 			Common.evSettings.yamj3playerpaths="";
 		if(Common.evSettings.yamj3preferedtitletype==null || Common.evSettings.yamj3preferedtitletype==undefined)
 			Common.evSettings.yamj3preferedtitletype="title";
+		if(Common.evSettings.yamj3displayphoto==null || Common.evSettings.yamj3displayphoto==undefined)
+			Common.evSettings.yamj3displayphoto = "true";
+		if(Common.evSettings.yamj3maxpeople==null || Common.evSettings.yamj3maxpeople==undefined)
+			Common.evSettings.yamj3maxpeople='-1';
 		
 	}
 

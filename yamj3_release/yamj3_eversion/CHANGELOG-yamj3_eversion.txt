@@ -1,4 +1,6 @@
 Yamj3_Eversion Changelog
+V2.1:
+- add 2 new parameters yamj3displayphoto, yamj3maxpeople
 V2.0
 - add library entry
 - add boxset item , return true if part of a boxset otherwise false
