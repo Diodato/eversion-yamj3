@@ -272,7 +272,7 @@
 	<renderquality>HIGH</renderquality>
 
 	<!-- used to verify settings match interface version -->
-    <eversion>R3002</eversion>
+    <eversion>R3005</eversion>
 
 	<!-- YAMJ3 settings -->
 	<yamj3coreurl>http://192.168.1.8:8888/yamj3/</yamj3coreurl>
@@ -281,4 +281,14 @@
 	<yamj3chunksize>24</yamj3chunksize>
 	<!-- add this value to select tile, title_sort, title_original -->
 	<yamj3preferedtitletype>title</yamj3preferedtitletype>
+	<!-- add this value to select the number of days for new TV and movie -->
+	<yamj3newdaysvideo>80</yamj3newdaysvideo>
+	<!-- add this value to select the number of days for new movies, this value overwrite the newdaysvideo only for movie search -->
+	<yamj3newdaysmovie>80</yamj3newdaysmovie>
+	<!-- add this value to select the number of days for new TV, this value overwrite the newdaysvideo only for TV search -->
+	<yamj3newdaystv>80</yamj3newdaystv>
+	<!-- add this value to display photo on detail page, true = display, false = no display , default = true -->
+	<yamj3displayphoto>true</yamj3displayphoto>
+	<!-- add this value to limit the amount of people on detail page, -1 no limit, xx = number is the max number of people fetched, default is -1 ,no limit -->
+	<yamj3maxpeople>-1</yamj3maxpeople>
 </settings>
