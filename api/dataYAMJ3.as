@@ -189,6 +189,8 @@ class api.dataYAMJ3 {
 		arr[i++]={action:"SWITCH", data:"Other_TV Shows_1", file:"Other_TV Shows_1", title:"TV Shows", originaltitle:"TV Shows"};
 		arr[i++]={action:"SWITCH", data:"Other_3D_1", file:"Other_3D_1", title:"3D", originaltitle:"3D"};
 		arr[i++]={action:"SWITCH", data:"Other_HD_1", file:"Other_HD_1", title:"HD", originaltitle:"HD"};
+		arr[i++]={action:"SWITCH", data:"Other_4K_1", file:"Other_4K_1", title:"4K", originaltitle:"4K"};
+		arr[i++]={action:"SWITCH", data:"Other_8K_1", file:"Other_8K_1", title:"8K", originaltitle:"8K"};
 	/*	arr[i++]={action:"SWITCH", data:"Other_Top250_1", file:"Other_Top250_1", title:"Top250", originaltitle:"Top250"}; */
 		arr[i++]={action:"SWITCH", data:"Other_Unwatched_1", file:"Other_Unwatched_1", title:"Unwatched", originaltitle:"Unwatched"};
 	/*	arr[i++]={action:"SWITCH", data:"Other_Rating-1_1", file:"Other_Rating-1_1", title:"Rating-1", originaltitle:"Rating-1"};
@@ -986,6 +988,14 @@ class api.dataYAMJ3 {
 					{
 						this.indexTypeTemp = "HD";
 					}
+			else if (url.indexOf("Other_4K") != -1 ) 
+					{
+						this.indexTypeTemp = "4K";
+					}
+			else if (url.indexOf("Other_8K") != -1 ) 
+					{
+						this.indexTypeTemp = "8K";
+					}
 			else if (url.indexOf("Other_Unwatched") != -1 ) 
 					{
 						this.indexTypeTemp = "UNWATCHED";
@@ -1246,6 +1256,12 @@ class api.dataYAMJ3 {
 						break;
 					case "HD" :
 						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&include=resolution-hd&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+						break;
+					case "4K" :
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&include=resolution-4k&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
+						break;
+					case "8K" :
+						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&include=resolution-8k&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
 						break;
 					case "Unwatched" :
 						this.getDataYAMJ3(yamj3coreurl + "api/index/video.json?type=MOVIE,SERIES&page=" + this.currentChunk + "&perpage=" + ev.Common.evSettings.yamj3chunksize + "&artwork=poster,fanart&dataitems=status,plot,outline,rating,certification,award,boxset&watched=false&sortby=" + title_sort , callBack, null, this.fn.onGetIndex_getDetails);
@@ -2203,7 +2219,7 @@ class api.dataYAMJ3 {
 							itemResult="dvd";
 						} else if(itemResult.indexOf("ISO") != -1) {
 							itemResult="iso";
-						} else if(itemResult.indexOf("BDMV") != -1 || itemResult.indexOf("BDAV") != -1 || itemResult.indexOf("BLURAY") != -1 || itemResult.indexOf("BLU-RAY") != -1 || itemResult.indexOf("BDMV") != -1 || itemResult.indexOf("BDMV") != -1) {
+						} else if(itemResult.indexOf("BDMV") != -1 || itemResult.indexOf("BDAV") != -1 || itemResult.indexOf("BLURAY") != -1 || itemResult.indexOf("BLU-RAY") != -1) {
 							itemResult="bluray";
 						} else if(itemResult.indexOf("M1V") != -1) {
 							itemResult="m1v";
