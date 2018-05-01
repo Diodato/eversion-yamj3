@@ -67,6 +67,22 @@ For more info: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:control
 		<file>wallfull2row</file>
         <data>Other_HD_1</data>
     </item>
+	<item>
+        <name>4K</name>
+        <action>SWITCH</action>
+        <title>[:%4k,upper:]</title>
+        <originaltitle>4k</originaltitle>
+		<file>wallfull2row</file>
+        <data>Other_4K_1</data>
+    </item>
+	<item>
+        <name>8K</name>
+        <action>SWITCH</action>
+        <title>[:%8k,upper:]</title>
+        <originaltitle>8k</originaltitle>
+		<file>wallfull2row</file>
+        <data>Other_8K_1</data>
+    </item>
     <item>
         <name>3D</name>
         <action>SWITCH</action>
@@ -118,8 +134,8 @@ For more info: http://www.dentedboxes.com/doku.php/eversion:eskins:ref:control
         <title>[:%set:]</title>
         <originaltitle>set</originaltitle>
 		<action>PRELOAD</action>
-	    <file>wallfull</file>
-	    <data>index</data>       
+	    <file>wallfull_set</file>
+	    <data>Other_New_1</data>       
 	</insert>
 	<insert>
         <name>Title</name>

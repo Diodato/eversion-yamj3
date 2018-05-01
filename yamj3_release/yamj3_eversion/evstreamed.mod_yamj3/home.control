@@ -48,13 +48,27 @@
         <originaltitle>TV Shows</originaltitle>
 	    <data>Other_TV Shows_1</data>
     </item> 
- <item>
+	<item>
         <name>3D</name>
         <action>SWITCH</action>
         <title>[:%3d:]</title>
         <originaltitle>3D</originaltitle>
         <data>Other_3D_1</data>
     </item> 
+	<item>
+        <name>4K</name>
+        <action>SWITCH</action>
+        <title>[:%4k:]</title>
+        <originaltitle>4K</originaltitle>
+        <data>Other_4K_1</data>
+    </item> 
+	<item>
+        <name>8K</name>
+        <action>SWITCH</action>
+        <title>[:%8k:]</title>
+        <originaltitle>8K</originaltitle>
+        <data>Other_8K_1</data>
+    </item>
 -->
 	<!-- add the set entry need to add userlist in evstreamed property -->
 	<insert>

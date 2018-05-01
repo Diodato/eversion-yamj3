@@ -1,4 +1,5 @@
 <settings>	
+
 	<menuHOME>home_zap</menuHOME>
 	<!-- Show current temperature and weather (PCH A/C-300 like) -->
 	<current_weather>true</current_weather>

@@ -1,3 +1,5 @@
+v6.3
+- add 4k and 8k
 v6.2
 - add library entry
 - add boxset flag if part of a boxset
