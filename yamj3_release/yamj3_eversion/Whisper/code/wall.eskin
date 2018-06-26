@@ -145,7 +145,16 @@
 				<posy>10</posy>
 				<width>65</width>
 				<height>64</height>				
-			</image>				
+			</image>
+			<image>
+				<name>set.overlay</name>
+				<condition>[:boxset:] == true</condition>  <!-- This block is done if the condition is true-->
+				<file>[:@media:]wall/1.eskin.used/set.overlay.png</file>
+				<posx>90</posx>
+				<posy>175</posy>
+				<width>45</width>
+				<height>22</height>				
+			</image>					
 		</tile>
         <remote>
            <button>PLAY</button>

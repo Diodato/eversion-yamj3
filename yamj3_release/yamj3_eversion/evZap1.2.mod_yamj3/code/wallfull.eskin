@@ -63,6 +63,7 @@
 			</image>
 			<image>
 				<name>thumbnail_source</name>
+				<condition>[:#index_vidsource,lower:] == true</condition>
 				<file>[:@media:]wall/source_[:videoSource,lower:]_[:#index_vidsource,lower:].swf</file>
 				<posx>13</posx>
 				<posy>15.5</posy>

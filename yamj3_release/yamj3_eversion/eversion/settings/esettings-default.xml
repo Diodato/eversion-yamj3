@@ -272,7 +272,7 @@
 	<renderquality>HIGH</renderquality>
 
 	<!-- used to verify settings match interface version -->
-    <eversion>R3005</eversion>
+    <eversion>R3006</eversion>
 
 	<!-- YAMJ3 settings -->
 	<yamj3coreurl>http://192.168.1.8:8888/yamj3/</yamj3coreurl>

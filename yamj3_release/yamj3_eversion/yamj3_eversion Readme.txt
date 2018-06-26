@@ -1,4 +1,4 @@
-This is a quick and dirty port of eversion R0179 for YAMJ3 and eversion version is R3005
+This is a quick and dirty port of eversion R0179 for YAMJ3 and eversion version is R3006
 Manual Installation:
 --------------------
 If you already have a Jukebox :
@@ -37,9 +37,9 @@ note for translation paths:
 	<yamj3playerpaths>file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO/video/Film/  ,file:///opt/sybhttpd/localhost.drives/NETWORK_SHARE/SYNO2/video/Series</yamj3playerpaths>
 in this exemple Film and Series are stored on 2 network_share SYNO and SYNO2 
 
-d)	eversion version is R3005
+d)	eversion version is R3006
 	adjust inside jukebox/erversion/settings/esettings.xml (create this file if it doesn't exists)
-	<eversion>R3005</eversion>
+	<eversion>R3006</eversion>
 e) add a new paramter which allow eversion to call title , title_sort, title_original 
 	<yamj3preferedtitletype>title</yamj3preferedtitletype>
 	this parameter is used in the yamj3 API to sort he title depneding of the title type choosen, it's also used the fetch movie by letter 

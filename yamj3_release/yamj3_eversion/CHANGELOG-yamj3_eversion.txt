@@ -1,4 +1,7 @@
 Yamj3_Eversion Changelog
+v2.5
+- fix boxset for all categories
+- add boxset overlay for evstreamed, Whisper
 v2.4
 - fix movieset and boxset
 v2.3

@@ -57,6 +57,15 @@
 				<width>65</width>
 				<height>64</height>
 			</image>
+			<image>
+				<name>boxset.overlay</name>
+				<condition>[:boxset:] == true</condition>  <!-- This block is done if the condition is true-->
+				<file>[:@media:]wall/1.eskin.used/set.overlay.png</file>
+				<posx>80</posx>
+				<posy>180</posy>
+				<width>45</width>
+				<height>22</height>
+			</image>
 		</tile>
 
 	<!-- Remote commands -->

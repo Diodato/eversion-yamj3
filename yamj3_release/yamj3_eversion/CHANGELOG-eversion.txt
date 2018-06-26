@@ -1,4 +1,6 @@
 Eversion Changelog
+R3006: 
+- fix boxset value not returned when within categories
 R3005:
 - fix movieset and boxset
 - add 2 new parameters yamj3displayphoto, yamj3maxpeople

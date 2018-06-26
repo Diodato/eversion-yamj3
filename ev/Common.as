@@ -114,8 +114,8 @@ class ev.Common {
 		Common.evRun.hardware.cfgmounts='auto';
 
 		Common.evRun.minyamj=3000;
-		Common.evRun.evversion="3.0.0.5";
-		Common.evRun.evrversion="R3005";
+		Common.evRun.evversion="3.0.0.6";
+		Common.evRun.evrversion="R3006";
 		Common.evRun.updated=false;
 		Common.evRun.highperf=false;  // high end chipset
 
