@@ -1974,9 +1974,9 @@ class api.dataYAMJ3 {
 							itemResult="TV";
 							break;
 						case "MOVIE":
-							if((titleArr["boxedSets"]!=undefined || titleArr["boxedSets"]!=null))
-								itemResult="MOVIESET";
-							else
+//							if((titleArr["boxedSets"]!=undefined || titleArr["boxedSets"]!=null))
+//								itemResult="MOVIESET";
+//							else
 								itemResult="MOVIE"
 							break;
 						default:

@@ -1,4 +1,6 @@
 Yamj3_Eversion Changelog
+v2.4
+- fix movieset and boxset
 v2.3
 - modify eskins to add 4k and 8k 
 v2.2

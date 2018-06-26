@@ -251,5 +251,6 @@ SPECIAL CATEGORY
 	added : 
 	[:title,yamj3clean:]  suppress the :: added in the title for inside use 
 	[:title,last1:]  return the last char in the title (last1 for 1 char , last2 for 2 char , ......)
+	[:boxset:]  return true  if the the movie is part of a set, false if not
 	
 	

@@ -1,5 +1,6 @@
 Eversion Changelog
 R3005:
+- fix movieset and boxset
 - add 2 new parameters yamj3displayphoto, yamj3maxpeople
 R3003: (skipped R3004)
 - add libray entry
